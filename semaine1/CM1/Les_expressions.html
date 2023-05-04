@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1. Cours n° 1 &#8212; Cours de LU2ST031</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -64,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Bienvenue sur le cours d’Informatique pour les Géosciences" href="../../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -332,27 +334,27 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="cours-n-1">
-<h1><span class="section-number">1. </span>Cours n° 1<a class="headerlink" href="#cours-n-1" title="Permalink to this headline">#</a></h1>
-<div class="section" id="les-expressions-python">
-<h2><span class="section-number">1.1. </span>Les expressions Python<a class="headerlink" href="#les-expressions-python" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="cours-n-1">
+<h1><span class="section-number">1. </span>Cours n° 1<a class="headerlink" href="#cours-n-1" title="Permalink to this heading">#</a></h1>
+<section id="les-expressions-python">
+<h2><span class="section-number">1.1. </span>Les expressions Python<a class="headerlink" href="#les-expressions-python" title="Permalink to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Le cours de cette semaine est sous forme d’un notebook jupyter. Vous devez le lire intégralement puis répondre aux questions de cours qui le composent et soumettre votre travail.</p>
 </div>
-<div class="section" id="qu-est-ce-qu-une-expression">
-<h3><span class="section-number">1.1.1. </span>Qu’est ce qu’une expression ?<a class="headerlink" href="#qu-est-ce-qu-une-expression" title="Permalink to this headline">#</a></h3>
+<section id="qu-est-ce-qu-une-expression">
+<h3><span class="section-number">1.1.1. </span>Qu’est ce qu’une expression ?<a class="headerlink" href="#qu-est-ce-qu-une-expression" title="Permalink to this heading">#</a></h3>
 <p>Une expression est un morceau de code qui est évalué par Python. L’interprétation de ce code donne une valeur. On parle d’expressions simples lorsqu’elles sont uniquement constituées d’une valeur.</p>
-</div>
-<div class="section" id="les-differents-types-de-valeurs">
-<h3><span class="section-number">1.1.2. </span>Les différents types de valeurs<a class="headerlink" href="#les-differents-types-de-valeurs" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="les-differents-types-de-valeurs">
+<h3><span class="section-number">1.1.2. </span>Les différents types de valeurs<a class="headerlink" href="#les-differents-types-de-valeurs" title="Permalink to this heading">#</a></h3>
 <p>On peut distinguer plusieurs types de valeurs :</p>
 <ul class="simple">
 <li><p>Des nombres entiers (<em>integers</em> en anglais, <em>int</em> pour Python)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1789</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>1789
 </pre></div>
 </div>
 </div>
@@ -367,7 +369,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>3.14159
 </pre></div>
 </div>
 </div>
@@ -377,16 +379,20 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="admonition-remarque admonition">
+<p class="admonition-title">Remarque</p>
+<p>En python le séparateur décimal est un point (<code class="docutils literal notranslate"><span class="pre">.</span></code>) et non une virgule (<code class="docutils literal notranslate"><span class="pre">,</span></code>)</p>
+</div>
 <ul class="simple">
 <li><p>Du texte qu’on appellera chaine de caractères (<em>strings</em> en anglais, <em>str</em> pour Python)</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Les caractères qui forment une chaîne de caractères sont entourrés par des apostrophes (‘). Ceci est nécessaire à Python pour que l’interpréteur reconnaisse l’expression comme une chaine.</p>
+<p>Les caractères qui forment une chaîne de caractères sont entourrés par des apostrophes (<code class="docutils literal notranslate"><span class="pre">'</span></code>). Ceci est nécessaire à Python pour que l’interpréteur reconnaisse l’expression comme une chaine.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello !&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;Hello !&#39;
 </pre></div>
 </div>
 </div>
@@ -401,7 +407,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -413,11 +419,11 @@ document.write(`
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Les valeurs booléennes ne peuvent prendre que 2 valeurs : vrai (True) ou faux (False). Nous reviendrons plus tard sur ce type de valeur.</p>
+<p>Les valeurs booléennes ne peuvent prendre que 2 valeurs : vrai (<code class="docutils literal notranslate"><span class="pre">True</span></code>) ou faux (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Nous reviendrons plus tard sur ce type de valeur.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -432,7 +438,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./semaine1\CM1"
+            path: "./semaine1/CM1"
         },
         predefinedOutput: true
     }
