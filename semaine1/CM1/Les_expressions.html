@@ -320,7 +320,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-python">1.1. Les expressions Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-expression">1.1.1. Qu’est ce qu’une expression ?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-differents-types-de-valeurs">1.1.2. Les différents types de valeurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-differents-types-de-valeurs">1.1.2. Les différents types de valeurs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">1.1.2.1. Exemples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -421,6 +424,74 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Les valeurs booléennes ne peuvent prendre que 2 valeurs : vrai (<code class="docutils literal notranslate"><span class="pre">True</span></code>) ou faux (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Nous reviendrons plus tard sur ce type de valeur.</p>
 </div>
+<p>Toutes les valeurs ci-dessus sont aussi des expressions que l’on appelle expressions simples. Il est aussi possible de construire des expressions plus complexes qui contiennent des opérations. Ces opérations s’appuient en général sur 2 valeurs (on parle d’opérateurs binaires) ou parfois un seule valeur (opérateur unaire). Evidemment la ou les valeurs utilisées par l’opérateur peuvent être de types variés.</p>
+<section id="exemples">
+<h4><span class="section-number">1.1.2.1. </span>Exemples<a class="headerlink" href="#exemples" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>une opération avec 2 entiers donnant un entier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>une opération avec 2 entiers donnant un flottant</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>une opération avec un entier et un flottant donnant un flotant.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="mf">3.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L’entier est en fait converti en flottant par python avant d’effectuer l’opération. Nous verrons les conversions de type plus tard dans le cours.</p>
+</div>
+<ul class="simple">
+<li><p>une opération avec une seule valeur booléenne</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="ow">not</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -485,7 +556,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-python">1.1. Les expressions Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-expression">1.1.1. Qu’est ce qu’une expression ?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-differents-types-de-valeurs">1.1.2. Les différents types de valeurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-differents-types-de-valeurs">1.1.2. Les différents types de valeurs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">1.1.2.1. Exemples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
