@@ -9,7 +9,9 @@ logo: logo.jpg
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-
+parse:
+  myst_enable_extensions:  
+    - strikethrough
 
 # Define the name of the latex output file for PDF builds
 #latex:
