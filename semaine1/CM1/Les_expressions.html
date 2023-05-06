@@ -335,9 +335,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.3.2. Les expressions booléennes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.3.2.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.3.2.2. Les principaux opérateurs booléennes</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#not">1.3.2.2.1. not</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#and">1.3.2.2.2. and</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#or">1.3.2.2.3. or</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#or">1.3.2.2.1. or</a></li>
 </ul>
 </li>
 </ul>
@@ -363,7 +361,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="les-expressions">
+  <section id="les-expressions">
 <h1><span class="section-number">1. </span>Les expressions<a class="headerlink" href="#les-expressions" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
@@ -467,9 +465,15 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Les valeurs booléennes ne peuvent prendre que 2 valeurs : vrai (<code class="docutils literal notranslate"><span class="pre">True</span></code>) ou faux (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Nous reviendrons plus tard sur ce type de valeur.</p>
+<p>Les valeurs booléennes ne peuvent prendre que 2 valeurs :</p>
+<ul class="simple">
+<li><p>vrai : <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>faux : <code class="docutils literal notranslate"><span class="pre">False</span></code>
+. Nous reviendrons plus tard sur ce type de valeur.</p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Pour que Python reconnaisse bien les valeurs booléennes <code class="docutils literal notranslate"><span class="pre">True</span></code> et <code class="docutils literal notranslate"><span class="pre">False</span></code>, il ne faut pas oublier qu’elles commencent par une majuscule (C’est à dire que <s>true</s> est incorrect)</p>
 </div>
 </section>
 <section id="affichage-du-type-d-une-valeur">
@@ -692,14 +696,33 @@ document.write(`
 <h3><span class="section-number">1.3.2. </span>Les expressions booléennes<a class="headerlink" href="#les-expressions-booleennes" title="Permalink to this heading">#</a></h3>
 <section id="les-operateurs-ayant-pour-resultat-une-valeur-booleenne">
 <h4><span class="section-number">1.3.2.1. </span>Les opérateurs ayant pour résultat une valeur booléenne<a class="headerlink" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p>&gt;</p></li>
-<li><p>&gt;=</p></li>
-<li><p>&lt;</p></li>
-<li><p>&lt;=</p></li>
-<li><p>==</p></li>
-<li><p>!=</p></li>
-</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Symbole</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>&gt;</p></td>
+<td class="text-left"><p>strictement supérieur à</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>&gt;=</p></td>
+<td class="text-left"><p>supérieur ou égal à</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>&lt;</p></td>
+<td class="text-left"><p>strictement inférieur à</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>&lt;=</p></td>
+<td class="text-left"><p>inférieur ou égal à</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>==</p></td>
+<td class="text-left"><p>égal à</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>!=</p></td>
+<td class="text-left"><p>différent de</p></td>
+</tr>
+</tbody>
+</table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">10</span>
@@ -714,12 +737,12 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">!=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">7</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">7</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -752,14 +775,15 @@ document.write(`
 <section id="les-principaux-operateurs-booleennes">
 <h4><span class="section-number">1.3.2.2. </span>Les principaux opérateurs booléennes<a class="headerlink" href="#les-principaux-operateurs-booleennes" title="Permalink to this heading">#</a></h4>
 <p>Il existe plusieurs opérateurs, voici les principaux :</p>
-<section id="not">
-<h5><span class="section-number">1.3.2.2.1. </span>not<a class="headerlink" href="#not" title="Permalink to this heading">#</a></h5>
-</section>
-<section id="and">
-<h5><span class="section-number">1.3.2.2.2. </span>and<a class="headerlink" href="#and" title="Permalink to this heading">#</a></h5>
-</section>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">not</span></code> est un opérateur unaire. Le résultat de cet opérateur sur une valeur booléenne est le contraire de cette valeur. Le contraire de <code class="docutils literal notranslate"><span class="pre">True</span></code> est <code class="docutils literal notranslate"><span class="pre">False</span></code> et le contraire de <code class="docutils literal notranslate"><span class="pre">False</span></code> est <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+</ul>
 <section id="or">
-<h5><span class="section-number">1.3.2.2.3. </span>or<a class="headerlink" href="#or" title="Permalink to this heading">#</a></h5>
+<h5><span class="section-number">1.3.2.2.1. </span>or<a class="headerlink" href="#or" title="Permalink to this heading">#</a></h5>
 <ul class="simple">
 <li><p>une opération unaire sur une seule valeur booléenne (l’opérateur <code class="docutils literal notranslate"><span class="pre">not</span></code> donne le booléen contraire à celui de l’opérande)</p></li>
 </ul>
@@ -795,7 +819,7 @@ document.write(`
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="les-variables">
+<section id="les-variables">
 <h1><span class="section-number">2. </span>Les variables<a class="headerlink" href="#les-variables" title="Permalink to this heading">#</a></h1>
 <section id="le-principe">
 <h2><span class="section-number">2.1. </span>Le principe<a class="headerlink" href="#le-principe" title="Permalink to this heading">#</a></h2>
@@ -879,9 +903,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.3.2. Les expressions booléennes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.3.2.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.3.2.2. Les principaux opérateurs booléennes</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#not">1.3.2.2.1. not</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#and">1.3.2.2.2. and</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#or">1.3.2.2.3. or</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#or">1.3.2.2.1. or</a></li>
 </ul>
 </li>
 </ul>
