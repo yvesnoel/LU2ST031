@@ -8,3 +8,4 @@ options:
 chapters:
 - file: semaine1/CM1/Les_expressions
 - file: semaine5/CM4/Les_boucles
+- file: semaine7/CM6/Tutoriel_Spyder
