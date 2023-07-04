@@ -7,5 +7,6 @@ options:
   numbered: true
 chapters:
 - file: semaine1/CM1/Les_expressions
+- file: semaine1/CM1/Les_variables
 - file: semaine5/CM4/Les_boucles
 - file: semaine7/CM6/Tutoriel_Spyder
