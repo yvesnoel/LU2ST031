@@ -7,3 +7,4 @@ options:
   numbered: true
 chapters:
 - file: semaine1/CM1/Les_expressions
+- file: semaine5/CM4/Les_boucles
