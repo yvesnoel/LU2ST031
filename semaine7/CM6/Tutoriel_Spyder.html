@@ -1,0 +1,666 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Objectifs de ce cours &#8212; Cours de LU2ST031</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine7/CM6/Tutoriel_Spyder';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="3. CM 4 : les boucles" href="../../semaine5/CM4/Les_boucles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Bienvenue sur le cours d’Informatique pour les Géosciences
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../semaine1/CM1/Les_expressions.html">1. Les expressions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">3. CM 4 : les boucles</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Objectifs de ce cours</a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine7/CM6/Tutoriel_Spyder.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/semaine7/CM6/Tutoriel_Spyder.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objectifs de ce cours</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5. Objectifs de ce cours</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder-qu-est-ce-que-c-est">6. Spyder, qu’est-ce que c’est?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">7. Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-windows-et-macos">7.1. Pour Windows et MacOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-linux">7.2. Pour Linux</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#l-interface-pas-a-pas">8. L’interface pas à pas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-editeur">8.1. L’éditeur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fenetre-d-aide-et-explorateur-de-variables">8.2. Fenêtre d’aide et explorateur de variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aide">8.2.1. Aide</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-explorer">8.2.2. Variable explorer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#files">8.2.3. Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-console">8.3. La console</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">9. Pour aller plus loin</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-petits-exercices-sur-l-usage-de-spyder">10. TP: petits exercices sur l’usage de spyder</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="objectifs-de-ce-cours">
+<h1><span class="section-number">5. </span>Objectifs de ce cours<a class="headerlink" href="#objectifs-de-ce-cours" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Installer Spyder quel que soit le système d’exploitation.</p></li>
+</ul>
+<p>Être capable dans Spyder de :</p>
+<ul class="simple">
+<li><p>créer un script</p></li>
+<li><p>le sauvegarder</p></li>
+<li><p>l’exécuter ligne par ligne</p></li>
+<li><p>l’exécuter en entier</p></li>
+<li><p>lire et interpréter les informations de la console</p></li>
+<li><p>lire et interpréter les informations de l’explorateur de variables</p></li>
+</ul>
+</section>
+<section id="spyder-qu-est-ce-que-c-est">
+<h1><span class="section-number">6. </span>Spyder, qu’est-ce que c’est?<a class="headerlink" href="#spyder-qu-est-ce-que-c-est" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="https://hackmd.io/_uploads/SkFwSvgY2.png" /></p>
+<p>Jusqu’à présent, nous avons écrit des scripts dans des fichiers <code class="docutils literal notranslate"><span class="pre">.py</span></code> en utilisant un logiciel de traitement de texte classique (notepad, sublimetext, etc.). Cependant, il existe des programmes puissants qui fournissent une assistance précieuse pour la programmation. Nous allons apprendre au cours des prochaines semaines à nous servir du programme <strong>Spyder</strong> pour aller plus loin, plus vite, et en évitant de nombreuses erreurs.</p>
+<p>Spyder est ce qu’on appelle classiquement un environnement de développement intégré (ou IDE pour integrated development environment). Il s’agit d’un programme rassemblant un ensemble d’outils afin de faciliter l’écriture de code, notamment en simplifiant certaines tâches, en donnant un accès plus facile à la documentation, en affichant des alertes, en affichant un graphique directement après l’avoir appelé, etc. Un IDE se révèle rapidement indispensable pour toutes ces tâches. Spyder est un IDE open source spécifiquement concu pour Python et pour le domaine scientifique.</p>
+</section>
+<section id="installation">
+<h1><span class="section-number">7. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
+<p>Pour nous servir de Spyder, nous allons tout d’abord installer <strong>Anaconda</strong>, qui contient tout un ensemble d’outils pour programmer. Anaconda est gratuit, open source et contient directement Python (mais aussi le <a class="reference external" href="https://fr.wikipedia.org/wiki/R_(langage)">langage R</a>), Spyder, et permet de gérer librairies et dépendances plus facilement.</p>
+<p>Anaconda s’installe facilement sur Windows, MacOS et Linux. La procédure d’installation est décrite ci-dessous.</p>
+<section id="pour-windows-et-macos">
+<h2><span class="section-number">7.1. </span>Pour Windows et MacOS<a class="headerlink" href="#pour-windows-et-macos" title="Permalink to this heading">#</a></h2>
+<p>Télécharger l’installeur Anaconda disponible sur le site https://www.anaconda.com/.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/rye2aExF2.png" /></p>
+<p>Cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">download</span></code> pour télécharger automatiquement l’installeur qui correspond à votre système d’exploitation (dans le cas contraire, cliquer sur <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">additional</span> <span class="pre">Installers</span></code> en dessous du bouton <code class="docutils literal notranslate"><span class="pre">download</span></code> et choisissez la version qui correspond à votre système). Il suffit ensuite de lancer l’installeur téléchargé pour démarrer l’installation.</p>
+<p>Une fois l’installation terminée, l’application <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">navigator</span></code> peut être executée comme n’importe quel autre programme (une icône est maintenant présente dans votre espace de travail ou dans un menu démarrer). Lancez <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">navigator</span></code>. Lorsque le programme est ouvert, vous verrez l’icone de Spyder comme ci-dessous:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Hy3cVHlK3.png" /></p>
+<p>Cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">launch</span></code> sous l’icone Spyder pour le démarrer.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Bk8ySBgY3.png" /></p>
+</section>
+<section id="pour-linux">
+<h2><span class="section-number">7.2. </span>Pour Linux<a class="headerlink" href="#pour-linux" title="Permalink to this heading">#</a></h2>
+<p>Télécharger l’installeur Anaconda disponible sur le site https://www.anaconda.com/.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/rye2aExF2.png" /></p>
+<p>Cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">download</span></code> pour télécharger automatiquement l’installeur qui correspond à votre système d’exploitation (dans le cas contraire, cliquer sur <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">additional</span> <span class="pre">Installers</span></code> en dessous du bouton <code class="docutils literal notranslate"><span class="pre">download</span></code> et choisissez la version qui correspond à votre système).</p>
+<p>Une fois téléchargé le fichier (celui-ci comporte l’extension <code class="docutils literal notranslate"><span class="pre">.sh</span></code>), vous devrez ouvrir le <a class="reference external" href="https://doc.ubuntu-fr.org/terminal">terminal</a>. Le terminal est une fenêtre dans laquelle il est possible de tapper des commandes puis de les exécuter avec Entrée. Pour ouvrir le terminal sur Ubuntu, vous pouvez:</p>
+<ul class="simple">
+<li><p>cliquer sur l’icone terminal (visible dans <code class="docutils literal notranslate"><span class="pre">Afficher</span> <span class="pre">les</span> <span class="pre">applications</span></code>):</p></li>
+</ul>
+<p><img alt="" src="https://hackmd.io/_uploads/SyxGmBlYn.png" /></p>
+<ul class="simple">
+<li><p>presser Ctrl+Alt+T en même temps.</p></li>
+</ul>
+<p>et entrer l’instruction suivante:</p>
+<p><code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">~/Téléchargements/Anaconda3-2023.03-1-Linux-x86_64.sh</span></code></p>
+<p>(en remplaçant <code class="docutils literal notranslate"><span class="pre">Anaconda3-2023.03-1-Linux-x86_64.sh</span></code> par le nom du fichier <code class="docutils literal notranslate"><span class="pre">.sh</span></code> que vous venez de télécharger).</p>
+<p>Au message <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">order</span> <span class="pre">to</span> <span class="pre">continue</span> <span class="pre">the</span> <span class="pre">installation</span> <span class="pre">process,</span> <span class="pre">please</span> <span class="pre">review</span> <span class="pre">the</span> <span class="pre">license</span> <span class="pre">agreement</span></code> vous devez descendre tout en bas du texte à l’aide de la molette de la souris puis répondre <code class="docutils literal notranslate"><span class="pre">yes</span></code>. Vous devrez ensuite taper en toutes lettres <code class="docutils literal notranslate"><span class="pre">yes</span></code> et presser <code class="docutils literal notranslate"><span class="pre">Entrée</span></code> à la question suivante :</p>
+<blockquote>
+<div><p>Do you wish the installer to prepend the Anaconda3 install location
+to PATH in your /home/ec2-user/.bashrc ? [yes|no]</p>
+</div></blockquote>
+<p>Une fois ceci fait, et après avoir redémarré l’ordinateur, il suffit d’ouvrir le terminal, de taper la commande <code class="docutils literal notranslate"><span class="pre">anaconda-navigator</span></code> et de la lancer en appuyant sur <code class="docutils literal notranslate"><span class="pre">Entrée</span></code>. Lorsque le programme est ouvert, vous verrez l’icone de Spyder comme ci-dessous:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Hy3cVHlK3.png" /></p>
+<p>Cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">launch</span></code> sous l’icone Spyder pour le démarrer.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Bk8ySBgY3.png" /></p>
+</section>
+</section>
+<section id="l-interface-pas-a-pas">
+<h1><span class="section-number">8. </span>L’interface pas à pas<a class="headerlink" href="#l-interface-pas-a-pas" title="Permalink to this heading">#</a></h1>
+<p>Vous devriez maintenant avoir Spyder sous les yeux. Vous remarquez immédiatement que l’interface graphique est assez complexe avec plusieurs panneaux :</p>
+<p><img alt="" src="https://hackmd.io/_uploads/HyCCH8gth.png" /></p>
+<p>La suite de cette partie va vous permettre de faire le tour de l’interface afin de commencer à prendre vos marques.</p>
+<section id="l-editeur">
+<h2><span class="section-number">8.1. </span>L’éditeur<a class="headerlink" href="#l-editeur" title="Permalink to this heading">#</a></h2>
+<p>Le panneau de gauche contient un éditeur de texte. Celui-ci sert à écrire du code, tout comme notepad ou n’importe quel autre éditeur. Ci-dessous, vous voyez que Spyder a généré un fichier temporaire temp.py dans lequel vous pouvez commencer a écrire. Vous pouvez également constater que le fichier n’est pas vide, il y a déjà des lignes:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/H1X388lFn.png" /></p>
+<p>La première ligne est la suivante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+</pre></div>
+</div>
+<p>Cette ligne est systématiquement ajoutée par défaut à n’importe quel script Spyder. Il s’agit d’une ligne spécifiant le type d’encodage (l’alphabet) utilisé pour coder. Spyder spécifie systématiquement l’encodage Utf-8 pour <code class="docutils literal notranslate"><span class="pre">Universal</span> <span class="pre">Character</span> <span class="pre">Set</span> <span class="pre">Transformation</span> <span class="pre">Format</span> <span class="pre">-</span> <span class="pre">8</span> <span class="pre">bits</span></code> qui est le standard actuel et qui inclus tous les caractères que vous pourriez utiliser. Je vous conseille de mettre cette ligne dans tous les scripts que vous produirez.</p>
+<p>La seconde ligne est une chaîne de caractères:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Spyder-Editor</span>
+
+<span class="sd">This is a temporary script file</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Il s’agit tout simplement du “titre” de votre script, qu’il est utile de renseigner afin de donner des informations sur la fonction du script, la date, ou encore l’auteur. Tout ce qui est entre les deux triplets guillemets sera considéré comme faisant partie du titre.</p>
+<p>Nous allons maintenant voir comment utiliser l’éditeur qui va se réveler beaucoup plus puissant qu’un éditeur classique. Commencez par créer un nouveau fichier en cliquant sur l’icone <img alt="" src="https://hackmd.io/_uploads/ryJpevgYn.png" /></p>
+<p>Maintenant, copiez le code suivant et collez le a la place du code généré automatiquement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Circulation thermohaline</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">S2</span> <span class="o">=</span> <span class="mf">34.8</span> <span class="c1"># salinité dans l’Atlantique Nord en psu</span>
+
+<span class="n">V2</span> <span class="o">=</span> <span class="mi">70</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span> <span class="c1"># # volume d&#39;eau de l’Atlantique Nord en km</span>
+
+<span class="n">V2_apres</span> <span class="o">=</span> <span class="n">V2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="c1"># volume dans l&#39;Atlantique Nord après décharge </span>
+                    <span class="c1"># d’un iceberg de 0.5 millions de km^3</span>
+
+<span class="c1"># équilibre : S2 * V2 = S2_apres * V2_apres</span>
+
+<span class="n">S2_apres</span> <span class="o">=</span> <span class="p">(</span><span class="n">S2</span> <span class="o">*</span> <span class="n">V2</span><span class="p">)</span> <span class="o">/</span> <span class="n">V2_apres</span> <span class="c1"># salinité dans l’Atlantique N. après décharge</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">S2_apres</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ensuite, sauvegardez ce nouveau fichier à l’emplacement de votre choix en utilisant l’icone <img alt="" src="https://hackmd.io/_uploads/r1BJZwgK2.png" /> (vous pouvez également cliquer en haut à gauche sur l’onglet <code class="docutils literal notranslate"><span class="pre">File</span></code> puis <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">as</span></code>)</p>
+<p><img alt="" src="https://hackmd.io/_uploads/SkanyvlFh.png" /></p>
+<p>Une fois le fichier sauvegardé, regardons le résultat:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Bymz2L-F2.png" /></p>
+<p>Vous pouvez constater que certains mots sont dans une couleur particulière:</p>
+<ul class="simple">
+<li><p>en vert, les chaînes de caractères</p></li>
+<li><p>en jaune, les nombres</p></li>
+<li><p>en orange, les fonctions telles que <code class="docutils literal notranslate"><span class="pre">print</span></code></p></li>
+<li><p>en grisé, les commentaires</p></li>
+</ul>
+<p>Maintenant, essayez de supprimer la variable <code class="docutils literal notranslate"><span class="pre">V2_apres</span></code> de la ligne 12. Vous devriez voir apparaître ceci:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/BkEH-P-Yn.png" /></p>
+<p>Voila une première raison importante de l’utilité de Spyder. Celui-ci réalise une analyse de votre code en temps réel. Ici, ils vous indique avec un point rouge qu’il y a une erreur. Lorsque vous placez le curseur sur le point rouge, il vous indique le type d’erreur: ici, il s’agit d’une erreur de syntaxe. Normal, étant donné que la ligne se termine par le signe <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<p>Maintenant, après le signe <code class="docutils literal notranslate"><span class="pre">/</span></code>, ajoutez <code class="docutils literal notranslate"><span class="pre">V2_apres2</span></code>.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/rk8bMw-Kn.png" /></p>
+<p>Ici, Spyder vous alerte encore une fois. Nous avons oublié de définir <code class="docutils literal notranslate"><span class="pre">V2_apres2</span></code> avant de l’utiliser! Les points rouges ou les signes attention jaunes vous indiquent qu’il y a des erreurs dans votre script avant même de le lancer, ce qui fait gagner beaucoup de temps.</p>
+<p>Corrigez l’erreur afin qu’il n’y ait plus de point rouge affiché. Maintenant qu’il n’y a plus d’erreur, nous voulons lancer notre script. Pour lancer le script entier, il suffit de cliquer sur <img alt="" src="https://hackmd.io/_uploads/B12PKIlYn.png" />. Essayez.</p>
+<p>Et voila! Le script a été exécuté. Maintenant, vous constatez qu’il faut que vous relanciez une ligne particulière. Cliquez sur la ligne de votre choix, par exemple la 8, puis cliquez sur <img alt="" src="https://hackmd.io/_uploads/Bk32Y8xt3.png" />. Cette fois-ci, seule la ligne 8 a été exécutée.</p>
+</section>
+<section id="fenetre-d-aide-et-explorateur-de-variables">
+<h2><span class="section-number">8.2. </span>Fenêtre d’aide et explorateur de variables<a class="headerlink" href="#fenetre-d-aide-et-explorateur-de-variables" title="Permalink to this heading">#</a></h2>
+<p><strong>Le working directory</strong> =&gt; EN PARLER? ET AVANT? Manipulation de fichiers .py? working directory?</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Hygw7vgKh.png" /></p>
+<p>La fenêtre en haut à droite donne plusieurs informations utiles. Vous pouvez voir que cette fenêtre dispose de quatre onglets. Nous allons pour l’instant en voir deux, <code class="docutils literal notranslate"><span class="pre">Help</span></code> et <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">Explorer</span></code>.</p>
+<section id="aide">
+<h3><span class="section-number">8.2.1. </span>Aide<a class="headerlink" href="#aide" title="Permalink to this heading">#</a></h3>
+<p>Commencons par cliquer sur Help. Vous arrivez sur une page dans laquelle pouvez consulter l’aide concernant n’importe quel objet. Il suffit de taper un mot dans le champ à droite de <code class="docutils literal notranslate"><span class="pre">Object</span></code>. Essayez avec <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/SJNZeveYh.png" /></p>
+<p>Le champ Definition vous indique les arguments possibles. Type vous indique qu’il s’agit d’une fonction de base. Le texte en dessous indique à quoi sert cette fonction. Vous pouvez également voir l’aide directement dans l’interpréteur lorsque vous tapez un mot. Tapez <code class="docutils literal notranslate"><span class="pre">print()</span></code> dans l’éditeur de texte pour voir une infobulle apparaître.</p>
+</section>
+<section id="variable-explorer">
+<h3><span class="section-number">8.2.2. </span>Variable explorer<a class="headerlink" href="#variable-explorer" title="Permalink to this heading">#</a></h3>
+<p>Cliquez maintenant sur Variable Explorer. Vous avez maintenant sous les yeux un tableau:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/HkIkeDxKn.png" /></p>
+<p>Il s’agit de l’ensemble des variables actives. Au démarrage de Spyder, l’explorateur est vide. Puis, lorsque vous lancez des scripts, vous créez des variables avec une valeur. En lançant le script juste avant, vous avez notamment généré <code class="docutils literal notranslate"><span class="pre">S2</span></code> grâce à la ligne 6 <code class="docutils literal notranslate"><span class="pre">S2</span> <span class="pre">=</span> <span class="pre">34.8</span></code>. Vous constatez que cette variable est bien présente ici. Spyder vous indique qu’il s’agit d’une variable de type <code class="docutils literal notranslate"><span class="pre">float</span></code>, de taille 1 (pour les listes, la taille correspond par exemple au nombre d’éléments de la liste), et ayant pour valeur 34,8.</p>
+</section>
+<section id="files">
+<h3><span class="section-number">8.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this heading">#</a></h3>
+<p>Le troisième onglet que nous allons voir est Files. Il s’agit tout simplement de l’arborescence de vos fichiers.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/SkcGlvgtn.png" /></p>
+<p>Vous pouvez cliquer sur les noms des fichiers pour les ouvrir directement dans l’éditeur de texte.</p>
+</section>
+</section>
+<section id="la-console">
+<h2><span class="section-number">8.3. </span>La console<a class="headerlink" href="#la-console" title="Permalink to this heading">#</a></h2>
+<p>La dernière fenêtre que nous allons voir dans ce cours est la console, en bas à droite.</p>
+<p><img alt="" src="https://hackmd.io/_uploads/HkHIxPgY3.png" /></p>
+<p>Il s’agit tout simplement de la console ou s’affichent les résultats du script. La ligne runfile indique que vous avez cliqué sur <img alt="" src="https://hackmd.io/_uploads/B12PKIlYn.png" /> et écrit le nom du fichier exécuté. Vous pouvez voir en dessous un chiffre. Il s’agit du résultat du <code class="docutils literal notranslate"><span class="pre">print(S2_apres)</span></code> de la ligne 18 qui s’affiche ici.</p>
+<p>Vous pouvez voir en haut à droite de cette fenêtre une icone poubelle <img alt="" src="https://hackmd.io/_uploads/Hkb6mP-Fh.png" />. En cliquant dessus, vous remettez à zéro l’espace de travail en effaçant toutes les variables actives. Essayez de cliquer dessus, puis retournez à l’onglet <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">Explorer</span></code> pour constater qu’il n’y a plus rien.</p>
+<p>Vous pouvez également voir l’historique de tout ce que vous avez exécuté en cliquant sur l’onglet <code class="docutils literal notranslate"><span class="pre">History</span></code> en bas à droite:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/HkpWmv-Kh.png" /></p>
+</section>
+</section>
+<section id="pour-aller-plus-loin">
+<h1><span class="section-number">9. </span>Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h1>
+<p>Ctrl+G</p>
+<p>Ctrl+R</p>
+<p>Dans préférences, vous pouvez personnaliser Spyder. Par exemple, dans appearance, vous pouvez changer le thème utilisé dans “Syntax highlighting theme”.</p>
+</section>
+<section id="tp-petits-exercices-sur-l-usage-de-spyder">
+<h1><span class="section-number">10. </span>TP: petits exercices sur l’usage de spyder<a class="headerlink" href="#tp-petits-exercices-sur-l-usage-de-spyder" title="Permalink to this heading">#</a></h1>
+<p>Variable explorer</p>
+<p>Exercice debug script daubé</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./semaine7/CM6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../semaine5/CM4/Les_boucles.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>CM 4 : les boucles</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5. Objectifs de ce cours</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder-qu-est-ce-que-c-est">6. Spyder, qu’est-ce que c’est?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">7. Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-windows-et-macos">7.1. Pour Windows et MacOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-linux">7.2. Pour Linux</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#l-interface-pas-a-pas">8. L’interface pas à pas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-editeur">8.1. L’éditeur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fenetre-d-aide-et-explorateur-de-variables">8.2. Fenêtre d’aide et explorateur de variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aide">8.2.1. Aide</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-explorer">8.2.2. Variable explorer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#files">8.2.3. Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-console">8.3. La console</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">9. Pour aller plus loin</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-petits-exercices-sur-l-usage-de-spyder">10. TP: petits exercices sur l’usage de spyder</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Valentin RINEAU et Yves NOEL
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
