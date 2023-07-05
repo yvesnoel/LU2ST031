@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Les variables &#8212; Cours de LU2ST031</title>
+    <title>Expressions &#8212; Cours de LU2ST031</title>
   
   
   
@@ -61,11 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine1/CM1/Les_variables';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine2/CM1/idees_quiz';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. CM 4 : les boucles" href="../../semaine5/CM4/Les_boucles.html" />
-    <link rel="prev" title="1. Les expressions" href="Les_expressions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,13 +154,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Les_expressions.html">1. Les expressions</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">1. CM 4 : les boucles</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. CM 4 : les boucles</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. Objectifs de ce cours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">3. Objectifs de ce cours</a></li>
 
 
 
@@ -211,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine1/CM1/Les_variables.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine2/CM1/idees_quiz.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -237,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/semaine1/CM1/Les_variables.ipynb" target="_blank"
+      <li><a href="../../_sources/semaine2/CM1/idees_quiz.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -247,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -319,7 +314,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Les variables</h1>
+    <h1>Expressions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -329,10 +324,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-principe">3.1. Le principe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-variables">3.2. Types de variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variable">3.3. Noms de variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe">3.4. La syntaxe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-reconnaitre-le-type-dune-expression">de reconnaître le type d’une expression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#niv-1">Niv 1 :</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -344,45 +339,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="les-variables">
-<h1><span class="section-number">3. </span>Les variables<a class="headerlink" href="#les-variables" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031.git/master?labpath=semaine1%2FCM1%2FLes_variables.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<div class="hint admonition">
-<p class="admonition-title">Objectifs</p>
-<p>A l’issue de ce chapître, vous serez capable</p>
-<ul class="simple">
-<li><p>d’affecter le résultat d’une expression à une variable</p></li>
-<li><p>d’utiliser le contenu d’une variable dans une expression</p></li>
-<li><p>de reconnaître le type d’une variable déjà existante</p></li>
-<li><p>de modifier le contenu d’une variable déjà existante</p></li>
-</ul>
-</div>
-<section id="le-principe">
-<h2><span class="section-number">3.1. </span>Le principe<a class="headerlink" href="#le-principe" title="Permalink to this heading">#</a></h2>
-<p>Une variable permet de repérer, à l’aide d’un nom, des zones de la mémoire de l’ordinateur où sont stockées des valeurs.
-De la même façon que, chez soi, on peut ranger un objet dans dans une boîte, on peut écrire une valeur dans une variable ; on parle alors d’<strong>affectation</strong>.
-En Python, il n’est pas nécessaire de créer au préalable une variable (on appelle cela la déclaration) avant de lui affecter une valeur. La variable est créée au moment où on lui affecte une valeur pour la première fois. On appelle cela l’<strong>initialisation</strong> d’une variable.</p>
-<p>Chez soi, on range les objets dans des boites pour les utiliser plus tard, au bon moment. En programmation, c’est la même chose : on affecte des valeurs dans des variables pour les utiliser plus tard, quand on en a besoin, dans une expression.</p>
-<p>Pour changer le contenu d’une variable, il suffit de lui réaffecter une nouvelle valeur. L’ancienne valeur est alors écrassée, perdue.</p>
+  <p>Idées de questions pour évaluer si les notions vues en cours sont maitrisées</p>
+<section id="expressions">
+<h1>Expressions<a class="headerlink" href="#expressions" title="Permalink to this heading">#</a></h1>
+<section id="de-reconnaitre-le-type-dune-expression">
+<h2>de reconnaître le type d’une expression<a class="headerlink" href="#de-reconnaitre-le-type-dune-expression" title="Permalink to this heading">#</a></h2>
+<section id="niv-1">
+<h3>Niv 1 :<a class="headerlink" href="#niv-1" title="Permalink to this heading">#</a></h3>
+<p>Choisir dans une liste (integer;float;str;bool)- Pour chacune des expressions suivantes indiquer son type :
+123.67
+19
+False
+‘python’
+12.0
+-14
+True
+‘12’
+34.
+‘’</p>
 </section>
-<section id="types-de-variables">
-<h2><span class="section-number">3.2. </span>Types de variables<a class="headerlink" href="#types-de-variables" title="Permalink to this heading">#</a></h2>
-<p>Les valeurs qui sont affectées dans des variables sont le résultat d’une expression.
-Le type de ces variables correspond donc au type de l’expression qu’elle contient. Comme nous l’avons vu précédemment, les quatre types principaux sont : les entiers (<code class="docutils literal notranslate"><span class="pre">integer</span></code>), les nombres à virgule (<code class="docutils literal notranslate"><span class="pre">float</span></code>), les chaines de caractères (<code class="docutils literal notranslate"><span class="pre">str</span></code>) et les booléens (<code class="docutils literal notranslate"><span class="pre">bool</span></code>).</p>
-</section>
-<section id="noms-de-variable">
-<h2><span class="section-number">3.3. </span>Noms de variable<a class="headerlink" href="#noms-de-variable" title="Permalink to this heading">#</a></h2>
-<p>Si l’on reprend l’analogie de la boîte de rangement, il est rapidement nécessaire de mettre des étiquettes sur les boîtes pour récupérer efficacement ce que l’on cherche. En programmation, c’est un peu pareil : les variables ont un nom et c’est grâce à ce nom que l’on peut affecter une valeur dedans et encore grâce à lui que l’on peut réutiliser son contenu dans une expression.</p>
-</section>
-<section id="la-syntaxe">
-<h2><span class="section-number">3.4. </span>La syntaxe<a class="headerlink" href="#la-syntaxe" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_variable</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -399,7 +374,7 @@ Le type de ces variables correspond donc au type de l’expression qu’elle con
         },
         kernelOptions: {
             name: "python3",
-            path: "./semaine1/CM1"
+            path: "./semaine2/CM1"
         },
         predefinedOutput: true
     }
@@ -417,24 +392,6 @@ Le type de ces variables correspond donc au type de l’expression qu’elle con
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Les_expressions.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Les expressions</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../../semaine5/CM4/Les_boucles.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>CM 4 : les boucles</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -453,10 +410,10 @@ Le type de ces variables correspond donc au type de l’expression qu’elle con
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-principe">3.1. Le principe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-variables">3.2. Types de variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variable">3.3. Noms de variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe">3.4. La syntaxe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-reconnaitre-le-type-dune-expression">de reconnaître le type d’une expression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#niv-1">Niv 1 :</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
