@@ -14,7 +14,7 @@
 
 ## Spyder, qu'est-ce que c'est?
 
-![](https://hackmd.io/_uploads/SkFwSvgY2.png)
+![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_e406c51b9b8b63e00a4a99747902ebd6.png?raw=true)
 
 Jusqu'à présent, nous avons écrit des scripts dans des fichiers `.py` en utilisant un logiciel de traitement de texte classique (notepad, sublimetext, etc.). Cependant, il existe des programmes puissants qui fournissent une assistance précieuse pour la programmation. Nous allons apprendre au cours des prochaines semaines à nous servir du programme **Spyder** pour aller plus loin, plus vite, et en évitant de nombreuses erreurs.
 
