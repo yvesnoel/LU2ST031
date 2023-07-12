@@ -329,6 +329,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variable">2.3. Noms de variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe-de-l-affectation">2.4. La syntaxe de l’affectation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a></li>
 </ul>
             </nav>
         </div>
@@ -413,6 +414,48 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 </section>
+<section id="changer-le-contenu-d-une-variable">
+<h2><span class="section-number">2.6. </span>Changer le contenu d’une variable<a class="headerlink" href="#changer-le-contenu-d-une-variable" title="Permalink to this heading">#</a></h2>
+<p>A chaque fois que l’on affecte une valeur dans une variable, on modifie irrémédiablement son contenu. Nous avons aussi vu que l’on peut utiliser le contenu d’une variable dans une expression. On peut donc récupérer le contenu d’une variable, le changer en utilisant cette valeur (par exemple en lui ajoutant 1), et enfin le réaffecter à cette même variable.</p>
+<p>Par exemple pour augmenter de 1 le contenu de la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> (on appelle ça “incrémenter”), il faut écrire :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Attention : </p>
+<p>Pour incrémenter le contenu d’une variable, il faut que celle-ci existe (c’est à dire contienne une valeur) auparavant</p>
+</div>
+<p>Voici un autre exemple avec des chaînes de caractères (<code class="docutils literal notranslate"><span class="pre">str</span></code>) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texte</span> <span class="o">=</span> <span class="s1">&#39;Bonjour&#39;</span>
+<span class="n">texte</span> <span class="o">=</span> <span class="n">texte</span> <span class="o">+</span> <span class="s1">&#39; à toutes et tous&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour à toutes et tous
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>L’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> entre 2 chaînes de caractères permet de les coller bout à bout : on dit concaténer. Un même symbole (comme <code class="docutils literal notranslate"><span class="pre">+</span></code>) peut donc avoir des effets différents suivant le type des expressions qui l’entourent.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,6 +530,7 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variable">2.3. Noms de variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe-de-l-affectation">2.4. La syntaxe de l’affectation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a></li>
 </ul>
   </nav></div>
 
