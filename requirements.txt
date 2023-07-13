@@ -1,1 +1,3 @@
+math
 jupyter-book
+jupyterlab_myst
