@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Bienvenue sur le cours d’Informatique pour les Géosciences &#8212; Cours de LU2ST031</title>
+    <title>8. Débuguer efficacement avec Spyder &#8212; Cours de LU2ST031</title>
   
   
   
@@ -19,52 +19,52 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Les expressions" href="semaine2/CM1/Les_expressions.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine9/CM8/Debug_spyder';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="7. Algorithmes et logigrammes" href="Algorithmes_et_logigrammes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,7 +92,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="search.html"
+      action="../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -130,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="../../intro.html">
   
   
   
@@ -140,8 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -149,21 +149,21 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
                     Bienvenue sur le cours d’Informatique pour les Géosciences
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html">3. CM 4 : les boucles</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">3. CM 4 : les boucles</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html">5. Objectifs de ce cours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. Objectifs de ce cours</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Debug_spyder.html">8. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -207,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine9/CM8/Debug_spyder.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="../../_sources/semaine9/CM8/Debug_spyder.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -243,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -313,7 +313,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bienvenue sur le cours d’Informatique pour les Géosciences</h1>
+    <h1>Débuguer efficacement avec Spyder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,21 +327,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="bienvenue-sur-le-cours-d-informatique-pour-les-geosciences">
-<h1>Bienvenue sur le cours d’Informatique pour les Géosciences<a class="headerlink" href="#bienvenue-sur-le-cours-d-informatique-pour-les-geosciences" title="Permalink to this heading">#</a></h1>
-<p>Vous trouverez ici certains cours de l’UE LU2ST031. Cette UE est proposée aux étudiants de Sorbonne Université en 2^(ème) année de Licence  de Sciences de la Terre. Cet enseignement est hybride ; certains cours sont en autonomie à distance, d’autres sont en présence en amphi.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html">3. CM 4 : les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html#tp-2-les-boucles">4. TP 2 : les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html">5. Objectifs de ce cours</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html#tp-petits-exercices-sur-l-usage-de-spyder">6. TP: petits exercices sur l’usage de spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Debug_spyder.html">8. Débuguer efficacement avec Spyder</a></li>
-</ul>
-</div>
+  <section id="debuguer-efficacement-avec-spyder">
+<h1><span class="section-number">8. </span>Débuguer efficacement avec Spyder<a class="headerlink" href="#debuguer-efficacement-avec-spyder" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -357,7 +344,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./."
+            path: "./semaine9/CM8"
         },
         predefinedOutput: true
     }
@@ -375,14 +362,14 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
-       href="semaine2/CM1/Les_expressions.html"
-       title="next page">
+    <a class="left-prev"
+       href="Algorithmes_et_logigrammes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Les expressions</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Algorithmes et logigrammes</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -436,8 +423,8 @@ By Valentin RINEAU et Yves NOEL
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
