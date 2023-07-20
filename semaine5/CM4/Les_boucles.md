@@ -1,4 +1,4 @@
-# CM 4 : les boucles
+# Les boucles
 
 Un des intérêts majeurs des languages informatiques tels que Python est de réaliser des tâches répétitives et fastidieuses pour les humains.
 
