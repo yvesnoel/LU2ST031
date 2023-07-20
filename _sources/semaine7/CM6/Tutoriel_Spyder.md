@@ -1,3 +1,4 @@
+# Les environnements de développement: l'exemple de Spyder
 
 ## Objectifs de ce cours
 

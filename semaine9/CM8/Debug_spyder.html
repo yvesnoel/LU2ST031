@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>8. Débuguer efficacement avec Spyder &#8212; Cours de LU2ST031</title>
+    <title>7. Débuguer efficacement avec Spyder &#8212; Cours de LU2ST031</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine9/CM8/Debug_spyder';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="7. Algorithmes et logigrammes" href="Algorithmes_et_logigrammes.html" />
+    <link rel="prev" title="6. Algorithmes et logigrammes" href="Algorithmes_et_logigrammes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,12 +158,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">3. CM 4 : les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">3. Les boucles</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. Objectifs de ce cours</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -302,7 +301,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -318,6 +319,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-file">7.1. Debug file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentrer-dans-les-fonctions-avec-step-in">7.2. Rentrer dans les fonctions avec “step in”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-les-breakpoints">7.3. 🚀 Pour aller plus loin: les breakpoints</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -328,7 +339,115 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="debuguer-efficacement-avec-spyder">
-<h1><span class="section-number">8. </span>Débuguer efficacement avec Spyder<a class="headerlink" href="#debuguer-efficacement-avec-spyder" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Débuguer efficacement avec Spyder<a class="headerlink" href="#debuguer-efficacement-avec-spyder" title="Permalink to this heading">#</a></h1>
+<div class="hint admonition">
+<p class="admonition-title">Objectifs</p>
+<p>A l’issue de ce chapitre, vous serez capable de :</p>
+<ul class="simple">
+<li><p>utiliser les fonctionalités de debug de spyder pour localiser un bug dans un programme Python: étape par étape, step into function, utiliser des breakpoints</p></li>
+</ul>
+</div>
+<p>Régulièrement, un programmeur se retrouve devant un code qui ne fonctionne pas. Le problème, c’est qu’il peut être difficile de trouver ou se trouve l’erreur quand le code est complexe et dispose de nombreuses fonctions. On appuie sur <code class="docutils literal notranslate"><span class="pre">run</span></code>, le programme se lance, et puis… rien. Aucun indice sur à quel endroit du code il y a eu un problème. Pas de message d’erreur. Heureusement, des outils existent pour traquer et identifier rapidement les bugs. Dans Spyder, nous allons voir le débugueur.</p>
+<section id="debug-file">
+<h2><span class="section-number">7.1. </span>Debug file<a class="headerlink" href="#debug-file" title="Permalink to this heading">#</a></h2>
+<p>En ouvrant Spyder, vous pouvez voir dans les icones du haut un ensemble de plusieurs icones bleues.</p>
+<p><img alt="image.png" src="semaine9/CM8/attachment:cb7ca5fa-abae-456d-8cd6-09b7ebd8858b.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Circulation thermohaline</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># définition de la fonction circuthermo</span>
+<span class="k">def</span> <span class="nf">circuthermo</span><span class="p">(</span><span class="n">S2</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fonction calculant le volume d&#39;un océan et sa salinité après débacle d&#39;un</span>
+<span class="sd">    iceberg.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    S2 : float</span>
+<span class="sd">        volume de l&#39;océan avant débacle.</span>
+<span class="sd">    V2 : float</span>
+<span class="sd">        salinité de l&#39;océan avant débacle.</span>
+<span class="sd">    C : float</span>
+<span class="sd">        volume de l&#39;iceberg.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    V2_apres : float</span>
+<span class="sd">        volume de l&#39;océan avant débacle.</span>
+<span class="sd">    V2_apres : float</span>
+<span class="sd">        salinité de l&#39;océan après débacle.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">V2_apres</span> <span class="o">=</span> <span class="n">V2</span> <span class="o">+</span> <span class="n">C</span> <span class="c1"># volume dans l&#39;Atlantique Nord après décharge </span>
+                        <span class="c1"># d’un iceberg de 0.5 millions de km^3</span>
+
+    <span class="n">S2_apres</span> <span class="o">=</span> <span class="p">(</span><span class="n">S2</span> <span class="o">*</span> <span class="n">V2</span><span class="p">)</span> <span class="o">*</span> <span class="n">V2_apres</span> <span class="c1"># salinité après décharge</span>
+     
+    <span class="k">return</span> <span class="n">V2_apres</span><span class="p">,</span> <span class="n">S2_apres</span>  <span class="c1"># valeur renvoyée par la fonction</span>
+
+    <span class="c1"># fin de la fonction et de l&#39;indentation</span>
+
+<span class="n">S2</span> <span class="o">=</span> <span class="mf">34.8</span> <span class="c1"># salinité dans l’Atlantique Nord en psu</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="mi">70</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span> <span class="c1"># volume d&#39;eau de l’Atlantique Nord en km</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># volume de l&#39;iceberg</span>
+
+<span class="n">V2_apres</span><span class="p">,</span> <span class="n">S2_apres</span> <span class="o">=</span> <span class="n">circuthermo</span><span class="p">(</span><span class="n">S2</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>  <span class="c1"># appel de la fonction circuthermo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">S2_apres</span><span class="p">)</span>  <span class="c1"># print la valeur calculée</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.70520001218e+17
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il n’y a aucun message d’erreur, le script semble avoir fonctionné, mais… la salinité est beaucoup trop importante! Il faut localiser ou se trouve l’erreur.
+Reprenons ce code dans spyder. Collez le code ci-dessus dans un nouveau fichier et ouvrez le dans spyder. Ensuite, cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">file</span></code> <img alt="debug_run.png" src="semaine9/CM8/attachment:1a957813-624f-456e-8f6c-1effa6c97120.png" />. Vous devriez voir une flèche bleue en ligne 2 comme ceci:</p>
+<p><img alt="imprimecran_debug.png" src="semaine9/CM8/attachment:5ff5492b-a4da-489e-b6f1-e59e4a99d4bf.png" /></p>
+<p>Vous êtes maintenant dans le mode debug. Il s’agit d’un mode spécial dans lequel vous allez pouvoir exécuter votre code pas à pas pour identifier l’endroit ou se situe l’erreur.</p>
+<p>:class: note
+A tout moment, vous pouvez sortir de ce mode en cliquant sur <code class="docutils literal notranslate"><span class="pre">Stop</span> <span class="pre">debugging</span></code> <img alt="debug_stop.png" src="semaine9/CM8/attachment:060e82a0-aa00-434b-84b9-c7baf6858f3a.png" /></p>
+<p>Pour exécuter la ligne et uniquement celle-ci, cliquez sur <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">current</span> <span class="pre">line</span></code> <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" />. Vous arrivez maintenant ligne 7. CLiquez encore une fois et Spyder va charger la fonction, puis passer à la ligne 39.</p>
+<p>Cliquez encore pour arriver ligne 40. Vous pouvez regarder l’état des variables au fur et à mesure en ouvrant l’onglet <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">explorer</span></code>:</p>
+<p><img alt="imprimecran_debug40.png" src="semaine9/CM8/attachment:738a0298-7b18-4d49-99ad-7170f2b26040.png" /></p>
+<p>Vous constatez que seul S2 a été chargé. Pour l’instant, tout va bien, le bug ne semble pas être ici. Continuons <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" /> progressivement.  Regardez l’évolution des variables. Tout va bien jusqu’à la ligne 41. Il semble que ce soit au moment de l’appel de la fonction <code class="docutils literal notranslate"><span class="pre">circuthermo()</span></code> qu’il y ait un problème. Il faut rentrer directement dans la fonction avec les bons arguments pour trouver l’erreur.</p>
+</section>
+<section id="rentrer-dans-les-fonctions-avec-step-in">
+<h2><span class="section-number">7.2. </span>Rentrer dans les fonctions avec “step in”<a class="headerlink" href="#rentrer-dans-les-fonctions-avec-step-in" title="Permalink to this heading">#</a></h2>
+<p>Pour pouvoir rentrer “à l’intérieur” de la fonction pour la tester, vous devez être sur une ligne de code comportant un appel de la fonction. Si nécessaire, stoppez le mode debug, puis retourner dans le mode debug et revenez jusqu’à la ligne 43. A cet endroit, si vous cliquez sur <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" />, vous exécutez simplement la ligne et passez à la suivante. Nous voulons savoir précisément ce qui se passe dans cette ligne en rentrant dans la fonction. Pour ce faire, cliquez sur <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">into</span> <span class="pre">function</span></code> <img alt="debug_stepin.png" src="semaine9/CM8/attachment:e3d0a5e9-de10-411a-8741-ef2021ee19bd.png" />. Vous vous retrouvez maintenant dans la fonction <code class="docutils literal notranslate"><span class="pre">circuthermo()</span></code> et les variables <code class="docutils literal notranslate"><span class="pre">V2</span></code>, <code class="docutils literal notranslate"><span class="pre">S2</span></code> et <code class="docutils literal notranslate"><span class="pre">C</span></code> sont bien chargées comme indiqué dans le <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">explorer</span></code>. COntinuez a exécuter le code jusqu’à la ligne 33. Tout va bien. Exécutez cette ligne: <code class="docutils literal notranslate"><span class="pre">S2_apres</span></code> est calculé, et mal! C’est à cette ligne que se trouve le problème. En effet, il est nécessaire de remplacer</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">S2_apres</span> <span class="o">=</span> <span class="p">(</span><span class="n">S2</span> <span class="o">*</span> <span class="n">V2</span><span class="p">)</span> <span class="o">*</span> <span class="n">V2_apres</span> <span class="c1"># salinité après décharge</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>par</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">S2_apres</span> <span class="o">=</span> <span class="p">(</span><span class="n">S2</span> <span class="o">*</span> <span class="n">V2</span><span class="p">)</span> <span class="o">/</span> <span class="n">V2_apres</span> <span class="c1"># salinité après décharge</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pour-aller-plus-loin-les-breakpoints">
+<h2><span class="section-number">7.3. </span>🚀 Pour aller plus loin: les breakpoints<a class="headerlink" href="#pour-aller-plus-loin-les-breakpoints" title="Permalink to this heading">#</a></h2>
+<p>Parfois, on peut avoir une intuition de ou se trouve le problème. Si le problème n’est certainement pas dans la première partie d’un code par exemple, il peut être laborieux de cliquez 50 fois sur <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" />. Dans ce cas, on peut établir des points de passage dans notre code et passer uniquement par ces points. A gauche du script, vous pouvez voir les numéros des différentes lignes. En passant la souris à droite des numéros, vous pouvez apercevoir un rond rouge. Cliquez:</p>
+<p><img alt="imprimecran_breakpoint.png" src="semaine9/CM8/attachment:66c3a4e8-7d91-4177-acfd-a8cf51dec821.png" /></p>
+<p>Vous avez défini un “breakpoint”, un point de passage, sur la ligne indiquée. Retournez dans le mode debug. Vous arrivez directement à la ligne du breakpoint!</p>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Vous pouvez indiquer autant de points de passage que vous le souhaitez, aller au premier puis ensuite passer en ligne par ligne. Si vous indiquez plusieurs points de passage et que vous souhaitez aller au suivant, il suffit de cliquer sur <code class="docutils literal notranslate"><span class="pre">Continue</span> <span class="pre">execution</span> <span class="pre">until</span> <span class="pre">next</span> <span class="pre">breakpoint</span></code> <img alt="debug_breakpoint.png" src="semaine9/CM8/attachment:c75bc556-2841-4984-8686-82417d1c3b85.png" />.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -368,7 +487,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Algorithmes et logigrammes</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Algorithmes et logigrammes</p>
       </div>
     </a>
 </div></div>
@@ -380,6 +499,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-file">7.1. Debug file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentrer-dans-les-fonctions-avec-step-in">7.2. Rentrer dans les fonctions avec “step in”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-les-breakpoints">7.3. 🚀 Pour aller plus loin: les breakpoints</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
