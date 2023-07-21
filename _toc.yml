@@ -8,6 +8,7 @@ options:
 chapters:
 - file: semaine2/CM1/Les_expressions
 - file: semaine2/CM1/Les_variables
+- file: semaine3/CM2/Les_listes
 - file: semaine5/CM4/Les_boucles
 - file: semaine7/CM6/Tutoriel_Spyder
 - file: semaine9/CM8/Algorithmes_et_logigrammes
