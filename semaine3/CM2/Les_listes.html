@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine3/CM2/Les_listes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Les boucles" href="../../semaine5/CM4/Les_boucles.html" />
+    <link rel="next" title="4. Les boucles" href="../../semaine5/CM4/Les_boucles.html" />
     <link rel="prev" title="2. Les variables" href="../../semaine2/CM1/Les_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,13 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. Les boucles</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">6. Les boucles</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">8. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">10. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -328,7 +326,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Les listes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
@@ -340,18 +337,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">3.9. Taille d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp1-les-listes">4. TP1: les listes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">4.1. Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">4.2. Exercice 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">4.3. Exercice 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">4.4. Exercice 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">4.5. Exercice 5</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-discuter">5. <strong>A DISCUTER</strong></a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -382,7 +367,7 @@ document.write(`
 </div>
 </div>
 <p>Ici on instancie une nouvelle variable de type <code>list</code>, puis on l’affiche en utilisant <code>print</code>. Comme on ne lui a rien indiqué d’autre, la liste est vide.</p>
-<div class="note admonition">
+<div class="example admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez à votre tour de créer une liste vide nommée <code>liste_vide2</code>.</p>
 </div>
@@ -448,7 +433,10 @@ document.write(`
 </div>
 </div>
 <p>Nous avons créé ici une liste contenant quatre objets de types différents : un entier, un flottant, une chaîne de caractères et… une autre liste.</p>
-<p>💻 Essayez maintenant de créer une liste nommée <code>liste_6</code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début):</p>
+<div class="example admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Essayez maintenant de créer une liste nommée <code>liste_6</code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début):</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
@@ -497,7 +485,10 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>⚠️ Attention à ne pas confondre objet et indice quand les objets sont des entiers!</p>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Attention à ne pas confondre objet et indice quand les objets sont des entiers!</p>
+</div>
 <p>On peut également accéder à un élément via une expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,7 +563,10 @@ document.write(`
 </div>
 <p>Celle-ci renvoie une erreur. <code>IndexError</code> indique un problème de manipulation d’indices de listes (<code>list index out of range</code>). En l’occurence, on veut accéder au quatrième objet de ma_liste alors que celle-ci n’en contient pas.
 Remarquez que le message pointe également vers la ligne ou l’erreur a été détectée (<code>—-&gt; 1 ma_liste[3]</code>), ce qui va se révéler très utile lorsque vos scripts vont devenir plus longs</p>
-<p>💻 Essayez maintenant d’accédez à l’entier <code>2</code> contenu dans la liste ci-dessous par son indice</p>
+<div class="example admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Essayez maintenant d’accédez à l’entier <code>2</code> contenu dans la liste ci-dessous par son indice.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -621,7 +615,10 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </div>
 </div>
 </div>
-<p>💻 Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
+<div class="example admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
@@ -657,7 +654,10 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </div>
 </div>
 </div>
-<p>⚠️ Les méthodes de listes ne renvoient jamais rien mais modifient l’objet d’origine. En utilisant <code>append</code>, vous modifiez directement la liste, mais rien n’est renvoyé. Si on essaye de capturer le résultat dans une nouvelle variable <code>a</code> comme ceci:</p>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Les méthodes de listes ne renvoient jamais rien mais modifient l’objet d’origine. En utilisant <code>append</code>, vous modifiez directement la liste, mais rien n’est renvoyé. Si on essaye de capturer le résultat dans une nouvelle variable <code>a</code> comme ceci:</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;argiles&quot;</span><span class="p">)</span> <span class="c1"># On capture le résultat de la méthode</span>
@@ -676,7 +676,10 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </div>
-<p>💻 Que dois-je écrire si je veux rajouter le nombre 3 à la liste ci-dessous entre le 4 et le 12 en utilisant une méthode de liste?</p>
+<div class="example admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Que dois-je écrire si je veux rajouter le nombre 3 à la liste ci-dessous entre le 4 et le 12 en utilisant une méthode de liste?</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
@@ -756,7 +759,10 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </div>
-<p>💻 A partir de <code>ma_liste</code>, vous devez doubler les variables comme ceci: <code>[‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’, ‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’]</code>. Comment feriez-vous?</p>
+<div class="example admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>A partir de <code>ma_liste</code>, vous devez doubler les variables comme ceci: <code>[‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’, ‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’]</code>. Comment feriez-vous?</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cailloux&#39;</span><span class="p">,</span> <span class="s1">&#39;graviers&#39;</span><span class="p">,</span> <span class="s1">&#39;sables&#39;</span><span class="p">,</span> <span class="s1">&#39;limons&#39;</span><span class="p">,</span> <span class="s1">&#39;argiles&#39;</span><span class="p">]</span>
@@ -833,7 +839,13 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </div>
-<p>💻 Créez une nouvelle liste <code>elements</code> contenant dans l’ordre les éléments Mg, Na, et Fe dans l’ordre. Puis ajouter à la fin de la liste sa taille que vous aurez obtenu avec <code>len</code>.</p>
+<div class="example admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
+<div class="highlight-💻 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
@@ -889,46 +901,6 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 <p>Les deux sets sont identiques: l’ordre n’importe pas.</p>
 </section>
 </section>
-<section id="tp1-les-listes">
-<h1><span class="section-number">4. </span>TP1: les listes<a class="headerlink" href="#tp1-les-listes" title="Permalink to this heading">#</a></h1>
-<p>Notions à connaître:</p>
-<ul class="simple">
-<li><p>Expressions</p></li>
-<li><p>Variables</p></li>
-<li><p>Types</p></li>
-<li><p>Opérations</p></li>
-<li><p>Listes</p></li>
-</ul>
-<section id="exercice-1">
-<h2><span class="section-number">4.1. </span>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this heading">#</a></h2>
-<p>Créer une liste contenant des mesures.
-Echanger les valeurs (nécessite de comprendre l’idée d’une variable de stockage et permet de voir la confusion indice/valeur)</p>
-</section>
-<section id="exercice-2">
-<h2><span class="section-number">4.2. </span>Exercice 2<a class="headerlink" href="#exercice-2" title="Permalink to this heading">#</a></h2>
-<p>Liste donnée. Calcul à la main de la moyenne. Calcul de l’écart-type.</p>
-</section>
-<section id="exercice-3">
-<h2><span class="section-number">4.3. </span>Exercice 3<a class="headerlink" href="#exercice-3" title="Permalink to this heading">#</a></h2>
-<p>Exercice isostasie <strong>MOODLE</strong></p>
-</section>
-<section id="exercice-4">
-<h2><span class="section-number">4.4. </span>Exercice 4<a class="headerlink" href="#exercice-4" title="Permalink to this heading">#</a></h2>
-<p>Exercice isotopes stables <strong>MOODLE</strong></p>
-</section>
-<section id="exercice-5">
-<h2><span class="section-number">4.5. </span>Exercice 5<a class="headerlink" href="#exercice-5" title="Permalink to this heading">#</a></h2>
-<p>Exercice GPS? <strong>MOODLE</strong></p>
-</section>
-</section>
-<section id="a-discuter">
-<h1><span class="section-number">5. </span><strong>A DISCUTER</strong><a class="headerlink" href="#a-discuter" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p><strong>L’exercice conversion de degrés sera approprié après le CM introduisant les fonctions</strong></p></li>
-<li><p><strong>CM et/ou TP léger sur les erreurs? (+ try except?)</strong></p></li>
-<li><p><strong>chercher des erreurs classiques de types mal utilisés</strong></p></li>
-</ul>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -975,7 +947,7 @@ Echanger les valeurs (nécessite de comprendre l’idée d’une variable de sto
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Les boucles</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Les boucles</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -997,7 +969,6 @@ Echanger les valeurs (nécessite de comprendre l’idée d’une variable de sto
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Les listes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
@@ -1009,18 +980,6 @@ Echanger les valeurs (nécessite de comprendre l’idée d’une variable de sto
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">3.9. Taille d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp1-les-listes">4. TP1: les listes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">4.1. Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">4.2. Exercice 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">4.3. Exercice 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">4.4. Exercice 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">4.5. Exercice 5</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-discuter">5. <strong>A DISCUTER</strong></a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

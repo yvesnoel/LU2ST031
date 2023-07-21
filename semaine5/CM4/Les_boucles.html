@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Les boucles &#8212; Cours de LU2ST031</title>
+    <title>4. Les boucles &#8212; Cours de LU2ST031</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine5/CM4/Les_boucles';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Les environnements de développement: l’exemple de Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
+    <link rel="next" title="6. Les environnements de développement: l’exemple de Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
     <link rel="prev" title="3. Les listes" href="../../semaine3/CM2/Les_listes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,13 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Les boucles</a></li>
 
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Les boucles</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">8. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">10. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -328,16 +326,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Les boucles</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">6.1. Boucle While</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-for">6.2. Boucles For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">6.3. 🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Les boucles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">4.1. Boucle While</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-for">4.2. Boucles For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">4.3. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-2-les-boucles">7. TP 2 : les boucles</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">7.1. Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-suite-de-fibonacci">7.2. Exercice 2 : suite de Fibonacci</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices-sup">7.3. Exercices sup.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-2-les-boucles">5. TP 2 : les boucles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">5.1. Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-suite-de-fibonacci">5.2. Exercice 2 : suite de Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices-sup">5.3. Exercices sup.</a></li>
 </ul>
 </li>
 </ul>
@@ -353,11 +351,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="les-boucles">
-<h1><span class="section-number">6. </span>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this heading">#</a></h1>
 <p>Un des intérêts majeurs des languages informatiques tels que Python est de réaliser des tâches répétitives et fastidieuses pour les humains.</p>
 <p>On appelle <strong>boucler</strong> une action la répéter plusieurs fois. L’objectif de ce cours est de se familiariser avec les différents moyens pour réaliser des boucles en python.</p>
 <section id="boucle-while">
-<h2><span class="section-number">6.1. </span>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
 <p><strong>A DISCUTER :
 Problème, ce cours devrait être après les branchements: en commun, bloc instruction + conditions.
 Ne pas oublier de parler des 4 espaces vs tabulation
@@ -413,7 +411,7 @@ x = 0 # x est remis à zéro après le bloc.
 <p>💻 Essayez maintenant de modifier ce code pour afficher tous les multiples de 7 à la place.</p>
 </section>
 <section id="boucles-for">
-<h2><span class="section-number">6.2. </span>Boucles For<a class="headerlink" href="#boucles-for" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Boucles For<a class="headerlink" href="#boucles-for" title="Permalink to this heading">#</a></h2>
 <p>Une autre tâche répétitive est de parcourir tous les éléments d’une séquence et d’y appliquer la même action. Un objet est dit <strong>itérable</strong> s’il comporte plusieurs éléments et que l’on peut réaliser des actions sur chacun de ces élements. Nous avons vu précédemment les listes, qui sont des objets itérables. Mettons que l’on veuille réaliser une action sur chaque élement d’une’ liste. Pour cela, un nouveau mot clé est indispensable: <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <p>Dans l’exemple ci-dessous, on a une liste de valeurs correspondant à des tailles d’ammonites en centimètres. Nous devons convertir ces valeurs en millimètres:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># liste des valeurs en cm</span>
@@ -456,7 +454,7 @@ while i =! 10:  # tant que i ne vaut pas dix, répéter
 <p>💻 Essayez maintenant d’afficher tous les résultats de la table de 8 en utilisant <code class="docutils literal notranslate"><span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </section>
 <section id="pour-aller-plus-loin-listes-en-intension">
-<h2><span class="section-number">6.3. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
 <p>Reprenons l’exemple:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># liste des valeurs en cm</span>
 <span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># nouvelle liste à remplir</span>
@@ -488,23 +486,23 @@ while i =! 10:  # tant que i ne vaut pas dix, répéter
 </section>
 </section>
 <section id="tp-2-les-boucles">
-<h1><span class="section-number">7. </span>TP 2 : les boucles<a class="headerlink" href="#tp-2-les-boucles" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>TP 2 : les boucles<a class="headerlink" href="#tp-2-les-boucles" title="Permalink to this heading">#</a></h1>
 <p>Notions à connaître</p>
 <ul class="simple">
 <li><p>For</p></li>
 <li><p>While</p></li>
 </ul>
 <section id="exercice-1">
-<h2><span class="section-number">7.1. </span>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this heading">#</a></h2>
 <p>Créer une boucle for qui affiche les multiples de 4 compris entre 1 et 20 (inclus).</p>
 </section>
 <section id="exercice-2-suite-de-fibonacci">
-<h2><span class="section-number">7.2. </span>Exercice 2 : suite de Fibonacci<a class="headerlink" href="#exercice-2-suite-de-fibonacci" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Exercice 2 : suite de Fibonacci<a class="headerlink" href="#exercice-2-suite-de-fibonacci" title="Permalink to this heading">#</a></h2>
 <p>En mathématiques, la suite de Fibonacci est une suite d’entiers dans laquelle chaque terme est la somme des deux termes qui le précèdent. Elle commence généralement par les termes 0 et 1 (parfois 1 et 1) et ses premiers termes sont 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, etc.</p>
 <p>Écrivez un script qui fournit la série de Fibonacci pour obtenir les valeurs des 20 premiers éléments de la suite.</p>
 </section>
 <section id="exercices-sup">
-<h2><span class="section-number">7.3. </span>Exercices sup.<a class="headerlink" href="#exercices-sup" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Exercices sup.<a class="headerlink" href="#exercices-sup" title="Permalink to this heading">#</a></h2>
 <p>Toutes les “gammes” sur Moodle</p>
 </section>
 </section>
@@ -554,7 +552,7 @@ while i =! 10:  # tant que i ne vaut pas dix, répéter
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Les environnements de développement: l’exemple de Spyder</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Les environnements de développement: l’exemple de Spyder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -576,16 +574,16 @@ while i =! 10:  # tant que i ne vaut pas dix, répéter
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Les boucles</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">6.1. Boucle While</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-for">6.2. Boucles For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">6.3. 🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Les boucles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">4.1. Boucle While</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-for">4.2. Boucles For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">4.3. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-2-les-boucles">7. TP 2 : les boucles</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">7.1. Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-suite-de-fibonacci">7.2. Exercice 2 : suite de Fibonacci</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices-sup">7.3. Exercices sup.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-2-les-boucles">5. TP 2 : les boucles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">5.1. Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2-suite-de-fibonacci">5.2. Exercice 2 : suite de Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices-sup">5.3. Exercices sup.</a></li>
 </ul>
 </li>
 </ul>

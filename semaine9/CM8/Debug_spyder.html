@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10. Débuguer efficacement avec Spyder &#8212; Cours de LU2ST031</title>
+    <title>8. Débuguer efficacement avec Spyder &#8212; Cours de LU2ST031</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine9/CM8/Debug_spyder';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="9. Algorithmes et logigrammes" href="Algorithmes_et_logigrammes.html" />
+    <link rel="prev" title="7. Algorithmes et logigrammes" href="Algorithmes_et_logigrammes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,13 +159,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. Les boucles</a></li>
 
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">6. Les boucles</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">8. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -327,9 +325,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-file">10.1. Debug file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentrer-dans-les-fonctions-avec-step-in">10.2. Rentrer dans les fonctions avec “step in”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-les-breakpoints">10.3. 🚀 Pour aller plus loin: les breakpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-file">8.1. Debug file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentrer-dans-les-fonctions-avec-step-in">8.2. Rentrer dans les fonctions avec “step in”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-les-breakpoints">8.3. 🚀 Pour aller plus loin: les breakpoints</a></li>
 </ul>
             </nav>
         </div>
@@ -342,7 +340,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="debuguer-efficacement-avec-spyder">
-<h1><span class="section-number">10. </span>Débuguer efficacement avec Spyder<a class="headerlink" href="#debuguer-efficacement-avec-spyder" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Débuguer efficacement avec Spyder<a class="headerlink" href="#debuguer-efficacement-avec-spyder" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
@@ -352,7 +350,7 @@ document.write(`
 </div>
 <p>Régulièrement, un programmeur se retrouve devant un code qui ne fonctionne pas. Le problème, c’est qu’il peut être difficile de trouver ou se trouve l’erreur quand le code est complexe et dispose de nombreuses fonctions. On appuie sur <code class="docutils literal notranslate"><span class="pre">run</span></code>, le programme se lance, et puis… rien. Aucun indice sur à quel endroit du code il y a eu un problème. Pas de message d’erreur. Heureusement, des outils existent pour traquer et identifier rapidement les bugs. Dans Spyder, nous allons voir le débugueur.</p>
 <section id="debug-file">
-<h2><span class="section-number">10.1. </span>Debug file<a class="headerlink" href="#debug-file" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Debug file<a class="headerlink" href="#debug-file" title="Permalink to this heading">#</a></h2>
 <p>En ouvrant Spyder, vous pouvez voir dans les icones du haut un ensemble de plusieurs icones bleues.</p>
 <p><img alt="image.png" src="semaine9/CM8/attachment:cb7ca5fa-abae-456d-8cd6-09b7ebd8858b.png" /></p>
 <div class="cell docutils container">
@@ -423,7 +421,7 @@ A tout moment, vous pouvez sortir de ce mode en cliquant sur <code class="docuti
 <p>Vous constatez que seul S2 a été chargé. Pour l’instant, tout va bien, le bug ne semble pas être ici. Continuons <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" /> progressivement.  Regardez l’évolution des variables. Tout va bien jusqu’à la ligne 41. Il semble que ce soit au moment de l’appel de la fonction <code class="docutils literal notranslate"><span class="pre">circuthermo()</span></code> qu’il y ait un problème. Il faut rentrer directement dans la fonction avec les bons arguments pour trouver l’erreur.</p>
 </section>
 <section id="rentrer-dans-les-fonctions-avec-step-in">
-<h2><span class="section-number">10.2. </span>Rentrer dans les fonctions avec “step in”<a class="headerlink" href="#rentrer-dans-les-fonctions-avec-step-in" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Rentrer dans les fonctions avec “step in”<a class="headerlink" href="#rentrer-dans-les-fonctions-avec-step-in" title="Permalink to this heading">#</a></h2>
 <p>Pour pouvoir rentrer “à l’intérieur” de la fonction pour la tester, vous devez être sur une ligne de code comportant un appel de la fonction. Si nécessaire, stoppez le mode debug, puis retourner dans le mode debug et revenez jusqu’à la ligne 43. A cet endroit, si vous cliquez sur <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" />, vous exécutez simplement la ligne et passez à la suivante. Nous voulons savoir précisément ce qui se passe dans cette ligne en rentrant dans la fonction. Pour ce faire, cliquez sur <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">into</span> <span class="pre">function</span></code> <img alt="debug_stepin.png" src="semaine9/CM8/attachment:e3d0a5e9-de10-411a-8741-ef2021ee19bd.png" />. Vous vous retrouvez maintenant dans la fonction <code class="docutils literal notranslate"><span class="pre">circuthermo()</span></code> et les variables <code class="docutils literal notranslate"><span class="pre">V2</span></code>, <code class="docutils literal notranslate"><span class="pre">S2</span></code> et <code class="docutils literal notranslate"><span class="pre">C</span></code> sont bien chargées comme indiqué dans le <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">explorer</span></code>. COntinuez a exécuter le code jusqu’à la ligne 33. Tout va bien. Exécutez cette ligne: <code class="docutils literal notranslate"><span class="pre">S2_apres</span></code> est calculé, et mal! C’est à cette ligne que se trouve le problème. En effet, il est nécessaire de remplacer</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -442,7 +440,7 @@ A tout moment, vous pouvez sortir de ce mode en cliquant sur <code class="docuti
 </div>
 </section>
 <section id="pour-aller-plus-loin-les-breakpoints">
-<h2><span class="section-number">10.3. </span>🚀 Pour aller plus loin: les breakpoints<a class="headerlink" href="#pour-aller-plus-loin-les-breakpoints" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>🚀 Pour aller plus loin: les breakpoints<a class="headerlink" href="#pour-aller-plus-loin-les-breakpoints" title="Permalink to this heading">#</a></h2>
 <p>Parfois, on peut avoir une intuition de ou se trouve le problème. Si le problème n’est certainement pas dans la première partie d’un code par exemple, il peut être laborieux de cliquez 50 fois sur <img alt="debug_next.png" src="semaine9/CM8/attachment:487b6231-f001-4fa7-91b9-a4917998a53d.png" />. Dans ce cas, on peut établir des points de passage dans notre code et passer uniquement par ces points. A gauche du script, vous pouvez voir les numéros des différentes lignes. En passant la souris à droite des numéros, vous pouvez apercevoir un rond rouge. Cliquez:</p>
 <p><img alt="imprimecran_breakpoint.png" src="semaine9/CM8/attachment:66c3a4e8-7d91-4177-acfd-a8cf51dec821.png" /></p>
 <p>Vous avez défini un “breakpoint”, un point de passage, sur la ligne indiquée. Retournez dans le mode debug. Vous arrivez directement à la ligne du breakpoint!</p>
@@ -490,7 +488,7 @@ A tout moment, vous pouvez sortir de ce mode en cliquant sur <code class="docuti
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Algorithmes et logigrammes</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Algorithmes et logigrammes</p>
       </div>
     </a>
 </div></div>
@@ -511,9 +509,9 @@ A tout moment, vous pouvez sortir de ce mode en cliquant sur <code class="docuti
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-file">10.1. Debug file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentrer-dans-les-fonctions-avec-step-in">10.2. Rentrer dans les fonctions avec “step in”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-les-breakpoints">10.3. 🚀 Pour aller plus loin: les breakpoints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-file">8.1. Debug file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentrer-dans-les-fonctions-avec-step-in">8.2. Rentrer dans les fonctions avec “step in”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-les-breakpoints">8.3. 🚀 Pour aller plus loin: les breakpoints</a></li>
 </ul>
   </nav></div>
 
