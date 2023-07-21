@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CM3: les listes &#8212; Cours de LU2ST031</title>
+    <title>3. Les listes &#8212; Cours de LU2ST031</title>
   
   
   
@@ -61,9 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine3/CM2/CM3-listes + TP previsionnel a discuter';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine3/CM2/Les_listes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Les boucles" href="../../semaine5/CM4/Les_boucles.html" />
+    <link rel="prev" title="2. Les variables" href="../../semaine2/CM1/Les_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,18 +152,21 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Bienvenue sur le cours d’Informatique pour les Géosciences
+                    Informatique pour les Géosciences
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">3. Les boucles</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Les listes</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">7. Débuguer efficacement avec Spyder</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">6. Les boucles</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">8. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">10. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -205,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine3/CM2/CM3-listes + TP previsionnel a discuter.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine3/CM2/Les_listes.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -231,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/semaine3/CM2/CM3-listes + TP previsionnel a discuter.ipynb" target="_blank"
+      <li><a href="../../_sources/semaine3/CM2/Les_listes.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CM3: les listes</h1>
+    <h1>Les listes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -323,28 +328,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CM3: les listes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">Créer des listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">Accéder a un objet d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">Accéder a une tranche d’objets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-objets-dans-une-liste">Remplacer des objets dans une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-des-objets-dans-une-liste">Ajouter des objets dans une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">Supprimer des objets d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">Concaténer des listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">Listes de listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">Taille d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Les listes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-objets-dans-une-liste">3.4. Remplacer des objets dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-des-objets-dans-une-liste">3.5. Ajouter des objets dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">3.6. Supprimer des objets d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">3.9. Taille d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp1-les-listes">TP1: les listes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">Exercice 5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp1-les-listes">4. TP1: les listes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">4.1. Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">4.2. Exercice 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">4.3. Exercice 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">4.4. Exercice 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">4.5. Exercice 5</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-discuter"><strong>A DISCUTER</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-discuter">5. <strong>A DISCUTER</strong></a></li>
 </ul>
 
             </nav>
@@ -357,11 +362,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="cm3-les-listes">
-<h1>CM3: les listes<a class="headerlink" href="#cm3-les-listes" title="Permalink to this heading">#</a></h1>
+  <section id="les-listes">
+<h1><span class="section-number">3. </span>Les listes<a class="headerlink" href="#les-listes" title="Permalink to this heading">#</a></h1>
 <section id="creer-des-listes">
-<h2>Créer des listes<a class="headerlink" href="#creer-des-listes" title="Permalink to this heading">#</a></h2>
-<p>Vous avez vu au cours précédent plusieurs types d’objets différents: les <code class="docutils literal notranslate"><span class="pre">int</span></code>, les <code>float</code>, les <code>str</code>. Nous allons maintenant découvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets.</p>
+<h2><span class="section-number">3.1. </span>Créer des listes<a class="headerlink" href="#creer-des-listes" title="Permalink to this heading">#</a></h2>
+<p>Nous avons vu au cours précédent plusieurs types d’objets différents: les <code>int</code>, les <code>float</code>, les <code>str</code>. Nous allons maintenant découvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets.</p>
 <p>Il existe un moyen simple de créer une liste en utilisant des crochets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -377,7 +382,10 @@ document.write(`
 </div>
 </div>
 <p>Ici on instancie une nouvelle variable de type <code>list</code>, puis on l’affiche en utilisant <code>print</code>. Comme on ne lui a rien indiqué d’autre, la liste est vide.</p>
-<p>💻 Essayez à votre tour de créer une liste vide nommée <code>liste_vide2</code></p>
+<div class="note admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Essayez à votre tour de créer une liste vide nommée <code>liste_vide2</code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
@@ -452,7 +460,7 @@ document.write(`
 </div>
 </section>
 <section id="acceder-a-un-objet-dune-liste">
-<h2>Accéder a un objet d’une liste<a class="headerlink" href="#acceder-a-un-objet-dune-liste" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Accéder a un objet d’une liste<a class="headerlink" href="#acceder-a-un-objet-dune-liste" title="Permalink to this heading">#</a></h2>
 <p>Il est souvent nécessaire d’accéder à un élément particulier d’une liste. Pour accéder a un objet, il est possible d’utiliser son indice. Les objets contenus dans une liste possèdent chacun un indice. Le premier objet de la liste a pour indice 0, le second a pour indice 1, le troisième a pour indice 2, etc. L’indice peut-être utilisé pour accéder à un élément de la liste de la manière suivante:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -583,7 +591,7 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </div>
 </section>
 <section id="acceder-a-une-tranche-d-objets">
-<h2>Accéder a une tranche d’objets<a class="headerlink" href="#acceder-a-une-tranche-d-objets" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Accéder a une tranche d’objets<a class="headerlink" href="#acceder-a-une-tranche-d-objets" title="Permalink to this heading">#</a></h2>
 <p>Enfin, il est également possible à plusieurs objets d’un seul coup, en spécifiant un intervalle grâce aux <code>:</code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,7 +634,7 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </div>
 </section>
 <section id="remplacer-des-objets-dans-une-liste">
-<h2>Remplacer des objets dans une liste<a class="headerlink" href="#remplacer-des-objets-dans-une-liste" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Remplacer des objets dans une liste<a class="headerlink" href="#remplacer-des-objets-dans-une-liste" title="Permalink to this heading">#</a></h2>
 <p>On peut assigner une nouvelle valeur aux objets de la liste:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,7 +647,7 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 <p>Une liste n’est donc pas un objet figé, on peut modifier, supprimer, réorganiser les objets qu’elle contient. On dit alors que la liste est un type d’objet <strong>mutable</strong> (pour modifiable).</p>
 </section>
 <section id="ajouter-des-objets-dans-une-liste">
-<h2>Ajouter des objets dans une liste<a class="headerlink" href="#ajouter-des-objets-dans-une-liste" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Ajouter des objets dans une liste<a class="headerlink" href="#ajouter-des-objets-dans-une-liste" title="Permalink to this heading">#</a></h2>
 <p><code>append</code> est une méthode spécifique des listes. Elle permet d’ajouter un nouvel élément à la fin de la liste:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -678,19 +686,6 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">L</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 5, 3, 5]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
 <span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
 <span class="c1">### END SOLUTION</span>
@@ -700,7 +695,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </section>
 <section id="supprimer-des-objets-dune-liste">
-<h2>Supprimer des objets d’une liste<a class="headerlink" href="#supprimer-des-objets-dune-liste" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>Supprimer des objets d’une liste<a class="headerlink" href="#supprimer-des-objets-dune-liste" title="Permalink to this heading">#</a></h2>
 <p>Il existe plusieurs manières de supprimer des objets dans une liste. Lorsque l’on connaît l’indice de l’objet à supprimer, il est possible d’utiliser <code>del</code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,7 +717,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 <p>Notez que si “sables grossiers” existe plusieurs fois dans ma_liste, seule la première occurence sera supprimée.</p>
 </section>
 <section id="concatener-des-listes">
-<h2>Concaténer des listes<a class="headerlink" href="#concatener-des-listes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>Concaténer des listes<a class="headerlink" href="#concatener-des-listes" title="Permalink to this heading">#</a></h2>
 <p>Il peut être intéressant de fusionner plusieurs listes en une seule. Pour cela, la méthode <code>extend</code> est parfaitement adaptée:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,7 +775,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </section>
 <section id="listes-de-listes">
-<h2>Listes de listes<a class="headerlink" href="#listes-de-listes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.8. </span>Listes de listes<a class="headerlink" href="#listes-de-listes" title="Permalink to this heading">#</a></h2>
 <p>Nous avons dit précédemment qu’une liste pouvait contenir de nombreux types différents. Il peut être intéressant d’imbriquer des listes dans des listes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -812,7 +807,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </section>
 <section id="taille-dune-liste">
-<h2>Taille d’une liste<a class="headerlink" href="#taille-dune-liste" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.9. </span>Taille d’une liste<a class="headerlink" href="#taille-dune-liste" title="Permalink to this heading">#</a></h2>
 <p>Il est souvent important de savoir quelle taille fait une liste, c’est à dire combien d’objets la composent:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -851,7 +846,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </section>
 <section id="pour-aller-plus-loin-quelques-autres-types-interessants">
-<h2>🚀 Pour aller plus loin: quelques autres types intéressants<a class="headerlink" href="#pour-aller-plus-loin-quelques-autres-types-interessants" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.10. </span>🚀 Pour aller plus loin: quelques autres types intéressants<a class="headerlink" href="#pour-aller-plus-loin-quelques-autres-types-interessants" title="Permalink to this heading">#</a></h2>
 <p>Les listes sont des objets puissants permettant d’enregistrer et de classer facilement des variables. Mais d’autres types similaires existent:</p>
 <ul class="simple">
 <li><p>Une liste mais qui ne peut plus être modifiée après sa création ? Il s’agit des <strong>tuples</strong>!</p></li>
@@ -895,7 +890,7 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 </section>
 </section>
 <section id="tp1-les-listes">
-<h1>TP1: les listes<a class="headerlink" href="#tp1-les-listes" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>TP1: les listes<a class="headerlink" href="#tp1-les-listes" title="Permalink to this heading">#</a></h1>
 <p>Notions à connaître:</p>
 <ul class="simple">
 <li><p>Expressions</p></li>
@@ -905,29 +900,29 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 <li><p>Listes</p></li>
 </ul>
 <section id="exercice-1">
-<h2>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this heading">#</a></h2>
 <p>Créer une liste contenant des mesures.
 Echanger les valeurs (nécessite de comprendre l’idée d’une variable de stockage et permet de voir la confusion indice/valeur)</p>
 </section>
 <section id="exercice-2">
-<h2>Exercice 2<a class="headerlink" href="#exercice-2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Exercice 2<a class="headerlink" href="#exercice-2" title="Permalink to this heading">#</a></h2>
 <p>Liste donnée. Calcul à la main de la moyenne. Calcul de l’écart-type.</p>
 </section>
 <section id="exercice-3">
-<h2>Exercice 3<a class="headerlink" href="#exercice-3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Exercice 3<a class="headerlink" href="#exercice-3" title="Permalink to this heading">#</a></h2>
 <p>Exercice isostasie <strong>MOODLE</strong></p>
 </section>
 <section id="exercice-4">
-<h2>Exercice 4<a class="headerlink" href="#exercice-4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>Exercice 4<a class="headerlink" href="#exercice-4" title="Permalink to this heading">#</a></h2>
 <p>Exercice isotopes stables <strong>MOODLE</strong></p>
 </section>
 <section id="exercice-5">
-<h2>Exercice 5<a class="headerlink" href="#exercice-5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.5. </span>Exercice 5<a class="headerlink" href="#exercice-5" title="Permalink to this heading">#</a></h2>
 <p>Exercice GPS? <strong>MOODLE</strong></p>
 </section>
 </section>
 <section id="a-discuter">
-<h1><strong>A DISCUTER</strong><a class="headerlink" href="#a-discuter" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span><strong>A DISCUTER</strong><a class="headerlink" href="#a-discuter" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>L’exercice conversion de degrés sera approprié après le CM introduisant les fonctions</strong></p></li>
 <li><p><strong>CM et/ou TP léger sur les erreurs? (+ try except?)</strong></p></li>
@@ -966,6 +961,24 @@ Echanger les valeurs (nécessite de comprendre l’idée d’une variable de sto
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../semaine2/CM1/Les_variables.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Les variables</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../semaine5/CM4/Les_boucles.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Les boucles</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -984,28 +997,28 @@ Echanger les valeurs (nécessite de comprendre l’idée d’une variable de sto
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CM3: les listes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">Créer des listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">Accéder a un objet d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">Accéder a une tranche d’objets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-objets-dans-une-liste">Remplacer des objets dans une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-des-objets-dans-une-liste">Ajouter des objets dans une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">Supprimer des objets d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">Concaténer des listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">Listes de listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">Taille d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Les listes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-objets-dans-une-liste">3.4. Remplacer des objets dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-des-objets-dans-une-liste">3.5. Ajouter des objets dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">3.6. Supprimer des objets d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">3.9. Taille d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp1-les-listes">TP1: les listes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">Exercice 5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tp1-les-listes">4. TP1: les listes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">4.1. Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">4.2. Exercice 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">4.3. Exercice 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">4.4. Exercice 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">4.5. Exercice 5</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-discuter"><strong>A DISCUTER</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-discuter">5. <strong>A DISCUTER</strong></a></li>
 </ul>
 
   </nav></div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Bienvenue sur le cours d’Informatique pour les Géosciences &#8212; Cours de LU2ST031</title>
+    <title>Informatique pour les Géosciences &#8212; Cours de LU2ST031</title>
   
   
   
@@ -151,18 +151,21 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Bienvenue sur le cours d’Informatique pour les Géosciences
+                    Informatique pour les Géosciences
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html">3. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine3/CM2/Les_listes.html">3. Les listes</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html">5. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Debug_spyder.html">7. Débuguer efficacement avec Spyder</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html">6. Les boucles</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html">8. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Debug_spyder.html">10. Débuguer efficacement avec Spyder</a></li>
 </ul>
 
     </div>
@@ -301,7 +304,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -312,11 +317,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bienvenue sur le cours d’Informatique pour les Géosciences</h1>
+    <h1>Informatique pour les Géosciences</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-l-informatique-en-geosciences">Pourquoi l’informatique en géosciences?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resume-et-objectif-du-cours">Résumé et objectif du cours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-des-matieres">Table des matières</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -326,20 +341,37 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="bienvenue-sur-le-cours-d-informatique-pour-les-geosciences">
-<h1>Bienvenue sur le cours d’Informatique pour les Géosciences<a class="headerlink" href="#bienvenue-sur-le-cours-d-informatique-pour-les-geosciences" title="Permalink to this heading">#</a></h1>
-<p>Vous trouverez ici certains cours de l’UE LU2ST031. Cette UE est proposée aux étudiants de Sorbonne Université en 2^(ème) année de Licence  de Sciences de la Terre. Cet enseignement est hybride ; certains cours sont en autonomie à distance, d’autres sont en présence en amphi.</p>
+  <section id="informatique-pour-les-geosciences">
+<h1>Informatique pour les Géosciences<a class="headerlink" href="#informatique-pour-les-geosciences" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://jupyter.org/try"><img alt="jupyter" src="https://img.shields.io/badge/Made%20with-Jupyter-orange?style=flat&amp;logo=Jupyter" /></a>
+<a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"><img alt="licence" src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg" /></a></p>
+<p>Bienvenue dans le cours d’Informatique pour les Géosciences (LU2ST031). Cette unité d’enseignement est proposée aux étudiants de Sorbonne Université en 2e année de Licence monodisciplinaire Sciences de la Terre. Cet enseignement est hybride ; certains cours sont en autonomie à distance, d’autres sont en présence en amphi.</p>
+<section id="pourquoi-l-informatique-en-geosciences">
+<h2>Pourquoi l’informatique en géosciences?<a class="headerlink" href="#pourquoi-l-informatique-en-geosciences" title="Permalink to this heading">#</a></h2>
+<p>Justification</p>
+</section>
+<section id="resume-et-objectif-du-cours">
+<h2>Résumé et objectif du cours<a class="headerlink" href="#resume-et-objectif-du-cours" title="Permalink to this heading">#</a></h2>
+<p>Résumé CM/TD + quizz</p>
+<p>AAV généraux ici</p>
+</section>
+<section id="table-des-matieres">
+<h2>Table des matières<a class="headerlink" href="#table-des-matieres" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html">3. Les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html#tp-2-les-boucles">4. TP 2 : les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html">5. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Debug_spyder.html">7. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine3/CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine3/CM2/Les_listes.html#tp1-les-listes">4. TP1: les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine3/CM2/Les_listes.html#a-discuter">5. <strong>A DISCUTER</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html">6. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine5/CM4/Les_boucles.html#tp-2-les-boucles">7. TP 2 : les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine7/CM6/Tutoriel_Spyder.html">8. Les environnements de développement: l’exemple de Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semaine9/CM8/Debug_spyder.html">10. Débuguer efficacement avec Spyder</a></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -391,6 +423,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-l-informatique-en-geosciences">Pourquoi l’informatique en géosciences?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resume-et-objectif-du-cours">Résumé et objectif du cours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-des-matieres">Table des matières</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
