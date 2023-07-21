@@ -1,17 +1,18 @@
-# Les environnements de développement: l'exemple de Spyder
+# L'environnement de développement Spyder
 
-## Objectifs de ce cours
+```{admonition} Objectifs
+:class: hint
+A l'issue de ce chapitre, vous serez capable de : 
+- installer Spyder quel que soit le système d'exploitation.
 
-* Installer Spyder quel que soit le système d'exploitation.
-
-Être capable dans Spyder de :
-
-* créer un script
-* le sauvegarder
-* l'exécuter ligne par ligne
-* l'exécuter en entier
-* lire et interpréter les informations de la console
-* lire et interpréter les informations de l'explorateur de variables
+Vous serez également capable dans Spyder de :
+- créer un script
+- le sauvegarder
+- l'exécuter ligne par ligne
+- l'exécuter en entier
+- lire et interpréter les informations de la console
+- lire et interpréter les informations de l'explorateur de variables
+```
 
 ### Spyder, qu'est-ce que c'est?
 
@@ -211,11 +212,3 @@ Vous pouvez voir en haut à droite de cette fenêtre une icone poubelle ![](http
 Vous pouvez également voir l'historique de tout ce que vous avez exécuté en cliquant sur l'onglet `History` en bas à droite:
 
 ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_6e30a19680ec0495fd34c1e18cf67d67.png?raw=true)
-
-
-## TP: petits exercices sur l'usage de spyder
-
-Variable explorer
-
-Exercice debug script faux
-
