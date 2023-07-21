@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Algorithmes et logigrammes &#8212; Cours de LU2ST031</title>
+    <title>6. Algorithmes et logigrammes &#8212; Cours de LU2ST031</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine9/CM8/Algorithmes_et_logigrammes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Débuguer efficacement avec Spyder" href="Debug_spyder.html" />
-    <link rel="prev" title="6. Les environnements de développement: l’exemple de Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
+    <link rel="next" title="7. Débuguer avec Spyder" href="Debug_spyder.html" />
+    <link rel="prev" title="5. L’environnement de développement Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,10 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. Les boucles</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debug_spyder.html">8. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debug_spyder.html">7. Débuguer avec Spyder</a></li>
 </ul>
 
     </div>
@@ -326,12 +325,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-un-algorithme">7.1. Qu’est-ce qu’un algorithme?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logigrammes">7.2. Logigrammes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structures-de-controle-branchements-et-boucles">7.2.1. Structures de contrôle: branchements et boucles</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if">7.2.1.1. Branchement (if)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if-else">7.2.1.2. Branchement (if else)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">7.2.1.3. Boucle (for)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-un-algorithme">6.1. Qu’est-ce qu’un algorithme?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logigrammes">6.2. Logigrammes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structures-de-controle-branchements-et-boucles">6.2.1. Structures de contrôle: branchements et boucles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if">6.2.1.1. Branchement (if)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if-else">6.2.1.2. Branchement (if else)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">6.2.1.3. Boucle (for)</a></li>
 </ul>
 </li>
 </ul>
@@ -348,19 +347,19 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="algorithmes-et-logigrammes">
-<h1><span class="section-number">7. </span>Algorithmes et logigrammes<a class="headerlink" href="#algorithmes-et-logigrammes" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Algorithmes et logigrammes<a class="headerlink" href="#algorithmes-et-logigrammes" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
 <ul class="simple">
-<li><p>Convertir un problème exposé en language humain en algorithme.</p></li>
-<li><p>Lire et interpréter un logigramme du début à la fin et ses différentes structures: boucle , branchement</p></li>
-<li><p>Construire un logigramme en utilisant boucles et branchements si nécessaire.</p></li>
-<li><p>Savoir écrire un code informatique appliquant un algorithme représenté en logigramme: boucle (for), branchement (if)</p></li>
+<li><p>convertir un problème exposé en language humain en algorithme.</p></li>
+<li><p>lire et interpréter un logigramme du début à la fin et ses différentes structures: boucle , branchement.</p></li>
+<li><p>construire un logigramme en utilisant boucles et branchements si nécessaire.</p></li>
+<li><p>savoir écrire un code informatique appliquant un algorithme représenté en logigramme: boucle (for), branchement (if).</p></li>
 </ul>
 </div>
 <section id="qu-est-ce-qu-un-algorithme">
-<h2><span class="section-number">7.1. </span>Qu’est-ce qu’un algorithme?<a class="headerlink" href="#qu-est-ce-qu-un-algorithme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Qu’est-ce qu’un algorithme?<a class="headerlink" href="#qu-est-ce-qu-un-algorithme" title="Permalink to this heading">#</a></h2>
 <p>Nous nous sommes au début de cette UE directement lancés dans la programmation Python. Il est temps de prendre un peu de recul sur notre pratique, au delà de l’écriture spécifique à Python. Ce que nous réalisons depuis le début de cours, c’est d’écrire une suite d’opérations qui est exécutée dans un ordre donné en vue de réaliser une action. C’est précisément la définition d’un <strong>algorithme</strong>!</p>
 <p>Vous utilisez déjà des algorithmes de manière omniprésente :</p>
 <ul class="simple">
@@ -371,8 +370,8 @@ document.write(`
 <p>Tout processus peut être exprimé en algorithme afin de mettre clairement en évidence les étapes. Voici un exemple d’algorithme permettant de se faire des tartines le matin écrit en language naturel et pas en Python:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ENTREE</span> <span class="p">:</span> <span class="n">pain</span><span class="p">,</span> <span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span>
 <span class="n">SORTIE</span> <span class="p">:</span> <span class="n">tartine</span> <span class="n">à</span> <span class="n">la</span> <span class="n">confiture</span>
-<span class="n">ETAPE</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">Etaler</span> <span class="n">le</span> <span class="n">beurre</span> <span class="n">sur</span> <span class="n">le</span> <span class="n">pain</span>
-<span class="n">ETAPE</span> <span class="mi">2</span> <span class="p">:</span> <span class="n">Etaler</span> <span class="n">la</span> <span class="n">confiture</span> <span class="n">sur</span> <span class="n">le</span> <span class="n">pain</span> <span class="n">beurré</span>
+<span class="mi">1</span> <span class="p">:</span> <span class="n">Etaler</span> <span class="n">le</span> <span class="n">beurre</span> <span class="n">sur</span> <span class="n">le</span> <span class="n">pain</span>
+<span class="mi">2</span> <span class="p">:</span> <span class="n">Etaler</span> <span class="n">la</span> <span class="n">confiture</span> <span class="n">sur</span> <span class="n">le</span> <span class="n">pain</span> <span class="n">beurré</span>
 </pre></div>
 </div>
 <p>Cet exemple nous permet de voir qu’un algorithme peut être exprimé dans notre language. On retrouve la suite d’opérations qui est réalisée dans un ordre donné (difficile de beurrer une tartine ou il y a déjà eu de la confiture). Remarquez la ligne Entrée qui indique les éléments nécessaires au départ à la réalisation de l’algorithme, et la ligne Sortie indiquant le produit final.</p>
@@ -383,9 +382,11 @@ document.write(`
 <p>Vous avez appris au chapitre précédent a créer des fonctions, qui sont des capsules autonomes de code avec des arguments d’entrée et des arguments de sortie. Cet algorithme peut être traduit en une fonction Python. Les arguments d’entrée sont pain, beurre, confiture, et l’argument <code class="docutils literal notranslate"><span class="pre">return</span></code> va renvoyer la tartine. Cependant, il convient de définir quel type d’objet sera la tartine. Celle-ci étant composée de plusieurs éléments (pain, beurre, confiture) dans un certain ordre, nous allons en faire une liste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">pain</span><span class="p">,</span> <span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée tels qu&#39;indiqués dans l&#39;algorithme</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">pain</span><span class="p">,</span> <span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée tels </span>
+                                       <span class="c1">#qu&#39;indiqués dans l&#39;algorithme</span>
     
-    <span class="c1"># initialisation de la tartine comme un objet de type liste comportant un élément (pain)</span>
+    <span class="c1"># initialisation de la tartine comme un objet </span>
+    <span class="c1"># de type liste comportant un élément (pain)</span>
     <span class="n">tartine</span> <span class="o">=</span> <span class="p">[</span><span class="n">pain</span><span class="p">]</span> 
     
     <span class="c1"># étaler le beurre sur le pain</span>
@@ -413,7 +414,7 @@ document.write(`
 </div>
 </section>
 <section id="logigrammes">
-<h2><span class="section-number">7.2. </span>Logigrammes<a class="headerlink" href="#logigrammes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Logigrammes<a class="headerlink" href="#logigrammes" title="Permalink to this heading">#</a></h2>
 <p>Dans les chapitres précédents, nous avons résolu des problèmes en créant directement des algorithmes dans un language de programmation donné, Python. Cependant, pour des problèmes complexes, il est utile de réflechir dans un premier temps aux étapes nécessaires pour réaliser une action (c’est l’étape de construction de l’algorithme), puis dans un second temps de traduire l’algorithme dans un language informatique donné. Cela permet de clarifier ce que l’on souhaite faire et d’éviter les erreurs, comme d’utiliser une variable qu’on n’a pas définie. Il est possible de réflechir à votre algorithme en écrivant les étapes en pseudo-code comme pour l’algorithme de la tartine ci-dessus. Il existe également une représentation graphique utile qui permet de réfléchir aux algorithmes de manière visuelle. Cette représentation schématique s’appelle un <strong>logigramme</strong>.</p>
 <div class="note admonition">
 <p class="admonition-title">Remarque</p>
@@ -423,19 +424,21 @@ document.write(`
 <p><img alt="" src="https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/base.png?raw=true" /></p>
 <p>Le schéma montre un point de départ, avec les arguments d’entrée nécessaires, les actions a effectuer dans l’ordre, puis le point de sortie avec les arguments renvoyés. Tirez profit du logigramme pour vérifier que tous les objets utilisés viennent de quelque part, que les étapes sont dans le bon ordre, et que chaque étape fonctionne de manière autonome. N’oubliez pas qu’un algorithme doit pouvoir être partagé. Alors relisez bien votre algorithme et vérifiez bien que celui-ci sera compréhensible par d’autres personnes.</p>
 <section id="structures-de-controle-branchements-et-boucles">
-<h3><span class="section-number">7.2.1. </span>Structures de contrôle: branchements et boucles<a class="headerlink" href="#structures-de-controle-branchements-et-boucles" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>Structures de contrôle: branchements et boucles<a class="headerlink" href="#structures-de-controle-branchements-et-boucles" title="Permalink to this heading">#</a></h3>
 <p>Bien souvent, un algorithme n’est pas linéaire. Dans ce cas, on utilise deux types de <strong>structures de contrôle</strong>. Ces structures permettent de vérifier quelque chose à un moment donné et d’agir en conséquence. Vous avez déjà utilisé ces structures en Python: ce sont les branchements (if) et les boucles (for).</p>
 <section id="branchement-if">
-<h4><span class="section-number">7.2.1.1. </span>Branchement (if)<a class="headerlink" href="#branchement-if" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.2.1.1. </span>Branchement (if)<a class="headerlink" href="#branchement-if" title="Permalink to this heading">#</a></h4>
 <p>Reprenons notre exemple précédent. Le branchement implique de vérifier une condition. Si la condition est remplie, une étape supplémentaire se produit.</p>
 <p><img alt="" src="https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/if.png?raw=true" /></p>
 <p>Dans tous les cas, notre fonction renverra une tartine. Mais il devient plus flexible: la confiture est un argument optionnel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">pain</span><span class="p">,</span> <span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée tels qu&#39;indiqués dans l&#39;algorithme. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">pain</span><span class="p">,</span> <span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée </span>
+    <span class="c1"># tels qu&#39;indiqués dans l&#39;algorithme. </span>
     <span class="c1">#  Si confiture n&#39;est pas renseigné, elle prend la valeur par défaut indiquée ici.</span>
     
-    <span class="c1"># initialisation de la tartine comme un objet de type liste comportant un élément (pain)</span>
+    <span class="c1"># initialisation de la tartine comme un objet </span>
+    <span class="c1"># de type liste comportant un élément (pain)</span>
     <span class="n">tartine</span> <span class="o">=</span> <span class="p">[</span><span class="n">pain</span><span class="p">]</span> 
     
     <span class="c1"># étaler le beurre sur le pain</span>
@@ -477,13 +480,14 @@ document.write(`
 <p>Avec cette ligne, la première fonction aurait renvoyé une erreur, ce qui n’est pas le cas ici.</p>
 </section>
 <section id="branchement-if-else">
-<h4><span class="section-number">7.2.1.2. </span>Branchement (if else)<a class="headerlink" href="#branchement-if-else" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.2.1.2. </span>Branchement (if else)<a class="headerlink" href="#branchement-if-else" title="Permalink to this heading">#</a></h4>
 <p>On peut également définir ce qui se passe dans un branchement si la réponse est oui, mais également si la réponse est non.</p>
 <p><img alt="" src="https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/ifelse.png?raw=true" /></p>
 <p>Cette structure correspond en Python au <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span><span class="p">,</span> <span class="n">pain</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée tels qu&#39;indiqués dans l&#39;algorithme</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">beurre</span><span class="p">,</span> <span class="n">confiture</span><span class="p">,</span> <span class="n">pain</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée </span>
+    <span class="c1"># tels qu&#39;indiqués dans l&#39;algorithme</span>
     <span class="c1"># Notez que les arguments spécifiant une valeur par défaut doivent nécessairement être à la fin.</span>
     
     <span class="c1"># S&#39;il y a du pain (tout sauf False)</span>
@@ -537,16 +541,18 @@ document.write(`
 <p>Notez la présence de deux ‘return’ qui correspond aux deux sorties possibles indiquées sur le logigramme après le point de branchement.</p>
 </section>
 <section id="boucle-for">
-<h4><span class="section-number">7.2.1.3. </span>Boucle (for)<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.2.1.3. </span>Boucle (for)<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h4>
 <p>La deuxième structure de contrôle est la boucle. La boucle permet de répéter une opération plusieurs fois, ce qui arrive typiquement avec <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <p><img alt="" src="https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/for.png?raw=true" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">pain</span><span class="p">,</span> <span class="n">confiture</span><span class="p">,</span> <span class="n">qbeurre</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée tels qu&#39;indiqués dans l&#39;algorithme</span>
-    <span class="c1"># cette fois-ci, qbeurre est une variable qui vaut 0 par défaut et doit être un entier qui correspond au nombre de fois</span>
-    <span class="c1"># que l&#39;on veut rajouter du beurre.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tartiner</span><span class="p">(</span><span class="n">pain</span><span class="p">,</span> <span class="n">confiture</span><span class="p">,</span> <span class="n">qbeurre</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span> <span class="c1"># trois arguments d&#39;entrée </span>
+    <span class="c1"># tels qu&#39;indiqués dans l&#39;algorithme</span>
+    <span class="c1"># cette fois-ci, qbeurre est une variable qui vaut 0 par défaut et doit être </span>
+    <span class="c1"># un entier qui correspond au nombre de fois que l&#39;on veut rajouter du beurre.</span>
     
-    <span class="c1"># initialisation de la tartine comme un objet de type liste comportant un élément (pain)</span>
+    <span class="c1"># initialisation de la tartine comme un objet </span>
+    <span class="c1">#de type liste comportant un élément (pain)</span>
     <span class="n">tartine</span> <span class="o">=</span> <span class="p">[</span><span class="n">pain</span><span class="p">]</span> 
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">qbeurre</span><span class="p">):</span>  <span class="c1"># on répète le bloc autant qbeurre fois</span>
@@ -585,7 +591,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>L’opération a bien été répétée 10 fois grâce à notre boucle.</p>
+<p>L’opération a bien été répétée 10 fois grâce à notre boucle! 🏆</p>
 </section>
 </section>
 </section>
@@ -628,7 +634,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Les environnements de développement: l’exemple de Spyder</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>L’environnement de développement Spyder</p>
       </div>
     </a>
     <a class="right-next"
@@ -636,7 +642,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Débuguer efficacement avec Spyder</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Débuguer avec Spyder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -658,12 +664,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-un-algorithme">7.1. Qu’est-ce qu’un algorithme?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logigrammes">7.2. Logigrammes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structures-de-controle-branchements-et-boucles">7.2.1. Structures de contrôle: branchements et boucles</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if">7.2.1.1. Branchement (if)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if-else">7.2.1.2. Branchement (if else)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">7.2.1.3. Boucle (for)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-un-algorithme">6.1. Qu’est-ce qu’un algorithme?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logigrammes">6.2. Logigrammes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structures-de-controle-branchements-et-boucles">6.2.1. Structures de contrôle: branchements et boucles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if">6.2.1.1. Branchement (if)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#branchement-if-else">6.2.1.2. Branchement (if else)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">6.2.1.3. Boucle (for)</a></li>
 </ul>
 </li>
 </ul>

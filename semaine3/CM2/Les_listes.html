@@ -161,10 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Les listes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. Les boucles</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. Les environnements de développement: l’exemple de Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer efficacement avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">7. Débuguer avec Spyder</a></li>
 </ul>
 
     </div>
@@ -349,6 +348,21 @@ document.write(`
                   
   <section id="les-listes">
 <h1><span class="section-number">3. </span>Les listes<a class="headerlink" href="#les-listes" title="Permalink to this heading">#</a></h1>
+<div class="hint admonition">
+<p class="admonition-title">Objectifs</p>
+<p>A l’issue de ce chapitre, vous serez capable de :</p>
+<ul class="simple">
+<li><p>créer une liste Python vide ou contenant des éléments parmi <code>str</code>, <code>int</code>, <code>float</code>, <code>list</code>.</p></li>
+<li><p>accéder à un élément d’une liste Python par son indice positif et négatif.</p></li>
+<li><p>accéder à une tranche d’éléments d’une liste Python grâce au symbole <code>:</code>.</p></li>
+<li><p>identifier d’ou provient une erreur de type <code>IndexError: list index out of range</code>.</p></li>
+<li><p>remplacer des objets dans une liste.</p></li>
+<li><p>ajouter des objets dans une liste avec <code>append</code> et <code>insert</code>.</p></li>
+<li><p>supprimer des objets d’une liste avec <code>del</code> et <code>remove</code>.</p></li>
+<li><p>concaténer des listes avec <code>extend</code>.</p></li>
+<li><p>accéder à la taille d’une liste avec la fonction <code>len()</code>.</p></li>
+</ul>
+</div>
 <section id="creer-des-listes">
 <h2><span class="section-number">3.1. </span>Créer des listes<a class="headerlink" href="#creer-des-listes" title="Permalink to this heading">#</a></h2>
 <p>Nous avons vu au cours précédent plusieurs types d’objets différents: les <code>int</code>, les <code>float</code>, les <code>str</code>. Nous allons maintenant découvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets.</p>
@@ -370,15 +384,6 @@ document.write(`
 <div class="example admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez à votre tour de créer une liste vide nommée <code>liste_vide2</code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">liste_vide2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1">### END SOLUTION</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>L’intérêt d’une liste est de pouvoir y mettre des objets, c’est à dire d’autres variables créées précédemment. On peut créer directement une liste avec des objets dedans. Pour cela, nous allons reprendre la notation entre crochets et lui indiquer quels objets on veut mettre dans notre liste. Voici un exemple avec 5 entiers:</p>
 <div class="cell docutils container">
@@ -433,18 +438,9 @@ document.write(`
 </div>
 </div>
 <p>Nous avons créé ici une liste contenant quatre objets de types différents : un entier, un flottant, une chaîne de caractères et… une autre liste.</p>
-<div class="example admonition">
+<div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez maintenant de créer une liste nommée <code>liste_6</code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début):</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">liste_6</span> <span class="o">=</span> <span class="p">[</span><span class="n">liste_vide</span><span class="p">,</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">,</span> <span class="n">liste3</span><span class="p">,</span> <span class="n">liste4</span><span class="p">,</span> <span class="n">liste5</span><span class="p">]</span>
-<span class="c1">### END SOLUTION</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="acceder-a-un-objet-dune-liste">
@@ -487,7 +483,7 @@ document.write(`
 </table>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
-<p>Attention à ne pas confondre objet et indice quand les objets sont des entiers!</p>
+<p>Attention à ne pas confondre objet et indice quand les objets sont des entiers.</p>
 </div>
 <p>On peut également accéder à un élément via une expression:</p>
 <div class="cell docutils container">
@@ -553,7 +549,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> 
 
 <span class="ne">IndexError</span>: list index out of range
@@ -563,22 +559,13 @@ document.write(`
 </div>
 <p>Celle-ci renvoie une erreur. <code>IndexError</code> indique un problème de manipulation d’indices de listes (<code>list index out of range</code>). En l’occurence, on veut accéder au quatrième objet de ma_liste alors que celle-ci n’en contient pas.
 Remarquez que le message pointe également vers la ligne ou l’erreur a été détectée (<code>—-&gt; 1 ma_liste[3]</code>), ce qui va se révéler très utile lorsque vos scripts vont devenir plus longs</p>
-<div class="example admonition">
+<div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez maintenant d’accédez à l’entier <code>2</code> contenu dans la liste ci-dessous par son indice.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">int_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="c1">### END SOLUTION</span>
 </pre></div>
 </div>
 </div>
@@ -615,19 +602,9 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </div>
 </div>
 </div>
-<div class="example admonition">
+<div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">pair</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-<span class="c1">### END SOLUTION</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="remplacer-des-objets-dans-une-liste">
@@ -676,22 +653,13 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </div>
-<div class="example admonition">
+<div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Que dois-je écrire si je veux rajouter le nombre 3 à la liste ci-dessous entre le 4 et le 12 en utilisant une méthode de liste?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
-<span class="c1">### END SOLUTION</span>
 </pre></div>
 </div>
 </div>
@@ -759,22 +727,13 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </div>
-<div class="example admonition">
+<div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>A partir de <code>ma_liste</code>, vous devez doubler les variables comme ceci: <code>[‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’, ‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’]</code>. Comment feriez-vous?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cailloux&#39;</span><span class="p">,</span> <span class="s1">&#39;graviers&#39;</span><span class="p">,</span> <span class="s1">&#39;sables&#39;</span><span class="p">,</span> <span class="s1">&#39;limons&#39;</span><span class="p">,</span> <span class="s1">&#39;argiles&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">ma_liste</span> <span class="o">+=</span> <span class="n">ma_liste</span>
-<span class="c1">### END SOLUTION</span>
 </pre></div>
 </div>
 </div>
@@ -839,22 +798,9 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </div>
-<div class="example admonition">
+<div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
-<div class="highlight-💻 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Mg&quot;</span><span class="p">,</span> <span class="s2">&quot;Na&quot;</span><span class="p">,</span> <span class="s2">&quot;Fe&quot;</span><span class="p">]</span>
-<span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
-<span class="c1">### END SOLUTION</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="pour-aller-plus-loin-quelques-autres-types-interessants">
