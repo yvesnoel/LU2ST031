@@ -328,8 +328,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-objets-dans-une-liste">3.4. Remplacer des objets dans une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-des-objets-dans-une-liste">3.5. Ajouter des objets dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-elements-dans-une-liste">3.4. Remplacer des éléments dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserer-des-elements-dans-une-liste">3.5. Insérer des éléments dans une liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserer-un-element-a-la-fin-d-une-liste">3.5.1. Insérer un élément à la fin d’une liste</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserer-un-element-n-importe-ou-dans-une-liste">3.5.2. Insérer un élément n’importe où dans une liste</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">3.6. Supprimer des objets d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
@@ -352,20 +356,20 @@ document.write(`
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
 <ul class="simple">
-<li><p>créer une liste Python vide ou contenant des éléments parmi <code>str</code>, <code>int</code>, <code>float</code>, <code>list</code>.</p></li>
+<li><p>créer une liste Python vide ou contenant des éléments parmi <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p></li>
 <li><p>accéder à un élément d’une liste Python par son indice positif et négatif.</p></li>
-<li><p>accéder à une tranche d’éléments d’une liste Python grâce au symbole <code>:</code>.</p></li>
-<li><p>identifier d’ou provient une erreur de type <code>IndexError: list index out of range</code>.</p></li>
-<li><p>remplacer des objets dans une liste.</p></li>
-<li><p>ajouter des objets dans une liste avec <code>append</code> et <code>insert</code>.</p></li>
-<li><p>supprimer des objets d’une liste avec <code>del</code> et <code>remove</code>.</p></li>
-<li><p>concaténer des listes avec <code>extend</code>.</p></li>
-<li><p>accéder à la taille d’une liste avec la fonction <code>len()</code>.</p></li>
+<li><p>accéder à une tranche d’éléments d’une liste Python grâce au symbole <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>accéder à la longueur d’une liste avec la fonction <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p></li>
+<li><p>identifier d’ou provient une erreur de type <code class="docutils literal notranslate"><span class="pre">IndexError:</span> <span class="pre">list</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code>.</p></li>
+<li><p>remplacer des éléments dans une liste.</p></li>
+<li><p>insérer des éléments dans une liste avec <code class="docutils literal notranslate"><span class="pre">append</span></code> ou <code class="docutils literal notranslate"><span class="pre">insert</span></code>.</p></li>
+<li><p>supprimer des éléments d’une liste avec <code class="docutils literal notranslate"><span class="pre">del</span></code> ou <code class="docutils literal notranslate"><span class="pre">remove</span></code>.</p></li>
+<li><p>concaténer des listes avec <code class="docutils literal notranslate"><span class="pre">extend</span></code>.</p></li>
 </ul>
 </div>
 <section id="creer-des-listes">
 <h2><span class="section-number">3.1. </span>Créer des listes<a class="headerlink" href="#creer-des-listes" title="Permalink to this heading">#</a></h2>
-<p>Nous avons vu au cours précédent plusieurs types d’objets différents: les <code>int</code>, les <code>float</code>, les <code>str</code>. Nous allons maintenant découvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets.</p>
+<p>Nous avons vu, lors du cours précédent, plusieurs types d’objets : les entiers,<code class="docutils literal notranslate"><span class="pre">int</span></code>, les nombres à virgule <code class="docutils literal notranslate"><span class="pre">float</span></code>, les chaînes de caractères <code class="docutils literal notranslate"><span class="pre">str</span></code> et les booléens <code class="docutils literal notranslate"><span class="pre">bool</span></code>. Nous allons maintenant découvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets, que l’on appelle aussi éléments de la liste.</p>
 <p>Il existe un moyen simple de créer une liste en utilisant des crochets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -380,12 +384,12 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Ici on instancie une nouvelle variable de type <code>list</code>, puis on l’affiche en utilisant <code>print</code>. Comme on ne lui a rien indiqué d’autre, la liste est vide.</p>
+<p>Ici on crée une nouvelle variable de type <code class="docutils literal notranslate"><span class="pre">list</span></code>, puis on l’affiche en utilisant <code class="docutils literal notranslate"><span class="pre">print</span></code>. Comme on ne lui a rien indiqué d’autre, la liste est vide.</p>
 <div class="example admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Essayez à votre tour de créer une liste vide nommée <code>liste_vide2</code>.</p>
+<p>Essayez à votre tour de créer une liste vide nommée <code class="docutils literal notranslate"><span class="pre">liste_vide2</span></code>.</p>
 </div>
-<p>L’intérêt d’une liste est de pouvoir y mettre des objets, c’est à dire d’autres variables créées précédemment. On peut créer directement une liste avec des objets dedans. Pour cela, nous allons reprendre la notation entre crochets et lui indiquer quels objets on veut mettre dans notre liste. Voici un exemple avec 5 entiers:</p>
+<p>L’intérêt d’une liste est de pouvoir y mettre des objets, c’est à dire des variables créées précédemment ou des expressions. On peut créer directement une liste avec des éléments dedans. Pour cela, nous allons reprendre la notation entre crochets et lui indiquer quels éléments on veut mettre dans notre liste. Voici un exemple avec 5 entiers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> 
@@ -399,7 +403,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Une liste est une séquence d’objets. Nous avons créé une premier liste contenant 0 objets, puis une seconde contenant 5 objets. C’est à vous de décider du contenu de la liste et de l’ordre des objets. En effet, la liste est un objet ordonné, l’ordre dans lequel on met les objets compte! L’exemple ci-dessous montre une autre liste contenant les mêmes objets mais dans un ordre différent :</p>
+<p>Une liste est une séquence d’éléments. Plus haut, nous avons créé une première liste contenant 0 éléments, puis ici une seconde contenant 5 élements. C’est à vous de décider du contenu de la liste et de l’ordre des éléments. En effet, la liste est un objet ordonné, l’ordre dans lequel on met les éléments compte ! L’exemple ci-dessous montre une autre liste contenant les mêmes éléments mais dans un ordre différent :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -413,39 +417,64 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Les listes peuvent contenir de nombreux types d’objets: entiers, flottants, chaines de caractères, etc. Il est également possible de mixer les types. Une liste peut par exemple contenir des chaînes de caractères et des entiers. Enfin, il est possible de mettre dans une liste des variables précédemment créées.</p>
+<p>ou encore avec des chaînes de caractères</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>  <span class="c1"># liste de str</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">]</span> <span class="c1"># liste de str</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">liste3</span><span class="p">)</span>
-
-<span class="n">liste4</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">4.51</span><span class="p">,</span> <span class="p">[]]</span>  <span class="c1"># liste contenant 4 types d&#39;objets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hello&#39;, &#39;world&#39;, &#39;!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons vu que les listes peuvent contenir de nombreux types d’objets: entiers, flottants, chaines de caractères, etc. Il est également possible de mixer les types. Une liste peut par exemple contenir des chaînes de caractères ET des entiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste4</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">4.51</span><span class="p">,</span> <span class="p">[]]</span>  <span class="c1"># liste contenant 4 types d&#39;objets</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">liste4</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;python&#39;, 2, 2, 2, 2, 4.51, []]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons créé ici une liste contenant quatre types d’objets différents : un entier, un flottant, une chaîne de caractères et… une autre liste.</p>
+<p>Enfin, il est possible d’utiliser les valeurs contenues dans des variables précédemment créées, comme élément de liste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">liste5</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>  <span class="c1"># liste contenant deux variables a et b de type int (entiers)</span>
+<span class="n">liste5</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>  <span class="c1"># liste contenant deux éléments issus des variables a et b de type int (entiers)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">liste5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-[&#39;python&#39;, 2, 2, 2, 2, 4.51, []]
-[25, 4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[25, 4]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Nous avons créé ici une liste contenant quatre objets de types différents : un entier, un flottant, une chaîne de caractères et… une autre liste.</p>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Essayez maintenant de créer une liste nommée <code>liste_6</code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début):</p>
+<p>Essayez maintenant de créer une liste nommée <code class="docutils literal notranslate"><span class="pre">liste_6</span></code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début)</p>
 </div>
 </section>
 <section id="acceder-a-un-objet-dune-liste">
 <h2><span class="section-number">3.2. </span>Accéder a un objet d’une liste<a class="headerlink" href="#acceder-a-un-objet-dune-liste" title="Permalink to this heading">#</a></h2>
-<p>Il est souvent nécessaire d’accéder à un élément particulier d’une liste. Pour accéder a un objet, il est possible d’utiliser son indice. Les objets contenus dans une liste possèdent chacun un indice. Le premier objet de la liste a pour indice 0, le second a pour indice 1, le troisième a pour indice 2, etc. L’indice peut-être utilisé pour accéder à un élément de la liste de la manière suivante:</p>
+<p>Il est souvent nécessaire d’accéder à un élément particulier d’une liste. Pour accéder a un objet, il est possible d’utiliser son indice. Les éléments contenus dans une liste possèdent chacun un indice. Le premier objet de la liste a pour indice 0, le second a pour indice 1, le troisième a pour indice 2, etc.</p>
+<div class="danger admonition">
+<p class="admonition-title">ATTENTION</p>
+<p>la numérotation des indices <strong>commançant à 0</strong> il y a toujours un décalage de 1 entre le numéro de l’élément et son indice (le 5<sup>ème</sup> élément a pour indice 4).</p>
+</div>
+<p>L’indice peut-être utilisé pour accéder à un élément de la liste de la manière suivante:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cailloux&quot;</span><span class="p">,</span><span class="s2">&quot;graviers&quot;</span><span class="p">,</span><span class="s2">&quot;sables&quot;</span><span class="p">,</span><span class="s2">&quot;limons&quot;</span><span class="p">,</span><span class="s2">&quot;argiles&quot;</span><span class="p">]</span>
@@ -459,10 +488,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>L’objet ma_liste possède 4 objets associés à 4 indices:</p>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code> possède 5 éléments associés à 5 indices:</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Objet</p></th>
+<tr class="row-odd"><th class="head"><p>Elément</p></th>
 <th class="head"><p>Indice</p></th>
 </tr>
 </thead>
@@ -479,11 +508,14 @@ document.write(`
 <tr class="row-odd"><td><p>limons</p></td>
 <td><p>3</p></td>
 </tr>
+<tr class="row-even"><td><p>argiles</p></td>
+<td><p>4</p></td>
+</tr>
 </tbody>
 </table>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
-<p>Attention à ne pas confondre objet et indice quand les objets sont des entiers.</p>
+<p>Attention à ne pas confondre éléments et indice quand les objets sont des entiers.</p>
 </div>
 <p>On peut également accéder à un élément via une expression:</p>
 <div class="cell docutils container">
@@ -502,7 +534,7 @@ document.write(`
 <p>Pour accéder au dernier élément de n’importe quelle liste, on peut utiliser l’indice -1. C’est assez pratique quand on ne connait pas la taille de la liste que l’on manipule:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># dernier objet</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># dernier élément</span>
 </pre></div>
 </div>
 </div>
@@ -512,7 +544,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Plus généralement, on peut accéder à n’importe quel objet via un indice négatif. Ceux-ci s’écoulent en sens inverse, à partir de la fin de la liste</p>
+<p>Plus généralement, on peut accéder à n’importe quel élément via un indice négatif. Ceux-ci s’écoulent en sens inverse, à partir de la fin de la liste :</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Objet</p></th>
@@ -523,23 +555,27 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p>cailloux</p></td>
 <td><p>0</p></td>
-<td><p>-4</p></td>
+<td><p>-5</p></td>
 </tr>
 <tr class="row-odd"><td><p>graviers</p></td>
 <td><p>1</p></td>
-<td><p>-3</p></td>
+<td><p>-4</p></td>
 </tr>
 <tr class="row-even"><td><p>sables</p></td>
 <td><p>2</p></td>
-<td><p>-2</p></td>
+<td><p>-3</p></td>
 </tr>
 <tr class="row-odd"><td><p>limons</p></td>
 <td><p>3</p></td>
+<td><p>-2</p></td>
+</tr>
+<tr class="row-even"><td><p>argiles</p></td>
+<td><p>4</p></td>
 <td><p>-1</p></td>
 </tr>
 </tbody>
 </table>
-<p>Analysons maintenant la ligne suivante:</p>
+<p>Analysons maintenant la ligne suivante :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> 
@@ -549,7 +585,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> 
 
 <span class="ne">IndexError</span>: list index out of range
@@ -557,15 +593,15 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Celle-ci renvoie une erreur. <code>IndexError</code> indique un problème de manipulation d’indices de listes (<code>list index out of range</code>). En l’occurence, on veut accéder au quatrième objet de ma_liste alors que celle-ci n’en contient pas.
-Remarquez que le message pointe également vers la ligne ou l’erreur a été détectée (<code>—-&gt; 1 ma_liste[3]</code>), ce qui va se révéler très utile lorsque vos scripts vont devenir plus longs</p>
+<p>Celle-ci renvoie une erreur. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> indique un problème de manipulation d’indices de listes. Le détail de l’erreur est donné à la fin : <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code> (que l’on pourrait traduire par : <em>indice en dehors de l’intervalle</em>). En l’occurence, on veut accéder au 6<sup>ème</sup> élément de ma_liste alors que celle-ci n’en contient que 5.
+Remarquez que le message pointe également vers la ligne ou l’erreur a été détectée : <code class="docutils literal notranslate"><span class="pre">----&gt;</span> <span class="pre">1</span> <span class="pre">ma_liste[5]</span></code> ; le numéro juste après la flèche indique que le numéro de la ligne où se situe l’erreur (ici l’erreur est sur la première ligne). Ceci va se révéler très utile lorsque votre code va devenir plus long.</p>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Essayez maintenant d’accédez à l’entier <code>2</code> contenu dans la liste ci-dessous par son indice.</p>
+<p>Essayez maintenant d’accédez à l’entier <code class="docutils literal notranslate"><span class="pre">2</span></code> contenu dans la liste ci-dessous par son indice.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -573,43 +609,93 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </section>
 <section id="acceder-a-une-tranche-d-objets">
 <h2><span class="section-number">3.3. </span>Accéder a une tranche d’objets<a class="headerlink" href="#acceder-a-une-tranche-d-objets" title="Permalink to this heading">#</a></h2>
-<p>Enfin, il est également possible à plusieurs objets d’un seul coup, en spécifiant un intervalle grâce aux <code>:</code>.</p>
+<p>Enfin, il est également possible d’accéder à plusieurs éléments d’un seul coup, en spécifiant une portion de la liste grâce aux <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[:]</span> <span class="c1">#tout, équivalent à &quot;ma_liste&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[:]</span> <span class="c1"># tout, équivalent à &quot;ma_liste&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1">#tout jusqu’à l’indice 2 (exclu)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># tout jusqu’à l’indice 2 (exclu)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1">#tout à partir de l’indice 2 (inclus)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># tout à partir de l’indice 2 (inclus)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#tout à partir de l’indice 1 (inclus) jusqu’à l’indice 3 (exclu)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># tout à partir de l’indice 1 (inclus) jusqu’à l’indice 3 (exclu)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;graviers&#39;, &#39;sables&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># un élément sur 2 à partir de l’indice 1 (inclus) jusqu’à l’indice 5 (exclu). Le pas est 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;graviers&#39;, &#39;limons&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># tout à l&#39;envers à partir de l’indice 5 (inclus) jusqu’à l’indice 1 (exclu). Le pas est -1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;argiles&#39;, &#39;limons&#39;, &#39;sables&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">En résumé</p>
+<p>La syntaxe pour accéder à des éléments d’une liste à l’aide de la notation <code class="docutils literal notranslate"><span class="pre">:</span></code> est :<br>
+<code class="docutils literal notranslate"><span class="pre">nom_de_la_liste[</span> <span class="pre">indice_debut</span> <span class="pre">:</span> <span class="pre">indice_fin</span> <span class="pre">:</span> <span class="pre">pas</span> <span class="pre">]</span></code><br>
+où l’<strong>indice de fin est exclu</strong> et où le pas (et le 2ème <code class="docutils literal notranslate"><span class="pre">:</span></code>) est optionnel (1 par défaut).</p>
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
+<p>Créez une liste appelée <code class="docutils literal notranslate"><span class="pre">pair</span></code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code class="docutils literal notranslate"><span class="pre">:</span></code>, extrayez les entiers 4, 6 et 8.</p>
 </div>
 </section>
-<section id="remplacer-des-objets-dans-une-liste">
-<h2><span class="section-number">3.4. </span>Remplacer des objets dans une liste<a class="headerlink" href="#remplacer-des-objets-dans-une-liste" title="Permalink to this heading">#</a></h2>
-<p>On peut assigner une nouvelle valeur aux objets de la liste:</p>
+<section id="remplacer-des-elements-dans-une-liste">
+<h2><span class="section-number">3.4. </span>Remplacer des éléments dans une liste<a class="headerlink" href="#remplacer-des-elements-dans-une-liste" title="Permalink to this heading">#</a></h2>
+<p>On peut affecter une nouvelle valeur à des éléments de la liste:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;granulés&quot;</span>
@@ -617,12 +703,80 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;granulés&#39;, &#39;limons&#39;, &#39;argiles&#39;]
+</pre></div>
 </div>
-<p>Une liste n’est donc pas un objet figé, on peut modifier, supprimer, réorganiser les objets qu’elle contient. On dit alors que la liste est un type d’objet <strong>mutable</strong> (pour modifiable).</p>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Une liste n’est donc pas un objet figé, on peut modifier, supprimer, réorganiser les éléments qu’elle contient. On dit alors que la liste est un type d’objet <strong>mutable</strong> (pour modifiable).</p>
+</div>
+<p>On peut aussi remplacer plusieurs éléments en une seule affectation. Dans ce cas, les nouvelles valeurs des éléments qui vont être remplacés sont spécifiées dans une liste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;verres&quot;</span><span class="p">,</span><span class="s2">&quot;boues&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;verres&#39;, &#39;boues&#39;, &#39;argiles&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Nous vous conseillons <strong>très fortement</strong> de faire en sorte que la liste contenant les nouvelles valeurs soit composée d’autant d’éléments que le nombre d’éléments à modifier, indiqué par la notation <code class="docutils literal notranslate"><span class="pre">:</span></code> (comme dans l’exemple ci-dessus). Il n’y a pas de contrôle par Python et le résultat n’est pas forcément très facile à comprendre (comme dans les exemples ci-dessous).</p>
+</div>
+<p>Exemples de comportements difficiles à comprendre :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_exemple</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_exemple</span><span class="p">)</span>
+<span class="n">liste_exemple</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">7.7</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span> <span class="c1"># les éléments d&#39;indices 1 et 2 (2ème et 3ème éléments) sont remplacés par 4 éléments (7.7 ... 0.0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_exemple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.1, 2.2, 3.3, 4.4, 5.5, 6.6]
+[1.1, 7.7, 8.8, 9.9, 0.0, 4.4, 5.5, 6.6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_exemple</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_exemple</span><span class="p">)</span>
+<span class="n">liste_exemple</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">7.7</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">]</span>  <span class="c1"># les éléments d&#39;indices 1, 2 et 3 (2ème, 3ème et 4ème éléments) sont remplacés par 2 éléments (7.7 et 8.8)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_exemple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.1, 2.2, 3.3, 4.4, 5.5, 6.6]
+[1.1, 7.7, 8.8, 5.5, 6.6]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="ajouter-des-objets-dans-une-liste">
-<h2><span class="section-number">3.5. </span>Ajouter des objets dans une liste<a class="headerlink" href="#ajouter-des-objets-dans-une-liste" title="Permalink to this heading">#</a></h2>
-<p><code>append</code> est une méthode spécifique des listes. Elle permet d’ajouter un nouvel élément à la fin de la liste:</p>
+<section id="inserer-des-elements-dans-une-liste">
+<h2><span class="section-number">3.5. </span>Insérer des éléments dans une liste<a class="headerlink" href="#inserer-des-elements-dans-une-liste" title="Permalink to this heading">#</a></h2>
+<section id="inserer-un-element-a-la-fin-d-une-liste">
+<h3><span class="section-number">3.5.1. </span>Insérer un élément à la fin d’une liste<a class="headerlink" href="#inserer-un-element-a-la-fin-d-une-liste" title="Permalink to this heading">#</a></h3>
+<p>Il est possible d’ajouter un nouvel élément à la fin d’une liste grâce à la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code>, spécifique aux objets de type <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Une méthode est une fonction associée à un type d’objet. On l’utilise grâce à la notation <code class="docutils literal notranslate"><span class="pre">.</span></code> : <br />
+<code class="docutils literal notranslate"><span class="pre">nom_de_l_objet.nom_de_la_methode(arguments_eventuels)</span></code><br />
+Dans le cas de la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code> que l’on veut appliquer à une liste dont le nom est <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code> on écrit : <br />
+<code class="docutils literal notranslate"><span class="pre">ma_liste.append(ce_que_l_on_veut_inserer)</span></code></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;argiles&quot;</span><span class="p">)</span> <span class="c1"># la chaîne de caractères &quot;argiles&quot; est placée en argument de la méthode append, ce qui l&#39;ajoute à ma_liste</span>
@@ -630,25 +784,62 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 </pre></div>
 </div>
 </div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">Attention</p>
-<p>Les méthodes de listes ne renvoient jamais rien mais modifient l’objet d’origine. En utilisant <code>append</code>, vous modifiez directement la liste, mais rien n’est renvoyé. Si on essaye de capturer le résultat dans une nouvelle variable <code>a</code> comme ceci:</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;argiles&quot;</span><span class="p">)</span> <span class="c1"># On capture le résultat de la méthode</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;verres&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>On voit que <code>a</code> ne contient rien car la méthode ne renvoie rien.
-Append permet d’ajouter un élément à la fin de la liste. La méthode <code>insert</code> permet elle d’insérer un élément à un endroit spécifique de la liste, et pas nécessairement à la fin. Cette méthode prend deux arguments, en premier l’indice où le nouvel objet doit être ajouté (les éléments suivants sont décalés et changent donc d’indice), et en second l’objet à ajouter:</p>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Les méthodes de listes ne renvoient jamais rien mais modifient l’objet d’origine. En utilisant <code class="docutils literal notranslate"><span class="pre">append</span></code>, vous modifiez directement la liste, mais rien n’est renvoyé. Si on essaye de capturer le résultat dans une nouvelle variable <code class="docutils literal notranslate"><span class="pre">a</span></code> comme ceci:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;blocs&quot;</span><span class="p">)</span> <span class="c1"># On capture le résultat de la méthode</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;verres&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;, &#39;blocs&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On constate bien que <code class="docutils literal notranslate"><span class="pre">a</span></code> ne contient rien car la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code> ne renvoie rien, par contre elle a bien modifié <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>.</p>
+</section>
+<section id="inserer-un-element-n-importe-ou-dans-une-liste">
+<h3><span class="section-number">3.5.2. </span>Insérer un élément n’importe où dans une liste<a class="headerlink" href="#inserer-un-element-n-importe-ou-dans-une-liste" title="Permalink to this heading">#</a></h3>
+<p>Nous avons vu que <code class="docutils literal notranslate"><span class="pre">append</span></code> permet d’ajouter un élément à la fin de la liste. La méthode <code class="docutils literal notranslate"><span class="pre">insert</span></code> permet elle d’insérer un élément à un endroit spécifique de la liste, et pas nécessairement à la fin. Cette méthode prend deux arguments, en premier l’indice où le nouvel objet doit être ajouté (les éléments suivants sont décalés et changent donc d’indice), et en second l’objet à ajouter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;sables grossiers&quot;</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables grossiers&#39;, &#39;verres&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;, &#39;blocs&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Si l’on spécifie un indice supérieur au dernier indice de la liste, l’élément sera inséré en dernière position</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;sables fins&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables grossiers&#39;, &#39;verres&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;, &#39;blocs&#39;, &#39;sables fins&#39;]
 </pre></div>
 </div>
 </div>
@@ -665,18 +856,25 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 </div>
 </section>
+</section>
 <section id="supprimer-des-objets-dune-liste">
 <h2><span class="section-number">3.6. </span>Supprimer des objets d’une liste<a class="headerlink" href="#supprimer-des-objets-dune-liste" title="Permalink to this heading">#</a></h2>
-<p>Il existe plusieurs manières de supprimer des objets dans une liste. Lorsque l’on connaît l’indice de l’objet à supprimer, il est possible d’utiliser <code>del</code>:</p>
+<p>Il existe plusieurs manières de supprimer des objets dans une liste. Lorsque l’on connaît l’indice de l’objet à supprimer, il est possible d’utiliser <code class="docutils literal notranslate"><span class="pre">del</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># On supprime le quatrième élément de la liste</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># On supprime le quatrième élément de la liste</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables grossiers&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;, &#39;blocs&#39;, &#39;sables fins&#39;]
+</pre></div>
 </div>
-<p>Si on connaît la valeur de l’objet à supprimer, on peut également utiliser la méthode <code>remove</code> en lui donnant la valeur de la variable en argument:</p>
+</div>
+</div>
+<p>Si l’on connaît la valeur de l’élément à supprimer, on peut également utiliser la méthode <code class="docutils literal notranslate"><span class="pre">remove</span></code> (en utilisant la syntaxe avec un <code class="docutils literal notranslate"><span class="pre">.</span></code>).
+La méthode <code class="docutils literal notranslate"><span class="pre">remove</span></code> supprimera le premier élément qui contient la valeur donné en argument :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables grossiers&quot;</span><span class="p">)</span>
@@ -684,12 +882,39 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;, &#39;blocs&#39;, &#39;sables fins&#39;]
+</pre></div>
 </div>
-<p>Notez que si “sables grossiers” existe plusieurs fois dans ma_liste, seule la première occurence sera supprimée.</p>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Si la liste ne contient pas d’élément dont la valeur correspond à l’argument donné à la méthode <code class="docutils literal notranslate"><span class="pre">remove</span></code>, une erreur de type <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> sera générée. Le détail de l’erreur est dans ce cas <code class="docutils literal notranslate"><span class="pre">list.remove(x):</span> <span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">list</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">107</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: list.remove(x): x not in list
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="concatener-des-listes">
 <h2><span class="section-number">3.7. </span>Concaténer des listes<a class="headerlink" href="#concatener-des-listes" title="Permalink to this heading">#</a></h2>
-<p>Il peut être intéressant de fusionner plusieurs listes en une seule. Pour cela, la méthode <code>extend</code> est parfaitement adaptée:</p>
+<p>Il peut être intéressant de fusionner plusieurs listes en une seule. Pour cela, la méthode <code class="docutils literal notranslate"><span class="pre">extend</span></code> est parfaitement adaptée:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;feldspath&quot;</span><span class="p">,</span> <span class="s2">&quot;plagioclase&quot;</span><span class="p">]</span>
@@ -729,7 +954,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>A partir de <code>ma_liste</code>, vous devez doubler les variables comme ceci: <code>[‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’, ‘cailloux’, ‘graviers’, ‘sables’, ‘limons’, ‘argiles’]</code>. Comment feriez-vous?</p>
+<p>A partir de <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>, vous devez doubler les variables comme ceci: <code class="docutils literal notranslate"><span class="pre">['cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles',</span> <span class="pre">'cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles']</span></code>. Comment feriez-vous?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -800,7 +1025,7 @@ Append permet d’ajouter un élément à la fin de la liste. La méthode <code>
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Créez une liste appelée <code>pair</code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code>:</code>, extrayez les entiers 4, 6 et 8.</p>
+<p>Créez une liste appelée <code class="docutils literal notranslate"><span class="pre">pair</span></code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code class="docutils literal notranslate"><span class="pre">:</span></code>, extrayez les entiers 4, 6 et 8.</p>
 </div>
 </section>
 <section id="pour-aller-plus-loin-quelques-autres-types-interessants">
@@ -918,8 +1143,12 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-objets-dans-une-liste">3.4. Remplacer des objets dans une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-des-objets-dans-une-liste">3.5. Ajouter des objets dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-elements-dans-une-liste">3.4. Remplacer des éléments dans une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserer-des-elements-dans-une-liste">3.5. Insérer des éléments dans une liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserer-un-element-a-la-fin-d-une-liste">3.5.1. Insérer un élément à la fin d’une liste</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserer-un-element-n-importe-ou-dans-une-liste">3.5.2. Insérer un élément n’importe où dans une liste</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">3.6. Supprimer des objets d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
