@@ -337,7 +337,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">3.6. Supprimer des objets d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">3.9. Taille d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longueur-dune-liste">3.9. Longueur d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
 </ul>
             </nav>
@@ -902,7 +902,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">107</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
 
@@ -914,7 +914,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </section>
 <section id="concatener-des-listes">
 <h2><span class="section-number">3.7. </span>Concaténer des listes<a class="headerlink" href="#concatener-des-listes" title="Permalink to this heading">#</a></h2>
-<p>Il peut être intéressant de fusionner plusieurs listes en une seule. Pour cela, la méthode <code class="docutils literal notranslate"><span class="pre">extend</span></code> est parfaitement adaptée:</p>
+<p>Il peut être intéressant de coller deux listes, l’une après l’autre, pour n’en faire plus qu’une seule. Pour cela, la méthode <code class="docutils literal notranslate"><span class="pre">extend</span></code> est parfaitement adaptée :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;feldspath&quot;</span><span class="p">,</span> <span class="s2">&quot;plagioclase&quot;</span><span class="p">]</span>
@@ -923,27 +923,47 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;boues&#39;, &#39;argiles&#39;, &#39;argiles&#39;, &#39;blocs&#39;, &#39;sables fins&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+</pre></div>
 </div>
-<p>Il est également possible de simplement additionner les deux listes:</p>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Le fait de coller bout à bout deux objets, s’appelle la <em>concaténation</em></p>
+</div>
+<p>Il est également possible d’utiliser, plus simplement, le symbole <code class="docutils literal notranslate"><span class="pre">+</span></code> pour concaténer deux listes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cailloux&#39;</span><span class="p">,</span> <span class="s1">&#39;graviers&#39;</span><span class="p">,</span> <span class="s1">&#39;sables&#39;</span><span class="p">,</span> <span class="s1">&#39;limons&#39;</span><span class="p">,</span> <span class="s1">&#39;argiles&#39;</span><span class="p">]</span>
-<span class="n">ma_liste</span> <span class="o">+</span> <span class="n">ma_liste2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span> <span class="o">+</span> <span class="n">ma_liste2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;]
+</pre></div>
 </div>
-<p>On peut voir ici que le résultat n’a pas été enregistré. Une opération, contrairement à une méthode, ne modifie rien: elle renvoie un nouveau résultat. La concaténation à seulement renvoyé une nouvelle liste. Il faut donc la capturer dans une nouvelle variable:</p>
+</div>
+</div>
+<p>On peut voir ici que l’opération de concaténation avec le symbole <code class="docutils literal notranslate"><span class="pre">+</span></code> n’a pas modifié <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>. Une opérationne modifie rien, contrairement à une méthode, qui est elle est appliquée à un objet (la liste). <code class="docutils literal notranslate"><span class="pre">ma_liste</span> <span class="pre">+</span> <span class="pre">ma_liste2</span></code> n’est qu’une expression dont le résultat est une valeur. Cette valeur est une nouvelle liste de type <code class="docutils literal notranslate"><span class="pre">list</span></code>. Pour utiliser ultérieurement cette nouvelle liste, il faut affecter résultat de l’expression dans une variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste3</span> <span class="o">=</span> <span class="n">ma_liste</span> <span class="o">+</span> <span class="n">ma_liste2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Une alternative plus simple peut s’écrire comme ceci:</p>
+<p>Dans le cas où l’on veut utiliser la variable <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code> pour récupérer le résultat de la concaténation, il existe une alternative plus simple (<a class="reference internal" href="../../semaine2/CM1/Les_variables.html#l-additionaffectation"><span class="std std-ref">cf chapitre sur l’affectation</span></a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">+=</span> <span class="n">ma_liste2</span> <span class="c1"># On modifie ma_liste en concaténant a elle ma_liste2.</span>
@@ -954,11 +974,11 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>A partir de <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code>, vous devez doubler les variables comme ceci: <code class="docutils literal notranslate"><span class="pre">['cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles',</span> <span class="pre">'cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles']</span></code>. Comment feriez-vous?</p>
+<p>Vous disposez d’une liste nommée <code class="docutils literal notranslate"><span class="pre">une_liste</span></code> qui contient les éléments suivants : <code class="docutils literal notranslate"><span class="pre">'cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles'</span></code>. Vous souhaitez répéter les éléments de la manière suivante : <code class="docutils literal notranslate"><span class="pre">['cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles',</span> <span class="pre">'cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles']</span></code>. Comment feriez-vous en utilisant la syntaxe vue précédemment ?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cailloux&#39;</span><span class="p">,</span> <span class="s1">&#39;graviers&#39;</span><span class="p">,</span> <span class="s1">&#39;sables&#39;</span><span class="p">,</span> <span class="s1">&#39;limons&#39;</span><span class="p">,</span> <span class="s1">&#39;argiles&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">une_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cailloux&#39;</span><span class="p">,</span> <span class="s1">&#39;graviers&#39;</span><span class="p">,</span> <span class="s1">&#39;sables&#39;</span><span class="p">,</span> <span class="s1">&#39;limons&#39;</span><span class="p">,</span> <span class="s1">&#39;argiles&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -996,12 +1016,12 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </div>
 </div>
 </section>
-<section id="taille-dune-liste">
-<h2><span class="section-number">3.9. </span>Taille d’une liste<a class="headerlink" href="#taille-dune-liste" title="Permalink to this heading">#</a></h2>
-<p>Il est souvent important de savoir quelle taille fait une liste, c’est à dire combien d’objets la composent:</p>
+<section id="longueur-dune-liste">
+<h2><span class="section-number">3.9. </span>Longueur d’une liste<a class="headerlink" href="#longueur-dune-liste" title="Permalink to this heading">#</a></h2>
+<p>Il est souvent utile de connaître la longueur une liste, c’est à dire combien d’éléments la composent:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span> <span class="c1"># cette liste contient 9 éléments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span> <span class="c1"># cette liste contient 5 éléments</span>
 </pre></div>
 </div>
 </div>
@@ -1022,10 +1042,6 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </pre></div>
 </div>
 </div>
-</div>
-<div class="question admonition">
-<p class="admonition-title">À vous de jouer</p>
-<p>Créez une liste appelée <code class="docutils literal notranslate"><span class="pre">pair</span></code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code class="docutils literal notranslate"><span class="pre">:</span></code>, extrayez les entiers 4, 6 et 8.</p>
 </div>
 </section>
 <section id="pour-aller-plus-loin-quelques-autres-types-interessants">
@@ -1051,7 +1067,7 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 </div>
 </div>
 <ul class="simple">
-<li><p>Une liste mais sans ordre? Le <strong>set</strong> (un ensemble) est la version non-ordonnée de la liste. Un set contient plusieurs éléments, mais ceux-ci ne sont pas ordonnés et n’ont pas d’indices. Ils servent à d’autres types d’opérations que nous verrons plus tard. Les ensembles se créent avec des accolades.</p></li>
+<li><p>Une liste mais sans ordre ? Le <strong>set</strong> (un ensemble) est la version non-ordonnée de la liste et ne contient pas de répétition. Un set contient des éléments, tous différents, mais ceux-ci ne sont pas ordonnés et n’ont pas d’indices. Ils servent à d’autres types d’opérations que nous verrons plus tard. Les ensembles se créent avec des accolades.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1070,6 +1086,47 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 </div>
 </div>
 <p>Les deux sets sont identiques: l’ordre n’importe pas.</p>
+<p>Les sets sont souvent utilisés dans des comparaisons avec l’opérateur <code class="docutils literal notranslate"><span class="pre">in</span></code> pour savoir si un élément est présent ou non dans le set :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Albite&quot;</span> <span class="ow">in</span>  <span class="n">mineraux1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Forsterite&quot;</span> <span class="ow">in</span> <span class="n">mineraux1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mineraux1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Forsterite&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mineraux1</span><span class="p">)</span>
+<span class="n">mineraux2</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Albite&#39;</span><span class="p">,</span> <span class="s1">&#39;Anorthite&#39;</span><span class="p">,</span> <span class="s1">&#39;Albite&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mineraux2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Albite&#39;, &#39;Anorthite&#39;, &#39;Forsterite&#39;}
+{&#39;Albite&#39;, &#39;Anorthite&#39;}
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1152,7 +1209,7 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supprimer-des-objets-dune-liste">3.6. Supprimer des objets d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-dune-liste">3.9. Taille d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longueur-dune-liste">3.9. Longueur d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
 </ul>
   </nav></div>
