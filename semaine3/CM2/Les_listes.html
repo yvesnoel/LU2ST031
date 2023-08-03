@@ -338,7 +338,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longueur-dune-liste">3.9. Longueur d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">3.10. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quelques-autres-types-interessants">3.10.1. Quelques autres types intéressants</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tuples-n-uplets-en-francais">3.10.1.1. Les Tuples (n-uplets en français)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-sets-ensembles-en-francais">3.10.1.2. Les sets (ensembles en français)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-listes">3.10.2. Zones de la mémoire et listes</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -902,7 +910,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_10356</span>\<span class="mf">956275911.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
 
@@ -971,6 +979,11 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
@@ -1026,7 +1039,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -1044,12 +1057,15 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </div>
 </div>
 </section>
-<section id="pour-aller-plus-loin-quelques-autres-types-interessants">
-<h2><span class="section-number">3.10. </span>🚀 Pour aller plus loin: quelques autres types intéressants<a class="headerlink" href="#pour-aller-plus-loin-quelques-autres-types-interessants" title="Permalink to this heading">#</a></h2>
-<p>Les listes sont des objets puissants permettant d’enregistrer et de classer facilement des variables. Mais d’autres types similaires existent:</p>
-<ul class="simple">
-<li><p>Une liste mais qui ne peut plus être modifiée après sa création ? Il s’agit des <strong>tuples</strong>!</p></li>
-</ul>
+<section id="pour-aller-plus-loin">
+<h2><span class="section-number">3.10. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<section id="quelques-autres-types-interessants">
+<h3><span class="section-number">3.10.1. </span>Quelques autres types intéressants<a class="headerlink" href="#quelques-autres-types-interessants" title="Permalink to this heading">#</a></h3>
+<p>Les listes sont des objets puissants permettant d’enregistrer et de classer facilement des variables. Ce sont des objets modifiables (on dit <strong>mutable</strong>) et ordonnés, mais d’autres types similaires existent.</p>
+<section id="les-tuples-n-uplets-en-francais">
+<h4><span class="section-number">3.10.1.1. </span>Les Tuples (n-uplets en français)<a class="headerlink" href="#les-tuples-n-uplets-en-francais" title="Permalink to this heading">#</a></h4>
+<p>Un tuple est une sorte de liste mais qui <strong>ne peut plus être modifiée</strong> après sa création (on dit qu’ils sont <em>immutables</em> ). De la même manière que les listes, les tuples sont <strong>ordonnés</strong>.<br />
+On créé un tuple avec des parenthèses pour le distinguer des listes entre crochets. Les éléments sont là aussi séparés par les virgules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupleint</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -1057,25 +1073,53 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </div>
 </div>
 </div>
-<p>On créé un tuple avec des parenthèses pour le distinguer des listes entre crochets. Le tuple est la version immutable de la la liste.
-Souvent on n’utilise pas directement un tuple mais d’une manière un peu détournée, comme ici:</p>
+<p>Souvent on n’utilise pas directement un tuple mais d’une manière un peu détournée, comme ici pour une (<a class="reference internal" href="../../semaine2/CM1/Les_variables.html#l-syntaxeaffectation"><span class="std std-ref">affectation</span></a>) multiple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="c1"># ceci est un tuple! Il permet de créer deux variables en une seule ligne</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># ceci est un tuple! Il permet de créer deux variables en une seule ligne</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+4
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Une liste mais sans ordre ? Le <strong>set</strong> (un ensemble) est la version non-ordonnée de la liste et ne contient pas de répétition. Un set contient des éléments, tous différents, mais ceux-ci ne sont pas ordonnés et n’ont pas d’indices. Ils servent à d’autres types d’opérations que nous verrons plus tard. Les ensembles se créent avec des accolades.</p></li>
-</ul>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Même si les paranthèses permettent de repérer facilement les tuples, celles-ci sont optionnelles.<br />
+<code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">3,</span> <span class="pre">4</span></code></p>
+</div>
+</section>
+<section id="les-sets-ensembles-en-francais">
+<h4><span class="section-number">3.10.1.2. </span>Les sets (ensembles en français)<a class="headerlink" href="#les-sets-ensembles-en-francais" title="Permalink to this heading">#</a></h4>
+<p>Les sets, ou ensembles, sont comme des listes mais <strong>sans ordre</strong>. Ils <strong>peuvent être modifiés</strong> (on dit qu’ils sont <em>mutables</em>). Ils ne peuvent pas contenir de répétitions (tous les éléments sont différents).<br />
+Les sets se créent avec des accolades et les éléments, encore une fois, sont séparés par des virgules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mineraux1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Albite&quot;</span><span class="p">,</span><span class="s2">&quot;Anorthite&quot;</span><span class="p">}</span>
+<span class="n">mineraux2</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Albite&#39;</span><span class="p">,</span> <span class="s1">&#39;Anorthite&#39;</span><span class="p">,</span> <span class="s1">&#39;Albite&#39;</span><span class="p">}</span>
 
-<span class="n">mineraux2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Anorthite&quot;</span><span class="p">,</span><span class="s2">&quot;Albite&quot;</span><span class="p">}</span>
-
-<span class="n">mineraux1</span> <span class="o">==</span> <span class="n">mineraux2</span> <span class="c1"># renvoie True si les objets sont identiques</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mineraux1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mineraux2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Albite&#39;}
+{&#39;Anorthite&#39;, &#39;Albite&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible de comparer les ensembles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mineraux1</span> <span class="o">==</span> <span class="n">mineraux2</span> <span class="c1"># renvoie True puisque les 2 objets sont identiques (il n&#39;y a pas d&#39;ordre et les répétitions sont enlevées)</span>
 </pre></div>
 </div>
 </div>
@@ -1085,8 +1129,23 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 </div>
 </div>
 </div>
-<p>Les deux sets sont identiques: l’ordre n’importe pas.</p>
-<p>Les sets sont souvent utilisés dans des comparaisons avec l’opérateur <code class="docutils literal notranslate"><span class="pre">in</span></code> pour savoir si un élément est présent ou non dans le set :</p>
+<p>ou de réaliser des opérations entre ensembles</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mineraux3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Fayalite&quot;</span><span class="p">,</span><span class="s2">&quot;Grossulaire&quot;</span><span class="p">,</span><span class="s2">&quot;Anorthite&quot;</span><span class="p">,</span><span class="s2">&quot;Muscovite&quot;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mineraux1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">mineraux3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mineraux3</span><span class="o">.</span><span class="n">difference</span><span class="p">({</span><span class="s2">&quot;Fayalite&quot;</span><span class="p">,</span><span class="s2">&quot;Anorthite&quot;</span><span class="p">}))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;}
+{&#39;Grossulaire&#39;, &#39;Muscovite&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou de tester si un élément est présent dans un ensemble grâce à l’opérateur <code class="docutils literal notranslate"><span class="pre">in</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Albite&quot;</span> <span class="ow">in</span>  <span class="n">mineraux1</span><span class="p">)</span>
@@ -1111,22 +1170,97 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 </div>
 </div>
 </div>
+<p>Il est possible d’ajouter un (et un seul) élément avec la méthode <code class="docutils literal notranslate"><span class="pre">add</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mineraux1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Forsterite&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mineraux1</span><span class="p">)</span>
-<span class="n">mineraux2</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Albite&#39;</span><span class="p">,</span> <span class="s1">&#39;Anorthite&#39;</span><span class="p">,</span> <span class="s1">&#39;Albite&#39;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mineraux2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Albite&#39;, &#39;Anorthite&#39;, &#39;Forsterite&#39;}
-{&#39;Albite&#39;, &#39;Anorthite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Forsterite&#39;, &#39;Albite&#39;}
 </pre></div>
 </div>
 </div>
 </div>
+<p>Les sets (ou ensembles) servent aussi à d’autres types d’opérations que nous verrons plus tard. Vous trouverez plus de détails ainsi que d’autres méthodes liées aux sets sur <a class="reference external" href="https://www.w3schools.com/python/python_sets_methods.asp">ce site</a></p>
+</section>
+</section>
+<section id="zones-de-la-memoire-et-listes">
+<h3><span class="section-number">3.10.2. </span>Zones de la mémoire et listes<a class="headerlink" href="#zones-de-la-memoire-et-listes" title="Permalink to this heading">#</a></h3>
+<p>Nous avons vu dans <a class="reference internal" href="../../semaine2/CM1/Les_variables.html#l-memoirevariables"><span class="std std-ref">le chapitre précedent</span></a> que l’affectation permet de faire référence par un nom à une zone de la mémoire de l’ordinateur où est stockée une valeur. C’est la même chose pour les listes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
+2282952809600
+</pre></div>
+</div>
+</div>
+</div>
+<p>Même si on modiifie la liste, son id ne change pas :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">))</span>
+<span class="n">ma_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;grenats&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2282952809600
+2282952809600
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible de référencer une même zone de la mémoire par plusieurs noms :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nouveau_nom</span><span class="o">=</span><span class="n">ma_liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">nouveau_nom</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2282952809600
+2282952809600
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il n’y a qu’une seule liste en mémoire, mais elle est référencée par 2 noms différents.</p>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Du coup une modification sur la liste à l’aide d’un nom de variable, s’effectue en mémoire et sera donc aussi répercutée sur l’autre variable.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nouveau_nom</span><span class="p">)</span>
+<span class="n">ma_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;graviers&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nouveau_nom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1210,7 +1344,15 @@ Souvent on n’utilise pas directement un tuple mais d’une manière un peu dé
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatener-des-listes">3.7. Concaténer des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listes-de-listes">3.8. Listes de listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longueur-dune-liste">3.9. Longueur d’une liste</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-quelques-autres-types-interessants">3.10. 🚀 Pour aller plus loin: quelques autres types intéressants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">3.10. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quelques-autres-types-interessants">3.10.1. Quelques autres types intéressants</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tuples-n-uplets-en-francais">3.10.1.1. Les Tuples (n-uplets en français)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-sets-ensembles-en-francais">3.10.1.2. Les sets (ensembles en français)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-listes">3.10.2. Zones de la mémoire et listes</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

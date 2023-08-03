@@ -332,6 +332,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-addition-affectation">2.6.1. L’addition affectation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">2.6.2. 🚀 Pour aller plus loin :</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-variables">2.6.2.1. Zones de la mémoire et variables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -376,7 +380,7 @@ Le type de ces variables correspond donc au type de l’expression qu’elle con
 <p>Si l’on reprend l’analogie de la boîte de rangement, il est rapidement nécessaire de mettre des étiquettes sur les boîtes pour récupérer efficacement ce que l’on cherche. En programmation, c’est un peu pareil : les variables ont un nom et c’est grâce à ce nom que l’on peut affecter une valeur dedans et encore grâce à lui que l’on peut réutiliser son contenu dans une expression.</p>
 </section>
 <section id="la-syntaxe-de-l-affectation">
-<h2><span class="section-number">2.4. </span>La syntaxe de l’affectation<a class="headerlink" href="#la-syntaxe-de-l-affectation" title="Permalink to this heading">#</a></h2>
+<span id="l-syntaxeaffectation"></span><h2><span class="section-number">2.4. </span>La syntaxe de l’affectation<a class="headerlink" href="#la-syntaxe-de-l-affectation" title="Permalink to this heading">#</a></h2>
 <p>Le symbole indiquant à Python une affectation est le signe <code class="docutils literal notranslate"><span class="pre">=</span></code>
 Contrairement à sont aspect et à son utilisation en mathématique, cet opérateur n’est pas symétrique : à gauche du <code class="docutils literal notranslate"><span class="pre">=</span></code> on trouve le nom de la variable dans laquel on va affecter la valeur et à droite on trouve une expression qui se ramène à une valeur qui va être affectée.</p>
 <div class="cell docutils container">
@@ -491,6 +495,65 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 </section>
+<section id="pour-aller-plus-loin">
+<h3><span class="section-number">2.6.2. </span>🚀 Pour aller plus loin :<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h3>
+<section id="zones-de-la-memoire-et-variables">
+<span id="l-memoirevariables"></span><h4><span class="section-number">2.6.2.1. </span>Zones de la mémoire et variables<a class="headerlink" href="#zones-de-la-memoire-et-variables" title="Permalink to this heading">#</a></h4>
+<p>Comme nous l’avons vu en introduction de ce chapitre, une variable permet de repérer, à l’aide d’un nom, des zones de la mémoire de l’ordinateur où sont stockées des valeurs.Ces zones de la mémoire de l’ordinateur sont repérées par un nombre que l’on appelle aussi adresse. Il est possible de récupérer cette adresse à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">id</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unDecimal</span><span class="o">=</span><span class="mf">123.456</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">unDecimal</span><span class="p">))</span>
+<span class="n">uneChaine</span><span class="o">=</span><span class="s1">&#39;Toto&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">uneChaine</span><span class="p">))</span>
+<span class="n">autreDecimal</span><span class="o">=</span><span class="mf">123.456</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">autreDecimal</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140206303578192
+140206303587952
+140206269348496
+</pre></div>
+</div>
+</div>
+</div>
+<p>Chaque variable crée dispose de sa propre adresse mémoire.</p>
+<div class="caution admonition">
+<p class="admonition-title">Attention : </p>
+<p>Ceci n’est pas vrai pour les entiers ≤ 256 et les chaînes de caractères composées d’un seul caractère</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unEntier</span><span class="o">=</span><span class="mi">256</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">unEntier</span><span class="p">))</span>
+<span class="n">autreEntier</span><span class="o">=</span><span class="mi">256</span> <span class="c1"># la meme zone memoire est utilisee</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">autreEntier</span><span class="p">))</span>
+<span class="n">unCaractere</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">unCaractere</span><span class="p">))</span>
+<span class="n">autreCaractere</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span>  <span class="c1"># la meme zone memoire est utilisee</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">autreCaractere</span><span class="p">))</span>
+<span class="n">unGrandEntier</span><span class="o">=</span><span class="mi">257</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">unGrandEntier</span><span class="p">))</span>
+<span class="n">autreGrandEntier</span><span class="o">=</span><span class="mi">257</span> <span class="c1"># Une autrezone memoire est utilisee</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">autreGrandEntier</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140206388765184
+140206388765184
+140206376303856
+140206376303856
+140206269349616
+140206269348816
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -568,6 +631,10 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-addition-affectation">2.6.1. L’addition affectation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">2.6.2. 🚀 Pour aller plus loin :</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-variables">2.6.2.1. Zones de la mémoire et variables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
