@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Les boucles &#8212; Cours de LU2ST031</title>
+    <title>5. Les boucles &#8212; Cours de LU2ST031</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine5/CM4/Les_boucles';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. L’environnement de développement Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
-    <link rel="prev" title="3. Les listes" href="../../semaine3/CM2/Les_listes.html" />
+    <link rel="next" title="6. L’environnement de développement Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
+    <link rel="prev" title="4. if : l’instruction pour créer des branchements" href="../../semaine4/CM3/Les_branchements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,10 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. L’environnement de développement Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">7. Débuguer avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. <code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer avec Spyder</a></li>
 </ul>
 
     </div>
@@ -205,6 +206,73 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031/master?urlpath=tree/semaine1/CM1/semaine5/CM4/Les_boucles.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yvesnoel/LU2ST031/blob/master/semaine1/CM1/semaine5/CM4/Les_boucles.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
 
 
 <a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine5/CM4/Les_boucles.html&body=Your%20issue%20content%20here." target="_blank"
@@ -325,10 +393,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">4.1. Une … boucle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">4.2. Boucle While</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">4.3. Boucle For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">4.4. 🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">5.1. Une … boucle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">5.2. Boucle While</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">5.3. Boucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.4. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
             </nav>
         </div>
@@ -341,7 +409,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="les-boucles">
-<h1><span class="section-number">4. </span>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
@@ -353,11 +421,11 @@ document.write(`
 </ul>
 </div>
 <section id="une-boucle">
-<h2><span class="section-number">4.1. </span>Une … boucle?<a class="headerlink" href="#une-boucle" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Une … boucle?<a class="headerlink" href="#une-boucle" title="Permalink to this heading">#</a></h2>
 <p>Un des intérêts majeurs des languages informatiques tels que Python est de réaliser des tâches répétitives et fastidieuses pour les humains. On appelle <strong>boucler</strong> une action la répéter plusieurs fois. L’objectif de ce cours est de se familiariser avec les différents moyens pour réaliser des boucles en python.</p>
 </section>
 <section id="boucle-while">
-<h2><span class="section-number">4.2. </span>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
 <p>Commençons par une opération très répétitive à faire à la main. Nous allons afficher tous les nombres pairs de 0 à 20:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -453,7 +521,7 @@ document.write(`
 </div>
 </section>
 <section id="boucle-for">
-<h2><span class="section-number">4.3. </span>Boucle For<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Boucle For<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h2>
 <p>Une autre tâche répétitive est de parcourir tous les éléments d’une séquence et d’y appliquer la même action. Un objet est dit <strong>itérable</strong> s’il comporte plusieurs éléments et que l’on peut réaliser des actions sur chacun de ces élements. Nous avons vu précédemment les listes, qui sont des objets itérables. Mettons que l’on veuille réaliser une action sur chaque élement d’une’ liste. Pour cela, un nouveau mot clé est indispensable: <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <p>Dans l’exemple ci-dessous, on a une liste de valeurs correspondant à des tailles d’ammonites en centimètres. Nous devons convertir ces valeurs en millimètres:</p>
 <div class="cell docutils container">
@@ -518,7 +586,7 @@ document.write(`
 </div>
 </section>
 <section id="pour-aller-plus-loin-listes-en-intension">
-<h2><span class="section-number">4.4. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
 <p>Reprenons l’exemple:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,7 +642,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "yvesnoel/LU2ST031",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -602,12 +670,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../semaine3/CM2/Les_listes.html"
+       href="../../semaine4/CM3/Les_branchements.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Les listes</p>
+        <p class="prev-next-title"><span class="section-number">4. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</p>
       </div>
     </a>
     <a class="right-next"
@@ -615,7 +683,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>L’environnement de développement Spyder</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>L’environnement de développement Spyder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -637,10 +705,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">4.1. Une … boucle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">4.2. Boucle While</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">4.3. Boucle For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">4.4. 🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">5.1. Une … boucle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">5.2. Boucle While</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">5.3. Boucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.4. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
   </nav></div>
 

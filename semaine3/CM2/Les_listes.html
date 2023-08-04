@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine3/CM2/Les_listes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Les boucles" href="../../semaine5/CM4/Les_boucles.html" />
+    <link rel="next" title="4. if : l’instruction pour créer des branchements" href="../../semaine4/CM3/Les_branchements.html" />
     <link rel="prev" title="2. Les variables" href="../../semaine2/CM1/Les_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,10 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Les listes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. Les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. L’environnement de développement Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">7. Débuguer avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. <code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer avec Spyder</a></li>
 </ul>
 
     </div>
@@ -205,6 +206,73 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031/master?urlpath=tree/semaine1/CM1/semaine3/CM2/Les_listes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yvesnoel/LU2ST031/blob/master/semaine1/CM1/semaine3/CM2/Les_listes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
 
 
 <a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine3/CM2/Les_listes.html&body=Your%20issue%20content%20here." target="_blank"
@@ -360,6 +428,7 @@ document.write(`
                   
   <section id="les-listes">
 <h1><span class="section-number">3. </span>Les listes<a class="headerlink" href="#les-listes" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031.git/master?labpath=semaine3%2FCM2%2FLes_listes.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
@@ -1268,7 +1337,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "yvesnoel/LU2ST031",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -1305,11 +1374,11 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
       </div>
     </a>
     <a class="right-next"
-       href="../../semaine5/CM4/Les_boucles.html"
+       href="../../semaine4/CM3/Les_branchements.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Les boucles</p>
+        <p class="prev-next-title"><span class="section-number">4. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

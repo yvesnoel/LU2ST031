@@ -160,10 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">4. Les boucles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">5. L’environnement de développement Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">6. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">7. Débuguer avec Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. <code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer avec Spyder</a></li>
 </ul>
 
     </div>
@@ -205,6 +206,73 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031/master?urlpath=tree/semaine1/CM1/semaine2/CM1/Les_variables.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yvesnoel/LU2ST031/blob/master/semaine1/CM1/semaine2/CM1/Les_variables.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
 
 
 <a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine2/CM1/Les_variables.html&body=Your%20issue%20content%20here." target="_blank"
@@ -354,12 +422,12 @@ document.write(`
 <p><a class="reference external" href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031.git/master?labpath=semaine2%2FCM1%2FLes_variables.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
-<p>A l’issue de ce chapître, vous serez capable</p>
+<p>A l’issue de ce chapître, vous serez capable de :</p>
 <ul class="simple">
-<li><p>d’affecter le résultat d’une expression à une variable</p></li>
-<li><p>d’utiliser le contenu d’une variable dans une expression</p></li>
-<li><p>de reconnaître le type d’une variable déjà existante</p></li>
-<li><p>de modifier le contenu d’une variable déjà existante</p></li>
+<li><p>affecter le résultat d’une expression à une variable</p></li>
+<li><p>utiliser le contenu d’une variable dans une expression</p></li>
+<li><p>reconnaître le type d’une variable déjà existante</p></li>
+<li><p>modifier le contenu d’une variable déjà existante</p></li>
 </ul>
 </div>
 <section id="le-principe">
@@ -512,9 +580,9 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140206303578192
-140206303587952
-140206269348496
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140338595704720
+140338595458288
+140338595703984
 </pre></div>
 </div>
 </div>
@@ -542,12 +610,12 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140206388765184
-140206388765184
-140206376303856
-140206376303856
-140206269349616
-140206269348816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140338732106240
+140338732106240
+140338719645104
+140338719645104
+140338595704592
+140338595704432
 </pre></div>
 </div>
 </div>
@@ -561,7 +629,7 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "yvesnoel/LU2ST031",
             ref: "master",
         },
         codeMirrorConfig: {
