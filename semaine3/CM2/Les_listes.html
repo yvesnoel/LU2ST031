@@ -653,7 +653,7 @@ document.write(`
 </tbody>
 </table>
 <p>Analysons maintenant la ligne suivante :</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> 
 </pre></div>
@@ -969,7 +969,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <p class="admonition-title">Remarque</p>
 <p>Si la liste ne contient pas d’élément dont la valeur correspond à l’argument donné à la méthode <code class="docutils literal notranslate"><span class="pre">remove</span></code>, une erreur de type <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> sera générée. Le détail de l’erreur est dans ce cas <code class="docutils literal notranslate"><span class="pre">list.remove(x):</span> <span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">list</span></code></p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
@@ -979,7 +979,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_10356</span>\<span class="mf">956275911.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
 
@@ -1179,8 +1179,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Albite&#39;}
-{&#39;Anorthite&#39;, &#39;Albite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Albite&#39;, &#39;Anorthite&#39;}
+{&#39;Albite&#39;, &#39;Anorthite&#39;}
 </pre></div>
 </div>
 </div>
@@ -1248,7 +1248,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Forsterite&#39;, &#39;Albite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Forsterite&#39;, &#39;Albite&#39;, &#39;Anorthite&#39;}
 </pre></div>
 </div>
 </div>
@@ -1267,8 +1267,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
-2282952809600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+140470139428224
 </pre></div>
 </div>
 </div>
@@ -1283,8 +1283,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2282952809600
-2282952809600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140470139428224
+140470139428224
 </pre></div>
 </div>
 </div>
@@ -1299,8 +1299,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2282952809600
-2282952809600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140470139428224
+140470139428224
 </pre></div>
 </div>
 </div>
@@ -1321,10 +1321,10 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
-[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
-[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
-[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;, &#39;grenats&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
 </pre></div>
 </div>
 </div>

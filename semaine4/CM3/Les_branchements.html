@@ -416,9 +416,9 @@ document.write(`
 <p>L’instruction <code class="docutils literal notranslate"><span class="pre">if</span></code> permet de créer des branchements dans votre code Python ; c’est à dire de conditionner l’execution d’une partie de votre code selon la valeur d’une <span class="xref myst">expression booléenne</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -434,6 +434,21 @@ Afin de spécifier, que l’instruction de la ligne 3 fait partie du bloc soumis
 Pour ce faire, il faut insérer une tabulation ou 4 espaces.
 Décrivons maintenant ce qui se passe lors de l’exécution du code Python ci-dessus. A la ligne 1, la valeur 10 est affectée à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.
 Ligne 2 l’expression booléenne <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">5</span></code> est évaluée : l’expression se ramène à la valeur <code class="docutils literal notranslate"><span class="pre">True</span></code> puisque 10 est plus grand que 5. Le code exécutera donc le bloc conditionnel qui est constitué d’un simple appel à la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> ce qui affiche à l’écran <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">est</span> <span class="pre">strictement</span> <span class="pre">plus</span> <span class="pre">grand</span> <span class="pre">que</span> <span class="pre">5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce message sera affiché quelque soit la valeur de x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ce message sera affiché quelque soit la valeur de x
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
