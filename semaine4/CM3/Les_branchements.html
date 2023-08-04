@@ -434,17 +434,157 @@ Afin de spécifier, que l’instruction de la ligne 3 fait partie du bloc soumis
 Pour ce faire, il faut insérer une tabulation ou 4 espaces.
 Décrivons maintenant ce qui se passe lors de l’exécution du code Python ci-dessus. A la ligne 1, la valeur 10 est affectée à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.
 Ligne 2 l’expression booléenne <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">5</span></code> est évaluée : l’expression se ramène à la valeur <code class="docutils literal notranslate"><span class="pre">True</span></code> puisque 10 est plus grand que 5. Le code exécutera donc le bloc conditionnel qui est constitué d’un simple appel à la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> ce qui affiche à l’écran <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">est</span> <span class="pre">strictement</span> <span class="pre">plus</span> <span class="pre">grand</span> <span class="pre">que</span> <span class="pre">5</span></code>.</p>
+<p>Pour terminer le bloc conditionnel, et écrire une ligne de code qui soit exécutée sans condition, il suffit d’aligner à nouveau ligne de code avec le <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos">2</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span>
 <span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce message sera affiché quelque soit la valeur de x&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deuxième message dans le bloc conditionnel&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce message sera affiché quelque soit la valeur de x&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ce message sera affiché quelque soit la valeur de x
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deuxième message dans le bloc conditionnel&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce message sera affiché quelque soit la valeur de x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x est strictement plus grand que 5
+Deuxième message dans le bloc conditionnel
+Ce message sera affiché quelque soit la valeur de x
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est aussi possible d’ajouter un bloc conditionnel qui sera éxecuté uniquement dans le cas où l’expression booléenne qui suit le <code class="docutils literal notranslate"><span class="pre">if</span></code> vaut <code class="docutils literal notranslate"><span class="pre">False</span></code> grâce à l’instruction <code class="docutils literal notranslate"><span class="pre">else</span></code>. Le bloc qui suit le <code class="docutils literal notranslate"><span class="pre">if</span></code>est appelé <em>bloc conséquent</em> et le bloc qui suit le <code class="docutils literal notranslate"><span class="pre">else</span></code> est appelé <em>bloc alternant</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deuxième message dans le bloc conséquent&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est inférieur ou égal à 5&quot;</span><span class="p">)</span>
+<span class="linenos">7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deuxième message dans le bloc alterant&quot;</span><span class="p">)</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce message sera affiché quelque soit la valeur de x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x est inférieur ou égal à 5
+Deuxième message dans le bloc alterant
+Ce message sera affiché quelque soit la valeur de x
+</pre></div>
+</div>
+</div>
+</div>
+<div class="question admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Créez un code qui affiche le message <em>“Le nombre entier x est pair”</em> quand l’entier contenu dans la variable x est pair et le message <em>“Le nombre entier x est impair”</em> dans le cas contraire. N’oubliez pas de tester le bon fonctionnement de votre code en affectant  différentes valeurs entières à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> au début de votre code.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre entier x est pair&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre entier x est impair&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le nombre entier x est pair
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut aussi créer des code Python plus complexes en utilsant d’autres <code class="docutils literal notranslate"><span class="pre">if</span></code> dans un bloc se situant lui aussi dans un autre <code class="docutils literal notranslate"><span class="pre">if</span></code>. On parle alors de <em>if imbriqués</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est strictement positif&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">5</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">6</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est strictement négatif&quot;</span><span class="p">)</span>
+<span class="linenos">7</span>    <span class="k">else</span> <span class="p">:</span>
+<span class="linenos">8</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est nul&quot;</span><span class="p">)</span>
+<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ceci est un exemple de if imbriqués&quot;</span><span class="p">)</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n est strictement positif
+Ceci est un exemple de if imbriqués
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est strictement positif&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est strictement négatif&quot;</span><span class="p">)</span>
+<span class="linenos">6</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est nul&quot;</span><span class="p">)</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ceci est un exemple de if successifs&quot;</span><span class="p">)</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n est strictement positif
+n est nul
+Ceci est un exemple de if successifs
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le code ci-dessus ne se comporte pas comme on l’aurait voulu. Voici pourquoi :<br />
+Ligne 2, l’expression n &gt; 0 vaut True puisque 5 &gt; 0.
+L’exécution se poursuit donc ligne 3, à l’intérieur du bloc conséquent du premier if et imprime à l’écran le message “n est strictement positif”.
+Ligne 4, l’expression n &lt; 0 vaut False puisque 5 &lt; 0.
+L’exécution se poursuit donc ligne 7, à l’intérieur du bloc alternant du deuxième if et imprime à l’écran le message “n est nul”.
+Enfin, on passe à la ligne 8 qui n’est pas soumise à condition et imprime le message “Ceci est un exemple de if successifs”.</p>
+<div class="question admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Créez un code qui affecte un nombre entier à la variable <code class="docutils literal notranslate"><span class="pre">v</span></code>. Puis :</p>
+<ul class="simple">
+<li><p>lorsque ce nombre entier est un nombre pair, on lui ajoute 1 et vérifie si cette somme est un multiple de 3. Quand c’est le cas on le divise par 3.</p></li>
+<li><p>lorsque le nombre entier de départ est impair, on lui ajoute 3.</p></li>
+<li><p>Enfin on imprime à l’écran le nombre obtenu.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">v</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">3</span>    <span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">4</span>    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+<span class="linenos">5</span>        <span class="n">v</span><span class="o">//=</span><span class="mi">3</span>
+<span class="linenos">6</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">7</span>    <span class="n">v</span><span class="o">+=</span><span class="mi">3</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="linenos">9</span>        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
