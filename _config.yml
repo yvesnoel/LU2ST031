@@ -12,6 +12,7 @@ execute:
 parse:
   myst_enable_extensions:  
     - strikethrough
+    - colon_fence
 
 # Define the name of the latex output file for PDF builds
 #latex:
