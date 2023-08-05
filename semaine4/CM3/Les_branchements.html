@@ -370,7 +370,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -386,6 +388,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principes-de-base">4.1. Principes de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-imbriques-ou-successifs">4.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-instruction-elif">4.3. L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">4.4. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-raccourcis">4.4.1. Les raccourcis</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -411,9 +427,11 @@ document.write(`
 </div>
 <div class="note admonition">
 <p class="admonition-title">Remarque</p>
-<p>Dans ce chapitre, des nuémros de ligne, sont insérés en tête de ligne à gauche de chaque morceau de code. Cela facilite les commentaires.</p>
+<p>A partir de ce chapitre, des numéros de ligne, sont insérés en tête de ligne à gauche de chaque morceau de code. Cela facilite les commentaires.</p>
 </div>
-<p>L’instruction <code class="docutils literal notranslate"><span class="pre">if</span></code> permet de créer des branchements dans votre code Python ; c’est à dire de conditionner l’execution d’une partie de votre code selon la valeur d’une <span class="xref myst">expression booléenne</span>.</p>
+<section id="principes-de-base">
+<h2><span class="section-number">4.1. </span>Principes de base<a class="headerlink" href="#principes-de-base" title="Permalink to this heading">#</a></h2>
+<p>L’instruction <code class="docutils literal notranslate"><span class="pre">if</span></code> permet de créer des branchements dans votre code Python ; c’est à dire de conditionner l’execution d’une partie de votre code selon la valeur d’une <a class="reference internal" href="../../semaine2/CM1/Les_expressions.html#l-expressionsbooleennes"><span class="std std-ref">expression booléenne</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
@@ -469,7 +487,7 @@ Ce message sera affiché quelque soit la valeur de x
 </div>
 </div>
 </div>
-<p>Il est aussi possible d’ajouter un bloc conditionnel qui sera éxecuté uniquement dans le cas où l’expression booléenne qui suit le <code class="docutils literal notranslate"><span class="pre">if</span></code> vaut <code class="docutils literal notranslate"><span class="pre">False</span></code> grâce à l’instruction <code class="docutils literal notranslate"><span class="pre">else</span></code>. Le bloc qui suit le <code class="docutils literal notranslate"><span class="pre">if</span></code>est appelé <em>bloc conséquent</em> et le bloc qui suit le <code class="docutils literal notranslate"><span class="pre">else</span></code> est appelé <em>bloc alternant</em>.</p>
+<p>Il est aussi possible d’ajouter un bloc conditionnel qui sera éxecuté uniquement dans le cas où l’expression booléenne qui suit le <code class="docutils literal notranslate"><span class="pre">if</span></code> vaut <code class="docutils literal notranslate"><span class="pre">False</span></code> grâce à l’instruction <code class="docutils literal notranslate"><span class="pre">else</span></code>. On parle alors d’alternative. Le bloc qui suit le <code class="docutils literal notranslate"><span class="pre">if</span></code>est appelé <em>bloc conséquent</em> et le bloc qui suit le <code class="docutils literal notranslate"><span class="pre">else</span></code> est appelé <em>bloc alternant</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
@@ -495,13 +513,32 @@ Ce message sera affiché quelque soit la valeur de x
 <p class="admonition-title">À vous de jouer</p>
 <p>Créez un code qui affiche le message <em>“Le nombre entier x est pair”</em> quand l’entier contenu dans la variable x est pair et le message <em>“Le nombre entier x est impair”</em> dans le cas contraire. N’oubliez pas de tester le bon fonctionnement de votre code en affectant  différentes valeurs entières à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> au début de votre code.</p>
 </div>
-<div class="cell tag_remove-input docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1">## SOLUTION</span>
+<span class="linenos">2</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre entier x est pair&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre entier x est impair&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le nombre entier x est pair
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="if-imbriques-ou-successifs">
+<h2><span class="section-number">4.2. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs<a class="headerlink" href="#if-imbriques-ou-successifs" title="Permalink to this heading">#</a></h2>
 <p>On peut aussi créer des code Python plus complexes en utilsant d’autres <code class="docutils literal notranslate"><span class="pre">if</span></code> dans un bloc se situant lui aussi dans un autre <code class="docutils literal notranslate"><span class="pre">if</span></code>. On parle alors de <em>if imbriqués</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,10 +583,10 @@ Ceci est un exemple de if successifs
 </div>
 </div>
 <p>Le code ci-dessus ne se comporte pas comme on l’aurait voulu. Voici pourquoi :<br />
-Ligne 2, l’expression n &gt; 0 vaut True puisque 5 &gt; 0.
-L’exécution se poursuit donc ligne 3, à l’intérieur du bloc conséquent du premier if et imprime à l’écran le message “n est strictement positif”.
-Ligne 4, l’expression n &lt; 0 vaut False puisque 5 &lt; 0.
-L’exécution se poursuit donc ligne 7, à l’intérieur du bloc alternant du deuxième if et imprime à l’écran le message “n est nul”.
+Ligne 2, l’expression <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> vaut True puisque 5 &gt; 0.
+L’exécution se poursuit donc ligne 3, à l’intérieur du bloc conséquent du premier <code class="docutils literal notranslate"><span class="pre">if</span></code> et imprime à l’écran le message “n est strictement positif”.
+Ligne 4, l’expression <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> vaut False puisque 5 &lt; 0.
+L’exécution se poursuit donc ligne 7, à l’intérieur du bloc alternant du deuxième <code class="docutils literal notranslate"><span class="pre">if</span></code> et imprime à l’écran le message “n est nul”.
 Enfin, on passe à la ligne 8 qui n’est pas soumise à condition et imprime le message “Ceci est un exemple de if successifs”.</p>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
@@ -559,14 +596,188 @@ Enfin, on passe à la ligne 8 qui n’est pas soumise à condition et imprime le
 <li><p>lorsque le nombre entier de départ est impair, on lui ajoute 3.</p></li>
 <li><p>Enfin on imprime à l’écran le nombre obtenu.</p></li>
 </ul>
+<p>Afin de tester  le bon fonctionnement de votre code vous le testerez avec différentes valeurs de <code class="docutils literal notranslate"><span class="pre">v</span></code> qui correspondent à tous les chemins possibles.</p>
 </div>
-<div class="cell tag_remove-input docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">##SOLUTION</span>
+<span class="linenos"> 2</span><span class="n">v</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># Valeurs à tester 3, 6 et 8</span>
+<span class="linenos"> 3</span><span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos"> 4</span>    <span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos"> 5</span>    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+<span class="linenos"> 6</span>        <span class="n">v</span><span class="o">//=</span><span class="mi">3</span>
+<span class="linenos"> 7</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">v</span><span class="o">+=</span><span class="mi">3</span>
+<span class="linenos"> 9</span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="linenos">10</span>        
+</pre></div>
+</div>
+</div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="l-instruction-elif">
+<h2><span class="section-number">4.3. </span>L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#l-instruction-elif" title="Permalink to this heading">#</a></h2>
+<p>Il est aussi possible d’utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code> qui est une contraction de <em>“else if”</em>. Après un bloc <code class="docutils literal notranslate"><span class="pre">if</span></code>, cela permet de mettre une alternative contenant une nouvelle condition. On peut en enchaîner plusieurs et même terminer par un simple <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">mineral</span><span class="o">=</span><span class="s2">&quot;pyrope&quot;</span>
+<span class="linenos"> 2</span><span class="k">if</span> <span class="n">mineral</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;biotite&quot;</span><span class="p">,</span><span class="s2">&quot;muscovite&quot;</span><span class="p">,</span><span class="s2">&quot;phlogopite&quot;</span><span class="p">}</span> <span class="p">:</span>
+<span class="linenos"> 3</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mineral</span> <span class="o">+</span> <span class="s2">&quot; est un mica&quot;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="k">elif</span> <span class="n">mineral</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;grossulaire&quot;</span><span class="p">,</span><span class="s2">&quot;almandin&quot;</span><span class="p">,</span><span class="s2">&quot;pyrope&quot;</span><span class="p">,</span><span class="s2">&quot;spessartite&quot;</span><span class="p">}</span> <span class="p">:</span>
+<span class="linenos"> 5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mineral</span> <span class="o">+</span> <span class="s2">&quot; est un grenat&quot;</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="k">elif</span> <span class="n">mineral</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;diopside&quot;</span><span class="p">,</span><span class="s2">&quot;hedenbergite&quot;</span><span class="p">,</span><span class="s2">&quot;clinoferrosilite&quot;</span><span class="p">,</span><span class="s2">&quot;clinoenstatite&quot;</span><span class="p">}</span> <span class="p">:</span>
+<span class="linenos"> 7</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mineral</span> <span class="o">+</span> <span class="s2">&quot; est un clinopyroxène&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="k">elif</span> <span class="n">mineral</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;trémolite&quot;</span><span class="p">,</span><span class="s2">&quot;actinote&quot;</span><span class="p">}</span> <span class="p">:</span>
+<span class="linenos"> 9</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mineral</span> <span class="o">+</span> <span class="s2">&quot; est une amphibole&quot;</span><span class="p">)</span>
+<span class="linenos">10</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">11</span>    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Je ne sais pas à quelle famille appartient &quot;</span> <span class="o">+</span> <span class="n">mineral</span><span class="p">)</span>
+<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin de mon enchaînement de tests&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyrope est un grenat
+Fin de mon enchaînement de tests
+</pre></div>
+</div>
+</div>
+</div>
+<p>Commentaire du code ci-dessus. <br />
+Le test de la ligne 2 est <code class="docutils literal notranslate"><span class="pre">False</span></code>, puisque la chaîne “pyrope” n’apparaît pas dans le premier set. L’exécution du code passe donc à la ligne 4.<br />
+Le test de la ligne 4 est <code class="docutils literal notranslate"><span class="pre">True</span></code>, puisque la chaîne “pyrope” apparaît pas dans le deuxième set. L’exécution du code passe donc à la ligne 12.<br />
+Le message final est enfin imprimer à l’écran.</p>
+</section>
+<section id="pour-aller-plus-loin">
+<h2><span class="section-number">4.4. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<section id="les-raccourcis">
+<h3><span class="section-number">4.4.1. </span>Les raccourcis<a class="headerlink" href="#les-raccourcis" title="Permalink to this heading">#</a></h3>
+<p>Si le bloc conséquent d’un <code class="docutils literal notranslate"><span class="pre">if</span></code> ne contient qu’une ligne, il est possible d’utiliser un raccourci en mettant tout sur une seule ligne. Cela rend aussi votre code plus lisible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x est strictement plus grand que 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si il y a une alternative en une ligne aussi, il est aussi possible d’utiliser une notation raccourcie mais il faut faire attention à l’ordre des instructions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est strictement plus grand que 5&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est inférieur ou égal à 5&quot;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce message sera affiché quelque soit la valeur de x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x est inférieur ou égal à 5
+Ce message sera affiché quelque soit la valeur de x
+</pre></div>
+</div>
+</div>
+</div>
+<p>Des raccourcis plus complexes sont possibles mais, très vite, ils perdent en lisibilité.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est strictement positif&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est strictement négatif&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n est nul&quot;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ceci est un exemple de if imbriqués&quot;</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n est strictement positif
+Ceci est un exemple de if imbriqués
+</pre></div>
+</div>
+</div>
+</div>
+<div class="question admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Transformez les lignes 3 à 6 du code ci dessous en en une seule ligne.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">mois</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;janvier&quot;</span><span class="p">,</span><span class="s2">&quot;février&quot;</span><span class="p">,</span><span class="s2">&quot;mars&quot;</span><span class="p">,</span><span class="s2">&quot;avril&quot;</span><span class="p">,</span><span class="s2">&quot;mai&quot;</span><span class="p">,</span><span class="s2">&quot;juin&quot;</span><span class="p">,</span><span class="s2">&quot;juillet&quot;</span><span class="p">,</span><span class="s2">&quot;août&quot;</span><span class="p">,</span><span class="s2">&quot;septembre&quot;</span><span class="p">,</span><span class="s2">&quot;octobre&quot;</span><span class="p">,</span><span class="s2">&quot;novembre&quot;</span><span class="p">,</span><span class="s2">&quot;décembre&quot;</span><span class="p">]</span>
+<span class="linenos">2</span><span class="n">m</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="ow">and</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mois</span><span class="p">)</span> <span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Il s&#39;agit du mois de &quot;</span> <span class="o">+</span> <span class="n">mois</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">5</span><span class="k">else</span> <span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le numéro du mois est invalide&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Il s&#39;agit du mois de août
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1">## SOLUTION</span>
+<span class="linenos">2</span><span class="n">mois</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;janvier&quot;</span><span class="p">,</span><span class="s2">&quot;février&quot;</span><span class="p">,</span><span class="s2">&quot;mars&quot;</span><span class="p">,</span><span class="s2">&quot;avril&quot;</span><span class="p">,</span><span class="s2">&quot;mai&quot;</span><span class="p">,</span><span class="s2">&quot;juin&quot;</span><span class="p">,</span><span class="s2">&quot;juillet&quot;</span><span class="p">,</span><span class="s2">&quot;août&quot;</span><span class="p">,</span><span class="s2">&quot;septembre&quot;</span><span class="p">,</span><span class="s2">&quot;octobre&quot;</span><span class="p">,</span><span class="s2">&quot;novembre&quot;</span><span class="p">,</span><span class="s2">&quot;décembre&quot;</span><span class="p">]</span>
+<span class="linenos">3</span><span class="n">m</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Il s&#39;agit du mois de &quot;</span> <span class="o">+</span> <span class="n">mois</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="ow">and</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mois</span><span class="p">)</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le numéro du mois est invalide&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Il s&#39;agit du mois de août
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Card header 1</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Card 1 title</div>
+<p class="sd-card-text">Card body 1</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Card footer 1</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Card header 1</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Card 1 title</div>
+<p class="sd-card-text">Card body 1</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Card footer 1</p>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -627,6 +838,26 @@ Enfin, on passe à la ligne 8 qui n’est pas soumise à condition et imprime le
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principes-de-base">4.1. Principes de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-imbriques-ou-successifs">4.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-instruction-elif">4.3. L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">4.4. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-raccourcis">4.4.1. Les raccourcis</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
