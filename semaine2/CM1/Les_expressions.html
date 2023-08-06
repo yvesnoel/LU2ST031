@@ -404,14 +404,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-complexes">1.4. Les expressions complexes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-numeriques">1.4.1. Les expressions numériques</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques">1.4.1.1. Exemples d’expressions utilisant des opérateurs numériques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">1.4.1.2. Les règles de priorité</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">1.4.2. Les règles de priorité</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.4.3. Les expressions booléennes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.4.3.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.4.3.2. Les principaux opérateurs booléennes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.4.2. Les expressions booléennes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.4.2.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.4.2.2. Les principaux opérateurs booléennes</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines-de-caracteres">1.4.3. Les chaînes de caractères</a></li>
 </ul>
 </li>
 </ul>
@@ -680,7 +681,7 @@ document.write(`
 <section id="les-expressions-complexes">
 <h2><span class="section-number">1.4. </span>Les expressions complexes<a class="headerlink" href="#les-expressions-complexes" title="Permalink to this heading">#</a></h2>
 <p>Dans tous les exemples ci-dessus, nous avions à faire à des expressions simples mais il est aussi possible de construire des expressions plus complexes qui contiennent des opérations. Ces opérations s’appuient en général sur 2 valeurs (on parle d’opérateurs binaires) ou parfois un seule valeur (opérateur unaire). Les valeurs sur lesquelles s’appuie l’opérateur pour calculer l’opération, s’appellent des opérandes.</p>
-<p>Evidemment, la ou les opérandes peuvent être de types variés. La valeur du résultat de l’opération peut aussi être de types variés.</p>
+<p>Evidemment, la ou les opérandes peuvent être de types variés. La valeur du résultat de l’opération peut aussi être de type varié.</p>
 <section id="les-expressions-numeriques">
 <h3><span class="section-number">1.4.1. </span>Les expressions numériques<a class="headerlink" href="#les-expressions-numeriques" title="Permalink to this heading">#</a></h3>
 <p>Vous avez déjà l’habitude d’utiliser votre calculatrice pour effectuer des opérations sur des nombres, voici la liste des opérations connues de python :</p>
@@ -825,7 +826,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>$- l’exemple ci-dessous qui fait appel à la division entière et au modulo et peut s’expliquer de la manière suivante : $5,55 = 4 \times 1,2 + 0,75 $$</p>
+<ul class="simple">
+<li><p>l’exemple ci-dessous qui fait appel à la division entière et au modulo et peut s’expliquer de la manière suivante : $$5,55 = 4 \times 1,2 + 0,75 $$</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">5.55</span> <span class="o">//</span> <span class="mf">1.20</span><span class="p">)</span>
@@ -842,9 +845,8 @@ document.write(`
 </div>
 <p>On pourrait l’illustrer par la situation suivante : “Je dispose de 5,55€, combien de croissants à 1,20 € pièce puis je acheter ? combien me restera-t-il ?”. La réponse est : “Je peux acheter 4 croissants et il me reste 0,75€”.</p>
 </section>
-</section>
 <section id="les-regles-de-priorite">
-<h3><span class="section-number">1.4.2. </span>Les règles de priorité<a class="headerlink" href="#les-regles-de-priorite" title="Permalink to this heading">#</a></h3>
+<h4><span class="section-number">1.4.1.2. </span>Les règles de priorité<a class="headerlink" href="#les-regles-de-priorite" title="Permalink to this heading">#</a></h4>
 <p>Dans une expression numérique sans parenthèse, la priorité d’abord sur les puissances puis sur multiplications et divisons, et enfin sur les additions et soustractions. Le parenthèses permettent d’indiquer précisément comment une expression doit être calculée.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -934,10 +936,11 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section id="les-expressions-booleennes">
-<span id="l-expressionsbooleennes"></span><h3><span class="section-number">1.4.3. </span>Les expressions booléennes<a class="headerlink" href="#les-expressions-booleennes" title="Permalink to this heading">#</a></h3>
+<span id="l-expressionsbooleennes"></span><h3><span class="section-number">1.4.2. </span>Les expressions booléennes<a class="headerlink" href="#les-expressions-booleennes" title="Permalink to this heading">#</a></h3>
 <section id="les-operateurs-ayant-pour-resultat-une-valeur-booleenne">
-<h4><span class="section-number">1.4.3.1. </span>Les opérateurs ayant pour résultat une valeur booléenne<a class="headerlink" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.2.1. </span>Les opérateurs ayant pour résultat une valeur booléenne<a class="headerlink" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne" title="Permalink to this heading">#</a></h4>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Symbole</p></th>
@@ -1015,14 +1018,14 @@ document.write(`
 </div>
 </section>
 <section id="les-principaux-operateurs-booleennes">
-<h4><span class="section-number">1.4.3.2. </span>Les principaux opérateurs booléennes<a class="headerlink" href="#les-principaux-operateurs-booleennes" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.2.2. </span>Les principaux opérateurs booléennes<a class="headerlink" href="#les-principaux-operateurs-booleennes" title="Permalink to this heading">#</a></h4>
 <p>Il existe plusieurs opérateurs, voici les principaux :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> : <code class="docutils literal notranslate"><span class="pre">not</span></code> est un opérateur unaire. Le résultat de cet opérateur sur une valeur booléenne est le contraire de cette valeur. Le contraire de <code class="docutils literal notranslate"><span class="pre">True</span></code> est <code class="docutils literal notranslate"><span class="pre">False</span></code> et le contraire de <code class="docutils literal notranslate"><span class="pre">False</span></code> est <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> : fait un ET logique des booléens à gauche et droite du <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> : fait un OU logique des booléens à gauche et droite du <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
 </ul>
-<p>Soient a et b deux booléens. On peut résumer le comportement des ET et OU logiques dans le tableau suivant (appelé Table de vérité):\</p>
+<p>Soient a et b deux booléens. On peut résumer le comportement des ET et OU logiques dans le tableau suivant (appelé Table de vérité):</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>a</p></th>
@@ -1085,6 +1088,61 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
+<section id="les-chaines-de-caracteres">
+<h3><span class="section-number">1.4.3. </span>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this heading">#</a></h3>
+<p>Les chaînes de caractères acceptent quelques opérateurs.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> : Opérateur de concaténation. Il permet de “coller” 2 chaînes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Bonjour&quot;</span> <span class="o">+</span> <span class="s2">&quot; à toutes et tous&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bonjour à toutes et tous&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> : Opérateur de répétition. Il permet de répéter la chaine qui le précède le nombre de fois qui sui l’étoile (nécessairement entier)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hop&quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pom &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hophophop
+Pom Pom Pom 
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> : Indique si une chaîne est incluse dans une autre. Il existe aussi <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tout&quot;</span> <span class="ow">in</span> <span class="s2">&quot;Bonjour à toutes et tous&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;ph&quot;</span> <span class="ow">in</span> <span class="s2">&quot;hop&quot;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sorbonne&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;Sorbonne Université&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -1167,14 +1225,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-complexes">1.4. Les expressions complexes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-numeriques">1.4.1. Les expressions numériques</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques">1.4.1.1. Exemples d’expressions utilisant des opérateurs numériques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">1.4.1.2. Les règles de priorité</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">1.4.2. Les règles de priorité</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.4.3. Les expressions booléennes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.4.3.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.4.3.2. Les principaux opérateurs booléennes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.4.2. Les expressions booléennes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.4.2.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.4.2.2. Les principaux opérateurs booléennes</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines-de-caracteres">1.4.3. Les chaînes de caractères</a></li>
 </ul>
 </li>
 </ul>
