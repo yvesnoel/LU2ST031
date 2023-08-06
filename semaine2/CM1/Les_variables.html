@@ -400,8 +400,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-addition-affectation">2.6.1. L’addition affectation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">2.6.2. 🚀 Pour aller plus loin :</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-variables">2.6.2.1. Zones de la mémoire et variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">2.6.2. 🚀 Pour aller plus loin :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tester-le-type-d-une-variable">2.6.3. Tester le type d’une variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-variables">2.6.3.1. Zones de la mémoire et variables</a></li>
 </ul>
 </li>
 </ul>
@@ -441,7 +442,7 @@ En Python, il n’est pas nécessaire de créer au préalable une variable (on a
 <section id="types-de-variables">
 <h2><span class="section-number">2.2. </span>Types de variables<a class="headerlink" href="#types-de-variables" title="Permalink to this heading">#</a></h2>
 <p>Les valeurs qui sont affectées dans des variables sont le résultat d’une expression.
-Le type de ces variables correspond donc au type de l’expression qu’elle contient. Comme nous l’avons vu précédemment, les quatre types principaux sont : les entiers (<code class="docutils literal notranslate"><span class="pre">integer</span></code>), les nombres à virgule (<code class="docutils literal notranslate"><span class="pre">float</span></code>), les chaines de caractères (<code class="docutils literal notranslate"><span class="pre">str</span></code>) et les booléens (<code class="docutils literal notranslate"><span class="pre">bool</span></code>).</p>
+Le type de ces variables correspond donc au type de l’expression qu’elle contient. Comme nous l’avons vu précédemment, les quatre types principaux sont : les entiers (<code class="docutils literal notranslate"><span class="pre">int</span></code>), les nombres à virgule (<code class="docutils literal notranslate"><span class="pre">float</span></code>), les chaines de caractères (<code class="docutils literal notranslate"><span class="pre">str</span></code>) et les booléens (<code class="docutils literal notranslate"><span class="pre">bool</span></code>).</p>
 </section>
 <section id="noms-de-variable">
 <h2><span class="section-number">2.3. </span>Noms de variable<a class="headerlink" href="#noms-de-variable" title="Permalink to this heading">#</a></h2>
@@ -565,8 +566,27 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </section>
 <section id="pour-aller-plus-loin">
 <h3><span class="section-number">2.6.2. </span>🚀 Pour aller plus loin :<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="tester-le-type-d-une-variable">
+<h3><span class="section-number">2.6.3. </span>Tester le type d’une variable<a class="headerlink" href="#tester-le-type-d-une-variable" title="Permalink to this heading">#</a></h3>
+<p>Pour tester le type d’une variable, vous pouvez comparer le résultat de la fonction <code class="docutils literal notranslate"><span class="pre">type</span></code> à un type :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
 <section id="zones-de-la-memoire-et-variables">
-<span id="l-memoirevariables"></span><h4><span class="section-number">2.6.2.1. </span>Zones de la mémoire et variables<a class="headerlink" href="#zones-de-la-memoire-et-variables" title="Permalink to this heading">#</a></h4>
+<span id="l-memoirevariables"></span><h4><span class="section-number">2.6.3.1. </span>Zones de la mémoire et variables<a class="headerlink" href="#zones-de-la-memoire-et-variables" title="Permalink to this heading">#</a></h4>
 <p>Comme nous l’avons vu en introduction de ce chapitre, une variable permet de repérer, à l’aide d’un nom, des zones de la mémoire de l’ordinateur où sont stockées des valeurs.Ces zones de la mémoire de l’ordinateur sont repérées par un nombre que l’on appelle aussi adresse. Il est possible de récupérer cette adresse à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">id</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,9 +600,9 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140270351647600
-140270283532208
-140270300638864
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140108624374960
+140108675416240
+140108624375344
 </pre></div>
 </div>
 </div>
@@ -610,12 +630,12 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140270436987392
-140270436987392
-140270424526384
-140270424526384
-140270283362384
-140270283362416
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140108760580608
+140108760580608
+140108748119600
+140108748119600
+140108623855984
+140108623855920
 </pre></div>
 </div>
 </div>
@@ -699,8 +719,9 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-addition-affectation">2.6.1. L’addition affectation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">2.6.2. 🚀 Pour aller plus loin :</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-variables">2.6.2.1. Zones de la mémoire et variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">2.6.2. 🚀 Pour aller plus loin :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tester-le-type-d-une-variable">2.6.3. Tester le type d’une variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-la-memoire-et-variables">2.6.3.1. Zones de la mémoire et variables</a></li>
 </ul>
 </li>
 </ul>
