@@ -552,6 +552,19 @@ document.write(`
 </div>
 </div>
 </div>
+<p>On peut utiliser la notation scientifique :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">12.345e-6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2345e-05
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>Du texte qu’on appellera chaine de caractères (<em>strings</em> en anglais, <code class="docutils literal notranslate"><span class="pre">str</span></code> pour Python)</p></li>
 </ul>
@@ -847,7 +860,7 @@ document.write(`
 </section>
 <section id="les-regles-de-priorite">
 <h4><span class="section-number">1.4.1.2. </span>Les règles de priorité<a class="headerlink" href="#les-regles-de-priorite" title="Permalink to this heading">#</a></h4>
-<p>Dans une expression numérique sans parenthèse, la priorité d’abord sur les puissances puis sur multiplications et divisons, et enfin sur les additions et soustractions. Le parenthèses permettent d’indiquer précisément comment une expression doit être calculée.</p>
+<p>Dans une expression numérique sans parenthèse, la priorité va d’abord sur les puissances puis sur multiplications et divisons, et enfin sur les additions et soustractions. Le parenthèses permettent d’indiquer précisément comment une expression doit être calculée.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span>
@@ -910,7 +923,7 @@ document.write(`
 </div>
 <div class="note admonition">
 <p class="admonition-title">Remarque</p>
-<p>Python n’intègre pas dans ses commandes de base les constantes et fonction mathématiques usuelles. Pour les utiliser il faut importer un module spécifique : le module math. Nous reviendrons plus loin dans ce cours sur les modules et la façon de les importer mais l’exemple ci-dessous vous permet d’ores et déjà de les utiliser.</p>
+<p>Python n’intègre pas dans ses commandes de base les constantes et fonction mathématiques usuelles (à part <code class="docutils literal notranslate"><span class="pre">abs</span></code> pour la valeur absolue). Pour les utiliser il faut importer un module spécifique : le module math. Nous reviendrons plus loin dans ce cours sur les modules et la façon de les importer mais l’exemple ci-dessous vous permet d’ores et déjà de les utiliser.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1016,6 +1029,51 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Les nombres flottants ne sont pas mémorisés avec une précision infinie. Ils sont mémorisés avec un certain nombre de décimales. Dans l’exemple ci-dessous, on peut s’en apercevoir.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">3.0</span> <span class="o">-</span> <span class="mf">2.7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2999999999999998
+</pre></div>
+</div>
+</div>
+</div>
+<p>Du coup si on effectue la comparaison suivante le résultat ne sera pas celui auquel on aurait pu s’attendre :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">3.0</span> <span class="o">-</span> <span class="mf">2.7</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ceci peut être généralisé pour tous les flottants : Il ne faut pas tester l’égalité stricte entre deux nombres flottants. Il faut tester leur égalité, à une certaine précision de la manière suivante :<br />
+<strong><code class="docutils literal notranslate"><span class="pre">abs(flottant_1</span> <span class="pre">-</span> <span class="pre">flottant_2)</span> <span class="pre">&lt;</span> <span class="pre">precision</span></code></strong> <br />
+Par exemple, si je veux tester si 3.0 -2.7 est égal à 0.3 à 10<sup>-6</sup> près il faut écrire :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">((</span><span class="mf">3.0</span> <span class="o">-</span> <span class="mf">2.7</span><span class="p">)</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>3.0 - 2.7 et 0.3 sont donc égaux à 10<sup>-6</sup> près</p>
 </section>
 <section id="les-principaux-operateurs-booleennes">
 <h4><span class="section-number">1.4.2.2. </span>Les principaux opérateurs booléennes<a class="headerlink" href="#les-principaux-operateurs-booleennes" title="Permalink to this heading">#</a></h4>
@@ -1113,13 +1171,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hop&quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pom &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pom &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hophophop
-Pom Pom Pom 
+Pom Pom Pom Pom Pom 
 </pre></div>
 </div>
 </div>
