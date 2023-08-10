@@ -396,7 +396,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-principe">2.1. Le principe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-variables">2.2. Types de variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variable">2.3. Noms de variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe-de-l-affectation">2.4. La syntaxe de l’affectation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe-de-l-affectation">2.4. La syntaxe de l’affectation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regles-a-respecter-pour-nommer-les-variables">2.4.1. Règles à respecter pour nommer les variables</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-addition-affectation">2.6.1. L’addition affectation</a></li>
@@ -460,6 +463,57 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 <p>Dans cet exemple on affecte la valeur 12 dans un variable dont le nom est <code class="docutils literal notranslate"><span class="pre">ma_variable</span></code></p>
+<section id="regles-a-respecter-pour-nommer-les-variables">
+<h3><span class="section-number">2.4.1. </span>Règles à respecter pour nommer les variables<a class="headerlink" href="#regles-a-respecter-pour-nommer-les-variables" title="Permalink to this heading">#</a></h3>
+<p>Les noms de variables doivent respecter les contraintes suivantes :</p>
+<ul class="simple">
+<li><p>un nom de variable ne contient que des lettres (majuscules ou minuscules), des chiffres ou le caractère <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p>un nom de variable doit <strong>commencer</strong> par un lettre ou dans certains cas par <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p>il ne faut pas utiliser un mot réservé (par exemple <code class="docutils literal notranslate"><span class="pre">print</span></code>) de Python comme nom de variable (cela ne génère pas une erreur mais c’est très fortement déconseillé).</p></li>
+<li><p>les lettres majuscules et minuscules sont des lettres différentes</p></li>
+</ul>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nom1</span> <span class="o">=</span> <span class="s1">&#39;titi&#39;</span> <span class="c1"># Nom de variable valide</span>
+<span class="n">nom1</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span> <span class="c1"># Nom de variable valide différent du précédent</span>
+<span class="n">plus_grand_nombre</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Nom de varaible valide</span>
+<span class="nb">print</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#Nom de variable valide mais à éviter absolument (on ne peut plus utiliser la fonction print après cette ligne)</span>
+<span class="mi">1</span><span class="n">truc</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Nom de variable INvalide</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">truc</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Nom de variable INvalide</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible de supprimer une variable grâce à la fonction <code class="docutils literal notranslate"><span class="pre">del</span></code>.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span><span class="mi">789</span>
+<span class="k">del</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span><span class="mi">789</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">del</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;a&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="l-utilisation-du-contenu-d-une-variable">
 <h2><span class="section-number">2.5. </span>L’utilisation du contenu d’une variable<a class="headerlink" href="#l-utilisation-du-contenu-d-une-variable" title="Permalink to this heading">#</a></h2>
@@ -600,9 +654,9 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140230922420016
-140230888622896
-140230973429392
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140379341228016
+140379342810672
+140379341226384
 </pre></div>
 </div>
 </div>
@@ -630,12 +684,12 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140231058690560
-140231058690560
-140231046229360
-140231046229360
-140230922419504
-140230888370224
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140379462795776
+140379462795776
+140379450334704
+140379450334704
+140379341690128
+140379341692208
 </pre></div>
 </div>
 </div>
@@ -715,7 +769,10 @@ False
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-principe">2.1. Le principe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-variables">2.2. Types de variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variable">2.3. Noms de variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe-de-l-affectation">2.4. La syntaxe de l’affectation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-syntaxe-de-l-affectation">2.4. La syntaxe de l’affectation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regles-a-respecter-pour-nommer-les-variables">2.4.1. Règles à respecter pour nommer les variables</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-utilisation-du-contenu-d-une-variable">2.5. L’utilisation du contenu d’une variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changer-le-contenu-d-une-variable">2.6. Changer le contenu d’une variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-addition-affectation">2.6.1. L’addition affectation</a></li>
