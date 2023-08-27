@@ -31,10 +31,14 @@ repository:
 launch_buttons:
   thebe                  : true
   binderhub_url: "https://mybinder.org"
-  colab_url: "https://colab.research.google.com"
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_issues_button: true
   use_repository_button: false
+  
+html:
+    extra_footer: |
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Cc_by-nc_icon.svg" alt="Cc_by-nc"/>
+        </div>
