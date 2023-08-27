@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. <code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. Les branchements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">5. Les boucles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. L’environnement de développement Spyder</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Les fonctions</a></li>
@@ -381,7 +381,6 @@ document.write(`
                   
   <section id="les-fonctions">
 <h1><span class="section-number">7. </span>Les fonctions<a class="headerlink" href="#les-fonctions" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031.git/master?labpath=semaine8%2FCM7%2FLes_fonctions.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapître, vous serez capable de :</p>
@@ -456,12 +455,64 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.24099550698449934
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7665283026959318
 </pre></div>
 </div>
 </div>
 </div>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">random</span></code> (du module <code class="docutils literal notranslate"><span class="pre">random</span></code>) a été appelé <strong>sans argument</strong>. Elle génère un nombre aléatoire entre 0.0 et 1.0 et le renvoie (type <code class="docutils literal notranslate"><span class="pre">float</span></code>).</p>
+<p>La valeur renvoyée par une fonction peut être affectée dans une variable :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="mf">9.8765</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.88
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou alors être utilisé dans une expression :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">+</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.47213595499958
+</pre></div>
+</div>
+</div>
+</div>
+<div class="question admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Affectez la valeur arrondie à 2 décimales de $\sin(\frac{2\pi}{3})$, à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> en appelant la fonction <code class="docutils literal notranslate"><span class="pre">sin</span></code> (du module <code class="docutils literal notranslate"><span class="pre">math</span></code>). Affichez le contenu de <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SOLUTION</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.87
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="definition-d-une-fonction">
 <h2><span class="section-number">7.3. </span>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Permalink to this heading">#</a></h2>
@@ -526,12 +577,45 @@ False
 </div>
 </div>
 </div>
+<div class="question admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Définissez une fonction dont nom est <code class="docutils literal notranslate"><span class="pre">maFonction</span></code> qui n’a qu’un seul paramètre, <code class="docutils literal notranslate"><span class="pre">n</span></code>. Si ce paramètre est strictement plus grand  que 10, elle le divise par 10, sinon elle l’incrémente de 1. Elle renvoie dans tous les cas le nombre ainsi obtenu.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SOLUTION</span>
+<span class="k">def</span> <span class="nf">maFonction</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">/</span><span class="mi">10</span> <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">10</span> <span class="k">else</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">maFonction</span><span class="p">(</span><span class="mi">23</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maFonction</span><span class="p">(</span><span class="mf">8.2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3
+9.2
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="pour-aller-plus-loin">
 <h2><span class="section-number">7.4. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
 <section id="les-fonctions-lambda">
 <h3><span class="section-number">7.4.1. </span>Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#les-fonctions-lambda" title="Permalink to this heading">#</a></h3>
-<p>Il est possible de définir des fonctions à partir d’une autre fonction, appelée <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, qui est composée d’une seul instruction (une seule ligne). La syntaxe est :</p>
+<p>Il est possible de définir<code class="docutils literal notranslate"><span class="pre">{admonition}</span> <span class="pre">À</span> <span class="pre">vous</span> <span class="pre">de</span> <span class="pre">jouer</span> <span class="pre">:class:</span> <span class="pre">question</span> <span class="pre">Créez</span> <span class="pre">un</span> <span class="pre">code</span> <span class="pre">qui</span> <span class="pre">affiche</span> <span class="pre">le</span> <span class="pre">message</span> <span class="pre">_&quot;Le</span> <span class="pre">nombre</span> <span class="pre">entier</span> <span class="pre">x</span> <span class="pre">est</span> <span class="pre">pair&quot;_</span> <span class="pre">quand</span> <span class="pre">l'entier</span> <span class="pre">contenu</span> <span class="pre">dans</span> <span class="pre">la</span> <span class="pre">variable</span> <span class="pre">x</span> <span class="pre">est</span> <span class="pre">pair</span> <span class="pre">et</span> <span class="pre">le</span> <span class="pre">message</span> <span class="pre">_&quot;Le</span> <span class="pre">nombre</span> <span class="pre">entier</span> <span class="pre">x</span> <span class="pre">est</span> <span class="pre">impair&quot;_</span> <span class="pre">dans</span> <span class="pre">le</span> <span class="pre">cas</span> <span class="pre">contraire.</span> <span class="pre">N'oubliez</span> <span class="pre">pas</span> <span class="pre">de</span> <span class="pre">tester</span> <span class="pre">le</span> <span class="pre">bon</span> <span class="pre">fonctionnement</span> <span class="pre">de</span> <span class="pre">votre</span> <span class="pre">code</span> <span class="pre">en</span> <span class="pre">affectant</span>&#160; <span class="pre">différentes</span> <span class="pre">valeurs</span> <span class="pre">entières</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">variable</span> <span class="pre">`x`</span> <span class="pre">au</span> <span class="pre">début</span> <span class="pre">de</span> <span class="pre">votre</span> <span class="pre">code.</span> </code> des fonctions à partir d’une autre fonction, appelée <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, qui est composée d’une seul instruction (une seule ligne). La syntaxe est :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom_de_la_fonction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">parametre_1</span><span class="p">,</span> <span class="n">parametre_2</span><span class="p">,</span> <span class="o">...</span> <span class="p">:</span> <span class="n">valeur_renvoyee</span>
 </pre></div>
 </div>
@@ -550,14 +634,16 @@ False
 </div>
 </div>
 </div>
+<p>Dans l’exemple ci-dessus, ligne 1, la fonction <code class="docutils literal notranslate"><span class="pre">lambda</span></code> est définie comme prenant 2 arguments (<code class="docutils literal notranslate"><span class="pre">a</span></code>et <code class="docutils literal notranslate"><span class="pre">b</span></code>). Elle renvoie la liste composée <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b]</span></code> lorsque <code class="docutils literal notranslate"><span class="pre">a</span></code> est inférieur à <code class="docutils literal notranslate"><span class="pre">b</span></code> ou alors la liste <code class="docutils literal notranslate"><span class="pre">[b,</span> <span class="pre">a]</span></code> dans le cas contraire (il s’agit d’<a class="reference internal" href="../../semaine2/CM1/Les_variables.html#l-syntaxeaffectation"><span class="std std-ref">un <code class="docutils literal notranslate"><span class="pre">if</span></code> raccourci</span></a>). Cette fonction définie “à la volée” est affectée à <code class="docutils literal notranslate"><span class="pre">ordonne</span></code> ; c’est à dire que ordonne est maintenant une fonction qui se comporte exactement comme la fonction <code class="docutils literal notranslate"><span class="pre">lambda</span></code> définie ligne 1. Les lignes 2 et 3 montrent 2 appels à la fonction <code class="docutils literal notranslate"><span class="pre">ordonne</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ordonne</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">=</span><span class="n">ordonne</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 50]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 12
 </pre></div>
 </div>
 </div>
