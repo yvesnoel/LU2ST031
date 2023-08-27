@@ -1,2 +1,3 @@
 dependencies:
-  - jupyterlab_myst
+  - pip:
+    - jupyterlab_myst
