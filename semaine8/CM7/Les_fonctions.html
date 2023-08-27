@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Les fonctions &#8212; Cours de LU2ST031</title>
+    <title>7. Les fonctions &#8212; Cours de LU2ST031</title>
   
   
   
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'semaine8/CM7/Les_fonctions';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8. Algorithmes et logigrammes" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html" />
+    <link rel="prev" title="6. L’environnement de développement Spyder" href="../../semaine7/CM6/Tutoriel_Spyder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,15 +156,16 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. <code class="docutils literal notranslate"><span class="pre">if</span></code> : l’instruction pour créer des branchements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">5. Les boucles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. L’environnement de développement Spyder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">7. Algorithmes et logigrammes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">8. Débuguer avec Spyder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Algorithmes_et_logigrammes.html">8. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine9/CM8/Debug_spyder.html">9. Débuguer avec Spyder</a></li>
 </ul>
 
     </div>
@@ -235,24 +238,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/yvesnoel/LU2ST031/blob/master/semaine8/CM7/Les_fonctions.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-      
-      
-      
       <li>
 <button onclick="initThebeSBT()"
   class="btn btn-sm btn-launch-thebe dropdown-item"
@@ -270,21 +255,6 @@ const thebe_selector_output = ".output, .cell_output"
       
   </ul>
 </div>
-
-
-
-<a href="https://github.com/yvesnoel/LU2ST031/issues/new?title=Issue%20on%20page%20%2Fsemaine8/CM7/Les_fonctions.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button"
-   title="Open an issue"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-
-</a>
 
 
 
@@ -391,10 +361,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Définition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appel-de-fonction">Appel de fonction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-d-une-fonction">Définition d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">7.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appel-de-fonction">7.2. Appel de fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-d-une-fonction">7.3. Définition d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">7.4. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-fonctions-lambda">7.4.1. Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -407,7 +380,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="les-fonctions">
-<h1>Les fonctions<a class="headerlink" href="#les-fonctions" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Les fonctions<a class="headerlink" href="#les-fonctions" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031.git/master?labpath=semaine8%2FCM7%2FLes_fonctions.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
@@ -421,17 +394,17 @@ document.write(`
 </ul>
 </div>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Nous avons déjà vu dans les chapîtres précédents des fonctions Python comme <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">round</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code> ou encore <code class="docutils literal notranslate"><span class="pre">print</span></code>. Même si ces fonctions vous apparaissent certainement pour le moment comme des boites noires, nous pouvons quand même faire quelques remarques.
 A chaque fois, pour les utiliser, on dit <strong>appeler</strong>, nous avons utilisé leur nom suivi d’une paire de parenthèses. A l’intérieur de ces parenthèses, nous avons spécifié ce que devait utiliser ces fonctions ; on appellera cela un <strong>argument</strong>.
-Une fonction peut aussi n’avoir aucun argument, ou même plusieurs arguments. Nous avons aussi constaté que les fonctions effectue une action et que la plupart (mais pas toutes) renvoie un objet (qui peut être de n’importe quel type).</p>
-</section>
-<section id="definition">
-<h2>Définition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+Une fonction peut aussi n’avoir aucun argument, ou plusieurs arguments. Nous avons aussi constaté que les fonctions effectue une action et que la plupart (mais pas toutes) renvoie un objet (qui peut être de n’importe quel type).</p>
+<div class="tip admonition">
+<p class="admonition-title">En résumé</p>
 <p>Une fonction est un bloc d’instructions qui est exécuté quand la fonction est appelée. La fonction “communique” avec le programme principal grâce aux arguments (en entrée) et grâce à ce qui est renvoyé (en sortie).</p>
+</div>
 </section>
 <section id="appel-de-fonction">
-<h2>Appel de fonction<a class="headerlink" href="#appel-de-fonction" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Appel de fonction<a class="headerlink" href="#appel-de-fonction" title="Permalink to this heading">#</a></h2>
 <p>Utilisons quelques exemples d’appels de fonctions et commentons les.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -446,7 +419,7 @@ Une fonction peut aussi n’avoir aucun argument, ou même plusieurs arguments. 
 </div>
 </div>
 <p>Ici, la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code> a été appelée avec un seul argument de type <code class="docutils literal notranslate"><span class="pre">str</span></code>.
-Elle calcule la longueur de cette chaîne de caractères et renvoie ce nombre entier.</p>
+Elle calcule la longueur de cette chaîne de caractères et renvoie ce nombre (type <code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -473,7 +446,7 @@ Elle calcule la longueur de cette chaîne de caractères et renvoie ce nombre en
 </div>
 </div>
 </div>
-<p>La fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> a été appelée avec un seul argument de type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> a été appelée avec un seul argument ; ici de type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.
 Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,16 +456,113 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8651518140234187
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.24099550698449934
 </pre></div>
 </div>
 </div>
 </div>
-<p>La fonction <code class="docutils literal notranslate"><span class="pre">random</span></code> (du module <code class="docutils literal notranslate"><span class="pre">random</span></code>) a été appelé <strong>sans argument</strong>. Elle génère un nombre aléatoire entre 0.0 et 1.0 et le renvoie ce <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">random</span></code> (du module <code class="docutils literal notranslate"><span class="pre">random</span></code>) a été appelé <strong>sans argument</strong>. Elle génère un nombre aléatoire entre 0.0 et 1.0 et le renvoie (type <code class="docutils literal notranslate"><span class="pre">float</span></code>).</p>
 </section>
 <section id="definition-d-une-fonction">
-<h2>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Permalink to this heading">#</a></h2>
-<p>Jusqu’à présent nous avons vu des fonctions de base de Python. Mais il est aussi possible d’en créer. On appelle cela <strong>définir</strong> une fonction.</p>
+<h2><span class="section-number">7.3. </span>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Permalink to this heading">#</a></h2>
+<p>Jusqu’à présent nous avons vu des fonctions de base de Python. Mais il est aussi possible d’en créer. On appelle cela <strong>définir</strong> une fonction. Pour définir une fonction il faut suivre la syntaxe suivante :
+la première ligne de la définition d’un fonction commence par le mot-clé <code class="docutils literal notranslate"><span class="pre">def</span></code>. Il est suivi, après un espace, par le nom de la fonction. On trouve ensuite les une paire de parenthèses encadrant une liste de paramètres (ils sont séparés par des virgules). Les paramètres sont des noms de variables qui seront utilisés dans le corps de la fonction. Lors de l’appel d’une fonction, ces paramètres prennent les valeurs données en arguments. Pour finir, la première ligne se termine par le symbole <code class="docutils literal notranslate"><span class="pre">:</span></code>
+Après la première ligne se trouve le bloc qui forme le corps de la fonction. Puisqu’il s’agit d’un bloc, il doit être indenté par rapport à la première ligne. Lorsue la fonction renvoie quelque chose, elle doit comporter une ligne avec l’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code> suivie de l’expression dont la valeur doit être renvoyée.</p>
+<div class="tip admonition">
+<p class="admonition-title">En résumé</p>
+<p>la syntaxe pour la définition d’une fonction est</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span> <span class="p">(</span> <span class="n">parametre_1</span><span class="p">,</span> <span class="n">parametre_2</span> <span class="p">)</span> <span class="p">:</span>
+    <span class="c1"># Ceci est un exemple pour 2 paramètres</span>
+    <span class="n">corps_de_la_fonction</span>
+    <span class="k">return</span> <span class="n">a_renvoyer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span> <span class="p">(</span> <span class="n">parametre_1</span><span class="p">,</span> <span class="n">parametre_2</span> <span class="p">)</span> <span class="p">:</span>
+    <span class="c1"># Ceci est un exemple pour 2 paramètres</span>
+    <span class="n">corps_de_la_fonction</span>
+    <span class="k">return</span> <span class="n">a_renvoyer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans l’exemple ci-dessous vous trouverez la définition d’une fonction <code class="docutils literal notranslate"><span class="pre">estpair</span></code> qui à partir d’un nombre, <code class="docutils literal notranslate"><span class="pre">nb</span></code>, renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> quand il est un entier pair et <code class="docutils literal notranslate"><span class="pre">False</span></code> dans le cas contraire (entier impair et non entier).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estpair</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">nb</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il était aussi possible de définir cette fonction de la manière suivante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estpair</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nb</span><span class="p">))</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="p">(</span><span class="n">nb</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Une fois cette fonction définie, nous pouvons l’appeler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">estpair</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">estpair</span><span class="p">(</span><span class="mi">17</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">estpair</span><span class="p">(</span><span class="mf">18.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pour-aller-plus-loin">
+<h2><span class="section-number">7.4. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<section id="les-fonctions-lambda">
+<h3><span class="section-number">7.4.1. </span>Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#les-fonctions-lambda" title="Permalink to this heading">#</a></h3>
+<p>Il est possible de définir des fonctions à partir d’une autre fonction, appelée <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, qui est composée d’une seul instruction (une seule ligne). La syntaxe est :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom_de_la_fonction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">parametre_1</span><span class="p">,</span> <span class="n">parametre_2</span><span class="p">,</span> <span class="o">...</span> <span class="p">:</span> <span class="n">valeur_renvoyee</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ordonne</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">:</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">]</span> <span class="k">if</span> <span class="n">a</span><span class="o">&lt;</span><span class="n">b</span> <span class="k">else</span> <span class="p">[</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ordonne</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ordonne</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 50]
+[8, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ordonne</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 50]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -527,6 +597,24 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../semaine7/CM6/Tutoriel_Spyder.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>L’environnement de développement Spyder</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../semaine9/CM8/Algorithmes_et_logigrammes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Algorithmes et logigrammes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -545,10 +633,13 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Définition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appel-de-fonction">Appel de fonction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-d-une-fonction">Définition d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">7.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appel-de-fonction">7.2. Appel de fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-d-une-fonction">7.3. Définition d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">7.4. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-fonctions-lambda">7.4.1. Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -585,6 +676,12 @@ By Valentin RINEAU et Yves NOEL
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Cc_by-nc_icon.svg" alt="Cc_by-nc"/>
+</div>
+
+</div>
   </div>
   
 </div>
