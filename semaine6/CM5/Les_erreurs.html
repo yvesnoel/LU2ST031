@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TP 1 &#8212; Python pour les Géosciences</title>
+    <title>Les messages d’erreur &#8212; Python pour les Géosciences</title>
   
   
   
@@ -61,7 +61,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine3/TP1/TP1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'semaine6/CM5/Les_erreurs';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -157,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine2/CM1/Les_variables.html">2. Les variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../semaine3/CM2/Les_listes.html">3. Les listes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine4/CM3/Les_branchements.html">4. Les branchements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine5/CM4/Les_boucles.html">5. Les boucles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../semaine7/CM6/Tutoriel_Spyder.html">6. L’environnement de développement Spyder</a></li>
@@ -218,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031/master?urlpath=lab/tree/semaine3/TP1/TP1.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031/master?urlpath=lab/tree/semaine6/CM5/Les_erreurs.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/semaine3/TP1/TP1.ipynb" target="_blank"
+      <li><a href="../../_sources/semaine6/CM5/Les_erreurs.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,9 +336,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -349,22 +347,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TP 1</h1>
+    <h1>Les messages d’erreur</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -374,96 +361,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="tp-1">
-<h1>TP 1<a class="headerlink" href="#tp-1" title="Permalink to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Bienvenue sur JupyterHub. Vous êtes dans le notebook du TP n°1.
-<a class="reference external" href="https://yvesnoel.github.io/LU2ST031/semaine1/CM0/Introduction.html">Nous avons vu</a> qu’un notebook est constitué de cellules.
-Ces cellules peuvent contenir du code Python ou bien du text Markdown (<a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">mémo Markdown ici</a>).
-Dans les notebooks de cours, vous trouverez une alternance de textes (introduction, énoncés, explications)
-et de code Python (exemples, code à compléter ou modifier, ou code à créer complètement.
-Certaines cellules ne sont pas modifiables, d’autres le sont si vous le désirez et d’autres encore DOIVENT être complétez (et seront évaluées).
-Lorsque vous aurez terminé ce TP, vous le soumettrez grâce à Jupyterhub (cf procédure ici).
-Votre enseignant pourra alors le récupérer, le corriger si besoin et faire des remarques éventuelles.</p>
-<p>Lors de cette séance vous allez découvrir l’environement que nous utiliserons tout au long du semestre.
-Vous êt</p>
-<div class="hint admonition">
-<p class="admonition-title">Objectifs</p>
-<p>A l’issue de ce TP, vous serez capable de :</p>
-<ul class="simple">
-<li><p>reconnaître le type d’une expression</p></li>
-<li><p>évaluer une expression comme le ferait Python en appliquant les règles de priorité</p></li>
-<li><p>traduire une expression mathématique relativement simple en une expression Python</p></li>
-<li><p>affecter le résultat d’une expression à une variable</p></li>
-<li><p>utiliser le contenu d’une variable dans une expression</p></li>
-<li><p>reconnaître le type d’une variable déjà existante</p></li>
-<li><p>modifier le contenu d’une variable déjà existante</p></li>
-</ul>
-</div>
-</section>
-<section id="exercice-1">
-<h2>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this heading">#</a></h2>
-<p>Ecrire une expression qui effectue le calcul suivant : $$\frac{4+3\times 5^2}{2\times 4-6}$$</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercice 1</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2">
-<h2>Exercice 2<a class="headerlink" href="#exercice-2" title="Permalink to this heading">#</a></h2>
-<p>Ecrire le code correspondant à la description suivante.</p>
-<ul class="simple">
-<li><p>Affecter 8 à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
-<li><p>Affecter le carré de la valeur contenue dans  <code class="docutils literal notranslate"><span class="pre">x</span></code> à la variable <code class="docutils literal notranslate"><span class="pre">y</span></code> (sans écrire explicitement 64).</p></li>
-<li><p>Augmenter le contenu de <code class="docutils literal notranslate"><span class="pre">x</span></code> de 3</p></li>
-<li><p>Diviser le contenu de <code class="docutils literal notranslate"><span class="pre">y</span></code> par 6</p></li>
-<li><p>Imprimer à l’écran le contenu de <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p>Imprimer à l’écran le type de <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
-<li><p>Imprimer à l’écran le type de l’expression <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercice 2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-3">
-<h2>Exercice 3<a class="headerlink" href="#exercice-3" title="Permalink to this heading">#</a></h2>
-<p>Compléter le code ci-dessous pour qu’il imprime le message :<br />
-Sorbonne Université - Sorbonne Université - Sorbonne Université - Sorbonne Université</p>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercice 3</span>
-<span class="n">chaine1</span> <span class="o">=</span> <span class="s2">&quot;Sorbonne&quot;</span>
-<span class="n">Chaine2</span> <span class="o">=</span> <span class="s2">&quot;Université&quot;</span>
-<span class="n">chaines_concatenees</span> <span class="o">=</span> 
-<span class="n">séparateur</span> <span class="o">=</span> 
-<span class="n">chaine_repetee</span> <span class="o">=</span> 
-<span class="n">message_final</span> <span class="o">=</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">message_final</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; Yeah !&quot;</span><span class="o">*</span><span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; Yeah ! Yeah ! Yeah !&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+  <section id="les-messages-d-erreur">
+<h1>Les messages d’erreur<a class="headerlink" href="#les-messages-d-erreur" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,7 +378,7 @@ Sorbonne Université - Sorbonne Université - Sorbonne Université - Sorbonne Un
         },
         kernelOptions: {
             name: "python3",
-            path: "./semaine3/TP1"
+            path: "./semaine6/CM5"
         },
         predefinedOutput: true
     }
@@ -506,23 +405,6 @@ Sorbonne Université - Sorbonne Université - Sorbonne Université - Sorbonne Un
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
