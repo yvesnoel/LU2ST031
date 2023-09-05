@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Les boucles &#8212; Python pour les Géosciences</title>
+    <title>5. Les boucles &#8212; Python pour les Géosciences</title>
   
   
   
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'CM4/Les_boucles';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Les messages d’erreur" href="../CM5/Les_erreurs.html" />
+    <link rel="prev" title="4. Les branchements" href="../CM3/Les_branchements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,7 +156,19 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CM1/Les_expressions.html">1. Les expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM1/Les_variables.html">2. Les variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM3/Les_branchements.html">4. Les branchements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM5/Les_erreurs.html">6. Les messages d’erreur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM6/Tutoriel_Spyder.html">7. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Debug_spyder.html">10. Débuguer avec Spyder</a></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -348,10 +362,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">Une … boucle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">Boucle While</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">Boucle For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">5.1. Une … boucle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">5.2. Boucle While</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">5.3. Boucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.4. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
             </nav>
         </div>
@@ -364,7 +378,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="les-boucles">
-<h1>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
@@ -376,11 +390,11 @@ document.write(`
 </ul>
 </div>
 <section id="une-boucle">
-<h2>Une … boucle?<a class="headerlink" href="#une-boucle" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Une … boucle?<a class="headerlink" href="#une-boucle" title="Permalink to this heading">#</a></h2>
 <p>Un des intérêts majeurs des languages informatiques tels que Python est de réaliser des tâches répétitives et fastidieuses pour les humains. On appelle <strong>boucler</strong> une action la répéter plusieurs fois. L’objectif de ce cours est de se familiariser avec les différents moyens pour réaliser des boucles en python.</p>
 </section>
 <section id="boucle-while">
-<h2>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
 <p>Commençons par une opération très répétitive à faire à la main. Nous allons afficher tous les nombres pairs de 0 à 20:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +536,7 @@ document.write(`
 </div>
 </section>
 <section id="boucle-for">
-<h2>Boucle For<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Boucle For<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h2>
 <p>Une autre tâche répétitive est de parcourir tous les éléments d’une séquence et d’y appliquer la même action. Un objet est dit <strong>itérable</strong> s’il comporte plusieurs éléments et que l’on peut réaliser des actions sur chacun de ces élements. Nous avons vu précédemment les listes, qui sont des objets itérables. Mettons que l’on veuille réaliser une action sur chaque élement d’une’ liste. Pour cela, un nouveau mot clé est indispensable: <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <p>Dans l’exemple ci-dessous, on a une liste de valeurs correspondant à des tailles d’ammonites en centimètres. Nous devons convertir ces valeurs en millimètres:</p>
 <div class="cell docutils container">
@@ -628,7 +642,7 @@ document.write(`
 </div>
 </section>
 <section id="pour-aller-plus-loin-listes-en-intension">
-<h2>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
 <p>Reprenons l’exemple:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -711,6 +725,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../CM3/Les_branchements.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Les branchements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../CM5/Les_erreurs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Les messages d’erreur</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -729,10 +761,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">Une … boucle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">Boucle While</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">Boucle For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">5.1. Une … boucle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">5.2. Boucle While</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">5.3. Boucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.4. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
   </nav></div>
 

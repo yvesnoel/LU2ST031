@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Les branchements &#8212; Python pour les Géosciences</title>
+    <title>4. Les branchements &#8212; Python pour les Géosciences</title>
   
   
   
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'CM3/Les_branchements';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Les boucles" href="../CM4/Les_boucles.html" />
+    <link rel="prev" title="3. Les listes" href="../CM2/Les_listes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,7 +156,19 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CM1/Les_expressions.html">1. Les expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM1/Les_variables.html">2. Les variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Les branchements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM4/Les_boucles.html">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM5/Les_erreurs.html">6. Les messages d’erreur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM6/Tutoriel_Spyder.html">7. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Debug_spyder.html">10. Débuguer avec Spyder</a></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -348,11 +362,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principes-de-base">Principes de base</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-imbriques-ou-successifs"><code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-instruction-elif">L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-raccourcis">Les raccourcis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principes-de-base">4.1. Principes de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-imbriques-ou-successifs">4.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-instruction-elif">4.3. L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">4.4. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-raccourcis">4.4.1. Les raccourcis</a></li>
 </ul>
 </li>
 </ul>
@@ -367,7 +381,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="les-branchements">
-<h1>Les branchements<a class="headerlink" href="#les-branchements" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Les branchements<a class="headerlink" href="#les-branchements" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapître, vous serez capable de :</p>
@@ -384,7 +398,7 @@ document.write(`
 <p>A partir de ce chapitre, des numéros de ligne, sont insérés en tête de ligne à gauche de chaque morceau de code. Cela facilite les commentaires.</p>
 </div>
 <section id="principes-de-base">
-<h2>Principes de base<a class="headerlink" href="#principes-de-base" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Principes de base<a class="headerlink" href="#principes-de-base" title="Permalink to this heading">#</a></h2>
 <p>L’instruction <code class="docutils literal notranslate"><span class="pre">if</span></code> permet de créer des branchements dans votre code Python ; c’est à dire de conditionner l’execution d’une partie de votre code selon la valeur d’une <a class="reference internal" href="../CM1/Les_expressions.html#l-expressionsbooleennes"><span class="std std-ref">expression booléenne</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,7 +506,7 @@ Ce message sera affiché quelque soit la valeur de x
 </div>
 </section>
 <section id="if-imbriques-ou-successifs">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs<a class="headerlink" href="#if-imbriques-ou-successifs" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs<a class="headerlink" href="#if-imbriques-ou-successifs" title="Permalink to this heading">#</a></h2>
 <p>On peut aussi créer des code Python plus complexes en utilsant d’autres <code class="docutils literal notranslate"><span class="pre">if</span></code> dans un bloc se situant lui aussi dans un autre <code class="docutils literal notranslate"><span class="pre">if</span></code>. On parle alors de <em>if imbriqués</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,7 +595,7 @@ Enfin, on passe à la ligne 8 qui n’est pas soumise à condition et imprime le
 </div>
 </section>
 <section id="l-instruction-elif">
-<h2>L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#l-instruction-elif" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#l-instruction-elif" title="Permalink to this heading">#</a></h2>
 <p>Il est aussi possible d’utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code> qui est une contraction de <em>“else if”</em>. Après un bloc <code class="docutils literal notranslate"><span class="pre">if</span></code>, cela permet de mettre une alternative contenant une nouvelle condition. On peut en enchaîner plusieurs et même terminer par un simple <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -613,9 +627,9 @@ Le test de la ligne 4 est <code class="docutils literal notranslate"><span class
 Le message final est enfin imprimer à l’écran.</p>
 </section>
 <section id="pour-aller-plus-loin">
-<h2>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
 <section id="les-raccourcis">
-<span id="l-ifraccourcis"></span><h3>Les raccourcis<a class="headerlink" href="#les-raccourcis" title="Permalink to this heading">#</a></h3>
+<span id="l-ifraccourcis"></span><h3><span class="section-number">4.4.1. </span>Les raccourcis<a class="headerlink" href="#les-raccourcis" title="Permalink to this heading">#</a></h3>
 <p>Si le bloc conséquent d’un <code class="docutils literal notranslate"><span class="pre">if</span></code> ne contient qu’une ligne, il est possible d’utiliser un raccourci en mettant tout sur une seule ligne. Cela rend aussi votre code plus lisible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,6 +753,24 @@ Ceci est un exemple de if imbriqués
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../CM2/Les_listes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Les listes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../CM4/Les_boucles.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Les boucles</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -757,11 +789,11 @@ Ceci est un exemple de if imbriqués
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principes-de-base">Principes de base</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-imbriques-ou-successifs"><code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-instruction-elif">L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-raccourcis">Les raccourcis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principes-de-base">4.1. Principes de base</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-imbriques-ou-successifs">4.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> imbriqués ou successifs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-instruction-elif">4.3. L’instruction <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">4.4. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-raccourcis">4.4.1. Les raccourcis</a></li>
 </ul>
 </li>
 </ul>

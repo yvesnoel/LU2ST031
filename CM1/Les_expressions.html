@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Les expressions &#8212; Python pour les Géosciences</title>
+    <title>1. Les expressions &#8212; Python pour les Géosciences</title>
   
   
   
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'CM1/Les_expressions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Les variables" href="Les_variables.html" />
+    <link rel="prev" title="Python pour les Géosciences" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,7 +156,19 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Les expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Les_variables.html">2. Les variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM3/Les_branchements.html">4. Les branchements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM4/Les_boucles.html">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM5/Les_erreurs.html">6. Les messages d’erreur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM6/Tutoriel_Spyder.html">7. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Debug_spyder.html">10. Débuguer avec Spyder</a></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -348,26 +362,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-expression-python">Qu’est ce qu’une expression Python ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affichage-d-une-expression">Affichage d’une expression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-valeurs">Types de valeurs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-base">Les types de base</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recuperer-le-type-d-une-valeur">Récupérer le type d’une valeur</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">Conversion de type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-expression-python">1.1. Qu’est ce qu’une expression Python ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affichage-d-une-expression">1.2. Affichage d’une expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-valeurs">1.3. Types de valeurs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-base">1.3.1. Les types de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recuperer-le-type-d-une-valeur">1.3.2. Récupérer le type d’une valeur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">1.3.3. Conversion de type</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-complexes">Les expressions complexes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-numeriques">Les expressions numériques</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques">Exemples d’expressions utilisant des opérateurs numériques</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">Les règles de priorité</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-complexes">1.4. Les expressions complexes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-numeriques">1.4.1. Les expressions numériques</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques">1.4.1.1. Exemples d’expressions utilisant des opérateurs numériques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">1.4.1.2. Les règles de priorité</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">Les expressions booléennes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">Les opérateurs ayant pour résultat une valeur booléenne</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">Les principaux opérateurs booléennes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.4.2. Les expressions booléennes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.4.2.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.4.2.2. Les principaux opérateurs booléennes</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines-de-caracteres">1.4.3. Les chaînes de caractères</a></li>
 </ul>
 </li>
 </ul>
@@ -382,7 +396,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="les-expressions">
-<h1>Les expressions<a class="headerlink" href="#les-expressions" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>Les expressions<a class="headerlink" href="#les-expressions" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapître, vous serez capable de :</p>
@@ -393,11 +407,11 @@ document.write(`
 </ul>
 </div>
 <section id="qu-est-ce-qu-une-expression-python">
-<h2>Qu’est ce qu’une expression Python ?<a class="headerlink" href="#qu-est-ce-qu-une-expression-python" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>Qu’est ce qu’une expression Python ?<a class="headerlink" href="#qu-est-ce-qu-une-expression-python" title="Permalink to this heading">#</a></h2>
 <p>Une expression est un morceau de code qui est évalué par Python et dont l’interprétation donne une <strong>valeur</strong>. On parle d’expressions simples lorsqu’elles sont uniquement constituées d’une valeur. Les expressions complexes quant à elles combinent des valeurs, des opérateurs ou des fonctions (nous aborerons les fonctions plus tard dans le cours).</p>
 </section>
 <section id="affichage-d-une-expression">
-<h2>Affichage d’une expression<a class="headerlink" href="#affichage-d-une-expression" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Affichage d’une expression<a class="headerlink" href="#affichage-d-une-expression" title="Permalink to this heading">#</a></h2>
 <p>Lorsque Python interprète un code (ou une cellule d’un notebook) il affiche le resultat de la dernière expression du code. Dans la majorité des exemples de ce chapitre nous utilisons cette propriété pour visualiser le résultat de chaque expression en ne mettant qu’une seule expression par cellule. Dans le cas où l’on voudrait afficher le contenu de plusieurs expressions d’un même code ou cellule, on est obligé de passer par une fonction Python qui “imprime vers l’écran” (<em>print</em> en anglais) une valeur. Cette fonction est la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Les 4 exemples à suivre illustrent ces subtilités à propos de l’affichage des valeurs issues d’une expression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,9 +466,9 @@ document.write(`
 </div>
 </section>
 <section id="types-de-valeurs">
-<h2>Types de valeurs<a class="headerlink" href="#types-de-valeurs" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3. </span>Types de valeurs<a class="headerlink" href="#types-de-valeurs" title="Permalink to this heading">#</a></h2>
 <section id="les-types-de-base">
-<h3>Les types de base<a class="headerlink" href="#les-types-de-base" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>Les types de base<a class="headerlink" href="#les-types-de-base" title="Permalink to this heading">#</a></h3>
 <p>On peut distinguer plusieurs types de valeurs :</p>
 <ul class="simple">
 <li><p>Des nombres entiers (<em>integers</em> en anglais, <code class="docutils literal notranslate"><span class="pre">int</span></code> pour Python)</p></li>
@@ -565,7 +579,7 @@ document.write(`
 </div>
 </section>
 <section id="recuperer-le-type-d-une-valeur">
-<h3>Récupérer le type d’une valeur<a class="headerlink" href="#recuperer-le-type-d-une-valeur" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.2. </span>Récupérer le type d’une valeur<a class="headerlink" href="#recuperer-le-type-d-une-valeur" title="Permalink to this heading">#</a></h3>
 <p>Il est possible de connaitre le type de la valeur issue d’une expression en utilisant la fonction <code class="docutils literal notranslate"><span class="pre">type</span></code>. Nous reviendrons plus tard dans le cours sur la notion de fonction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -593,7 +607,7 @@ document.write(`
 </div>
 </section>
 <section id="conversion-de-type">
-<h3>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.3. </span>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this heading">#</a></h3>
 <p>Il est possible de changer le type d’une valeur en utilisant les fonctions <code class="docutils literal notranslate"><span class="pre">int()</span></code> <code class="docutils literal notranslate"><span class="pre">float()</span></code> <code class="docutils literal notranslate"><span class="pre">bool()</span></code> <code class="docutils literal notranslate"><span class="pre">str()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,11 +660,11 @@ document.write(`
 </section>
 </section>
 <section id="les-expressions-complexes">
-<h2>Les expressions complexes<a class="headerlink" href="#les-expressions-complexes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4. </span>Les expressions complexes<a class="headerlink" href="#les-expressions-complexes" title="Permalink to this heading">#</a></h2>
 <p>Dans tous les exemples ci-dessus, nous avions à faire à des expressions simples mais il est aussi possible de construire des expressions plus complexes qui contiennent des opérations. Ces opérations s’appuient en général sur 2 valeurs (on parle d’opérateurs binaires) ou parfois un seule valeur (opérateur unaire). Les valeurs sur lesquelles s’appuie l’opérateur pour calculer l’opération, s’appellent des opérandes.</p>
 <p>Evidemment, la ou les opérandes peuvent être de types variés. La valeur du résultat de l’opération peut aussi être de type varié.</p>
 <section id="les-expressions-numeriques">
-<h3>Les expressions numériques<a class="headerlink" href="#les-expressions-numeriques" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.1. </span>Les expressions numériques<a class="headerlink" href="#les-expressions-numeriques" title="Permalink to this heading">#</a></h3>
 <p>Vous avez déjà l’habitude d’utiliser votre calculatrice pour effectuer des opérations sur des nombres, voici la liste des opérations connues de python :</p>
 <table class="table">
 <thead>
@@ -687,7 +701,7 @@ document.write(`
 <p>Dans tous les cas (sauf pour la division) si les deux opérandes sont de type entier (<code class="docutils literal notranslate"><span class="pre">int</span></code>), alors le résultat sera de type entier mais si l’un des deux opérandes est de type flottant (<code class="docutils literal notranslate"><span class="pre">float</span></code>) alors le résultat sera de type flottant. La division (<code class="docutils literal notranslate"><span class="pre">/</span></code>) est une exception : même si les deux opérandes sont des entiers, le résultat sera toujours de type flottant.</p>
 </div>
 <section id="exemples-d-expressions-utilisant-des-operateurs-numeriques">
-<h4>Exemples d’expressions utilisant des opérateurs numériques<a class="headerlink" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.1.1. </span>Exemples d’expressions utilisant des opérateurs numériques<a class="headerlink" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>une addition avec 2 entiers donne un entier</p></li>
 </ul>
@@ -813,7 +827,7 @@ document.write(`
 <p>On pourrait l’illustrer par la situation suivante : “Je dispose de 5,55€, combien de croissants à 1,20 € pièce puis je acheter ? combien me restera-t-il ?”. La réponse est : “Je peux acheter 4 croissants et il me reste 0,75€”.</p>
 </section>
 <section id="les-regles-de-priorite">
-<h4>Les règles de priorité<a class="headerlink" href="#les-regles-de-priorite" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.1.2. </span>Les règles de priorité<a class="headerlink" href="#les-regles-de-priorite" title="Permalink to this heading">#</a></h4>
 <p>Dans une expression numérique sans parenthèse, la priorité va d’abord sur les puissances puis sur multiplications et divisons, et enfin sur les additions et soustractions. Le parenthèses permettent d’indiquer précisément comment une expression doit être calculée.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,9 +919,9 @@ document.write(`
 </section>
 </section>
 <section id="les-expressions-booleennes">
-<span id="l-expressionsbooleennes"></span><h3>Les expressions booléennes<a class="headerlink" href="#les-expressions-booleennes" title="Permalink to this heading">#</a></h3>
+<span id="l-expressionsbooleennes"></span><h3><span class="section-number">1.4.2. </span>Les expressions booléennes<a class="headerlink" href="#les-expressions-booleennes" title="Permalink to this heading">#</a></h3>
 <section id="les-operateurs-ayant-pour-resultat-une-valeur-booleenne">
-<h4>Les opérateurs ayant pour résultat une valeur booléenne<a class="headerlink" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.2.1. </span>Les opérateurs ayant pour résultat une valeur booléenne<a class="headerlink" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne" title="Permalink to this heading">#</a></h4>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Symbole</p></th>
@@ -1030,7 +1044,7 @@ Par exemple, si je veux tester si 3.0 -2.7 est égal à 0.3 à 10<sup>-6</sup> p
 <p>3.0 - 2.7 et 0.3 sont donc égaux à 10<sup>-6</sup> près</p>
 </section>
 <section id="les-principaux-operateurs-booleennes">
-<h4>Les principaux opérateurs booléennes<a class="headerlink" href="#les-principaux-operateurs-booleennes" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.4.2.2. </span>Les principaux opérateurs booléennes<a class="headerlink" href="#les-principaux-operateurs-booleennes" title="Permalink to this heading">#</a></h4>
 <p>Il existe plusieurs opérateurs, voici les principaux :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> : <code class="docutils literal notranslate"><span class="pre">not</span></code> est un opérateur unaire. Le résultat de cet opérateur sur une valeur booléenne est le contraire de cette valeur. Le contraire de <code class="docutils literal notranslate"><span class="pre">True</span></code> est <code class="docutils literal notranslate"><span class="pre">False</span></code> et le contraire de <code class="docutils literal notranslate"><span class="pre">False</span></code> est <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
@@ -1102,7 +1116,7 @@ Par exemple, si je veux tester si 3.0 -2.7 est égal à 0.3 à 10<sup>-6</sup> p
 </section>
 </section>
 <section id="les-chaines-de-caracteres">
-<h3>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.3. </span>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this heading">#</a></h3>
 <p>Les chaînes de caractères acceptent quelques opérateurs.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">len</span></code> : Cette fonction donne la longueur, c’est à dire le nombre de caractères d’une chaîne</p></li>
@@ -1205,6 +1219,24 @@ True
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python pour les Géosciences</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Les_variables.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Les variables</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1223,26 +1255,26 @@ True
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-expression-python">Qu’est ce qu’une expression Python ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affichage-d-une-expression">Affichage d’une expression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-valeurs">Types de valeurs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-base">Les types de base</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recuperer-le-type-d-une-valeur">Récupérer le type d’une valeur</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">Conversion de type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-expression-python">1.1. Qu’est ce qu’une expression Python ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affichage-d-une-expression">1.2. Affichage d’une expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-valeurs">1.3. Types de valeurs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-base">1.3.1. Les types de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recuperer-le-type-d-une-valeur">1.3.2. Récupérer le type d’une valeur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-type">1.3.3. Conversion de type</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-complexes">Les expressions complexes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-numeriques">Les expressions numériques</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques">Exemples d’expressions utilisant des opérateurs numériques</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">Les règles de priorité</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-complexes">1.4. Les expressions complexes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-numeriques">1.4.1. Les expressions numériques</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-d-expressions-utilisant-des-operateurs-numeriques">1.4.1.1. Exemples d’expressions utilisant des opérateurs numériques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-regles-de-priorite">1.4.1.2. Les règles de priorité</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">Les expressions booléennes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">Les opérateurs ayant pour résultat une valeur booléenne</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">Les principaux opérateurs booléennes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-expressions-booleennes">1.4.2. Les expressions booléennes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-operateurs-ayant-pour-resultat-une-valeur-booleenne">1.4.2.1. Les opérateurs ayant pour résultat une valeur booléenne</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principaux-operateurs-booleennes">1.4.2.2. Les principaux opérateurs booléennes</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines-de-caracteres">Les chaînes de caractères</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-chaines-de-caracteres">1.4.3. Les chaînes de caractères</a></li>
 </ul>
 </li>
 </ul>
