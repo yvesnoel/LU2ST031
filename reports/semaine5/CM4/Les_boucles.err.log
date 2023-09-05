@@ -15,16 +15,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-x = 0  # On créé une variable x qui vaut 0
+i = 0  # en règle générale, on compte à partir de zéro en python
 
-while x =! 20:  # tant que x est différent de 20, répéter le bloc ci-dessous
-    print(x)
-    x += 2  # ajouter 2 à x
+while i =! 10:  # tant que i ne vaut pas dix, répéter
+    print('infogeol')
+    i += 1  # incrémenter le compteur de 1
 ------------------
 
 
-[0;36m  Cell [0;32mIn[2], line 3[0;36m[0m
-[0;31m    while x =get_ipython().getoutput(' 20:  # tant que x est différent de 20, répéter le bloc ci-dessous')[0m
+[0;36m  Cell [0;32mIn[7], line 3[0;36m[0m
+[0;31m    while i =get_ipython().getoutput(' 10:  # tant que i ne vaut pas dix, répéter')[0m
 [0m            ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 

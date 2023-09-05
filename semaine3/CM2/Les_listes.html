@@ -508,7 +508,21 @@ document.write(`
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Essayez maintenant de créer une liste nommée <code class="docutils literal notranslate"><span class="pre">liste_6</span></code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début)</p>
+<p>Essayez maintenant de créer une liste nommée <code class="docutils literal notranslate"><span class="pre">liste6</span></code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début)</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="n">liste6</span> <span class="o">=</span> <span class="p">[</span><span class="n">liste_vide</span><span class="p">,</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">,</span> <span class="n">liste3</span><span class="p">,</span> <span class="n">liste4</span><span class="p">,</span> <span class="n">liste5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[], [1, 2, 3, 4, 5], [5, 2, 4, 3, 1], [&#39;Hello&#39;, &#39;world&#39;, &#39;!&#39;], [&#39;python&#39;, 2, 2, 2, 2, 4.51, []], [25, 4]]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="acceder-a-un-objet-dune-liste">
@@ -629,7 +643,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> 
 
 <span class="ne">IndexError</span>: list index out of range
@@ -646,6 +660,19 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="n">int_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -735,6 +762,20 @@ où l’<strong>indice de fin est exclu</strong> et où le pas (et le 2ème <cod
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Créez une liste appelée <code class="docutils literal notranslate"><span class="pre">pair</span></code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code class="docutils literal notranslate"><span class="pre">:</span></code>, extrayez les entiers 4, 6 et 8.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="n">pair</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 6, 8]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="remplacer-des-elements-dans-une-liste">
@@ -899,6 +940,20 @@ Dans le cas de la méthode <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 5, 4, 3, 12]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="supprimer-des-objets-dune-liste">
@@ -946,7 +1001,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;sables&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
 
@@ -1028,6 +1083,20 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">une_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cailloux&#39;</span><span class="p">,</span> <span class="s1">&#39;graviers&#39;</span><span class="p">,</span> <span class="s1">&#39;sables&#39;</span><span class="p">,</span> <span class="s1">&#39;limons&#39;</span><span class="p">,</span> <span class="s1">&#39;argiles&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="n">une_liste</span> <span class="o">+=</span> <span class="n">une_liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">une_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;]
 </pre></div>
 </div>
 </div>
@@ -1235,7 +1304,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
-140380817276032
+140059362135616
 </pre></div>
 </div>
 </div>
@@ -1250,8 +1319,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140380817276032
-140380817276032
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140059362135616
+140059362135616
 </pre></div>
 </div>
 </div>
@@ -1266,8 +1335,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140380817276032
-140380817276032
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140059362135616
+140059362135616
 </pre></div>
 </div>
 </div>

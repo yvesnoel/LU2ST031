@@ -440,17 +440,23 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># On créé une variable x qui vaut 0</span>
 
-<span class="k">while</span> <span class="n">x</span> <span class="o">=!</span><span class="w"> </span><span class="m">20</span>:<span class="w">  </span>#<span class="w"> </span>tant<span class="w"> </span>que<span class="w"> </span>x<span class="w"> </span>est<span class="w"> </span>différent<span class="w"> </span>de<span class="w"> </span><span class="m">20</span>,<span class="w"> </span>répéter<span class="w"> </span>le<span class="w"> </span>bloc<span class="w"> </span>ci-dessous
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># tant que x est différent de 20, répéter le bloc ci-dessous</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>  <span class="c1"># ajouter 2 à x</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="k">while</span> <span class="n">x</span> <span class="o">=</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s1">&#39; 20:  # tant que x est différent de 20, répéter le bloc ci-dessous&#39;</span><span class="p">)</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+12
+14
+16
+18
+20
 </pre></div>
 </div>
 </div>
@@ -469,11 +475,25 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">while</span> <span class="n">x</span> <span class="o">=!</span><span class="w"> </span><span class="m">20</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">20</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     
 <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># x est remis à zéro après le bloc.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+12
+14
+16
+18
+20
 </pre></div>
 </div>
 </div>
@@ -486,6 +506,32 @@ document.write(`
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez maintenant de modifier ce code pour afficher tous les multiples de 7 à la place.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+14
+21
+28
+35
+42
+49
+56
+63
+70
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="boucle-for">
@@ -504,6 +550,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.4, 58.7, 94.5, 42.5]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Ce code ressemble beaucoup au while, avec son indentation qui distingue le bloc d’instructions. Cependant, le fonctionnement y est ici différent. <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code> est la liste sur laquelle nous itérons. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">liste_cm</span></code> peut être traduit en : pour chaque élément dénoté <code class="docutils literal notranslate"><span class="pre">i</span></code> de <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code>, réaliser le bloc d’instructions. Le code va répéter le bloc d’instructions pour chaque élément de la liste. A chaque itération, le nouvel élément courant de la liste prendra le nom <code class="docutils literal notranslate"><span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">i</span></code> va donc changer à chaque boucle). C’est un outil puissant pour automatiser des actions à répéter!</p>
 <div class="cell docutils container">
@@ -515,6 +566,11 @@ document.write(`
     <span class="n">liste_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># on multiplie par 10 i et on l&#39;ajoute à la nouvelle liste. Cette action se répéte pour chaque valeur i de liste_cm</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">liste_mm</span><span class="p">)</span>  <span class="c1">#affiche la nouvelle liste</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.4, 58.7, 94.5, 42.5]
 </pre></div>
 </div>
 </div>
@@ -535,6 +591,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">=</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s1">&#39; 10:  # tant que i ne vaut pas dix, répéter&#39;</span><span class="p">)</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 <p>Il est également possible d’utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">range</span></code> pour générer une suite de nombres, ce qui est très utile pour itérer sans avoir de liste. Cette instruction s’utilise de la manière suivante :</p>
 <p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code></p>
@@ -551,6 +615,29 @@ document.write(`
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez maintenant d’afficher tous les résultats de la table de 8 en utilisant <code class="docutils literal notranslate"><span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># pour chaque élément i de 0 à 9</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># bloc d&#39;instructions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+16
+24
+32
+40
+48
+56
+64
+72
+80
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pour-aller-plus-loin-listes-en-intension">
