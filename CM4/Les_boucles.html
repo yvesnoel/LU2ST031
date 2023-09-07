@@ -383,72 +383,39 @@ document.write(`
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapitre, vous serez capable de :</p>
 <ul class="simple">
-<li><p>créer un script contenant une boucle utilisant le mot-clef <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
-<li><p>créer un script contenant une boucle utilisant le mot-clef <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
+<li><p>créer un programme contenant une boucle utilisant le mot-clef <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
+<li><p>créer un programme contenant une boucle utilisant le mot-clef <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
 <li><p>itérer sur une liste Python en utilisant <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
-<li><p>utiliser a fonction <code class="docutils literal notranslate"><span class="pre">range()</span></code> pour boucler un nombre prédéfini de fois.</p></li>
+<li><p>utiliser a fonction <code class="docutils literal notranslate"><span class="pre">range()</span></code> pour itérer un nombre prédéfini de fois.</p></li>
 </ul>
 </div>
 <section id="une-boucle">
 <h2><span class="section-number">5.1. </span>Une … boucle?<a class="headerlink" href="#une-boucle" title="Permalink to this heading">#</a></h2>
-<p>Un des intérêts majeurs des languages informatiques tels que Python est de réaliser des tâches répétitives et fastidieuses pour les humains. On appelle <strong>boucler</strong> une action la répéter plusieurs fois. L’objectif de ce cours est de se familiariser avec les différents moyens pour réaliser des boucles en python.</p>
+<p>Un des intérêts majeurs des languages informatiques tels que Python est de réaliser des tâches répétitives et fastidieuses pour les humains. On appelle <strong>itérer</strong>, le fait de la répéter plusieurs fois une action.
+Ces actions étant dans une boucle, on dira aussi par extension  <strong>boucler</strong>. L’objectif de ce cours est de se familiariser avec les différents moyens pour réaliser des boucles en python.</p>
 </section>
 <section id="boucle-while">
 <h2><span class="section-number">5.2. </span>Boucle While<a class="headerlink" href="#boucle-while" title="Permalink to this heading">#</a></h2>
 <p>Commençons par une opération très répétitive à faire à la main. Nous allons afficher tous les nombres pairs de 0 à 20:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
 2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ce code est valide mais il n’est pas pratique. Il est répétitif et difficile à modifier. Le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> (“tant que” en anglais) est le premier mot clé que nous allons apprendre pour répéter une action en boucle. <code class="docutils literal notranslate"><span class="pre">while</span></code> permet de répéter une action tant qu’une condition n’est pas remplie. La syntaxe est la suivante:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
-    <span class="c1"># instruction 1</span>
-    <span class="c1"># instruction 2</span>
-</pre></div>
-</div>
-<p>On commence par le mot clé while suivi d’une condition à remplir, généralement un test, c’est à dire une expression renvoyant <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (voir partie <a class="reference external" href="https://yvesnoel.github.io/LU2ST031/semaine2/CM1/Les_expressions.html#les-expressions-booleennes">expressions booléennes</a>), puis de deux points, obligatoires (s’ils manquent, une erreur est renvoyée).</p>
-<p>Voici un exemple d’utilisation du while pour résoudre le problème ci dessus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># On créé une variable x qui vaut 0</span>
-
-<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># tant que x est différent de 20, répéter le bloc ci-dessous</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>  <span class="c1"># ajouter 2 à x</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 4
 6
 8
@@ -462,15 +429,52 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Les instructions sont répétées tant que <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=!</span> <span class="pre">20</span></code> est vrai. Le résultat est exactement le même, mais le code est modifiable très aisément, et beaucoup plus court. Voici l’explication de ce code ligne par ligne:</p>
+<p>Ce code est valide mais il n’est pas pratique. Il est répétitif et difficile à modifier. Le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> (“tant que” en anglais) est le premier mot clé que nous allons apprendre pour répéter une action en boucle. <code class="docutils literal notranslate"><span class="pre">while</span></code> permet de répéter une action <strong>tant qu’</strong> une condition n’est pas remplie. La syntaxe est la suivante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># instruction 1</span>
+    <span class="c1"># instruction 2</span>
+</pre></div>
+</div>
+<p>On commence par le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> suivi d’une condition à remplir, généralement un test, c’est à dire une expression valant <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (voir partie <a class="reference external" href="https://yvesnoel.github.io/LU2ST031/semaine2/CM1/Les_expressions.html#les-expressions-booleennes">expressions booléennes</a>), puis de deux points <code class="docutils literal notranslate"><span class="pre">:</span></code>, obligatoires (s’ils manquent, une erreur de syntaxe est renvoyée).
+L’ensemble d’instructions qui va être répété forme un bloc. Ces instructions doivent donc être indentées par rapport au <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>Voici un exemple d’utilisation du <code class="docutils literal notranslate"><span class="pre">while</span></code> pour résoudre le problème ci-dessus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># On créé une variable x qui vaut 0</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># tant que x est inférieur ou égal à 20, répéter le bloc ci-dessous</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>  <span class="c1"># ajouter 2 à x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+</pre></div>
+</div>
+</div>
+</div>
+<p>Les instructions sont répétées tant que <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">20</span></code> est vrai. Le résultat est exactement le même, mais le code est modifiable très aisément, et beaucoup plus court. Voici l’explication de ce code ligne par ligne:</p>
 <ol class="arabic simple">
 <li><p>On créé la variable x qui vaut 0.</p></li>
-<li><p>On créé une boucle while: tant que x est différent de 20, on répète le bloc instruction.</p></li>
-<li><p>Bloc d’instructions. C’est l’indentation qui permet d’indiquer le bloc. Ici le bloc consiste à afficher x, puis à lui ajouter 2. C’est cette instruction qui va “boucler”, c’est à dire être répétée, jusqu’à ce que x soit égal à 20.</p></li>
+<li><p>On créé une boucle while: tant que x est inférieur ou égal à 20, on répète le bloc d’instructions.</p></li>
+<li><p>Bloc d’instructions. C’est l’indentation qui permet d’indiquer le bloc. Ici le bloc consiste à afficher x, puis à lui ajouter 2. Ce sont ces instructions qui vont “boucler”, c’est à dire être répétées, jusqu’à ce que x soit strictement supérieur à 20 (évènement contraire à inférieur ou égal à 20).</p></li>
 </ol>
-<div class="question admonition">
-<p class="admonition-title">À vous de jouer</p>
-<p>L’indentation est le seul signe du bloc d’instructions. Dès que l’on veut sortir du bloc à répéter, il suffit d’écrire la ligne suivante sans indentation. Celle-ci n’est donc pas cosmétique: elle fait partie de la syntaxe. Par exemple, si on veut réinitialiser x à la fin:</p>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>L’indentation est le seul moyen de signifier à Python un bloc d’instructions.
+Lorsque l’on veut sortir du bloc à répéter, il suffit d’écrire la ligne suivante sans indentation (en tout cas une de moins).
+Celle-ci n’est donc pas cosmétique : elle fait partie de la syntaxe. Par exemple, si on veut réinitialiser x à la fin:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,14 +503,14 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Le résultat est une répétition de la procédure: 20 fois, x va être affiché puis incrémenté (sa valeur va augmenter) de 2.</p>
+<p>Le résultat est une répétition de la procédure : 20 fois, x va être affiché puis incrémenté (sa valeur va augmenter) de 2.</p>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
-<p>Si la condition ne devient jamais fausse, on génère alors une boucle infinie. Il faut alors manuellement arrêter le script. C’est toujours au programmeur de vérifier que la condition va finir par devenir fausse. Ce type de bug ne provoque même pas de message d’erreur et peut être difficile à détecter.</p>
+<p>Si la condition ne devient jamais fausse, on génère alors une boucle infinie. Il faut alors manuellement arrêter l’exécution du programme. C’est toujours au programmeur de vérifier que la condition va finir par devenir fausse. Ce type de bug ne provoque même pas de message d’erreur et peut être difficile à détecter.</p>
 </div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Essayez maintenant de modifier ce code pour afficher tous les multiples de 7 à la place.</p>
+<p>Essayez maintenant d’écrire une variante du code vu précédemment pour afficher à la place tous les multiples de 7 jusqu’à 70.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -518,15 +522,16 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">70</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">70</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+7
 14
 21
 28
@@ -540,20 +545,40 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Le module <code class="docutils literal notranslate"><span class="pre">random</span></code> de Python fournit des fonctions qui permettent de tirer aléatoirement des nombres.
+Par exemple, la fonction <code class="docutils literal notranslate"><span class="pre">randint</span></code> renvoie un entier tiré au hasard entre les deux bornes qu’on lui fournit.
+Dans l’exemple ci-dessous, la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> nous sert à compter le nombre de tirages d’entiers entre 0 et 100 qu’il aura fallu avant de tomber sur un entier supérieur ou égal à 95. <code class="docutils literal notranslate"><span class="pre">n</span></code> compte le nombre d’itérations de la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. On ne sait pas a priori combien d’itérations on va faire. Si vous exécutez à nouveau cette cellule, vous obiendrez un nombre différent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">95</span> <span class="p">:</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="boucle-for">
 <h2><span class="section-number">5.3. </span>Boucle For<a class="headerlink" href="#boucle-for" title="Permalink to this heading">#</a></h2>
-<p>Une autre tâche répétitive est de parcourir tous les éléments d’une séquence et d’y appliquer la même action. Un objet est dit <strong>itérable</strong> s’il comporte plusieurs éléments et que l’on peut réaliser des actions sur chacun de ces élements. Nous avons vu précédemment les listes, qui sont des objets itérables. Mettons que l’on veuille réaliser une action sur chaque élement d’une’ liste. Pour cela, un nouveau mot clé est indispensable: <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Le fait d’appliquer une même action à tous les éléments d’un ensemble d’objets, qu’on applera <strong>itérable</strong>, est une autre tâche répétitive qui peut être réalisée avec un autre mot clé : <code class="docutils literal notranslate"><span class="pre">for</span></code>.
+Nous avons vu précédemment les listes, qui sont des objets itérables. Nous pouvons donc utiliser une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> pour parcourir la liste et effectuer la même action pour chacun de ces éléments.</p>
 <p>Dans l’exemple ci-dessous, on a une liste de valeurs correspondant à des tailles d’ammonites en centimètres. Nous devons convertir ces valeurs en millimètres:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># liste des valeurs en cm</span>
-<span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># nouvelle liste à remplir</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># Liste des tailles en cm</span>
+<span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Nouvelle liste à remplir</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span><span class="p">:</span> <span class="c1"># pour chaque élément de liste_cm appelé i</span>
-    <span class="n">liste_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># on multiplie par 10 i et on l&#39;ajoute à la nouvelle liste. Cette action se répéte pour chaque valeur i de liste_cm</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">liste_mm</span><span class="p">)</span>  <span class="c1">#affiche la nouvelle liste</span>
+<span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span><span class="p">:</span> <span class="c1"># pour chaque élément de liste_cm appelé i</span>
+    <span class="n">tailles_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taille</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># on multiplie par 10 taille et on l&#39;ajoute à la fin de la nouvelle liste, tailles_mm. </span>
+                                  <span class="c1"># Cette action se répéte pour chaque valeur de taille de la liste tailles_cm</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>  <span class="c1"># Affiche la nouvelle liste des tailles en mm</span>
 </pre></div>
 </div>
 </div>
@@ -563,7 +588,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Ce code ressemble beaucoup au while, avec son indentation qui distingue le bloc d’instructions. Cependant, le fonctionnement y est ici différent. <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code> est la liste sur laquelle nous itérons. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">liste_cm</span></code> peut être traduit en : pour chaque élément dénoté <code class="docutils literal notranslate"><span class="pre">i</span></code> de <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code>, réaliser le bloc d’instructions. Le code va répéter le bloc d’instructions pour chaque élément de la liste. A chaque itération, le nouvel élément courant de la liste prendra le nom <code class="docutils literal notranslate"><span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">i</span></code> va donc changer à chaque boucle). C’est un outil puissant pour automatiser des actions à répéter!</p>
+<p>Ce code ressemble beaucoup au <code class="docutils literal notranslate"><span class="pre">while</span></code>, avec son indentation qui distingue le bloc d’instructions. Cependant, le fonctionnement y est ici différent. <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code> est la liste sur laquelle nous itérons. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">liste_cm</span></code> peut être traduit en : pour chaque élément dénoté <code class="docutils literal notranslate"><span class="pre">i</span></code> de <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code>, réaliser le bloc d’instructions. Le code va répéter le bloc d’instructions pour chaque élément de la liste. A chaque itération, le nouvel élément courant de la liste prendra le nom <code class="docutils literal notranslate"><span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">i</span></code> va donc changer à chaque boucle). C’est un outil puissant pour automatiser des actions à répéter!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># liste des valeurs en cm</span>
@@ -599,7 +624,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
     <span class="k">while</span> <span class="n">i</span> <span class="o">=</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s1">&#39; 10:  # tant que i ne vaut pas dix, répéter&#39;</span><span class="p">)</span>
             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
