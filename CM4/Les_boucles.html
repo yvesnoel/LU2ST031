@@ -365,7 +365,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">5.1. Une … boucle?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">5.2. Boucle While</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">5.3. Boucle For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.4. 🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-iterables">5.4. Les itérables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.5. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
             </nav>
         </div>
@@ -559,7 +560,7 @@ Dans l’exemple ci-dessous, la boucle <code class="docutils literal notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -572,13 +573,13 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 <p>Dans l’exemple ci-dessous, on a une liste de valeurs correspondant à des tailles d’ammonites en centimètres. Nous devons convertir ces valeurs en millimètres:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># Liste des tailles en cm</span>
-<span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Nouvelle liste à remplir</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span> <span class="mf">5.87</span><span class="p">,</span> <span class="mf">9.45</span><span class="p">,</span> <span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># Liste des tailles en cm</span>
+<span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[]</span>                     <span class="c1"># Nouvelle liste à remplir</span>
 
-<span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span><span class="p">:</span> <span class="c1"># pour chaque élément de liste_cm appelé i</span>
-    <span class="n">tailles_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taille</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># on multiplie par 10 taille et on l&#39;ajoute à la fin de la nouvelle liste, tailles_mm. </span>
-                                  <span class="c1"># Cette action se répéte pour chaque valeur de taille de la liste tailles_cm</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>  <span class="c1"># Affiche la nouvelle liste des tailles en mm</span>
+<span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span> <span class="p">:</span>           <span class="c1"># pour chaque élément de liste_cm appelé i</span>
+    <span class="n">tailles_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taille</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>    <span class="c1"># on multiplie par 10 taille et on l&#39;ajoute à la fin de la nouvelle liste, tailles_mm. </span>
+                                    <span class="c1"># Cette action se répéte pour chaque valeur de taille de la liste tailles_cm</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>                   <span class="c1"># Affiche la nouvelle liste des tailles en mm</span>
 </pre></div>
 </div>
 </div>
@@ -588,65 +589,87 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 </div>
 </div>
 </div>
-<p>Ce code ressemble beaucoup au <code class="docutils literal notranslate"><span class="pre">while</span></code>, avec son indentation qui distingue le bloc d’instructions. Cependant, le fonctionnement y est ici différent. <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code> est la liste sur laquelle nous itérons. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">liste_cm</span></code> peut être traduit en : pour chaque élément dénoté <code class="docutils literal notranslate"><span class="pre">i</span></code> de <code class="docutils literal notranslate"><span class="pre">liste_cm</span></code>, réaliser le bloc d’instructions. Le code va répéter le bloc d’instructions pour chaque élément de la liste. A chaque itération, le nouvel élément courant de la liste prendra le nom <code class="docutils literal notranslate"><span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">i</span></code> va donc changer à chaque boucle). C’est un outil puissant pour automatiser des actions à répéter!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># liste des valeurs en cm</span>
-<span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># nouvelle liste à remplir</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span><span class="p">:</span> <span class="c1"># pour chaque élément de liste_cm appelé i</span>
-    <span class="n">liste_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># on multiplie par 10 i et on l&#39;ajoute à la nouvelle liste. Cette action se répéte pour chaque valeur i de liste_cm</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">liste_mm</span><span class="p">)</span>  <span class="c1">#affiche la nouvelle liste</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.4, 58.7, 94.5, 42.5]
-</pre></div>
-</div>
-</div>
-</div>
+<p>Le code ci-dessus ressemble beaucoup au <code class="docutils literal notranslate"><span class="pre">while</span></code>, avec son indentation qui distingue le bloc d’instructions. Cependant, le fonctionnement y est ici différent. <code class="docutils literal notranslate"><span class="pre">taille_cm</span></code> est la liste sur laquelle nous itérons. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">taille</span> <span class="pre">in</span> <span class="pre">taille_cm</span> <span class="pre">:</span></code> peut être traduit en : <strong>pour</strong> chaque élément dénoté <code class="docutils literal notranslate"><span class="pre">taille</span></code> de <code class="docutils literal notranslate"><span class="pre">taille_cm</span></code>, réaliser le bloc d’instructions. Le code va répéter le bloc d’instructions pour chaque élément de la liste. A chaque itération, le nouvel élément courant de la liste sera affecté à la variable <code class="docutils literal notranslate"><span class="pre">taille</span></code> (la valeur contenue dans la variable <code class="docutils literal notranslate"><span class="pre">taille</span></code> va donc changer à chaque tour de boucle). C’est un outil puissant pour automatiser des actions à répéter!</p>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
 <p>Il ne faut jamais modifier une liste lorsque l’on boucle dessus, car c’est une source majeure d’erreurs. Préférez toujours créer une nouvelle liste pour que les éléments de la liste ne soient pas modifiés et puissent continuer à être itérer.</p>
 </div>
-<p>A retenir: while sert à répéter une action jusqu’à ce qu’une condition ne soit plus satisfaite. for sert à répéter une action sur chaque élément d’une liste ou d’un autre objet itérable. En général, on utilise plutôt for quand on sait combien de fois il va falloir répéter le bloc d’instructions. Si ce nombre n’est pas connu, on se reporte vers while.</p>
-<p>On utilise souvent une variable qui va servir de <strong>compteur</strong> et qui est notée <code class="docutils literal notranslate"><span class="pre">i</span></code> par convention. Mettons que l’on veuille reproduire une action dix fois. Il est possible d’utiliser un compteur avec while:</p>
+<p>A retenir: <code class="docutils literal notranslate"><span class="pre">while</span></code> sert à répéter une action jusqu’à ce qu’une condition ne soit plus satisfaite. <code class="docutils literal notranslate"><span class="pre">for</span></code> sert à répéter une action sur chaque élément d’une liste ou d’un autre objet itérable. En général, on utilise plutôt <code class="docutils literal notranslate"><span class="pre">for</span></code> quand on sait combien de fois il va falloir répéter le bloc d’instructions. Si ce nombre n’est pas connu, on se reporte vers <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>On utilise souvent une variable qui va servir de <strong>compteur</strong> et qui est notée <code class="docutils literal notranslate"><span class="pre">i</span></code> par convention. Par exemple, si on veut répéter une action dix fois, il est possible d’utiliser un compteur avec une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> comme ci-dessous :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># en règle générale, on compte à partir de zéro en python</span>
 
-<span class="k">while</span> <span class="n">i</span> <span class="o">=!</span><span class="w"> </span><span class="m">10</span>:<span class="w">  </span>#<span class="w"> </span>tant<span class="w"> </span>que<span class="w"> </span>i<span class="w"> </span>ne<span class="w"> </span>vaut<span class="w"> </span>pas<span class="w"> </span>dix,<span class="w"> </span>répéter
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>  <span class="c1"># tant que i plus petit que dix, répéter</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;infogeol&#39;</span><span class="p">)</span>
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># incrémenter le compteur de 1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">=</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s1">&#39; 10:  # tant que i ne vaut pas dix, répéter&#39;</span><span class="p">)</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
 </pre></div>
 </div>
 </div>
 </div>
 <p>Il est également possible d’utiliser l’instruction <code class="docutils literal notranslate"><span class="pre">range</span></code> pour générer une suite de nombres, ce qui est très utile pour itérer sans avoir de liste. Cette instruction s’utilise de la manière suivante :</p>
 <p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code></p>
-<p>Ce qui créé une suite de nombres allant de start (inclus) à stop (exclu) avec un pas de step (cet argument est optionnel). <code class="docutils literal notranslate"><span class="pre">range(0,1000)</span></code> permet de générer tous les nombres de 0 à 999. Il est possible d’utiliser ce résultat directement dans une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>. Par exemple, si l’on souhaite afficher dix fois un texte:</p>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code> créé une suite de nombres allant de <code class="docutils literal notranslate"><span class="pre">start</span></code> (inclus) à <code class="docutils literal notranslate"><span class="pre">stop</span></code> (exclu) avec un pas de <code class="docutils literal notranslate"><span class="pre">step</span></code> (cet argument est optionnel).
+Si le paramètre <code class="docutils literal notranslate"><span class="pre">start</span></code> est homis, il prend la valeur 0. <code class="docutils literal notranslate"><span class="pre">range(0,1000)</span></code> est équivalent à <code class="docutils literal notranslate"><span class="pre">range(1000)</span></code> et permet de générer tous les entiers de 0 à 999. Il est possible d’utiliser ce résultat directement dans une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Par exemple, si l’on souhaite afficher dix fois un texte :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span> <span class="c1"># pour chaque élément i de 0 à 9</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="c1"># pour chaque élément i de 0 à 9</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;infogeol&#39;</span><span class="p">)</span> <span class="c1"># bloc d&#39;instructions</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+infogeol
+</pre></div>
 </div>
-<p>i va prendre toutes les valeurs de 0 à 9. Il peut être utilisé mais ce n’est pas le cas ici, car on souhaite uniquement répéter le même élément à chaque fois.</p>
+</div>
+</div>
+<p>Dans l’exemple ci-desus, <code class="docutils literal notranslate"><span class="pre">i</span></code> va prendre toutes les valeurs de 0 à 9. Il peut être utilisé, mais ce n’est pas le cas ici, car on souhaite uniquement faire 10 tours de boucle (on aurait pu utiliser <code class="docutils literal notranslate"><span class="pre">range(1,11)</span></code> ou <code class="docutils literal notranslate"><span class="pre">range(0,20,2)</span></code> mais ça n’a pas vraiment d’intérêt).</p>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code> ne renvoie pas une liste de nombres à proprement parler mais un objet de type <code class="docutils literal notranslate"><span class="pre">range</span></code> sur lequel on peut itérer comme si c’était une liste. L’exemple ci-dessous illustre ça grâce à la fonction <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;range&#39;&gt;
+&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="question admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Essayez maintenant d’afficher tous les résultats de la table de 8 en utilisant <code class="docutils literal notranslate"><span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
+<p>Essayez maintenant d’afficher tous les résultats de la table de multiplication de 8 (de 8 x 1 à 8 x 10) en utilisant <code class="docutils literal notranslate"><span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -656,7 +679,7 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##SOLUTION</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># pour chaque élément i de 0 à 9</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># pour chaque élément i de 0 à 10</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># bloc d&#39;instructions</span>
 </pre></div>
 </div>
@@ -678,34 +701,129 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 </div>
 </div>
 </section>
+<section id="les-iterables">
+<h2><span class="section-number">5.4. </span>Les itérables<a class="headerlink" href="#les-iterables" title="Permalink to this heading">#</a></h2>
+<p>Nous avons vu précédemment que les listes et les range sont des itérables. Les chaîne de caractères, <span class="xref myst">les tuples et les sets</span> sont aussi des itérables. Par contre les <code class="docutils literal notranslate"><span class="pre">int</span></code>, les <code class="docutils literal notranslate"><span class="pre">float</span></code> et les <code class="docutils literal notranslate"><span class="pre">bool</span></code> ne le sont pas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">&#39;Toto&#39;</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T
+o
+t
+o
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mf">3.141</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mf">3.141</span> <span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;float&#39; object is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+<p>Une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> itère seulement sur le premier niveau d’itérable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+[4, 5]
+[6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>La solution est alors d’utiliser 2 boucles <strong>imbriquées</strong> ; c’est à dire une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> à l’intérieur d’une autre boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>. On itère sur l’élément <code class="docutils literal notranslate"><span class="pre">i</span></code> de la première boucle car c’est lui même un itérable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="pour-aller-plus-loin-listes-en-intension">
-<h2><span class="section-number">5.4. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
-<p>Reprenons l’exemple:</p>
+<h2><span class="section-number">5.5. </span>🚀 Pour aller plus loin: listes en intension<a class="headerlink" href="#pour-aller-plus-loin-listes-en-intension" title="Permalink to this heading">#</a></h2>
+<p>Les listes en intension (on dit aussi listes en compréhension) sont une forme encore plus puissante et synthétique de créer des listes. Reprenons l’exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span><span class="mf">5.87</span><span class="p">,</span><span class="mf">9.45</span><span class="p">,</span><span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># liste des valeurs en cm</span>
-<span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># nouvelle liste à remplir</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_cm</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.54</span><span class="p">,</span> <span class="mf">5.87</span><span class="p">,</span> <span class="mf">9.45</span><span class="p">,</span> <span class="mf">4.25</span><span class="p">]</span>  <span class="c1"># Liste des tailles en cm</span>
+<span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[]</span>                     <span class="c1"># Nouvelle liste à remplir</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span><span class="p">:</span> <span class="c1"># pour chaque élément de liste_cm appelé i</span>
-    <span class="n">liste_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># on multiplie par 10 i et on l&#39;ajoute à la nouvelle liste. Cette action se répéte pour chaque valeur i de liste_cm</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">liste_mm</span><span class="p">)</span>  <span class="c1">#affiche la nouvelle liste</span>
+<span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span> <span class="p">:</span>           <span class="c1"># pour chaque élément de liste_cm appelé i</span>
+    <span class="n">tailles_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taille</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>    <span class="c1"># on multiplie par 10 taille et on l&#39;ajoute à la fin de la nouvelle liste, tailles_mm. </span>
+                                    <span class="c1"># Cette action se répéte pour chaque valeur de taille de la liste tailles_cm</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>                   <span class="c1"># Affiche la nouvelle liste des tailles en mm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.4, 58.7, 94.5, 42.5]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Les listes en intension sont une forme encore plus puissante et synthétique de créer des listes:</p>
+<p>Cet exemple s’écrirait de la manière suivante avec des listes en intension</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[</span><span class="n">taille</span> <span class="o">*</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.4, 58.7, 94.5, 42.5]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Ici, plus de bloc, la création de liste tient en une ligne, sans avoir à écrire toutes les valeurs. Il s’agit d’une <strong>liste en intension</strong>. Les listes en intension sont un moyen très efficace de transformer toute une liste. Il est possible par exemple de jouer avec les types:</p>
+<p>Ici, il n’y a plus de bloc ; la création de liste tient en une ligne, sans avoir à écrire toutes les valeurs. Il s’agit d’une <strong>liste en intension</strong>. Les listes en intension sont un moyen très efficace de transformer toute une liste. Il est possible par exemple de jouer avec les types:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">taille</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;mm&#39;</span> <span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;15.4mm&#39;, &#39;58.7mm&#39;, &#39;94.5mm&#39;, &#39;42.5mm&#39;]
 </pre></div>
 </div>
 </div>
@@ -713,7 +831,13 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 <p>Et même de filtrer des éléments d’une liste en y ajoutant, de manière très intuitive, une condition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_mm</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[</span><span class="n">taille</span> <span class="o">*</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span> <span class="k">if</span> <span class="n">taille</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[58.7, 94.5]
 </pre></div>
 </div>
 </div>
@@ -721,9 +845,16 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 <p>est équivalent à:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">liste_cm</span><span class="p">:</span> 
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># on filtre les valeurs supérieures à 5</span>
-        <span class="n">liste_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tailles_mm</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">taille</span> <span class="ow">in</span> <span class="n">tailles_cm</span> <span class="p">:</span> 
+    <span class="k">if</span> <span class="n">taille</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># on filtre les valeurs supérieures à 5</span>
+        <span class="n">tailles_mm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taille</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">tailles_mm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[58.7, 94.5]
 </pre></div>
 </div>
 </div>
@@ -801,7 +932,8 @@ Nous avons vu précédemment les listes, qui sont des objets itérables. Nous po
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#une-boucle">5.1. Une … boucle?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-while">5.2. Boucle While</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boucle-for">5.3. Boucle For</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.4. 🚀 Pour aller plus loin: listes en intension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-iterables">5.4. Les itérables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin-listes-en-intension">5.5. 🚀 Pour aller plus loin: listes en intension</a></li>
 </ul>
   </nav></div>
 
