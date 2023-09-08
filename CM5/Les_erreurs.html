@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Comprendre ses erreurs &#8212; Python pour les Géosciences</title>
+    <title>6. Les erreurs en Python &#8212; Python pour les Géosciences</title>
   
   
   
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM3/Les_branchements.html">4. Les branchements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM4/Les_boucles.html">5. Les boucles</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Comprendre ses erreurs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Les erreurs en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM6/Tutoriel_Spyder.html">7. L’environnement de développement Spyder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
@@ -352,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Comprendre ses erreurs</h1>
+    <h1>Les erreurs en Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,8 +370,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.1.5. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.1.6. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.1.7. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.8. Déclencher une exception</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.9. Gérer les exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.8. Gérer les exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.9. Déclencher une exception</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
@@ -387,8 +387,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="comprendre-ses-erreurs">
-<h1><span class="section-number">6. </span>Comprendre ses erreurs<a class="headerlink" href="#comprendre-ses-erreurs" title="Permalink to this heading">#</a></h1>
+  <section id="les-erreurs-en-python">
+<h1><span class="section-number">6. </span>Les erreurs en Python<a class="headerlink" href="#les-erreurs-en-python" title="Permalink to this heading">#</a></h1>
 <section id="les-exceptions">
 <h2><span class="section-number">6.1. </span>Les exceptions<a class="headerlink" href="#les-exceptions" title="Permalink to this heading">#</a></h2>
 <section id="qu-est-ce-qu-une-exception">
@@ -396,7 +396,7 @@ document.write(`
 <p>Les erreurs qui se produisent lors de l’exécution d’un programme sont appelées des exceptions.
 Une exception est un objet qui contient des informations sur le contexte de l’erreur. Lorsqu’une exception survient et qu’elle n’est pas traitée alors elle produit une interruption du programme et elle affiche un message. Il est utile de connaître les principales exceptions.</p>
 <p>Dans tous les cas le format d’une exception est :</p>
-<a class="reference internal image-reference" href="../_images/image.png"><img alt="Description exception" class="align-center" src="../_images/image.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/image.png"><img alt="Description exception" class="align-center" src="../_images/image.png" style="width: 80%;" /></a>
 </section>
 <section id="les-principales-exceptions">
 <h3><span class="section-number">6.1.2. </span>Les principales exceptions<a class="headerlink" href="#les-principales-exceptions" title="Permalink to this heading">#</a></h3>
@@ -542,16 +542,95 @@ Une exception est un objet qui contient des informations sur le contexte de l’
 <h3><span class="section-number">6.1.7. </span><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code><a class="headerlink" href="#zerodivisionerror" title="Permalink to this heading">#</a></h3>
 <p>L’exception <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> est déclenchée lorsque l’on essaie de diviser un nombre par la valeur 0 (de type ‘<code class="docutils literal notranslate"><span class="pre">int</span></code> ou float`).</p>
 </section>
-<section id="declencher-une-exception">
-<h3><span class="section-number">6.1.8. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h3>
-</section>
 <section id="gerer-les-exceptions">
-<h3><span class="section-number">6.1.9. </span>Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.8. </span>Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permalink to this heading">#</a></h3>
+<p>Il est possible de détecter les exceptions qui apparaitraient lors de l’exécution. Pour cela nous disposons d’une paire de mots clés : <code class="docutils literal notranslate"><span class="pre">try</span></code>et <code class="docutils literal notranslate"><span class="pre">except</span></code>.
+La syntaxe la plus simple est la suivante</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">:</span>
+    <span class="c1"># instruction pouvant générer une exception</span>
+<span class="k">except</span> <span class="p">:</span>
+    <span class="c1"># instruction à exécuter quand une exception est détectée</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’exemple ci-dessous peut parfois entrainer une exception <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> (une chance sur 3).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># un nombre aléatoir entre parmi 0, 1 ou 2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># un nombre aléatoir entre parmi 0, 1 ou 2</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">n</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est donc préférable de gérer cette exception.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4 valeurs différentes à tester</span>
+<span class="n">ma_var</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">ma_var</span> <span class="o">=</span> <span class="s1">&#39;trois&#39;</span>
+<span class="n">ma_var</span> <span class="o">=</span> <span class="s1">&#39;12.34&#39;</span>
+<span class="n">ma_var</span> <span class="o">=</span> <span class="mf">12.34</span>
+<span class="n">ma_var</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>
+<span class="c1">#</span>
+<span class="k">for</span> <span class="n">ma_var</span> <span class="ow">in</span> <span class="p">[</span> <span class="mf">12.34</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;12.34&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;trois&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">]</span> <span class="p">:</span>
+    <span class="k">try</span> <span class="p">:</span>
+        <span class="n">mon_entier</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ma_var</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">mon_entier</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ce type de valeur ne peut être converti en int&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>    
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cette chaine ne peut être convertie en int&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">mon_entier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+120
+12
+120
+Cette chaine ne peut être convertie en int
+invalid literal for int() with base 10: &#39;12.34&#39;
+1
+10
+Cette chaine ne peut être convertie en int
+invalid literal for int() with base 10: &#39;trois&#39;
+Ce type de valeur ne peut être converti en int
+int() argument must be a string, a bytes-like object or a number, not &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="declencher-une-exception">
+<h3><span class="section-number">6.1.9. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="les-erreurs-de-syntaxe">
 <h2><span class="section-number">6.2. </span>Les erreurs de syntaxe<a class="headerlink" href="#les-erreurs-de-syntaxe" title="Permalink to this heading">#</a></h2>
-<p>SyntaxError: invalid syntax</p>
+<p>SyntaxError: invalid syntax
+IndentationError : expected an indented block</p>
 </section>
 <section id="les-erreurs-d-execution">
 <h2><span class="section-number">6.3. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
@@ -637,8 +716,8 @@ Une exception est un objet qui contient des informations sur le contexte de l’
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.1.5. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.1.6. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.1.7. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.8. Déclencher une exception</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.9. Gérer les exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.8. Gérer les exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.9. Déclencher une exception</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
