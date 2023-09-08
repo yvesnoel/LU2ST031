@@ -362,17 +362,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-messages-d-erreur">6.1. Les messages d’erreur</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-exceptions">6.2. Les exceptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">6.2.1. <code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">6.2.2. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.2.3. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.2.4. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.2.5. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-exceptions">6.1. Les exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-exception">6.1.1. Qu’est ce qu’une exception ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principales-exceptions">6.1.2. Les principales exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">6.1.3. <code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">6.1.4. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.1.5. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.1.6. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.1.7. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.8. Déclencher une exception</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.9. Gérer les exceptions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.3. Déclencher une exception</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.4. Gérer les exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a></li>
 </ul>
             </nav>
         </div>
@@ -386,18 +389,20 @@ document.write(`
                   
   <section id="comprendre-ses-erreurs">
 <h1><span class="section-number">6. </span>Comprendre ses erreurs<a class="headerlink" href="#comprendre-ses-erreurs" title="Permalink to this heading">#</a></h1>
-<section id="les-messages-d-erreur">
-<h2><span class="section-number">6.1. </span>Les messages d’erreur<a class="headerlink" href="#les-messages-d-erreur" title="Permalink to this heading">#</a></h2>
-<p>SyntaxError: invalid syntax</p>
-</section>
 <section id="les-exceptions">
-<h2><span class="section-number">6.2. </span>Les exceptions<a class="headerlink" href="#les-exceptions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Les exceptions<a class="headerlink" href="#les-exceptions" title="Permalink to this heading">#</a></h2>
+<section id="qu-est-ce-qu-une-exception">
+<h3><span class="section-number">6.1.1. </span>Qu’est ce qu’une exception ?<a class="headerlink" href="#qu-est-ce-qu-une-exception" title="Permalink to this heading">#</a></h3>
 <p>Les erreurs qui se produisent lors de l’exécution d’un programme sont appelées des exceptions.
 Une exception est un objet qui contient des informations sur le contexte de l’erreur. Lorsqu’une exception survient et qu’elle n’est pas traitée alors elle produit une interruption du programme et elle affiche un message. Il est utile de connaître les principales exceptions.</p>
 <p>Dans tous les cas le format d’une exception est :</p>
 <a class="reference internal image-reference" href="../_images/image.png"><img alt="Description exception" class="align-center" src="../_images/image.png" style="width: 100%;" /></a>
+</section>
+<section id="les-principales-exceptions">
+<h3><span class="section-number">6.1.2. </span>Les principales exceptions<a class="headerlink" href="#les-principales-exceptions" title="Permalink to this heading">#</a></h3>
+</section>
 <section id="nameerror">
-<h3><span class="section-number">6.2.1. </span><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.3. </span><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this heading">#</a></h3>
 <p>L’exception <code class="docutils literal notranslate"><span class="pre">NameError</span></code> est déclenchée lorsque l’on essaie d’utiliser une variable qui n’est pas définie ; c’est à dire qu’aucune valeur n’a été affectée à cette variable.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -420,7 +425,7 @@ Une exception est un objet qui contient des informations sur le contexte de l’
 </div>
 </section>
 <section id="typeerror">
-<h3><span class="section-number">6.2.2. </span><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.4. </span><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this heading">#</a></h3>
 <p>L’exception <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> est déclenchée lorsque l’on essaie d’utiliser en paramètre (on dit aussi opérande) d’une fonction une valeur qui n’a pas le bon type. C’est la même chose lorsque l’on tente de faire une opération avec des opérandes qui n’ont pas le bon type.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -459,7 +464,7 @@ Une exception est un objet qui contient des informations sur le contexte de l’
 </div>
 </section>
 <section id="valueerror">
-<h3><span class="section-number">6.2.3. </span><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.5. </span><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this heading">#</a></h3>
 <p>L’exception <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> est déclenchée lorsque l’on essaie d’utiliser en paramètre d’une fonction une valeur qui a le bon type mais dont la valeur ne peut être utilisée.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,7 +497,7 @@ Une exception est un objet qui contient des informations sur le contexte de l’
 </div>
 </section>
 <section id="indexerror">
-<h3><span class="section-number">6.2.4. </span><code class="docutils literal notranslate"><span class="pre">IndexError</span></code><a class="headerlink" href="#indexerror" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.6. </span><code class="docutils literal notranslate"><span class="pre">IndexError</span></code><a class="headerlink" href="#indexerror" title="Permalink to this heading">#</a></h3>
 <p>L’exception <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> est déclenchée lorsque l’on essaie d’accéder à un élément d’une liste (ou d’un <span class="xref myst">tuple</span>) avec un indice qui n’est plus grand que la taille de la liste. Cette erreur est aussi déclenchée si l’indice négatif mène en dehors de la liste.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -534,15 +539,26 @@ Une exception est un objet qui contient des informations sur le contexte de l’
 </div>
 </section>
 <section id="zerodivisionerror">
-<h3><span class="section-number">6.2.5. </span><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code><a class="headerlink" href="#zerodivisionerror" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.7. </span><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code><a class="headerlink" href="#zerodivisionerror" title="Permalink to this heading">#</a></h3>
 <p>L’exception <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> est déclenchée lorsque l’on essaie de diviser un nombre par la valeur 0 (de type ‘<code class="docutils literal notranslate"><span class="pre">int</span></code> ou float`).</p>
 </section>
-</section>
 <section id="declencher-une-exception">
-<h2><span class="section-number">6.3. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h2>
+<h3><span class="section-number">6.1.8. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="gerer-les-exceptions">
-<h2><span class="section-number">6.4. </span>Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permalink to this heading">#</a></h2>
+<h3><span class="section-number">6.1.9. </span>Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="les-erreurs-de-syntaxe">
+<h2><span class="section-number">6.2. </span>Les erreurs de syntaxe<a class="headerlink" href="#les-erreurs-de-syntaxe" title="Permalink to this heading">#</a></h2>
+<p>SyntaxError: invalid syntax</p>
+</section>
+<section id="les-erreurs-d-execution">
+<h2><span class="section-number">6.3. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La boucle infinie</p></li>
+<li><p>Le code n’affiche rien</p></li>
+</ul>
 </section>
 </section>
 
@@ -613,17 +629,20 @@ Une exception est un objet qui contient des informations sur le contexte de l’
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-messages-d-erreur">6.1. Les messages d’erreur</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-exceptions">6.2. Les exceptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">6.2.1. <code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">6.2.2. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.2.3. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.2.4. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.2.5. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-exceptions">6.1. Les exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-une-exception">6.1.1. Qu’est ce qu’une exception ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principales-exceptions">6.1.2. Les principales exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">6.1.3. <code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">6.1.4. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.1.5. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.1.6. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.1.7. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.8. Déclencher une exception</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.9. Gérer les exceptions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.3. Déclencher une exception</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.4. Gérer les exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a></li>
 </ul>
   </nav></div>
 
