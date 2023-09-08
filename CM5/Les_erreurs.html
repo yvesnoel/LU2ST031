@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Les messages d’erreur &#8212; Python pour les Géosciences</title>
+    <title>6. Comprendre ses erreurs &#8212; Python pour les Géosciences</title>
   
   
   
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM3/Les_branchements.html">4. Les branchements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM4/Les_boucles.html">5. Les boucles</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Les messages d’erreur</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Comprendre ses erreurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM6/Tutoriel_Spyder.html">7. L’environnement de développement Spyder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
@@ -339,7 +339,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -350,11 +352,29 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Les messages d’erreur</h1>
+    <h1>Comprendre ses erreurs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-messages-d-erreur">6.1. Les messages d’erreur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-exceptions">6.2. Les exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">6.2.1. <code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">6.2.2. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.2.3. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.2.4. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.2.5. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.3. Déclencher une exception</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.4. Gérer les exceptions</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -364,8 +384,166 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="les-messages-d-erreur">
-<h1><span class="section-number">6. </span>Les messages d’erreur<a class="headerlink" href="#les-messages-d-erreur" title="Permalink to this heading">#</a></h1>
+  <section id="comprendre-ses-erreurs">
+<h1><span class="section-number">6. </span>Comprendre ses erreurs<a class="headerlink" href="#comprendre-ses-erreurs" title="Permalink to this heading">#</a></h1>
+<section id="les-messages-d-erreur">
+<h2><span class="section-number">6.1. </span>Les messages d’erreur<a class="headerlink" href="#les-messages-d-erreur" title="Permalink to this heading">#</a></h2>
+<p>SyntaxError: invalid syntax</p>
+</section>
+<section id="les-exceptions">
+<h2><span class="section-number">6.2. </span>Les exceptions<a class="headerlink" href="#les-exceptions" title="Permalink to this heading">#</a></h2>
+<p>Les erreurs qui se produisent lors de l’exécution d’un programme sont appelées des exceptions.
+Une exception est un objet qui contient des informations sur le contexte de l’erreur. Lorsqu’une exception survient et qu’elle n’est pas traitée alors elle produit une interruption du programme et elle affiche un message. Il est utile de connaître les principales exceptions.</p>
+<p>Dans tous les cas le format d’une exception est :</p>
+<a class="reference internal image-reference" href="../_images/image.png"><img alt="Description exception" class="align-center" src="../_images/image.png" style="width: 100%;" /></a>
+<section id="nameerror">
+<h3><span class="section-number">6.2.1. </span><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this heading">#</a></h3>
+<p>L’exception <code class="docutils literal notranslate"><span class="pre">NameError</span></code> est déclenchée lorsque l’on essaie d’utiliser une variable qui n’est pas définie ; c’est à dire qu’aucune valeur n’a été affectée à cette variable.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">jamaisInitialise</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">jamaisInitialise</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;jamaisInitialise&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="typeerror">
+<h3><span class="section-number">6.2.2. </span><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this heading">#</a></h3>
+<p>L’exception <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> est déclenchée lorsque l’on essaie d’utiliser en paramètre (on dit aussi opérande) d’une fonction une valeur qui n’a pas le bon type. C’est la même chose lorsque l’on tente de faire une opération avec des opérandes qui n’ont pas le bon type.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="s1">&#39;Coucou&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">abs</span><span class="p">(</span><span class="s1">&#39;Coucou&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: bad operand type for abs(): &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="s1">&#39;Coucou&#39;</span><span class="o">**</span><span class="mi">2</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;Coucou&#39;</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for ** or pow(): &#39;str&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valueerror">
+<h3><span class="section-number">6.2.3. </span><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this heading">#</a></h3>
+<p>L’exception <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> est déclenchée lorsque l’on essaie d’utiliser en paramètre d’une fonction une valeur qui a le bon type mais dont la valeur ne peut être utilisée.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)</span> <span class="c1"># Ca fonctionne. La chaine peut etre convertie en int</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;123.4&#39;</span><span class="p">)</span> <span class="c1"># Ca ne fonctionne pas. La chaine ne peut etre convertie en int</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;123.4&#39;</span><span class="p">)</span> <span class="c1"># Ca ne fonctionne pas. La chaine ne peut etre convertie en int</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;123.4&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="indexerror">
+<h3><span class="section-number">6.2.4. </span><code class="docutils literal notranslate"><span class="pre">IndexError</span></code><a class="headerlink" href="#indexerror" title="Permalink to this heading">#</a></h3>
+<p>L’exception <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> est déclenchée lorsque l’on essaie d’accéder à un élément d’une liste (ou d’un <span class="xref myst">tuple</span>) avec un indice qui n’est plus grand que la taille de la liste. Cette erreur est aussi déclenchée si l’indice négatif mène en dehors de la liste.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">ma_liste</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ma_liste</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zerodivisionerror">
+<h3><span class="section-number">6.2.5. </span><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code><a class="headerlink" href="#zerodivisionerror" title="Permalink to this heading">#</a></h3>
+<p>L’exception <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> est déclenchée lorsque l’on essaie de diviser un nombre par la valeur 0 (de type ‘<code class="docutils literal notranslate"><span class="pre">int</span></code> ou float`).</p>
+</section>
+</section>
+<section id="declencher-une-exception">
+<h2><span class="section-number">6.3. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="gerer-les-exceptions">
+<h2><span class="section-number">6.4. </span>Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -426,6 +604,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-messages-d-erreur">6.1. Les messages d’erreur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-exceptions">6.2. Les exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror">6.2.1. <code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">6.2.2. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">6.2.3. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.2.4. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.2.5. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.3. Déclencher une exception</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.4. Gérer les exceptions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
