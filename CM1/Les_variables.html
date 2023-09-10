@@ -440,24 +440,29 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 <li><p>il ne faut pas utiliser un mot réservé (par exemple <code class="docutils literal notranslate"><span class="pre">print</span></code>) de Python comme nom de variable (cela ne génère pas une erreur mais c’est très fortement déconseillé).</p></li>
 <li><p>les lettres majuscules et minuscules sont des lettres différentes</p></li>
 </ul>
+<p>Quand on aimerait utiliser plusieurs mots pour un nom de varaible, par convention on utilise des <code class="docutils literal notranslate"><span class="pre">_</span></code> à la place des espaces. Par convention encore on réserve plutôt les majuscules à des constantes et on utilise que des minuscules pour nommer de variables. Par exemple <code class="docutils literal notranslate"><span class="pre">temps_total</span></code> plutôt que <code class="docutils literal notranslate"><span class="pre">TempsTotal</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nom1</span> <span class="o">=</span> <span class="s1">&#39;titi&#39;</span> <span class="c1"># Nom de variable valide</span>
 <span class="n">nom1</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span> <span class="c1"># Nom de variable valide différent du précédent</span>
 <span class="n">plus_grand_nombre</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Nom de varaible valide</span>
 <span class="nb">print</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#Nom de variable valide mais à éviter absolument (on ne peut plus utiliser la fonction print après cette ligne)</span>
-<span class="mi">1</span><span class="n">truc</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Nom de variable INvalide</span>
+<span class="mi">1</span><span class="n">truc</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Nom de variable invalide</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">truc</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Nom de variable INvalide</span>
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">truc</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Nom de variable invalide</span>
      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>Le symbole <code class="docutils literal notranslate"><span class="pre">#</span></code> permet d’écrire des commentaires dans son code. Python ignorera sur la ligne tout ce qui est écrit après le <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
 </div>
 <p>Il est possible de supprimer une variable grâce à la fonction <code class="docutils literal notranslate"><span class="pre">del</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
@@ -485,7 +490,7 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </section>
 <section id="l-utilisation-du-contenu-d-une-variable">
 <h2><span class="section-number">2.5. </span>L’utilisation du contenu d’une variable<a class="headerlink" href="#l-utilisation-du-contenu-d-une-variable" title="Permalink to this heading">#</a></h2>
-<p>L’intéret d’affecter une valeur dans une variable, c’est à dire de la stocker, est de pouvoir la réutiliser plus tard, dans une nouvelle expression. Pour cela, dans une expression, il suffit d’utiliser le nom de la variable là où on voudrait utiliser sa valeur</p>
+<p>L’int￩ret d’affecter une valeur dans une variable, c’est ￠ dire de la stocker, est de pouvoir la r￩utiliser plus tard, dans une nouvelle expression. Pour cela, dans une expression, il suffit d’utiliser le nom de la variable l￠ o￹ on voudrait utiliser sa valeur</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
@@ -533,7 +538,7 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 <div class="caution admonition">
 <p class="admonition-title">Attention : </p>
-<p>Pour incrémenter le contenu d’une variable, il faut que celle-ci existe (c’est à dire contienne une valeur) auparavant</p>
+<p>Pour changer le contenu d’une variable, il faut que celle-ci existe (c’est à dire contienne une valeur) auparavant</p>
 </div>
 <p>Voici un autre exemple avec des chaînes de caractères (<code class="docutils literal notranslate"><span class="pre">str</span></code>) :</p>
 <div class="cell docutils container">
@@ -585,6 +590,28 @@ Contrairement à sont aspect et à son utilisation en mathématique, cet opérat
 </div>
 </div>
 </div>
+<div class="seealso admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Ecrire un code permettant d’affecter 18 dans la variable <code class="docutils literal notranslate"><span class="pre">a</span></code>  et 12 dans la variable <code class="docutils literal notranslate"><span class="pre">b</span></code>, le résultat de la somme
+de ces nombres dans la variable <code class="docutils literal notranslate"><span class="pre">c</span></code> (en utilisant les variables <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code>) et enfin incrémente la variable <code class="docutils literal notranslate"><span class="pre">b</span></code> de 5.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### SOLUTION</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">b</span> <span class="o">+=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 <section id="pour-aller-plus-loin">
 <h3><span class="section-number">2.6.2. </span>🚀 Pour aller plus loin :<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h3>
@@ -622,9 +649,9 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140562534955888
-140562534975664
-140562480950576
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140500065778224
+140499994479536
+140499994899696
 </pre></div>
 </div>
 </div>
@@ -652,12 +679,12 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140562618552832
-140562618552832
-140562606095792
-140562606095792
-140562480886320
-140562480886352
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140500149441024
+140500149441024
+140500136983856
+140500136983856
+140499994900624
+140499994899856
 </pre></div>
 </div>
 </div>

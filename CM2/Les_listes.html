@@ -362,7 +362,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crer-des-listes">3.1. Cr￩er des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-elements-dans-une-liste">3.4. Remplacer des éléments dans une liste</a></li>
@@ -377,7 +377,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longueur-dune-liste">3.9. Longueur d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">3.10. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quelques-autres-types-interessants">3.10.1. Quelques autres types intéressants</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tuples-n-uplets-en-francais">3.10.1.1. Les Tuples (n-uplets en français)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tuples-n-uplets-en-franais">3.10.1.1. Les Tuples (n-uplets en fran￧ais)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-sets-ensembles-en-francais">3.10.1.2. Les sets (ensembles en français)</a></li>
 </ul>
 </li>
@@ -412,10 +412,10 @@ document.write(`
 <li><p>concaténer des listes avec <code class="docutils literal notranslate"><span class="pre">extend</span></code>.</p></li>
 </ul>
 </div>
-<section id="creer-des-listes">
-<h2><span class="section-number">3.1. </span>Créer des listes<a class="headerlink" href="#creer-des-listes" title="Permalink to this heading">#</a></h2>
-<p>Nous avons vu, lors du cours précédent, plusieurs types d’objets : les entiers,<code class="docutils literal notranslate"><span class="pre">int</span></code>, les nombres à virgule <code class="docutils literal notranslate"><span class="pre">float</span></code>, les chaînes de caractères <code class="docutils literal notranslate"><span class="pre">str</span></code> et les booléens <code class="docutils literal notranslate"><span class="pre">bool</span></code>. Nous allons maintenant découvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets, que l’on appelle aussi éléments de la liste.</p>
-<p>Il existe un moyen simple de créer une liste en utilisant des crochets:</p>
+<section id="crer-des-listes">
+<h2><span class="section-number">3.1. </span>Cr￩er des listes<a class="headerlink" href="#crer-des-listes" title="Permalink to this heading">#</a></h2>
+<p>Nous avons vu, lors du cours pr￩c￩dent, plusieurs types d’objets : les entiers,<code class="docutils literal notranslate"><span class="pre">int</span></code>, les nombres ￠ virgule <code class="docutils literal notranslate"><span class="pre">float</span></code>, les cha￮nes de caract￨res <code class="docutils literal notranslate"><span class="pre">str</span></code> et les bool￩ens <code class="docutils literal notranslate"><span class="pre">bool</span></code>. Nous allons maintenant d￩couvrir un nouveau type un peu plus complexe: les listes. Les listes sont des objets qui contiennent d’autres objets, que l’on appelle aussi ￩l￩ments de la liste.</p>
+<p>Il existe un moyen simple de cr￩er une liste en utilisant des crochets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_vide</span> <span class="o">=</span> <span class="p">[]</span>
@@ -430,11 +430,11 @@ document.write(`
 </div>
 </div>
 <p>Ici on crée une nouvelle variable de type <code class="docutils literal notranslate"><span class="pre">list</span></code>, puis on l’affiche en utilisant <code class="docutils literal notranslate"><span class="pre">print</span></code>. Comme on ne lui a rien indiqué d’autre, la liste est vide.</p>
-<div class="example admonition">
+<div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez à votre tour de créer une liste vide nommée <code class="docutils literal notranslate"><span class="pre">liste_vide2</span></code>.</p>
 </div>
-<p>L’intérêt d’une liste est de pouvoir y mettre des objets, c’est à dire des variables créées précédemment ou des expressions. On peut créer directement une liste avec des éléments dedans. Pour cela, nous allons reprendre la notation entre crochets et lui indiquer quels éléments on veut mettre dans notre liste. Voici un exemple avec 5 entiers:</p>
+<p>L’int￩r￪t d’une liste est de pouvoir y mettre des objets, c’est ￠ dire des variables cr￩￩es pr￩c￩demment ou des expressions. On peut cr￩er directement une liste avec des ￩l￩ments dedans. Pour cela, nous allons reprendre la notation entre crochets et lui indiquer quels ￩l￩ments on veut mettre dans notre liste. Voici un exemple avec 5 entiers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> 
@@ -448,7 +448,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Une liste est une séquence d’éléments. Plus haut, nous avons créé une première liste contenant 0 éléments, puis ici une seconde contenant 5 élements. C’est à vous de décider du contenu de la liste et de l’ordre des éléments. En effet, la liste est un objet ordonné, l’ordre dans lequel on met les éléments compte ! L’exemple ci-dessous montre une autre liste contenant les mêmes éléments mais dans un ordre différent :</p>
+<p>Une liste est une s￩quence d’￩l￩ments. Plus haut, nous avons cr￩￩ une premi￨re liste contenant 0 ￩l￩ments, puis ici une seconde contenant 5 ￩lements. C’est ￠ vous de d￩cider du contenu de la liste et de l’ordre des ￩l￩ments. En effet, la liste est un objet ordonn￩, l’ordre dans lequel on met les ￩l￩ments compte ! L’exemple ci-dessous montre une autre liste contenant les m￪mes ￩l￩ments mais dans un ordre diff￩rent :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -462,7 +462,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>ou encore avec des chaînes de caractères</p>
+<p>ou encore avec des cha￮nes de caract￨res</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">]</span> <span class="c1"># liste de str</span>
@@ -507,7 +507,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="question admonition">
+<div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez maintenant de créer une liste nommée <code class="docutils literal notranslate"><span class="pre">liste6</span></code> contenant dans l’ordre toutes les listes crées précédemment (y compris les deux listes vides du début)</p>
 </div>
@@ -537,13 +537,13 @@ document.write(`
 <p>Il est souvent nécessaire d’accéder à un élément particulier d’une liste. Pour accéder a un objet, il est possible d’utiliser son indice. Les éléments contenus dans une liste possèdent chacun un indice. Le premier objet de la liste a pour indice 0, le second a pour indice 1, le troisième a pour indice 2, etc.</p>
 <div class="danger admonition">
 <p class="admonition-title">ATTENTION</p>
-<p>la numérotation des indices <strong>commançant à 0</strong> il y a toujours un décalage de 1 entre le numéro de l’élément et son indice (le 5<sup>ème</sup> élément a pour indice 4).</p>
+<p>la num￩rotation des indices <strong>comman￧ant ￠ 0</strong> il y a toujours un d￩calage de 1 entre le num￩ro de l’￩l￩ment et son indice (le 5<sup>￨me</sup> ￩l￩ment a pour indice 4).</p>
 </div>
 <p>L’indice peut-être utilisé pour accéder à un élément de la liste de la manière suivante:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cailloux&quot;</span><span class="p">,</span><span class="s2">&quot;graviers&quot;</span><span class="p">,</span><span class="s2">&quot;sables&quot;</span><span class="p">,</span><span class="s2">&quot;limons&quot;</span><span class="p">,</span><span class="s2">&quot;argiles&quot;</span><span class="p">]</span>
-<span class="n">ma_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># On accède au premier élément de la liste</span>
+<span class="n">ma_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># On acc￨de au premier ￩l￩ment de la liste</span>
 </pre></div>
 </div>
 </div>
@@ -553,10 +553,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>La variable <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code> possède 5 éléments associés à 5 indices:</p>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code> poss￨de 5 ￩l￩ments associ￩s ￠ 5 indices:</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Elément</p></th>
+<tr class="row-odd"><th class="head"><p>El￩ment</p></th>
 <th class="head"><p>Indice</p></th>
 </tr>
 </thead>
@@ -580,7 +580,7 @@ document.write(`
 </table>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
-<p>Attention à ne pas confondre éléments et indice quand les objets sont des entiers.</p>
+<p>Attention ￠ ne pas confondre ￩l￩ments et indice quand les objets sont des entiers.</p>
 </div>
 <p>On peut également accéder à un élément via une expression:</p>
 <div class="cell docutils container">
@@ -660,7 +660,7 @@ document.write(`
 </div>
 <p>Celle-ci renvoie une erreur. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> indique un problème de manipulation d’indices de listes. Le détail de l’erreur est donné à la fin : <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code> (que l’on pourrait traduire par : <em>indice en dehors de l’intervalle</em>). En l’occurence, on veut accéder au 6<sup>ème</sup> élément de ma_liste alors que celle-ci n’en contient que 5.
 Remarquez que le message pointe également vers la ligne ou l’erreur a été détectée : <code class="docutils literal notranslate"><span class="pre">----&gt;</span> <span class="pre">1</span> <span class="pre">ma_liste[5]</span></code> ; le numéro juste après la flèche indique que le numéro de la ligne où se situe l’erreur (ici l’erreur est sur la première ligne). Ceci va se révéler très utile lorsque votre code va devenir plus long.</p>
-<div class="question admonition">
+<div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Essayez maintenant d’accédez à l’entier <code class="docutils literal notranslate"><span class="pre">2</span></code> contenu dans la liste ci-dessous par son indice.</p>
 </div>
@@ -772,7 +772,7 @@ Remarquez que le message pointe également vers la ligne ou l’erreur a été d
 <code class="docutils literal notranslate"><span class="pre">nom_de_la_liste[</span> <span class="pre">indice_debut</span> <span class="pre">:</span> <span class="pre">indice_fin</span> <span class="pre">:</span> <span class="pre">pas</span> <span class="pre">]</span></code><br>
 où l’<strong>indice de fin est exclu</strong> et où le pas (et le 2ème <code class="docutils literal notranslate"><span class="pre">:</span></code>) est optionnel (1 par défaut).</p>
 </div>
-<div class="question admonition">
+<div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Créez une liste appelée <code class="docutils literal notranslate"><span class="pre">pair</span></code> contenant tous les entiers pairs de 2 à 10. Puis, en utilisant <code class="docutils literal notranslate"><span class="pre">:</span></code>, extrayez les entiers 4, 6 et 8.</p>
 </div>
@@ -817,7 +817,7 @@ où l’<strong>indice de fin est exclu</strong> et où le pas (et le 2ème <cod
 <p class="admonition-title">Remarque</p>
 <p>Une liste n’est donc pas un objet figé, on peut modifier, supprimer, réorganiser les éléments qu’elle contient. On dit alors que la liste est un type d’objet <strong>mutable</strong> (pour modifiable).</p>
 </div>
-<p>On peut aussi remplacer plusieurs éléments en une seule affectation. Dans ce cas, les nouvelles valeurs des éléments qui vont être remplacés sont spécifiées dans une liste.</p>
+<p>On peut aussi remplacer plusieurs ￩l￩ments en une seule affectation. Dans ce cas, les nouvelles valeurs des ￩l￩ments qui vont ￪tre remplac￩s sont sp￩cifi￩es dans une liste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;verres&quot;</span><span class="p">,</span><span class="s2">&quot;boues&quot;</span><span class="p">]</span>
@@ -948,7 +948,7 @@ Dans le cas de la méthode <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 </div>
-<div class="question admonition">
+<div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Que dois-je écrire si je veux rajouter le nombre 3 à la liste ci-dessous entre le 4 et le 12 en utilisant une méthode de liste?</p>
 </div>
@@ -1101,7 +1101,7 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 </div>
 </div>
 </div>
-<div class="question admonition">
+<div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
 <p>Vous disposez d’une liste nommée <code class="docutils literal notranslate"><span class="pre">une_liste</span></code> qui contient les éléments suivants : <code class="docutils literal notranslate"><span class="pre">'cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles'</span></code>. Vous souhaitez répéter les éléments de la manière suivante : <code class="docutils literal notranslate"><span class="pre">['cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles',</span> <span class="pre">'cailloux',</span> <span class="pre">'graviers',</span> <span class="pre">'sables',</span> <span class="pre">'limons',</span> <span class="pre">'argiles']</span></code>. Comment feriez-vous en utilisant la syntaxe vue précédemment ?</p>
 </div>
@@ -1198,10 +1198,10 @@ La méthode <code class="docutils literal notranslate"><span class="pre">remove<
 <section id="quelques-autres-types-interessants">
 <span id="l-autrestypes"></span><h3><span class="section-number">3.10.1. </span>Quelques autres types intéressants<a class="headerlink" href="#quelques-autres-types-interessants" title="Permalink to this heading">#</a></h3>
 <p>Les listes sont des objets puissants permettant d’enregistrer et de classer facilement des variables. Ce sont des objets modifiables (on dit <strong>mutable</strong>) et ordonnés, mais d’autres types similaires existent.</p>
-<section id="les-tuples-n-uplets-en-francais">
-<h4><span class="section-number">3.10.1.1. </span>Les Tuples (n-uplets en français)<a class="headerlink" href="#les-tuples-n-uplets-en-francais" title="Permalink to this heading">#</a></h4>
-<p>Un tuple est une sorte de liste mais qui <strong>ne peut plus être modifiée</strong> après sa création (on dit qu’ils sont <em>immutables</em> ). De la même manière que les listes, les tuples sont <strong>ordonnés</strong>.<br />
-On créé un tuple avec des parenthèses pour le distinguer des listes entre crochets. Les éléments sont là aussi séparés par les virgules.</p>
+<section id="les-tuples-n-uplets-en-franais">
+<h4><span class="section-number">3.10.1.1. </span>Les Tuples (n-uplets en fran￧ais)<a class="headerlink" href="#les-tuples-n-uplets-en-franais" title="Permalink to this heading">#</a></h4>
+<p>Un tuple est une sorte de liste mais qui <strong>ne peut plus ￪tre modifi￩e</strong> apr￨s sa cr￩ation (on dit qu’ils sont <em>immutables</em> ). De la m￪me mani￨re que les listes, les tuples sont <strong>ordonn￩s</strong>.<br />
+On cr￩￩ un tuple avec des parenth￨ses pour le distinguer des listes entre crochets. Les ￩l￩ments sont l￠ aussi s￩par￩s par les virgules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupleint</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -1246,8 +1246,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Albite&#39;}
-{&#39;Anorthite&#39;, &#39;Albite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Albite&#39;, &#39;Anorthite&#39;}
+{&#39;Albite&#39;, &#39;Anorthite&#39;}
 </pre></div>
 </div>
 </div>
@@ -1315,7 +1315,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Forsterite&#39;, &#39;Anorthite&#39;, &#39;Albite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Forsterite&#39;, &#39;Albite&#39;, &#39;Anorthite&#39;}
 </pre></div>
 </div>
 </div>
@@ -1335,7 +1335,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
-140625020229504
+139772134198208
 </pre></div>
 </div>
 </div>
@@ -1350,8 +1350,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140625020229504
-140625020229504
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139772134198208
+139772134198208
 </pre></div>
 </div>
 </div>
@@ -1366,10 +1366,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140625020229504
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140625020229504
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139772134198208
+139772134198208
 </pre></div>
 </div>
 </div>
@@ -1471,7 +1469,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-listes">3.1. Créer des listes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crer-des-listes">3.1. Cr￩er des listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-un-objet-dune-liste">3.2. Accéder a un objet d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-une-tranche-d-objets">3.3. Accéder a une tranche d’objets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacer-des-elements-dans-une-liste">3.4. Remplacer des éléments dans une liste</a></li>
@@ -1486,7 +1484,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#longueur-dune-liste">3.9. Longueur d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">3.10. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quelques-autres-types-interessants">3.10.1. Quelques autres types intéressants</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tuples-n-uplets-en-francais">3.10.1.1. Les Tuples (n-uplets en français)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tuples-n-uplets-en-franais">3.10.1.1. Les Tuples (n-uplets en fran￧ais)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-sets-ensembles-en-francais">3.10.1.2. Les sets (ensembles en français)</a></li>
 </ul>
 </li>
