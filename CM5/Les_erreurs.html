@@ -577,15 +577,7 @@ La syntaxe la plus simple est la suivante</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># un nombre aléatoir entre parmi 0, 1 ou 2</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">n</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="ne">ZeroDivisionError</span>: division by zero
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
 </pre></div>
 </div>
 </div>
@@ -639,6 +631,34 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </section>
 <section id="declencher-une-exception">
 <h3><span class="section-number">6.1.9. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h3>
+<p>Il peut être intéressant quand on code de déclencher un exception. Par exemple, lorsque vous effectuez un control de cohérence des données que vous venez de récupérer (vous avez récupéré un fichier de températures de l’océan atlantique et vous avez repéré des températures inférieures à -20 degrés).
+Pour cela on utilise le mot clé <code class="docutils literal notranslate"><span class="pre">raise</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_hebdo</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.8</span><span class="p">,</span> <span class="mf">18.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mf">17.0</span> <span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">20</span> <span class="k">for</span> <span class="n">x</span>  <span class="ow">in</span> <span class="n">temperatures_hebdo</span><span class="p">])</span> <span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;les données de température récupérées semblent abérantes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">20</span> <span class="k">for</span> <span class="n">x</span>  <span class="ow">in</span> <span class="n">temperatures_hebdo</span><span class="p">])</span> <span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;les données de température récupérées semblent abérantes&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: les données de température récupérées semblent abérantes
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="les-erreurs-de-syntaxe">
