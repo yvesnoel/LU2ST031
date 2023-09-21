@@ -385,7 +385,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-code-n-affiche-rien">6.3.2. Le code n’affiche rien</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -399,6 +403,19 @@ document.write(`
                   
   <section id="les-erreurs-en-python">
 <h1><span class="section-number">6. </span>Les erreurs en Python<a class="headerlink" href="#les-erreurs-en-python" title="Permalink to this heading">#</a></h1>
+<p>temps approximatif : 45min</p>
+<div class="hint admonition">
+<p class="admonition-title">Objectifs</p>
+<p>A l’issue de ce chapitre, vous serez capable de :</p>
+<ul class="simple">
+<li><p>expliquer la différence entre les exceptions, les erreurs de syntaxe et les erreurs d’execution</p></li>
+<li><p>gérer des exceptions pourraient intervenir à l’aide des commandes <code class="docutils literal notranslate"><span class="pre">try</span></code> et <code class="docutils literal notranslate"><span class="pre">except</span></code></p></li>
+<li><p>lister les principales exceptions</p></li>
+<li><p>déclencher une exception</p></li>
+<li><p>expliquer un message d’erreur et apporter la correction adéquate</p></li>
+<li><p>quitter une boucle infinie</p></li>
+</ul>
+</div>
 <section id="les-exceptions">
 <h2><span class="section-number">6.1. </span>Les exceptions<a class="headerlink" href="#les-exceptions" title="Permalink to this heading">#</a></h2>
 <section id="qu-est-ce-qu-une-exception">
@@ -577,7 +594,7 @@ La syntaxe la plus simple est la suivante</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
 </pre></div>
 </div>
 </div>
@@ -668,10 +685,14 @@ IndentationError : expected an indented block</p>
 </section>
 <section id="les-erreurs-d-execution">
 <h2><span class="section-number">6.3. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>La boucle infinie</p></li>
-<li><p>Le code n’affiche rien</p></li>
-</ul>
+<section id="la-boucle-infinie">
+<h3><span class="section-number">6.3.1. </span>La boucle infinie<a class="headerlink" href="#la-boucle-infinie" title="Permalink to this heading">#</a></h3>
+<p>Il arrive que l’on ne se rende pas compte qu’il y a une erreur dans notre code et qu’il n’existe aucun moyen de sortir d’une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. C’est à dire que la condition qui suit le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> ne vaut jamais <code class="docutils literal notranslate"><span class="pre">False</span></code>. On se retrouve alors dans une boucle infinie. Pour en sortir, il n’existe qu’un seul moyen : interrompre l’exécution du code. Dans un notebook, cela se fait en cliquant sur le bouton stop (un carré), qui s’appelle ausi <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> (que l’on retrouve aussi dans le menu <code class="docutils literal notranslate"><span class="pre">kernel</span></code>. Dans l’exemple ci-dessous, la boucle infinie est évidente mais cela n’est pas toujours le cas. La fonction <code class="docutils literal notranslate"><span class="pre">sleep</span></code>du module <code class="docutils literal notranslate"><span class="pre">time</span></code>permet de mettre en pause l’exécution pendant un certain nombre de secondes (paramètre de la fonction). Dans la capture ci-dessous, le bouton <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> a été pressé après 3 itérations. L’interuption provoque un message d’erreur <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/infinite_loop.png"><img alt="La boucle inifinie" class="align-center" src="../_images/infinite_loop.png" style="width: 80%;" /></a>
+</section>
+<section id="le-code-n-affiche-rien">
+<h3><span class="section-number">6.3.2. </span>Le code n’affiche rien<a class="headerlink" href="#le-code-n-affiche-rien" title="Permalink to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -751,7 +772,11 @@ IndentationError : expected an indented block</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-code-n-affiche-rien">6.3.2. Le code n’affiche rien</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
