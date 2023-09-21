@@ -387,7 +387,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-code-n-affiche-rien">6.3.2. Le code n’affiche rien</a></li>
 </ul>
 </li>
 </ul>
@@ -680,8 +679,132 @@ Pour cela on utilise le mot clé <code class="docutils literal notranslate"><spa
 </section>
 <section id="les-erreurs-de-syntaxe">
 <h2><span class="section-number">6.2. </span>Les erreurs de syntaxe<a class="headerlink" href="#les-erreurs-de-syntaxe" title="Permalink to this heading">#</a></h2>
+<p>Les erreurs de syntaxe sont des erreurs que l’on peut connaitre (si on est attentif ou un automate) avant même de lancer l’exécution du code. Beaucoup d’outils repèrent ce type d’erreurs et les soulignent pour que vous puissiez les corriger avant de lancer l’exécution de votre code. On peut distinguer les catégories d’erreurs de syntaxe suivantes :</p>
+<ul class="simple">
+<li><p>oubli d’un mot clé</p></li>
+<li><p>mot clé au mauvais endroit</p></li>
+<li><p>oubli d’un symbole (comme un : ou une paranthèse)</p></li>
+<li><p>faute de frappe sur un mot clé</p></li>
+<li><p>indentation incorrecte</p></li>
+<li><p>block vide</p></li>
+</ul>
 <p>SyntaxError: invalid syntax
 IndentationError : expected an indented block</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il manque le in devant range</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il manque le in devant range</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">continue</span> <span class="p">:</span>  <span class="c1"># continue n&#39;a rien à faire là</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2380400520.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">continue</span> <span class="p">:</span>  <span class="c1"># continue n&#39;a rien à faire là</span>
+                      <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Il manque le :</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2092945019.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Il manque le :</span>
+                         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foor</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\616432984.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">foor</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
+         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2635188246.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2635188246.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="p">:</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;perdu !&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\1571802836.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+    <span class="k">else</span> <span class="p">:</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="les-erreurs-d-execution">
 <h2><span class="section-number">6.3. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
@@ -689,9 +812,6 @@ IndentationError : expected an indented block</p>
 <h3><span class="section-number">6.3.1. </span>La boucle infinie<a class="headerlink" href="#la-boucle-infinie" title="Permalink to this heading">#</a></h3>
 <p>Il arrive que l’on ne se rende pas compte qu’il y a une erreur dans notre code et qu’il n’existe aucun moyen de sortir d’une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. C’est à dire que la condition qui suit le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> ne vaut jamais <code class="docutils literal notranslate"><span class="pre">False</span></code>. On se retrouve alors dans une boucle infinie. Pour en sortir, il n’existe qu’un seul moyen : interrompre l’exécution du code. Dans un notebook, cela se fait en cliquant sur le bouton stop (un carré), qui s’appelle ausi <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> (que l’on retrouve aussi dans le menu <code class="docutils literal notranslate"><span class="pre">kernel</span></code>. Dans l’exemple ci-dessous, la boucle infinie est évidente mais cela n’est pas toujours le cas. La fonction <code class="docutils literal notranslate"><span class="pre">sleep</span></code>du module <code class="docutils literal notranslate"><span class="pre">time</span></code>permet de mettre en pause l’exécution pendant un certain nombre de secondes (paramètre de la fonction). Dans la capture ci-dessous, le bouton <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> a été pressé après 3 itérations. L’interuption provoque un message d’erreur <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/infinite_loop.png"><img alt="La boucle inifinie" class="align-center" src="../_images/infinite_loop.png" style="width: 80%;" /></a>
-</section>
-<section id="le-code-n-affiche-rien">
-<h3><span class="section-number">6.3.2. </span>Le code n’affiche rien<a class="headerlink" href="#le-code-n-affiche-rien" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -774,7 +894,6 @@ IndentationError : expected an indented block</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-code-n-affiche-rien">6.3.2. Le code n’affiche rien</a></li>
 </ul>
 </li>
 </ul>
