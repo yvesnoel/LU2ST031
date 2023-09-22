@@ -384,7 +384,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.9. Déclencher une exception</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-mot-cle">6.2.1. oubli d’un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-cle-au-mauvais-endroit">6.2.2. mot clé au mauvais endroit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese">6.2.3. oubli d’un symbole (comme un : ou une paranthèse)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faute-de-frappe-sur-un-mot-cle">6.2.4. faute de frappe sur un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-incorrecte">6.2.5. indentation incorrecte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-vide">6.2.6. block vide</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
 </ul>
@@ -593,7 +601,7 @@ La syntaxe la plus simple est la suivante</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
 </pre></div>
 </div>
 </div>
@@ -679,18 +687,10 @@ Pour cela on utilise le mot clé <code class="docutils literal notranslate"><spa
 </section>
 <section id="les-erreurs-de-syntaxe">
 <h2><span class="section-number">6.2. </span>Les erreurs de syntaxe<a class="headerlink" href="#les-erreurs-de-syntaxe" title="Permalink to this heading">#</a></h2>
-<p>Les erreurs de syntaxe sont des erreurs que l’on peut connaitre (si on est attentif ou un automate) avant même de lancer l’exécution du code. Beaucoup d’outils repèrent ce type d’erreurs et les soulignent pour que vous puissiez les corriger avant de lancer l’exécution de votre code. On peut distinguer les catégories d’erreurs de syntaxe suivantes :</p>
-<ul class="simple">
-<li><p>oubli d’un mot clé</p></li>
-<li><p>mot clé au mauvais endroit</p></li>
-<li><p>oubli d’un symbole (comme un : ou une paranthèse)</p></li>
-<li><p>faute de frappe sur un mot clé</p></li>
-<li><p>indentation incorrecte</p></li>
-<li><p>block vide</p></li>
-</ul>
-<p>SyntaxError: invalid syntax
-IndentationError : expected an indented block</p>
-<div class="cell docutils container">
+<p>Les erreurs de syntaxe sont des erreurs que l’on peut connaitre (si on est attentif ou un automate) avant même de lancer l’exécution du code. Beaucoup d’outils repèrent ce type d’erreurs et les soulignent pour que vous puissiez les corriger avant de lancer l’exécution de votre code. Elles ne peuvent être gérées pendant l’exécution. Voici quelques exemples</p>
+<section id="oubli-d-un-mot-cle">
+<h3><span class="section-number">6.2.1. </span>oubli d’un mot clé<a class="headerlink" href="#oubli-d-un-mot-cle" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il manque le in devant range</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -706,7 +706,10 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+</section>
+<section id="mot-cle-au-mauvais-endroit">
+<h3><span class="section-number">6.2.2. </span>mot clé au mauvais endroit<a class="headerlink" href="#mot-cle-au-mauvais-endroit" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">continue</span> <span class="p">:</span>  <span class="c1"># continue n&#39;a rien à faire là</span>
@@ -715,7 +718,7 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2380400520.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">continue</span> <span class="p">:</span>  <span class="c1"># continue n&#39;a rien à faire là</span>
                       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -723,7 +726,10 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+</section>
+<section id="oubli-d-un-symbole-comme-un-ou-une-paranthese">
+<h3><span class="section-number">6.2.3. </span>oubli d’un symbole (comme un : ou une paranthèse)<a class="headerlink" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Il manque le :</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -731,7 +737,7 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2092945019.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Il manque le :</span>
                          <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -739,7 +745,10 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+</section>
+<section id="faute-de-frappe-sur-un-mot-cle">
+<h3><span class="section-number">6.2.4. </span>faute de frappe sur un mot clé<a class="headerlink" href="#faute-de-frappe-sur-un-mot-cle" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foor</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -747,7 +756,7 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\616432984.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">foor</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
          <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -755,7 +764,10 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+</section>
+<section id="indentation-incorrecte">
+<h3><span class="section-number">6.2.5. </span>indentation incorrecte<a class="headerlink" href="#indentation-incorrecte" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -763,7 +775,7 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2635188246.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="o">^</span>
 <span class="ne">IndentationError</span>: expected an indented block
@@ -771,23 +783,10 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2635188246.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+</section>
+<section id="block-vide">
+<h3><span class="section-number">6.2.6. </span>block vide<a class="headerlink" href="#block-vide" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="p">:</span>
@@ -797,7 +796,7 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\1571802836.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
     <span class="k">else</span> <span class="p">:</span>
     <span class="o">^</span>
 <span class="ne">IndentationError</span>: expected an indented block
@@ -805,6 +804,7 @@ IndentationError : expected an indented block</p>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="les-erreurs-d-execution">
 <h2><span class="section-number">6.3. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
@@ -891,7 +891,15 @@ IndentationError : expected an indented block</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.9. Déclencher une exception</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-mot-cle">6.2.1. oubli d’un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-cle-au-mauvais-endroit">6.2.2. mot clé au mauvais endroit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese">6.2.3. oubli d’un symbole (comme un : ou une paranthèse)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faute-de-frappe-sur-un-mot-cle">6.2.4. faute de frappe sur un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-incorrecte">6.2.5. indentation incorrecte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-vide">6.2.6. block vide</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
 </ul>
