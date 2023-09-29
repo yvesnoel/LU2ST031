@@ -889,6 +889,7 @@ où l’<strong>indice de fin est exclu</strong> et où le pas (et le 2ème <cod
 <p class="admonition-title">Remarque</p>
 <p>Une méthode est une fonction associée à un type d’objet. On l’utilise grâce à la notation <code class="docutils literal notranslate"><span class="pre">.</span></code> : <br />
 <code class="docutils literal notranslate"><span class="pre">nom_de_l_objet.nom_de_la_methode(arguments_eventuels)</span></code><br />
+Vous trouverez la description de toutes les méthodes associées aux listes <a class="reference external" href="https://www.w3schools.com/python/python_lists_methods.asp">ici</a>.
 Dans le cas de la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code> que l’on veut appliquer à une liste dont le nom est <code class="docutils literal notranslate"><span class="pre">ma_liste</span></code> on écrit : <br />
 <code class="docutils literal notranslate"><span class="pre">ma_liste.append(ce_que_l_on_veut_inserer)</span></code></p>
 </div>
@@ -1231,7 +1232,9 @@ On créé un tuple avec des parenthèses pour le distinguer des listes entre cro
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1257,8 +1260,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Albite&#39;}
-{&#39;Anorthite&#39;, &#39;Albite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Albite&#39;, &#39;Anorthite&#39;}
+{&#39;Albite&#39;, &#39;Anorthite&#39;}
 </pre></div>
 </div>
 </div>
@@ -1303,6 +1306,9 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1313,6 +1319,9 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1326,7 +1335,10 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Anorthite&#39;, &#39;Albite&#39;, &#39;Forsterite&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Forsterite&#39;, &#39;Albite&#39;, &#39;Anorthite&#39;}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1346,7 +1358,7 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;limons&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
-139950572200896
+140035471249024
 </pre></div>
 </div>
 </div>
@@ -1361,8 +1373,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139950572200896
-139950572200896
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140035471249024
+140035471249024
 </pre></div>
 </div>
 </div>
@@ -1377,8 +1389,8 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139950572200896
-139950572200896
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140035471249024
+140035471249024
 </pre></div>
 </div>
 </div>
@@ -1400,7 +1412,9 @@ Les sets se créent avec des accolades et les éléments, encore une fois, sont 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
-[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;grenats&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
 [&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
 [&#39;cailloux&#39;, &#39;graviers&#39;, &#39;sables&#39;, &#39;graviers&#39;, &#39;argiles&#39;, &#39;feldspath&#39;, &#39;plagioclase&#39;]
 </pre></div>

@@ -395,6 +395,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comportement-different-de-celui-attendu">6.3.2. Comportement différent de celui attendu</a></li>
 </ul>
 </li>
 </ul>
@@ -813,6 +814,10 @@ Pour cela on utilise le mot clé <code class="docutils literal notranslate"><spa
 <p>Il arrive que l’on ne se rende pas compte qu’il y a une erreur dans notre code et qu’il n’existe aucun moyen de sortir d’une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. C’est à dire que la condition qui suit le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> ne vaut jamais <code class="docutils literal notranslate"><span class="pre">False</span></code>. On se retrouve alors dans une boucle infinie. Pour en sortir, il n’existe qu’un seul moyen : interrompre l’exécution du code. Dans un notebook, cela se fait en cliquant sur le bouton stop (un carré), qui s’appelle ausi <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> (que l’on retrouve aussi dans le menu <code class="docutils literal notranslate"><span class="pre">kernel</span></code>. Dans l’exemple ci-dessous, la boucle infinie est évidente mais cela n’est pas toujours le cas. La fonction <code class="docutils literal notranslate"><span class="pre">sleep</span></code>du module <code class="docutils literal notranslate"><span class="pre">time</span></code>permet de mettre en pause l’exécution pendant un certain nombre de secondes (paramètre de la fonction). Dans la capture ci-dessous, le bouton <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> a été pressé après 3 itérations. L’interuption provoque un message d’erreur <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/infinite_loop.png"><img alt="La boucle inifinie" class="align-center" src="../_images/infinite_loop.png" style="width: 80%;" /></a>
 </section>
+<section id="comportement-different-de-celui-attendu">
+<h3><span class="section-number">6.3.2. </span>Comportement différent de celui attendu<a class="headerlink" href="#comportement-different-de-celui-attendu" title="Permalink to this heading">#</a></h3>
+<p>Le plus souvent, une fois les erreurs de syntaxe corrigées ainsi que les les exceptions gérées, il n’y a plus de message d’erreur qui s’affiche mais pourtant le résultat que vous obtenez n’est pas celui que vous attendiez. Il va falloir dans ce cas exécuter votre code pas à pas en inspectant le contenu des variables à chacun de ces pas. Lorsque vous observerez le premier comportement différent de celui auquel vous étiez attendu, vous devez relire avec attention cette ligne et peut être celles juste avant : la faute est par là. Cette exécution pas à pas en oservant le contenu des variables, s’appelle (en bon franglais) <strong>débugger</strong>. Vous verez dans le chapitre suivant l’environement Spyder qui permet de débugger facilement votre code.</p>
+</section>
 </section>
 </section>
 
@@ -902,6 +907,7 @@ Pour cela on utilise le mot clé <code class="docutils literal notranslate"><spa
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comportement-different-de-celui-attendu">6.3.2. Comportement différent de celui attendu</a></li>
 </ul>
 </li>
 </ul>
