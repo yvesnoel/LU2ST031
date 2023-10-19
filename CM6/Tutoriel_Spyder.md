@@ -9,7 +9,7 @@ Vous serez également capable dans Spyder de :
 - créer un script
 - le sauvegarder
 - l'exécuter ligne par ligne
-- l'exécuter en entier
+- l'exécuter intégralement
 - lire et interpréter les informations de la console
 - lire et interpréter les informations de l'explorateur de variables
 ```
@@ -18,13 +18,13 @@ Vous serez également capable dans Spyder de :
 
 ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_e406c51b9b8b63e00a4a99747902ebd6.png?raw=true)
 
-Jusqu'à présent, nous avons écrit des scripts directement dans Moodle. Nous allons voir maintenant comment créer des scripts python (reconnaissables par leur extension en `.py`) pour vos futurs projets. On peut écrire un script Python de manière très simple en utilisant un logiciel de traitement de texte classique comme notepad, sublimetext, etc. puis de changer l'extension `.txt` en `.py`. Cependant, il existe des programmes puissants qui fournissent une assistance précieuse pour la programmation. Nous allons apprendre au cours des prochaines semaines à nous servir du programme **Spyder** pour aller plus loin, plus vite, et en évitant de nombreuses erreurs.
+Jusqu'à présent, nous avons écrit des scripts directement dans Moodle ou dans un notebook par exemple sur JupyterHub. Nous allons voir maintenant comment créer des scripts python (reconnaissables par leur extension en `.py`) pour vos futurs projets. On peut écrire un script Python de manière très simple en utilisant un logiciel d'édition de texte classique comme notepad, sublimetext, etc. puis de changer l'extension `.txt` en `.py`. Cependant, il existe des programmes puissants qui fournissent une assistance précieuse pour la programmation. Nous allons apprendre au cours des prochaines semaines à nous servir du programme **Spyder** pour aller plus loin, plus vite, et en évitant de nombreuses erreurs.
 
-Spyder est ce qu'on appelle classiquement un environnement de développement intégré (ou IDE pour integrated development environment). Il s'agit d'un programme rassemblant un ensemble d'outils afin de faciliter l'écriture de code, notamment en simplifiant certaines tâches, en donnant un accès plus facile à la documentation, en affichant des alertes, en affichant un graphique directement après l'avoir appelé, etc. Un IDE se révèle rapidement indispensable pour toutes ces tâches. Spyder est un IDE open source spécifiquement concu pour Python et pour le domaine scientifique.
+Spyder est ce qu'on appelle classiquement un environnement de développement intégré (ou IDE pour Integrated Development Environment). Il s'agit d'un programme rassemblant des outils afin de faciliter l'écriture de code ; notamment en simplifiant certaines tâches, en donnant un accès plus facile à la documentation, en affichant des alertes, en affichant un graphique directement après l'avoir appelé, etc. Un IDE se révèle rapidement indispensable pour toutes ces tâches. Spyder est un IDE open source spécifiquement concu pour Python et pour le domaine scientifique.
 
 ### Installation
 
-Pour nous servir de Spyder, nous allons tout d'abord installer **Anaconda**, qui contient tout un ensemble d'outils pour programmer. Anaconda est gratuit, open source et contient directement Python (mais aussi le [langage R](https://fr.wikipedia.org/wiki/R_(langage))), Spyder, et permet de gérer librairies et dépendances plus facilement. 
+Pour nous servir de Spyder, nous allons tout d'abord installer **Anaconda**, qui contient tout un ensemble d'outils pour programmer. Anaconda est gratuit, open source et contient directement Python (mais aussi le [langage R](https://fr.wikipedia.org/wiki/R_(langage))), Spyder, et permet de gérer les librairies et dépendances plus facilement. 
 
 Anaconda s'installe facilement sur Windows, MacOS et Linux. La procédure d'installation est décrite ci-dessous.
 
@@ -157,17 +157,17 @@ Maintenant, essayez de supprimer la variable `V2_apres` de la ligne 12. Vous dev
 
 ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_26e9a0bdc078f5ac86b46eabdefe3c17.png?raw=true)
 
-Voila une première raison importante de l'utilité de Spyder. Celui-ci réalise une analyse de votre code en temps réel. Ici, ils vous indique avec un point rouge qu'il y a une erreur. Lorsque vous placez le curseur sur le point rouge, il vous indique le type d'erreur: ici, il s'agit d'une erreur de syntaxe. Normal, étant donné que la ligne se termine par le signe `/`.
+Voila une première raison importante pour utiliser Spyder. Celui-ci réalise une analyse de votre code en temps réel. Ici, il vous indique avec un point rouge qu'il y a une erreur. Lorsque vous placez le curseur sur le point rouge, il vous indique le type d'erreur: ici, il s'agit d'une [erreur de syntaxe](L_erreurs_syntaxe). Normal, étant donné que la ligne se termine par le signe `/`.
 
 Maintenant, après le signe `/`, ajoutez `V2_apres2`. 
 
 ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_66b3c08f25a106ace2406ea2b1c69ad9.png?raw=true)
 
-Ici, Spyder vous alerte encore une fois. Nous avons oublié de définir `V2_apres2` avant de l'utiliser! Les points rouges ou les signes attention jaunes vous indiquent qu'il y a des erreurs dans votre script avant même de le lancer, ce qui fait gagner beaucoup de temps.
+Ici, Spyder nous alerte encore une fois. Nous avons oublié de définir `V2_apres2` avant de l'utiliser! Les points rouges ou les signes attention jaunes vous indiquent qu'il y a des erreurs dans votre script avant même de le lancer, ce qui fait gagner beaucoup de temps.
 
-Corrigez l'erreur afin qu'il n'y ait plus de point rouge affiché. Maintenant qu'il n'y a plus d'erreur, nous voulons lancer notre script. Pour lancer le script entier, il suffit de cliquer sur ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_1060a5cddc2dd1577853aab597f3a81c.png?raw=true). Essayez.
+Corrigez l'erreur afin qu'il n'y ait plus de point rouge affiché. Maintenant qu'il n'y a plus d'erreur, nous pouvons lancer notre script. Pour lancer le script entier, il suffit de cliquer sur ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_1060a5cddc2dd1577853aab597f3a81c.png?raw=true). Essayez.
 
-Et voila! Le script a été exécuté. Maintenant, vous constatez qu'il faut que vous relanciez une ligne particulière. Cliquez sur la ligne de votre choix, par exemple la 8, puis cliquez sur ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_cfd9b64cd7e2af2fc2595120407d52ec.png?raw=true). Cette fois-ci, seule la ligne 8 a été exécutée.
+Et voila! Le script a été exécuté. Si vous constatez qu'il faut que vous relanciez une ligne particulière, cliquez sur la ligne de votre choix, par exemple la 8, puis cliquez sur ![](https://github.com/yvesnoel/LU2ST031/blob/master/docs/assets/css/upload_cfd9b64cd7e2af2fc2595120407d52ec.png?raw=true). Cette fois-ci, seule la ligne 8 a été exécutée.
 
 
 #### Fenêtre d'aide et explorateur de variables
