@@ -381,7 +381,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.1.6. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.1.7. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.8. Gérer les exceptions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.9. Déclencher une exception</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
@@ -602,7 +601,7 @@ La syntaxe la plus simple est la suivante</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
 </pre></div>
 </div>
 </div>
@@ -649,15 +648,6 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 </div>
-<div class="danger admonition">
-<p class="admonition-title">ATTENTION</p>
-<p>TRAVAIL EN COURS. Revenez plus tard.</p>
-</div>
-</section>
-<section id="declencher-une-exception">
-<h3><span class="section-number">6.1.9. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h3>
-<p>Il peut être intéressant quand on code de déclencher un exception. Par exemple, lorsque vous effectuez un control de cohérence des données que vous venez de récupérer (vous avez récupéré un fichier de températures de l’océan atlantique et vous avez repéré des températures inférieures à -20 degrés).
-Pour cela on utilise le mot clé <code class="docutils literal notranslate"><span class="pre">raise</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_hebdo</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.8</span><span class="p">,</span> <span class="mf">18.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mf">17.0</span> <span class="p">]</span> 
@@ -893,7 +883,6 @@ Pour cela on utilise le mot clé <code class="docutils literal notranslate"><spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">6.1.6. <code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zerodivisionerror">6.1.7. <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.8. Gérer les exceptions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.1.9. Déclencher une exception</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
