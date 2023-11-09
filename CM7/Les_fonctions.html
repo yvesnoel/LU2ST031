@@ -376,9 +376,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">8.1. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appel-de-fonction">8.2. Appel de fonction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-d-une-fonction">8.3. Définition d’une fonction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-domaine-de-variable">8.4. AJOUTER Domaine de variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">8.5. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-fonctions-lambda">8.5.1. Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#portee-des-varaiables">8.4. Portée des varaiables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-et-parametres-d-une-fonction">8.4.1. Arguments et paramètres d’une fonction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-memoires-et-arguments-de-fonction">8.5. Zones mémoires et arguments de fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">8.6. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-fonctions-lambda">8.6.1. Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valeurs-par-defaut-pour-les-parametres">8.6.2. Valeurs par défaut pour les paramètres</a></li>
 </ul>
 </li>
 </ul>
@@ -468,7 +473,7 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8146674769658454
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8109400813999796
 </pre></div>
 </div>
 </div>
@@ -580,13 +585,6 @@ False
 </div>
 </div>
 </div>
-</section>
-<section id="ajouter-domaine-de-variable">
-<h2><span class="section-number">8.4. </span>AJOUTER Domaine de variable<a class="headerlink" href="#ajouter-domaine-de-variable" title="Permalink to this heading">#</a></h2>
-<div class="seealso admonition">
-<p class="admonition-title">À vous de jouer</p>
-<p>Définissez une fonction dont nom est <code class="docutils literal notranslate"><span class="pre">maFonction</span></code> qui n’a qu’un seul paramètre, <code class="docutils literal notranslate"><span class="pre">n</span></code>. Si ce paramètre est strictement plus grand  que 10, elle le divise par 10, sinon elle l’incrémente de 1. Elle renvoie dans tous les cas le nombre ainsi obtenu.</p>
-</div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -616,11 +614,240 @@ False
 </div>
 </div>
 </div>
+<div class="seealso admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Définissez une fonction dont nom est <code class="docutils literal notranslate"><span class="pre">maFonction</span></code> qui n’a qu’un seul paramètre, <code class="docutils literal notranslate"><span class="pre">n</span></code>. Si ce paramètre est strictement plus grand  que 10, elle le divise par 10, sinon elle l’incrémente de 1. Elle renvoie dans tous les cas le nombre ainsi obtenu.</p>
+</div>
+</section>
+<section id="portee-des-varaiables">
+<h2><span class="section-number">8.4. </span>Portée des varaiables<a class="headerlink" href="#portee-des-varaiables" title="Permalink to this heading">#</a></h2>
+<p>L’expression <em>portée des variables</em> signifie que les variables sont accessibles (c’est à dire utilisables) que dans certains espaces de votre script et pas dans d’autres. Il existe des variables locales et des variables globales mais ici nous n’aborderons que les variables locales. Les variables utilisées dans l’espaces de définition d’une fonction sont des vartiables locales à la fonction et ne sont pas accessibles à l’extérieur de cette fonction (par exemple dans le script qui appelle cette fonction). Réciproquement, les variables utilisées dans l’espace de votre script sont inaccessibles à l’intérieur de l’espace de définition de la fonction. La seule façon de communiquer entre une fonction et le script, c’est à travers les arguments d’entrée et les valeurs de retour de la fonction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fonc_bidon</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+<span class="c1">#   ICI ON EST DANS L&#39;ESPACE DE LA FONCTION</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans la fonction la variable x vaut : &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans la fonction la variable a vaut : &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ICI ON EST DANS L&#39;ESPACE DU SCRIPT</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans le script la variable a vaut : &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">fonc_bidon</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans le script la variable a vaut toujours : &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans le script la variable b vaut : &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="k">try</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans le script la variable x vaut : &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">)</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans le script la variable x n&#39;est pas définie&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dans le script la variable a vaut : 5
+Dans la fonction la variable x vaut : 4
+Dans la fonction la variable a vaut : 8
+Dans le script la variable a vaut toujours : 5
+Dans le script la variable b vaut : 10
+Dans le script la variable x vaut : 0.87
+</pre></div>
+</div>
+</div>
+</div>
+<section id="arguments-et-parametres-d-une-fonction">
+<h3><span class="section-number">8.4.1. </span>Arguments et paramètres d’une fonction<a class="headerlink" href="#arguments-et-parametres-d-une-fonction" title="Permalink to this heading">#</a></h3>
+<p>Nous avons vu précédemment qu’un seul moyen de transmettre des valeurs de l’espace du script à celui de la fonction : définir un ou des paramètres et donner des valeurs en argument lors de l’appel de la fonction à partir du script. C’est à dire que d’une part on définit des noms de variable dans la définition de la fonction, que l’on peut utiliser dans la fonction et d’autre part on fournit des valeurs, c’est à dire une expression, en argument lors de l’appel de la fonction. L’expression fournie en argument lors de l’appel peut se résumer à une variable, c’est à dire la valeur contenue dans cette variable. Tous les paramètres prévus dans la définition de la fonction doivent correspondre à des valeurs (arguments) lors de l’appelc (dans le cas contraire une exception de type <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> est signalée).</p>
+<div class="caution admonition">
+<p class="admonition-title">Attention : </p>
+<p>C’est l’ordre des arguments qui permet des les relier aux paramètres de la fonction.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fdiff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="p">:</span>
+<span class="c1"># DEFINITION DE LA FONCTION</span>
+    <span class="k">return</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiff</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">fdiff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans l’exemple ci-dessus, on constate bien qu’il n’y a pas de “lien” entre <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">a</span></code>. C’est bien la position des arguments qui compte. <code class="docutils literal notranslate"><span class="pre">y</span></code>est en première position : sa valeur est affectée à <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">x</span></code> est en deuxième position : sa valeur est affectée à <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiff</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’exemple ci-dessus, montre qu’on ne fournit pas des noms de variable en arguments, lors de l’appel d’une fonction, mais bien des expressions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">fdiff</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans l’exemple ci-dessus, on constate bien que le nom des varaibles utilisées dans les expressions fournies comme arguments lors de l’appel à <code class="docutils literal notranslate"><span class="pre">fdiff</span></code>, est indépendant des noms utilisés comme paramètres dans la définition de <code class="docutils literal notranslate"><span class="pre">fdiff</span></code>.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdiff</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fdiff</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: fdiff() missing 1 required positional argument: &#39;b&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans l’exemple ci-dessus, une exception est signalée car il manque une valeur pour le 2ème paramètre (<code class="docutils literal notranslate"><span class="pre">b</span></code>) de <code class="docutils literal notranslate"><span class="pre">fdiff</span></code>.</p>
+</section>
+</section>
+<section id="zones-memoires-et-arguments-de-fonction">
+<h2><span class="section-number">8.5. </span>Zones mémoires et arguments de fonction<a class="headerlink" href="#zones-memoires-et-arguments-de-fonction" title="Permalink to this heading">#</a></h2>
+<p>Lors de l’appel d’une fonction, c’est l’id de la zone mémoire qui est passée et non la valeur. C’est très important si par exemple on modifie le contenu d’une variable dans la fonction, cela modifie aussi la variable dans le script.</p>
+<p>Dans l’exemple ci-dessous, on affiche à chaque étape l’id (c’est à dire l’adresse mémoire) des variables dans l’espace de de la fonction et dans l’espace du script. On voit que l’adresse mémoire est toujours la même, des variables différentes pointent vers la même zone mémoire. Une modification du contenu d’une de ces variables affecte donc les autres.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suivi_id</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans la fonction l&#39;id de b avant append est :&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+    <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=-</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans la fonction l&#39;id de b après append est :&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans la fonction l&#39;id de a après append est :&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+    <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="c1">#</span>
+<span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans le script avant l&#39;appel, l&#39;id de c est :&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans le script avant l&#39;appel, l&#39;id de a est :&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+<span class="c1">#</span>
+<span class="n">suivi_id</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans le script après l&#39;appel, l&#39;id de c est :&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3] [4, 5, 6]
+Dans le script avant l&#39;appel, l&#39;id de c est :140513220100864
+Dans le script avant l&#39;appel, l&#39;id de a est :140513220100608
+Dans la fonction l&#39;id de b avant append est :140513220100864
+Dans la fonction l&#39;id de b après append est :140513220100864
+Dans la fonction l&#39;id de a après append est :140513220100608
+Dans le script après l&#39;appel, l&#39;id de c est :140513220100864
+[1, -2, 3] [4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suivi_id</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans la fonction &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans la fonction &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans la fonction &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>    
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>
+<span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans le script &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dans le script &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">suivi_id</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dans le script 140513220530560
+Dans le script 140513220100736
+Dans la fonction 140513220530560
+Dans la fonction 140513220100736
+Dans la fonction 140513220530560
+True
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="pour-aller-plus-loin">
-<h2><span class="section-number">8.5. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
 <section id="les-fonctions-lambda">
-<h3><span class="section-number">8.5.1. </span>Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#les-fonctions-lambda" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.6.1. </span>Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#les-fonctions-lambda" title="Permalink to this heading">#</a></h3>
 <p>Il est possible de définir des fonctions à partir d’une autre fonction, appelée <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, qui est composée d’une seul instruction (une seule ligne). La syntaxe est :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom_de_la_fonction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">parametre_1</span><span class="p">,</span> <span class="n">parametre_2</span><span class="p">,</span> <span class="o">...</span> <span class="p">:</span> <span class="n">valeur_renvoyee</span>
 </pre></div>
@@ -654,6 +881,80 @@ False
 </div>
 </div>
 </div>
+</section>
+<section id="valeurs-par-defaut-pour-les-parametres">
+<h3><span class="section-number">8.6.2. </span>Valeurs par défaut pour les paramètres<a class="headerlink" href="#valeurs-par-defaut-pour-les-parametres" title="Permalink to this heading">#</a></h3>
+<p>Il est possible de rendre optionnels certains paramètre dans une fonction. Pour cela il suffit d’indiquer une valeur par défaut pour les paramètres concernés.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="n">long</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">larg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">long</span><span class="o">+</span><span class="n">larg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimetre</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimetre</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimetre</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimetre</span><span class="p">(</span><span class="n">larg</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le dernier exemple nous montre que si l’on souhaite omettre un argument mais en spécifier d’autres qui se situent après, on doit indiquer la correspondance explicitement entre paramètre (<code class="docutils literal notranslate"><span class="pre">larg</span></code>) et argument (<code class="docutils literal notranslate"><span class="pre">3</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimetre</span><span class="p">(</span><span class="n">larg</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">long</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
+</div>
+</div>
+<p>lorsque l’on donne la correspondance explicite comme dans l’exemple ci-dessus, il n’est plus nécessaire de respecter l’ordre des paramètres.</p>
 </section>
 </section>
 </section>
@@ -724,9 +1025,14 @@ False
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">8.1. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appel-de-fonction">8.2. Appel de fonction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-d-une-fonction">8.3. Définition d’une fonction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ajouter-domaine-de-variable">8.4. AJOUTER Domaine de variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">8.5. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-fonctions-lambda">8.5.1. Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#portee-des-varaiables">8.4. Portée des varaiables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-et-parametres-d-une-fonction">8.4.1. Arguments et paramètres d’une fonction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-memoires-et-arguments-de-fonction">8.5. Zones mémoires et arguments de fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">8.6. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-fonctions-lambda">8.6.1. Les fonctions <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valeurs-par-defaut-pour-les-parametres">8.6.2. Valeurs par défaut pour les paramètres</a></li>
 </ul>
 </li>
 </ul>
