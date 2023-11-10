@@ -417,7 +417,7 @@ A chaque fois, pour les utiliser, on dit <strong>appeler</strong>, nous avons ut
 Une fonction peut aussi n’avoir aucun argument, ou plusieurs arguments. Nous avons aussi constaté que les fonctions effectue une action et que la plupart (mais pas toutes) renvoie un objet (qui peut être de n’importe quel type).</p>
 <div class="tip admonition">
 <p class="admonition-title">En résumé</p>
-<p>Une fonction est un bloc d’instructions qui est exécuté quand la fonction est appelée. La fonction “communique” avec le programme principal grâce aux arguments (en entrée) et grâce à ce qui est renvoyé (en sortie).</p>
+<p>Une fonction est un bloc d’instructions qui est exécuté quand la fonction est appelée. La fonction “communique” avec le programme principal grâce aux <strong>arguments</strong> (en entrée) et grâce à ce qui est renvoyé (en sortie).</p>
 </div>
 </section>
 <section id="appel-de-fonction">
@@ -473,7 +473,7 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8109400813999796
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.041060398426559175
 </pre></div>
 </div>
 </div>
@@ -483,12 +483,12 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="mf">9.8765</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.88
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.76
 </pre></div>
 </div>
 </div>
@@ -805,12 +805,12 @@ Dans le script la variable x vaut : 0.87
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3] [4, 5, 6]
-Dans le script avant l&#39;appel, l&#39;id de c est :140513220100864
-Dans le script avant l&#39;appel, l&#39;id de a est :140513220100608
-Dans la fonction l&#39;id de b avant append est :140513220100864
-Dans la fonction l&#39;id de b après append est :140513220100864
-Dans la fonction l&#39;id de a après append est :140513220100608
-Dans le script après l&#39;appel, l&#39;id de c est :140513220100864
+Dans le script avant l&#39;appel, l&#39;id de c est :140712269315456
+Dans le script avant l&#39;appel, l&#39;id de a est :140712269313344
+Dans la fonction l&#39;id de b avant append est :140712269315456
+Dans la fonction l&#39;id de b après append est :140712269315456
+Dans la fonction l&#39;id de a après append est :140712269313344
+Dans le script après l&#39;appel, l&#39;id de c est :140712269315456
 [1, -2, 3] [4, 5, 6]
 </pre></div>
 </div>
@@ -833,11 +833,11 @@ Dans le script après l&#39;appel, l&#39;id de c est :140513220100864
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dans le script 140513220530560
-Dans le script 140513220100736
-Dans la fonction 140513220530560
-Dans la fonction 140513220100736
-Dans la fonction 140513220530560
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dans le script 140712269313920
+Dans le script 140712269314368
+Dans la fonction 140712269313920
+Dans la fonction 140712269314368
+Dans la fonction 140712269313920
 True
 </pre></div>
 </div>
@@ -884,7 +884,7 @@ True
 </section>
 <section id="valeurs-par-defaut-pour-les-parametres">
 <h3><span class="section-number">8.6.2. </span>Valeurs par défaut pour les paramètres<a class="headerlink" href="#valeurs-par-defaut-pour-les-parametres" title="Permalink to this heading">#</a></h3>
-<p>Il est possible de rendre optionnels certains paramètre dans une fonction. Pour cela il suffit d’indiquer une valeur par défaut pour les paramètres concernés.</p>
+<p>Il est possible de rendre optionnels certains arguments lors de l’appel d’une fonction. Pour cela il suffit d’indiquer une valeur par défaut pour les paramètres concernés.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="n">long</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">larg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
@@ -905,6 +905,7 @@ True
 </div>
 </div>
 </div>
+<p>Dans l’exemple ci-dessus tous les arguments ont été spécifiés, les valeurs par défaut ne sont pas utilisés.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimetre</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>

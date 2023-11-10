@@ -602,15 +602,7 @@ La syntaxe la plus simple est la suivante</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># un nombre aléatoir entre parmi 0, 1 ou 2</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">n</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="ne">ZeroDivisionError</span>: division by zero
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
 </pre></div>
 </div>
 </div>
@@ -674,7 +666,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_20496</span>\<span class="mf">1170450253.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">20</span> <span class="k">for</span> <span class="n">x</span>  <span class="ow">in</span> <span class="n">temperatures_hebdo</span><span class="p">])</span> <span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;les données de température récupérées semblent abérantes&#39;</span><span class="p">)</span>
 
@@ -698,7 +690,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\707529251.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il manque le in devant range</span>
           <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -718,7 +710,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2380400520.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">continue</span> <span class="p">:</span>  <span class="c1"># continue n&#39;a rien à faire là</span>
                       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -737,7 +729,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2092945019.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Il manque le :</span>
                          <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -756,7 +748,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\616432984.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">foor</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
          <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -775,7 +767,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\2635188246.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="o">^</span>
 <span class="ne">IndentationError</span>: expected an indented block
@@ -796,7 +788,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\YVES\AppData\Local\Temp\ipykernel_20496\1571802836.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
     <span class="k">else</span> <span class="p">:</span>
     <span class="o">^</span>
 <span class="ne">IndentationError</span>: expected an indented block
