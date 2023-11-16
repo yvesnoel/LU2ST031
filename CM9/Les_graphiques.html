@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>La bibliothèque Matplotlib &#8212; Python pour les Géosciences</title>
+    <title>11. La bibliothèque Matplotlib &#8212; Python pour les Géosciences</title>
   
   
   
@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'CM9/Les_graphiques';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="10. Débuguer avec Spyder" href="../CM8/Debug_spyder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../CM1/Les_expressions.html">1. Les expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM1/Les_variables.html">2. Les variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
@@ -176,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CM8/Debug_spyder.html">10. Débuguer avec Spyder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. La bibliothèque Matplotlib</a></li>
 </ul>
 
     </div>
@@ -371,46 +373,46 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-import-du-paquet">L’import du paquet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-cas-le-plus-simple">Le cas le plus simple</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-nuage-de-point-avec-scatter">Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-commande-de-base">La commande de base</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-marqueurs">Les marqueurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taille-des-marqueurs">La taille des marqueurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-couleur">La couleur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-import-du-paquet">11.1. L’import du paquet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-cas-le-plus-simple">11.2. Le cas le plus simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-nuage-de-point-avec-scatter">11.3. Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-commande-de-base">11.3.1. La commande de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-marqueurs">11.3.2. Les marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taille-des-marqueurs">11.3.3. La taille des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-couleur">11.3.4. La couleur</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-lignes-brisees-avec-plot">Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-plus-simple">Le plus simple</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-du-style-des-marqueurs">Modification du style des marqueurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait">La taile des marqueurs et l’épaisseur du trait</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-de-ligne">Le type de ligne</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-lignes-brisees-avec-plot">11.4. Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-plus-simple">11.4.1. Le plus simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-du-style-des-marqueurs">11.4.2. Modification du style des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait">11.4.3. La taile des marqueurs et l’épaisseur du trait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-de-ligne">11.4.4. Le type de ligne</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-types-de-traces">Autres types de tracés</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar"><code class="docutils literal notranslate"><span class="pre">bar</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step"><code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-types-de-traces">11.5. Autres types de tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar">11.5.1. <code class="docutils literal notranslate"><span class="pre">bar</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step">11.5.2. <code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres-et-annotations">Les titres et annotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres">Les titres</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-annotations">Les annotations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-legende">La légende</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres-et-annotations">11.6. Les titres et annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres">11.6.1. Les titres</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-annotations">11.6.2. Les annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-legende">11.6.3. La légende</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-axes">Les axes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-valeurs-limites">Les valeurs limites</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-graduations">Les graduations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-axes">11.7. Les axes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-valeurs-limites">11.7.1. Les valeurs limites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-graduations">11.7.2. Les graduations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-traces">Plusieurs tracés</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-un-meme-graphique">Sur un même graphique</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-des-graphiques-differents">Sur des graphiques différents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-traces">11.8. Plusieurs tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-un-meme-graphique">11.8.1. Sur un même graphique</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-des-graphiques-differents">11.8.2. Sur des graphiques différents</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-de-la-figure">Sauvegarde de la figure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-figures">Les figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-de-la-figure">11.9. Sauvegarde de la figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">11.10. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-figures">11.10.1. Les figures</a></li>
 </ul>
 </li>
 </ul>
@@ -425,7 +427,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="la-bibliotheque-matplotlib">
-<h1>La bibliothèque Matplotlib<a class="headerlink" href="#la-bibliotheque-matplotlib" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>La bibliothèque Matplotlib<a class="headerlink" href="#la-bibliotheque-matplotlib" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
 <p>A l’issue de ce chapître, vous serez capable de :</p>
@@ -450,7 +452,7 @@ document.write(`
 </div>
 </div>
 <section id="l-import-du-paquet">
-<h2>L’import du paquet<a class="headerlink" href="#l-import-du-paquet" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>L’import du paquet<a class="headerlink" href="#l-import-du-paquet" title="Permalink to this heading">#</a></h2>
 <p>Toutt commence par l’importation de la bibliothèque. En fait nous n’allons utiliser qu’un sous ensemble de <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> : <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. De plus, nous allons utiliser un raccourci pour ne pas avoir à écrire <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code> mais plus simplement <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> (la fonction <code class="docutils literal notranslate"><span class="pre">plot</span></code>est donnée ici comme exemple de fonction que nous allons utiliser).
 L’import s’écrit donc  :</p>
 <div class="cell docutils container">
@@ -472,14 +474,14 @@ L’import s’écrit donc  :</p>
 </div>
 </section>
 <section id="le-cas-le-plus-simple">
-<h2>Le cas le plus simple<a class="headerlink" href="#le-cas-le-plus-simple" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Le cas le plus simple<a class="headerlink" href="#le-cas-le-plus-simple" title="Permalink to this heading">#</a></h2>
 <p>Lorsque l’on a besoin d’un seul graphique qui ne fait appel qu’à un seul jeu d’axes (un seul axe des abscisses et un seul axe des ordonnées), il est possible de tracer directement ce dont on a besoin. Pour obtenir des graphiques plus complexes ou pour plus le personnaliser il faudra passer par des figures et plusieurs lignes de commandes mais cela sort de  ce que l’on s’est fixé comme objectif pour ce cours. Nous allons donc nous limiter ici à quelques types de tracés simples et à quelques moyens pour adapter le rendu à ses besoins.</p>
 </section>
 <section id="le-nuage-de-point-avec-scatter">
-<h2>Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code><a class="headerlink" href="#le-nuage-de-point-avec-scatter" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code><a class="headerlink" href="#le-nuage-de-point-avec-scatter" title="Permalink to this heading">#</a></h2>
 <p>Pour un nuage de point on peut utiliser la fonction <code class="docutils literal notranslate"><span class="pre">scatter</span></code> (<em>scatter plot</em> veut dire nuage de points en anglais).</p>
 <section id="la-commande-de-base">
-<h3>La commande de base<a class="headerlink" href="#la-commande-de-base" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.3.1. </span>La commande de base<a class="headerlink" href="#la-commande-de-base" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
@@ -495,7 +497,7 @@ L’import s’écrit donc  :</p>
 </div>
 </section>
 <section id="les-marqueurs">
-<h3>Les marqueurs<a class="headerlink" href="#les-marqueurs" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.3.2. </span>Les marqueurs<a class="headerlink" href="#les-marqueurs" title="Permalink to this heading">#</a></h3>
 <p>Par défaut, le nuage de points est tracé avec des points bleus. Vous pouvez spécifier le paramètre optionnel <code class="docutils literal notranslate"><span class="pre">marker</span></code> de la fonction <code class="docutils literal notranslate"><span class="pre">scatter</span></code> pour changer le type de marqueurs. Par exemple : <code class="docutils literal notranslate"><span class="pre">&quot;+&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>, … (<a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">plus d’infos ici</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,7 +514,7 @@ L’import s’écrit donc  :</p>
 </div>
 </section>
 <section id="la-taille-des-marqueurs">
-<h3>La taille des marqueurs<a class="headerlink" href="#la-taille-des-marqueurs" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.3.3. </span>La taille des marqueurs<a class="headerlink" href="#la-taille-des-marqueurs" title="Permalink to this heading">#</a></h3>
 <p>Il est parfois utilie de changer la taille des marqueurs en utilisant le paramètre optionnel <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -529,7 +531,7 @@ L’import s’écrit donc  :</p>
 </div>
 </section>
 <section id="la-couleur">
-<h3>La couleur<a class="headerlink" href="#la-couleur" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.3.4. </span>La couleur<a class="headerlink" href="#la-couleur" title="Permalink to this heading">#</a></h3>
 <p>Pour changer la couleur de tous les marqueurs, on utilise le paramètre optionnel <code class="docutils literal notranslate"><span class="pre">color</span></code>. Les couleurs peuvent peuvent être spécifiées de plusieurs manières mais la plus simple est de donner le nom de la couleur sous la forme d’une chaîne de caractère correspondant au nom de la couleur en anglais. (ces noms peuvent être abrégés en une seule lettres ; <code class="docutils literal notranslate"><span class="pre">'blue'</span></code> : <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'red'</span></code> : <code class="docutils literal notranslate"><span class="pre">'r'</span></code> ou encore <code class="docutils literal notranslate"><span class="pre">'black'</span></code> : <code class="docutils literal notranslate"><span class="pre">'k'</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,10 +600,10 @@ L’import s’écrit donc  :</p>
 </section>
 </section>
 <section id="les-lignes-brisees-avec-plot">
-<h2>Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#les-lignes-brisees-avec-plot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#les-lignes-brisees-avec-plot" title="Permalink to this heading">#</a></h2>
 <p>Beaucoup d’options vues pour <code class="docutils literal notranslate"><span class="pre">scatter</span></code> sont aussi valables pour plot. Dans les exemples ci-dessous vous découvrirez d’autres.</p>
 <section id="le-plus-simple">
-<h3>Le plus simple<a class="headerlink" href="#le-plus-simple" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>Le plus simple<a class="headerlink" href="#le-plus-simple" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
@@ -617,7 +619,7 @@ L’import s’écrit donc  :</p>
 </div>
 </section>
 <section id="modification-du-style-des-marqueurs">
-<h3>Modification du style des marqueurs<a class="headerlink" href="#modification-du-style-des-marqueurs" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.2. </span>Modification du style des marqueurs<a class="headerlink" href="#modification-du-style-des-marqueurs" title="Permalink to this heading">#</a></h3>
 <p>Les paramètres <code class="docutils literal notranslate"><span class="pre">marker</span></code>, <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code> et <code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code>permettent de modifier le style de marqueurs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,7 +636,7 @@ L’import s’écrit donc  :</p>
 </div>
 </section>
 <section id="la-taile-des-marqueurs-et-l-epaisseur-du-trait">
-<h3>La taile des marqueurs et l’épaisseur du trait<a class="headerlink" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.3. </span>La taile des marqueurs et l’épaisseur du trait<a class="headerlink" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait" title="Permalink to this heading">#</a></h3>
 <p>La taille des marqueurs se modifie à l’aide de <code class="docutils literal notranslate"><span class="pre">markersize</span></code>.
 L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="docutils literal notranslate"><span class="pre">linewidth</span></code>.</p>
 <div class="cell docutils container">
@@ -652,7 +654,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="le-type-de-ligne">
-<h3>Le type de ligne<a class="headerlink" href="#le-type-de-ligne" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.4. </span>Le type de ligne<a class="headerlink" href="#le-type-de-ligne" title="Permalink to this heading">#</a></h3>
 <p>Le type de trait est modifié par <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> qui peut prendre notamment les valeurs suivantes : <code class="docutils literal notranslate"><span class="pre">'-'</span></code>, <code class="docutils literal notranslate"><span class="pre">'--'</span></code>, <code class="docutils literal notranslate"><span class="pre">'-.'</span></code>, <code class="docutils literal notranslate"><span class="pre">':'</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -707,10 +709,10 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </section>
 </section>
 <section id="autres-types-de-traces">
-<h2>Autres types de tracés<a class="headerlink" href="#autres-types-de-traces" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>Autres types de tracés<a class="headerlink" href="#autres-types-de-traces" title="Permalink to this heading">#</a></h2>
 <p>Il existe de nombreux autres types de tracés que nous ne développerons pas ici. On peut tout de même citer :</p>
 <section id="bar">
-<h3><code class="docutils literal notranslate"><span class="pre">bar</span></code><a class="headerlink" href="#bar" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.1. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code><a class="headerlink" href="#bar" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
@@ -726,7 +728,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="step">
-<h3><code class="docutils literal notranslate"><span class="pre">step</span></code><a class="headerlink" href="#step" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.2. </span><code class="docutils literal notranslate"><span class="pre">step</span></code><a class="headerlink" href="#step" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
@@ -743,9 +745,9 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </section>
 </section>
 <section id="les-titres-et-annotations">
-<h2>Les titres et annotations<a class="headerlink" href="#les-titres-et-annotations" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.6. </span>Les titres et annotations<a class="headerlink" href="#les-titres-et-annotations" title="Permalink to this heading">#</a></h2>
 <section id="les-titres">
-<h3>Les titres<a class="headerlink" href="#les-titres" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.6.1. </span>Les titres<a class="headerlink" href="#les-titres" title="Permalink to this heading">#</a></h3>
 <p>Le titre du graphique se définie à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">title</span></code>. LEs titres des des axes des abscisses et des ordonnées avec les fonctions <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> et <code class="docutils literal notranslate"><span class="pre">ylabel</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -765,7 +767,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="les-annotations">
-<h3>Les annotations<a class="headerlink" href="#les-annotations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.6.2. </span>Les annotations<a class="headerlink" href="#les-annotations" title="Permalink to this heading">#</a></h3>
 <p>Il est possible d’ajouter du texte sur le graphique en utilisant la méthode <code class="docutils literal notranslate"><span class="pre">text</span></code> qui prend comme arguments les coordonées du texte à afficher et bien-sûr la chaîne de caractères voulue. L’alignement ce gère avec <code class="docutils literal notranslate"><span class="pre">horizontalalignment</span></code> et la taille des caractères avec <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,7 +785,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="la-legende">
-<h3>La légende<a class="headerlink" href="#la-legende" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.6.3. </span>La légende<a class="headerlink" href="#la-legende" title="Permalink to this heading">#</a></h3>
 <p>La légende s’active grâce à la fonction <code class="docutils literal notranslate"><span class="pre">legend</span></code>. Elle nécessite que le paramètre <code class="docutils literal notranslate"><span class="pre">label</span></code> ait été renseigné pour les différents tracés.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -829,9 +831,9 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </section>
 </section>
 <section id="les-axes">
-<h2>Les axes<a class="headerlink" href="#les-axes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.7. </span>Les axes<a class="headerlink" href="#les-axes" title="Permalink to this heading">#</a></h2>
 <section id="les-valeurs-limites">
-<h3>Les valeurs limites<a class="headerlink" href="#les-valeurs-limites" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.7.1. </span>Les valeurs limites<a class="headerlink" href="#les-valeurs-limites" title="Permalink to this heading">#</a></h3>
 <p>Les valeurs limites de chaque axe sont spécifiées avec de 2 valeurs : la limite inférierue et la limite supérieure. Les méthodes sont <code class="docutils literal notranslate"><span class="pre">xlim</span></code> et <code class="docutils literal notranslate"><span class="pre">ylim</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -850,7 +852,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="les-graduations">
-<h3>Les graduations<a class="headerlink" href="#les-graduations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.7.2. </span>Les graduations<a class="headerlink" href="#les-graduations" title="Permalink to this heading">#</a></h3>
 <p>Les valeurs indiquées sur les axes et les graduations associées s’appellent en anglais des <em>ticks</em>. Il est possible de changer l’étendue ou la périodicité de ces graduations grâce à <code class="docutils literal notranslate"><span class="pre">xticks</span></code> (ou <code class="docutils literal notranslate"><span class="pre">yticks</span></code>). Attention les limites du graphes seront éventuellement augmentées pour que toutes les graduations soient visibles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -980,9 +982,9 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </section>
 </section>
 <section id="plusieurs-traces">
-<h2>Plusieurs tracés<a class="headerlink" href="#plusieurs-traces" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.8. </span>Plusieurs tracés<a class="headerlink" href="#plusieurs-traces" title="Permalink to this heading">#</a></h2>
 <section id="sur-un-meme-graphique">
-<h3>Sur un même graphique<a class="headerlink" href="#sur-un-meme-graphique" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.8.1. </span>Sur un même graphique<a class="headerlink" href="#sur-un-meme-graphique" title="Permalink to this heading">#</a></h3>
 <p>Il est évidemment possible d’afficher plusieurs tracés sur un même graphique.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1000,7 +1002,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="sur-des-graphiques-differents">
-<h3>Sur des graphiques différents<a class="headerlink" href="#sur-des-graphiques-differents" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.8.2. </span>Sur des graphiques différents<a class="headerlink" href="#sur-des-graphiques-differents" title="Permalink to this heading">#</a></h3>
 <p>La méthode <code class="docutils literal notranslate"><span class="pre">subplot</span></code> permet de créer et d’utiliser plusieurs graphique. Les deux premiers chiffres de l’unique argument permetent de spécifier combien de graphiques on va créer (nombre de lignes et de colonnes). Le troisième chiffre indique dans quel graphique on souhaite envoyer les commandes de tracé qui vont suivre. Le numéro 1 est en haut à gauche, on augment en ligne puis en colonne. Dans l’exemple ci-dessous, on crée un mosaïque de 6 graphiques : 2 lignes et 3 colonnes. Les numéros des zones accueillant les graphiques sont donc :</p>
 <div class="highlight-Table notranslate"><div class="highlight"><pre><span></span>| 1 | 2 | 3 |
 | 4 | 5 | 6 |
@@ -1073,7 +1075,7 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </section>
 </section>
 <section id="sauvegarde-de-la-figure">
-<h2>Sauvegarde de la figure<a class="headerlink" href="#sauvegarde-de-la-figure" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.9. </span>Sauvegarde de la figure<a class="headerlink" href="#sauvegarde-de-la-figure" title="Permalink to this heading">#</a></h2>
 <p>Pour sauvegarder la figure que l’on vient de tracer dans un fichier, il suffit de faire appel à la méthode <code class="docutils literal notranslate"><span class="pre">savefig</span></code> et de spécifier le nom de fichier voulu. Le type est automatiquement déduit de l’extension du fichier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1089,9 +1091,9 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
 </div>
 </section>
 <section id="pour-aller-plus-loin">
-<h2>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.10. </span>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
 <section id="les-figures">
-<span id="l-figures"></span><h3>Les figures<a class="headerlink" href="#les-figures" title="Permalink to this heading">#</a></h3>
+<span id="l-figures"></span><h3><span class="section-number">11.10.1. </span>Les figures<a class="headerlink" href="#les-figures" title="Permalink to this heading">#</a></h3>
 <p>Les figures premettent plus de contrôle sur l’affichage des graphiques mais dépassent les objectifs de ce cours. Toutefois, elles sont indispensables lorsque l’on veut afficher plusieurs graphes sur un figure ; on parle alors de sous-figures. La syntaxe est évidemment un peu plus complexe.
 <a class="reference external" href="https://matplotlib.org/stable/users/explain/quick_start.html#quick-start">Plus de détails ici</a></p>
 </section>
@@ -1128,6 +1130,15 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../CM8/Debug_spyder.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Débuguer avec Spyder</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -1143,46 +1154,46 @@ L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="do
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-import-du-paquet">L’import du paquet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-cas-le-plus-simple">Le cas le plus simple</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-nuage-de-point-avec-scatter">Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-commande-de-base">La commande de base</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-marqueurs">Les marqueurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taille-des-marqueurs">La taille des marqueurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-couleur">La couleur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-import-du-paquet">11.1. L’import du paquet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-cas-le-plus-simple">11.2. Le cas le plus simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-nuage-de-point-avec-scatter">11.3. Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-commande-de-base">11.3.1. La commande de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-marqueurs">11.3.2. Les marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taille-des-marqueurs">11.3.3. La taille des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-couleur">11.3.4. La couleur</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-lignes-brisees-avec-plot">Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-plus-simple">Le plus simple</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-du-style-des-marqueurs">Modification du style des marqueurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait">La taile des marqueurs et l’épaisseur du trait</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-de-ligne">Le type de ligne</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-lignes-brisees-avec-plot">11.4. Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-plus-simple">11.4.1. Le plus simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-du-style-des-marqueurs">11.4.2. Modification du style des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait">11.4.3. La taile des marqueurs et l’épaisseur du trait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-de-ligne">11.4.4. Le type de ligne</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-types-de-traces">Autres types de tracés</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar"><code class="docutils literal notranslate"><span class="pre">bar</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step"><code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-types-de-traces">11.5. Autres types de tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar">11.5.1. <code class="docutils literal notranslate"><span class="pre">bar</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step">11.5.2. <code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres-et-annotations">Les titres et annotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres">Les titres</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-annotations">Les annotations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-legende">La légende</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres-et-annotations">11.6. Les titres et annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres">11.6.1. Les titres</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-annotations">11.6.2. Les annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-legende">11.6.3. La légende</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-axes">Les axes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-valeurs-limites">Les valeurs limites</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-graduations">Les graduations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-axes">11.7. Les axes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-valeurs-limites">11.7.1. Les valeurs limites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-graduations">11.7.2. Les graduations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-traces">Plusieurs tracés</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-un-meme-graphique">Sur un même graphique</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-des-graphiques-differents">Sur des graphiques différents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-traces">11.8. Plusieurs tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-un-meme-graphique">11.8.1. Sur un même graphique</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-des-graphiques-differents">11.8.2. Sur des graphiques différents</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-de-la-figure">Sauvegarde de la figure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-figures">Les figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-de-la-figure">11.9. Sauvegarde de la figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">11.10. 🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-figures">11.10.1. Les figures</a></li>
 </ul>
 </li>
 </ul>
