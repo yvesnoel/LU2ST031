@@ -1,0 +1,1203 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>La bibliothèque Matplotlib &#8212; Python pour les Géosciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CM9/Les_graphiques';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Python pour les Géosciences - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Python pour les Géosciences - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python pour les Géosciences
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CM1/Les_expressions.html">1. Les expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM1/Les_variables.html">2. Les variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM2/Les_listes.html">3. Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM3/Les_branchements.html">4. Les branchements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM4/Les_boucles.html">5. Les boucles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM5/Les_erreurs.html">6. Les erreurs en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM6/Tutoriel_Spyder.html">7. L’environnement de développement Spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM7/Les_fonctions.html">8. Les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Algorithmes_et_logigrammes.html">9. Algorithmes et logigrammes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CM8/Debug_spyder.html">10. Débuguer avec Spyder</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yvesnoel/LU2ST031/master?urlpath=lab/tree/CM9/Les_graphiques.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/CM9/Les_graphiques.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>La bibliothèque Matplotlib</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-import-du-paquet">L’import du paquet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-cas-le-plus-simple">Le cas le plus simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-nuage-de-point-avec-scatter">Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-commande-de-base">La commande de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-marqueurs">Les marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taille-des-marqueurs">La taille des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-couleur">La couleur</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-lignes-brisees-avec-plot">Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-plus-simple">Le plus simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-du-style-des-marqueurs">Modification du style des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait">La taile des marqueurs et l’épaisseur du trait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-de-ligne">Le type de ligne</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-types-de-traces">Autres types de tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar"><code class="docutils literal notranslate"><span class="pre">bar</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step"><code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres-et-annotations">Les titres et annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres">Les titres</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-annotations">Les annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-legende">La légende</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-axes">Les axes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-valeurs-limites">Les valeurs limites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-graduations">Les graduations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-traces">Plusieurs tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-un-meme-graphique">Sur un même graphique</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-des-graphiques-differents">Sur des graphiques différents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-de-la-figure">Sauvegarde de la figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-figures">Les figures</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="la-bibliotheque-matplotlib">
+<h1>La bibliothèque Matplotlib<a class="headerlink" href="#la-bibliotheque-matplotlib" title="Permalink to this heading">#</a></h1>
+<div class="hint admonition">
+<p class="admonition-title">Objectifs</p>
+<p>A l’issue de ce chapître, vous serez capable de :</p>
+<ul class="simple">
+<li><p>importer la bibliothèque Matplotlib</p></li>
+<li><p>tracer un nuage de points et une ligne brisée</p></li>
+<li><p>adapter les paramètres d’affichage concernant les symboles, les lignes, les axes et les titres et étiquettes</p></li>
+<li><p>Créer une figure</p></li>
+<li><p>sauver une figure sous un format d’image</p></li>
+</ul>
+</div>
+<p>Matplotlib est une bibliothèque très riche qui permet de tracer un grand nombre de figures. Nous n’allons aborder ici qu’une partie de cette bibliothèque. Vous pourrez élargir vos connaissances grâce à l’énorme documentation remplie d’exemples.</p>
+<p>Dans le pas à pas qui suit nous allons utiliser 3 listes comme exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abscisses</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="n">abscisses</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">ordonnees1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+<span class="n">ordonnees2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="l-import-du-paquet">
+<h2>L’import du paquet<a class="headerlink" href="#l-import-du-paquet" title="Permalink to this heading">#</a></h2>
+<p>Toutt commence par l’importation de la bibliothèque. En fait nous n’allons utiliser qu’un sous ensemble de <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> : <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. De plus, nous allons utiliser un raccourci pour ne pas avoir à écrire <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code> mais plus simplement <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> (la fonction <code class="docutils literal notranslate"><span class="pre">plot</span></code>est donnée ici comme exemple de fonction que nous allons utiliser).
+L’import s’écrit donc  :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="le-cas-le-plus-simple">
+<h2>Le cas le plus simple<a class="headerlink" href="#le-cas-le-plus-simple" title="Permalink to this heading">#</a></h2>
+<p>Lorsque l’on a besoin d’un seul graphique qui ne fait appel qu’à un seul jeu d’axes (un seul axe des abscisses et un seul axe des ordonnées), il est possible de tracer directement ce dont on a besoin. Pour obtenir des graphiques plus complexes ou pour plus le personnaliser il faudra passer par des figures et plusieurs lignes de commandes mais cela sort de  ce que l’on s’est fixé comme objectif pour ce cours. Nous allons donc nous limiter ici à quelques types de tracés simples et à quelques moyens pour adapter le rendu à ses besoins.</p>
+</section>
+<section id="le-nuage-de-point-avec-scatter">
+<h2>Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code><a class="headerlink" href="#le-nuage-de-point-avec-scatter" title="Permalink to this heading">#</a></h2>
+<p>Pour un nuage de point on peut utiliser la fonction <code class="docutils literal notranslate"><span class="pre">scatter</span></code> (<em>scatter plot</em> veut dire nuage de points en anglais).</p>
+<section id="la-commande-de-base">
+<h3>La commande de base<a class="headerlink" href="#la-commande-de-base" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69c03690&gt;
+</pre></div>
+</div>
+<img alt="../_images/437d84498efb1c4e506d163bff27d2bfdeb4306c1a931cc3ef338ea3e03f480b.png" src="../_images/437d84498efb1c4e506d163bff27d2bfdeb4306c1a931cc3ef338ea3e03f480b.png" />
+</div>
+</div>
+</section>
+<section id="les-marqueurs">
+<h3>Les marqueurs<a class="headerlink" href="#les-marqueurs" title="Permalink to this heading">#</a></h3>
+<p>Par défaut, le nuage de points est tracé avec des points bleus. Vous pouvez spécifier le paramètre optionnel <code class="docutils literal notranslate"><span class="pre">marker</span></code> de la fonction <code class="docutils literal notranslate"><span class="pre">scatter</span></code> pour changer le type de marqueurs. Par exemple : <code class="docutils literal notranslate"><span class="pre">&quot;+&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>, … (<a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">plus d’infos ici</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69c57d10&gt;
+</pre></div>
+</div>
+<img alt="../_images/1097f4c7615e40dae64027b30236426eff1a8c9681d5d6ddacc1dbd11873649c.png" src="../_images/1097f4c7615e40dae64027b30236426eff1a8c9681d5d6ddacc1dbd11873649c.png" />
+</div>
+</div>
+</section>
+<section id="la-taille-des-marqueurs">
+<h3>La taille des marqueurs<a class="headerlink" href="#la-taille-des-marqueurs" title="Permalink to this heading">#</a></h3>
+<p>Il est parfois utilie de changer la taille des marqueurs en utilisant le paramètre optionnel <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69d04950&gt;
+</pre></div>
+</div>
+<img alt="../_images/56435deb2571b28a5612f9c992acf963e70ec9a2f1c34bd1b6f2ae7e74c97932.png" src="../_images/56435deb2571b28a5612f9c992acf963e70ec9a2f1c34bd1b6f2ae7e74c97932.png" />
+</div>
+</div>
+</section>
+<section id="la-couleur">
+<h3>La couleur<a class="headerlink" href="#la-couleur" title="Permalink to this heading">#</a></h3>
+<p>Pour changer la couleur de tous les marqueurs, on utilise le paramètre optionnel <code class="docutils literal notranslate"><span class="pre">color</span></code>. Les couleurs peuvent peuvent être spécifiées de plusieurs manières mais la plus simple est de donner le nom de la couleur sous la forme d’une chaîne de caractère correspondant au nom de la couleur en anglais. (ces noms peuvent être abrégés en une seule lettres ; <code class="docutils literal notranslate"><span class="pre">'blue'</span></code> : <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'red'</span></code> : <code class="docutils literal notranslate"><span class="pre">'r'</span></code> ou encore <code class="docutils literal notranslate"><span class="pre">'black'</span></code> : <code class="docutils literal notranslate"><span class="pre">'k'</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69d74290&gt;
+</pre></div>
+</div>
+<img alt="../_images/9fb03a0917a8935209239097453455545798de93c5cce18c517d0df54448840c.png" src="../_images/9fb03a0917a8935209239097453455545798de93c5cce18c517d0df54448840c.png" />
+</div>
+</div>
+<p>Le contour se controle avec <code class="docutils literal notranslate"><span class="pre">edgecolors</span></code> et <code class="docutils literal notranslate"><span class="pre">linewidth</span></code></p>
+<p>Pour changer la couleur des marqueurs individuellement, il faut spécifier une liste avec les couleurs à utiliser pour chaque marqueur. Il existe de nombreuses autres possibilités fort utiles mais qui dépassent les objectifs de ce cours ().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69f323d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/ffbf117fc53b81b194887462d27ec6e2cb6356bf024e72d641e04c9372070521.png" src="../_images/ffbf117fc53b81b194887462d27ec6e2cb6356bf024e72d641e04c9372070521.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69a4f890&gt;
+</pre></div>
+</div>
+<img alt="../_images/9f7263e37bb5a8e12c20d6078369ec52a1259cb62e6f62929c64e85d05c6da51.png" src="../_images/9f7263e37bb5a8e12c20d6078369ec52a1259cb62e6f62929c64e85d05c6da51.png" />
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Essayez de reproduire la figure ci-dessous en utilisant les données <code class="docutils literal notranslate"><span class="pre">abscisses</span></code> et <code class="docutils literal notranslate"><span class="pre">ordonnees2</span></code> déjà définies plus haut.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69b55510&gt;
+</pre></div>
+</div>
+<img alt="../_images/0ef1d5af61c56f07a5e1a6e36ac56011708b1ee7e1b3043d3b8be4eab0a8f79c.png" src="../_images/0ef1d5af61c56f07a5e1a6e36ac56011708b1ee7e1b3043d3b8be4eab0a8f79c.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="les-lignes-brisees-avec-plot">
+<h2>Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#les-lignes-brisees-avec-plot" title="Permalink to this heading">#</a></h2>
+<p>Beaucoup d’options vues pour <code class="docutils literal notranslate"><span class="pre">scatter</span></code> sont aussi valables pour plot. Dans les exemples ci-dessous vous découvrirez d’autres.</p>
+<section id="le-plus-simple">
+<h3>Le plus simple<a class="headerlink" href="#le-plus-simple" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e69f4f950&gt;]
+</pre></div>
+</div>
+<img alt="../_images/7eec8d40226a5c09443913393a1d11167786bf1e97e091440e45ef7d928ba475.png" src="../_images/7eec8d40226a5c09443913393a1d11167786bf1e97e091440e45ef7d928ba475.png" />
+</div>
+</div>
+</section>
+<section id="modification-du-style-des-marqueurs">
+<h3>Modification du style des marqueurs<a class="headerlink" href="#modification-du-style-des-marqueurs" title="Permalink to this heading">#</a></h3>
+<p>Les paramètres <code class="docutils literal notranslate"><span class="pre">marker</span></code>, <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code> et <code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code>permettent de modifier le style de marqueurs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e6a122f10&gt;]
+</pre></div>
+</div>
+<img alt="../_images/c3031a0976641dec491ae95fdf858f91989082177745f0cdd59161fc279be5cc.png" src="../_images/c3031a0976641dec491ae95fdf858f91989082177745f0cdd59161fc279be5cc.png" />
+</div>
+</div>
+</section>
+<section id="la-taile-des-marqueurs-et-l-epaisseur-du-trait">
+<h3>La taile des marqueurs et l’épaisseur du trait<a class="headerlink" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait" title="Permalink to this heading">#</a></h3>
+<p>La taille des marqueurs se modifie à l’aide de <code class="docutils literal notranslate"><span class="pre">markersize</span></code>.
+L’épaisseur du trait de la ligne brisée se modifie elle avec <code class="docutils literal notranslate"><span class="pre">linewidth</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e6a164f50&gt;]
+</pre></div>
+</div>
+<img alt="../_images/f2fc03fed24354ec84b548e0ef33533cb44b7aa13232f6d6ffc9b91dca00c1da.png" src="../_images/f2fc03fed24354ec84b548e0ef33533cb44b7aa13232f6d6ffc9b91dca00c1da.png" />
+</div>
+</div>
+</section>
+<section id="le-type-de-ligne">
+<h3>Le type de ligne<a class="headerlink" href="#le-type-de-ligne" title="Permalink to this heading">#</a></h3>
+<p>Le type de trait est modifié par <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> qui peut prendre notamment les valeurs suivantes : <code class="docutils literal notranslate"><span class="pre">'-'</span></code>, <code class="docutils literal notranslate"><span class="pre">'--'</span></code>, <code class="docutils literal notranslate"><span class="pre">'-.'</span></code>, <code class="docutils literal notranslate"><span class="pre">':'</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e6b1b4f50&gt;]
+</pre></div>
+</div>
+<img alt="../_images/5e25e07d6d0306bd87f7607106eec026ddbfdaa04f47230614f8eefedad634b3.png" src="../_images/5e25e07d6d0306bd87f7607106eec026ddbfdaa04f47230614f8eefedad634b3.png" />
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Essayez de reproduire la figure ci-dessous en utilisant les données <code class="docutils literal notranslate"><span class="pre">abscisses</span></code> et <code class="docutils literal notranslate"><span class="pre">ordonnees2</span></code> déjà définies plus haut.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e6b269150&gt;]
+</pre></div>
+</div>
+<img alt="../_images/641a51b2d847bd66da4d7f13f0aa22e0c4ab4d49d12ae8a762f2a4f2412727c9.png" src="../_images/641a51b2d847bd66da4d7f13f0aa22e0c4ab4d49d12ae8a762f2a4f2412727c9.png" />
+</div>
+</div>
+<p>Par défaut, les lignes sont affichées et il n’y a pas de marqueurs, mais il est aussi possible de ne garder que les marqueurs en spécifiant <code class="docutils literal notranslate"><span class="pre">linestyle=''</span></code> et retomber sur un affichage équivalent à <code class="docutils literal notranslate"><span class="pre">scatter</span></code> (à part l’individualisation des marqueurs).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e6a057950&gt;]
+</pre></div>
+</div>
+<img alt="../_images/437d84498efb1c4e506d163bff27d2bfdeb4306c1a931cc3ef338ea3e03f480b.png" src="../_images/437d84498efb1c4e506d163bff27d2bfdeb4306c1a931cc3ef338ea3e03f480b.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="autres-types-de-traces">
+<h2>Autres types de tracés<a class="headerlink" href="#autres-types-de-traces" title="Permalink to this heading">#</a></h2>
+<p>Il existe de nombreux autres types de tracés que nous ne développerons pas ici. On peut tout de même citer :</p>
+<section id="bar">
+<h3><code class="docutils literal notranslate"><span class="pre">bar</span></code><a class="headerlink" href="#bar" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
+</pre></div>
+</div>
+<img alt="../_images/d71892aec1d070ee33e7b9ee30ef39271e1c6f5f44be416a8257bc4b967cfe9d.png" src="../_images/d71892aec1d070ee33e7b9ee30ef39271e1c6f5f44be416a8257bc4b967cfe9d.png" />
+</div>
+</div>
+</section>
+<section id="step">
+<h3><code class="docutils literal notranslate"><span class="pre">step</span></code><a class="headerlink" href="#step" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e6b3dcc50&gt;]
+</pre></div>
+</div>
+<img alt="../_images/6f73a1c59da2d4119118186038dc3bdaf74cb727d97ef4fa904f1a7b0d6ee0de.png" src="../_images/6f73a1c59da2d4119118186038dc3bdaf74cb727d97ef4fa904f1a7b0d6ee0de.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="les-titres-et-annotations">
+<h2>Les titres et annotations<a class="headerlink" href="#les-titres-et-annotations" title="Permalink to this heading">#</a></h2>
+<section id="les-titres">
+<h3>Les titres<a class="headerlink" href="#les-titres" title="Permalink to this heading">#</a></h3>
+<p>Le titre du graphique se définie à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">title</span></code>. LEs titres des des axes des abscisses et des ordonnées avec les fonctions <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> et <code class="docutils literal notranslate"><span class="pre">ylabel</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Titre de mon graph&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Description des abscisses&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Description des ordonnées&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Description des ordonnées&#39;)
+</pre></div>
+</div>
+<img alt="../_images/8110121626b69f1bfcb195e8a05dae9a2d50b48b96e0b5e642d1589cf007504f.png" src="../_images/8110121626b69f1bfcb195e8a05dae9a2d50b48b96e0b5e642d1589cf007504f.png" />
+</div>
+</div>
+</section>
+<section id="les-annotations">
+<h3>Les annotations<a class="headerlink" href="#les-annotations" title="Permalink to this heading">#</a></h3>
+<p>Il est possible d’ajouter du texte sur le graphique en utilisant la méthode <code class="docutils literal notranslate"><span class="pre">text</span></code> qui prend comme arguments les coordonées du texte à afficher et bien-sûr la chaîne de caractères voulue. L’alignement ce gère avec <code class="docutils literal notranslate"><span class="pre">horizontalalignment</span></code> et la taille des caractères avec <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s2">&quot;Ce texte est centré sur(6,15)&quot;</span><span class="p">,</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(6, 15, &#39;Ce texte est centré sur(6,15)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/b4f37558c286bbb0d4bb1bdc5471a852ab1d5903dad72f22f022ea06feed75bf.png" src="../_images/b4f37558c286bbb0d4bb1bdc5471a852ab1d5903dad72f22f022ea06feed75bf.png" />
+</div>
+</div>
+</section>
+<section id="la-legende">
+<h3>La légende<a class="headerlink" href="#la-legende" title="Permalink to this heading">#</a></h3>
+<p>La légende s’active grâce à la fonction <code class="docutils literal notranslate"><span class="pre">legend</span></code>. Elle nécessite que le paramètre <code class="docutils literal notranslate"><span class="pre">label</span></code> ait été renseigné pour les différents tracés.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Etiquette pour la légende&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23e6b3a9250&gt;
+</pre></div>
+</div>
+<img alt="../_images/4abfca10b706781bb97c6c98eda4acc2a59f1dc0c311035e6658a38638fdd60e.png" src="../_images/4abfca10b706781bb97c6c98eda4acc2a59f1dc0c311035e6658a38638fdd60e.png" />
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Essayez de reproduire la figure ci-dessous en utilisant les données <code class="docutils literal notranslate"><span class="pre">abscisses</span></code> et <code class="docutils literal notranslate"><span class="pre">ordonnees2</span></code> déjà définies plus haut.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;A moi de jouer&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temps (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Espoir (sans unité)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s2">&quot;Le fond du trou&quot;</span><span class="p">,</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(6, 8, &#39;Le fond du trou&#39;)
+</pre></div>
+</div>
+<img alt="../_images/5b2e5e8937a8d9a18fc4992bfee664ece0a8135d67c00b367473310b8f578ea9.png" src="../_images/5b2e5e8937a8d9a18fc4992bfee664ece0a8135d67c00b367473310b8f578ea9.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="les-axes">
+<h2>Les axes<a class="headerlink" href="#les-axes" title="Permalink to this heading">#</a></h2>
+<section id="les-valeurs-limites">
+<h3>Les valeurs limites<a class="headerlink" href="#les-valeurs-limites" title="Permalink to this heading">#</a></h3>
+<p>Les valeurs limites de chaque axe sont spécifiées avec de 2 valeurs : la limite inférierue et la limite supérieure. Les méthodes sont <code class="docutils literal notranslate"><span class="pre">xlim</span></code> et <code class="docutils literal notranslate"><span class="pre">ylim</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-20.0, 20.0)
+</pre></div>
+</div>
+<img alt="../_images/c16f8e41da8d109112722f170cd3357c3878267221ec00ca18b232d2b71bdd07.png" src="../_images/c16f8e41da8d109112722f170cd3357c3878267221ec00ca18b232d2b71bdd07.png" />
+</div>
+</div>
+</section>
+<section id="les-graduations">
+<h3>Les graduations<a class="headerlink" href="#les-graduations" title="Permalink to this heading">#</a></h3>
+<p>Les valeurs indiquées sur les axes et les graduations associées s’appellent en anglais des <em>ticks</em>. Il est possible de changer l’étendue ou la périodicité de ces graduations grâce à <code class="docutils literal notranslate"><span class="pre">xticks</span></code> (ou <code class="docutils literal notranslate"><span class="pre">yticks</span></code>). Attention les limites du graphes seront éventuellement augmentées pour que toutes les graduations soient visibles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick at 0x23e56db3450&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56d53210&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56cca190&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56d0f850&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56a41950&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56362990&gt;],
+ [Text(0, 0, &#39;0&#39;),
+  Text(5, 0, &#39;5&#39;),
+  Text(10, 0, &#39;10&#39;),
+  Text(15, 0, &#39;15&#39;),
+  Text(20, 0, &#39;20&#39;),
+  Text(25, 0, &#39;25&#39;)])
+</pre></div>
+</div>
+<img alt="../_images/6656c2323a83245d0989e4ab82adeb51ea2c29b4f4bc2dbd517aef567942d38e.png" src="../_images/6656c2323a83245d0989e4ab82adeb51ea2c29b4f4bc2dbd517aef567942d38e.png" />
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarque</p>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">xticks</span></code> renvoie deux listes. La première correspond aux graduations créées et la deuxième aux textes correspondants. Ces valeurs renvoyées créent un affichage (souvent non désiré) lorsque l’appel est en dernière ligne d’une cellule et que les valeurs renvoyées ne sont récupérées dans une variable.</p>
+</div>
+<p>On peut changer le texte affiché sous chaque graduation mais il faut qu’il en ait exactement le même nombre que les graduations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Lu&#39;</span><span class="p">,</span><span class="s1">&#39;Ma&#39;</span><span class="p">,</span><span class="s1">&#39;Me&#39;</span><span class="p">,</span><span class="s1">&#39;Je&#39;</span><span class="p">,</span><span class="s1">&#39;Ve&#39;</span><span class="p">,</span><span class="s1">&#39;Sa&#39;</span><span class="p">,</span><span class="s1">&#39;Di&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick at 0x23e56df8c90&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56de2190&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56d84f10&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56e26a90&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56e2cbd0&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56e2ed10&gt;,
+  &lt;matplotlib.axis.XTick at 0x23e56e3cf50&gt;],
+ [Text(0, 0, &#39;Lu&#39;),
+  Text(3, 0, &#39;Ma&#39;),
+  Text(6, 0, &#39;Me&#39;),
+  Text(9, 0, &#39;Je&#39;),
+  Text(12, 0, &#39;Ve&#39;),
+  Text(15, 0, &#39;Sa&#39;),
+  Text(18, 0, &#39;Di&#39;)])
+</pre></div>
+</div>
+<img alt="../_images/2737d995de3285ec86901bc26c3e9c5714b98b156fcb627eea30fe1d9ae418b9.png" src="../_images/2737d995de3285ec86901bc26c3e9c5714b98b156fcb627eea30fe1d9ae418b9.png" />
+</div>
+</div>
+<p>Il est possible de gérer 2 nivaux de graduations. La graduation principale (<em>major</em>) vue précédemment et la graduation secondaire (<em>minor</em>), généralement sans étiquette. Dans l’exemple suivant, on trace des graduations principale (avec des étiquettes automatiques) de 0 à 16 par pas de 5 et des graduations secondaires (sans étiquette) de 0 à 16 par pas de 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">),</span><span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bb23786139e07210435cf0d818f10240df7c59ef87f1ae2c672cab00ff4c2286.png" src="../_images/bb23786139e07210435cf0d818f10240df7c59ef87f1ae2c672cab00ff4c2286.png" />
+</div>
+</div>
+<p>Ou plus simplement :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/39ffac9555dbe55c26da441973d4cea94ef4735b1960d0b4835f964bfbc6b6b5.png" src="../_images/39ffac9555dbe55c26da441973d4cea94ef4735b1960d0b4835f964bfbc6b6b5.png" />
+</div>
+</div>
+<p>Il est possible d’afficher une grille avec la méthode <code class="docutils literal notranslate"><span class="pre">grid</span></code>. <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html">Plus de détails ici</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/72ae27173f83d0e40bea7f741cf267ad940325598c7b05eeedf010e0980149a1.png" src="../_images/72ae27173f83d0e40bea7f741cf267ad940325598c7b05eeedf010e0980149a1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="plusieurs-traces">
+<h2>Plusieurs tracés<a class="headerlink" href="#plusieurs-traces" title="Permalink to this heading">#</a></h2>
+<section id="sur-un-meme-graphique">
+<h3>Sur un même graphique<a class="headerlink" href="#sur-un-meme-graphique" title="Permalink to this heading">#</a></h3>
+<p>Il est évidemment possible d’afficher plusieurs tracés sur un même graphique.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e582ae050&gt;
+</pre></div>
+</div>
+<img alt="../_images/c14f6eb0c7dd9c1324aa62aea236d79830833d8af424d79d127544147d60be16.png" src="../_images/c14f6eb0c7dd9c1324aa62aea236d79830833d8af424d79d127544147d60be16.png" />
+</div>
+</div>
+</section>
+<section id="sur-des-graphiques-differents">
+<h3>Sur des graphiques différents<a class="headerlink" href="#sur-des-graphiques-differents" title="Permalink to this heading">#</a></h3>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">subplot</span></code> permet de créer et d’utiliser plusieurs graphique. Les deux premiers chiffres de l’unique argument permetent de spécifier combien de graphiques on va créer (nombre de lignes et de colonnes). Le troisième chiffre indique dans quel graphique on souhaite envoyer les commandes de tracé qui vont suivre. Le numéro 1 est en haut à gauche, on augment en ligne puis en colonne. Dans l’exemple ci-dessous, on crée un mosaïque de 6 graphiques : 2 lignes et 3 colonnes. Les numéros des zones accueillant les graphiques sont donc :</p>
+<div class="highlight-Table notranslate"><div class="highlight"><pre><span></span>| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">231</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">233</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">235</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23e69a378d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/7081eb11c7530fa8b8af1942c1cbb346273cb015a294c4d2075beb9a493da9da.png" src="../_images/7081eb11c7530fa8b8af1942c1cbb346273cb015a294c4d2075beb9a493da9da.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="sauvegarde-de-la-figure">
+<h2>Sauvegarde de la figure<a class="headerlink" href="#sauvegarde-de-la-figure" title="Permalink to this heading">#</a></h2>
+<p>Pour sauvegarder la figure que l’on vient de tracer dans un fichier, il suffit de faire appel à la méthode <code class="docutils literal notranslate"><span class="pre">savefig</span></code> et de spécifier le nom de fichier voulu. Le type est automatiquement déduit de l’extension du fichier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;./exemple.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c14f6eb0c7dd9c1324aa62aea236d79830833d8af424d79d127544147d60be16.png" src="../_images/c14f6eb0c7dd9c1324aa62aea236d79830833d8af424d79d127544147d60be16.png" />
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">À vous de jouer</p>
+<p>Changez <code class="docutils literal notranslate"><span class="pre">plot</span></code> par <code class="docutils literal notranslate"><span class="pre">step</span></code> ou <code class="docutils literal notranslate"><span class="pre">bar</span></code> pour voir l’effet sur votre graphique.</p>
+</div>
+</section>
+<section id="pour-aller-plus-loin">
+<h2>🚀 Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this heading">#</a></h2>
+<section id="les-figures">
+<span id="l-figures"></span><h3>Les figures<a class="headerlink" href="#les-figures" title="Permalink to this heading">#</a></h3>
+<p>Les figures premettent plus de contrôle sur l’affichage des graphiques mais dépassent les objectifs de ce cours. Toutefois, elles sont indispensables lorsque l’on veut afficher plusieurs graphes sur un figure ; on parle alors de sous-figures. La syntaxe est évidemment un peu plus complexe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e583dacd0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/84c9626d5d618f9674b4af9df4ccbf4fc7d6b67762fbc5311c3f7c96ae906487.png" src="../_images/84c9626d5d618f9674b4af9df4ccbf4fc7d6b67762fbc5311c3f7c96ae906487.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">abscisses</span><span class="p">,</span><span class="n">ordonnees1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;a_vous_de_jouer_scatter.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/683c0c45015357501e31b344aae234c18630f53dde93bdad6f858c94cbf9f51d.png" src="../_images/683c0c45015357501e31b344aae234c18630f53dde93bdad6f858c94cbf9f51d.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "yvesnoel/LU2ST031",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./CM9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-import-du-paquet">L’import du paquet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-cas-le-plus-simple">Le cas le plus simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-nuage-de-point-avec-scatter">Le nuage de point avec <code class="docutils literal notranslate"><span class="pre">scatter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-commande-de-base">La commande de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-marqueurs">Les marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taille-des-marqueurs">La taille des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-couleur">La couleur</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-lignes-brisees-avec-plot">Les lignes brisées avec <code class="docutils literal notranslate"><span class="pre">plot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-plus-simple">Le plus simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-du-style-des-marqueurs">Modification du style des marqueurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-taile-des-marqueurs-et-l-epaisseur-du-trait">La taile des marqueurs et l’épaisseur du trait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-de-ligne">Le type de ligne</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-types-de-traces">Autres types de tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar"><code class="docutils literal notranslate"><span class="pre">bar</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step"><code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres-et-annotations">Les titres et annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-titres">Les titres</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-annotations">Les annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-legende">La légende</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-axes">Les axes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-valeurs-limites">Les valeurs limites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-graduations">Les graduations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-traces">Plusieurs tracés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-un-meme-graphique">Sur un même graphique</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sur-des-graphiques-differents">Sur des graphiques différents</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-de-la-figure">Sauvegarde de la figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pour-aller-plus-loin">🚀 Pour aller plus loin</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-figures">Les figures</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Valentin RINEAU et Yves NOEL
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Cc_by-nc_icon.svg" alt="Cc_by-nc"/>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
