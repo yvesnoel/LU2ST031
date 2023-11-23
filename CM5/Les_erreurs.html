@@ -385,18 +385,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.8. Gérer les exceptions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-mot-cle">6.2.1. oubli d’un mot clé</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-cle-au-mauvais-endroit">6.2.2. mot clé au mauvais endroit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese">6.2.3. oubli d’un symbole (comme un : ou une paranthèse)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faute-de-frappe-sur-un-mot-cle">6.2.4. faute de frappe sur un mot clé</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-incorrecte">6.2.5. indentation incorrecte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-vide">6.2.6. block vide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.2. Déclencher une exception</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.3. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-mot-cle">6.3.1. oubli d’un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-cle-au-mauvais-endroit">6.3.2. mot clé au mauvais endroit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese">6.3.3. oubli d’un symbole (comme un : ou une paranthèse)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faute-de-frappe-sur-un-mot-cle">6.3.4. faute de frappe sur un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-incorrecte">6.3.5. indentation incorrecte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-vide">6.3.6. block vide</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comportement-different-de-celui-attendu">6.3.2. Comportement différent de celui attendu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.4. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.4.1. La boucle infinie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comportement-different-de-celui-attendu">6.4.2. Comportement différent de celui attendu</a></li>
 </ul>
 </li>
 </ul>
@@ -658,6 +659,11 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="declencher-une-exception">
+<h2><span class="section-number">6.2. </span>Déclencher une exception<a class="headerlink" href="#declencher-une-exception" title="Permalink to this heading">#</a></h2>
+<p>Il est parfois utile de déclencher un message d’erreur. On dit aussi déclencher ou lever (raise en anglais) une exception. Pour cela, on utilise le mot clé <code class="docutils literal notranslate"><span class="pre">raise</span></code>. On spécifie quel est le type d’exception (cf plus haut) et le message qui apparaitra. Dans l’exemple suivant, on dispose de relevés de température. Quand une température de la liste est manifestement trop basse, on déclenche une exception.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_hebdo</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.8</span><span class="p">,</span> <span class="mf">18.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mf">17.0</span> <span class="p">]</span> 
@@ -685,12 +691,11 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </div>
 </section>
-</section>
 <section id="les-erreurs-de-syntaxe">
-<span id="l-erreurs-syntaxe"></span><h2><span class="section-number">6.2. </span>Les erreurs de syntaxe<a class="headerlink" href="#les-erreurs-de-syntaxe" title="Permalink to this heading">#</a></h2>
+<span id="l-erreurs-syntaxe"></span><h2><span class="section-number">6.3. </span>Les erreurs de syntaxe<a class="headerlink" href="#les-erreurs-de-syntaxe" title="Permalink to this heading">#</a></h2>
 <p>Les erreurs de syntaxe sont des erreurs que l’on peut connaitre (si on est attentif ou un automate) avant même de lancer l’exécution du code. Beaucoup d’outils repèrent ce type d’erreurs et les soulignent pour que vous puissiez les corriger avant de lancer l’exécution de votre code. Elles ne peuvent être gérées pendant l’exécution. Voici quelques exemples</p>
 <section id="oubli-d-un-mot-cle">
-<h3><span class="section-number">6.2.1. </span>oubli d’un mot clé<a class="headerlink" href="#oubli-d-un-mot-cle" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.1. </span>oubli d’un mot clé<a class="headerlink" href="#oubli-d-un-mot-cle" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il manque le in devant range</span>
@@ -709,7 +714,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </section>
 <section id="mot-cle-au-mauvais-endroit">
-<h3><span class="section-number">6.2.2. </span>mot clé au mauvais endroit<a class="headerlink" href="#mot-cle-au-mauvais-endroit" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.2. </span>mot clé au mauvais endroit<a class="headerlink" href="#mot-cle-au-mauvais-endroit" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
@@ -729,7 +734,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </section>
 <section id="oubli-d-un-symbole-comme-un-ou-une-paranthese">
-<h3><span class="section-number">6.2.3. </span>oubli d’un symbole (comme un : ou une paranthèse)<a class="headerlink" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.3. </span>oubli d’un symbole (comme un : ou une paranthèse)<a class="headerlink" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Il manque le :</span>
@@ -748,7 +753,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </section>
 <section id="faute-de-frappe-sur-un-mot-cle">
-<h3><span class="section-number">6.2.4. </span>faute de frappe sur un mot clé<a class="headerlink" href="#faute-de-frappe-sur-un-mot-cle" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.4. </span>faute de frappe sur un mot clé<a class="headerlink" href="#faute-de-frappe-sur-un-mot-cle" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foor</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
@@ -767,7 +772,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </section>
 <section id="indentation-incorrecte">
-<h3><span class="section-number">6.2.5. </span>indentation incorrecte<a class="headerlink" href="#indentation-incorrecte" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.5. </span>indentation incorrecte<a class="headerlink" href="#indentation-incorrecte" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># Il y a 2 o</span>
@@ -786,7 +791,7 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </div>
 </section>
 <section id="block-vide">
-<h3><span class="section-number">6.2.6. </span>block vide<a class="headerlink" href="#block-vide" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.6. </span>block vide<a class="headerlink" href="#block-vide" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -808,14 +813,14 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 </section>
 </section>
 <section id="les-erreurs-d-execution">
-<h2><span class="section-number">6.3. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Les erreurs d’exécution<a class="headerlink" href="#les-erreurs-d-execution" title="Permalink to this heading">#</a></h2>
 <section id="la-boucle-infinie">
-<h3><span class="section-number">6.3.1. </span>La boucle infinie<a class="headerlink" href="#la-boucle-infinie" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>La boucle infinie<a class="headerlink" href="#la-boucle-infinie" title="Permalink to this heading">#</a></h3>
 <p>Il arrive que l’on ne se rende pas compte qu’il y a une erreur dans notre code et qu’il n’existe aucun moyen de sortir d’une boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. C’est à dire que la condition qui suit le mot clé <code class="docutils literal notranslate"><span class="pre">while</span></code> ne vaut jamais <code class="docutils literal notranslate"><span class="pre">False</span></code>. On se retrouve alors dans une boucle infinie. Pour en sortir, il n’existe qu’un seul moyen : interrompre l’exécution du code. Dans un notebook, cela se fait en cliquant sur le bouton stop (un carré), qui s’appelle ausi <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> (que l’on retrouve aussi dans le menu <code class="docutils literal notranslate"><span class="pre">kernel</span></code>. Dans l’exemple ci-dessous, la boucle infinie est évidente mais cela n’est pas toujours le cas. La fonction <code class="docutils literal notranslate"><span class="pre">sleep</span></code>du module <code class="docutils literal notranslate"><span class="pre">time</span></code>permet de mettre en pause l’exécution pendant un certain nombre de secondes (paramètre de la fonction). Dans la capture ci-dessous, le bouton <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> a été pressé après 3 itérations. L’interuption provoque un message d’erreur <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/infinite_loop.png"><img alt="La boucle inifinie" class="align-center" src="../_images/infinite_loop.png" style="width: 80%;" /></a>
 </section>
 <section id="comportement-different-de-celui-attendu">
-<h3><span class="section-number">6.3.2. </span>Comportement différent de celui attendu<a class="headerlink" href="#comportement-different-de-celui-attendu" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.2. </span>Comportement différent de celui attendu<a class="headerlink" href="#comportement-different-de-celui-attendu" title="Permalink to this heading">#</a></h3>
 <p>Le plus souvent, une fois les erreurs de syntaxe corrigées ainsi que les les exceptions gérées, il n’y a plus de message d’erreur qui s’affiche mais pourtant le résultat que vous obtenez n’est pas celui que vous attendiez. Il va falloir dans ce cas exécuter votre code pas à pas en inspectant le contenu des variables à chacun de ces pas. Lorsque vous observerez le premier comportement différent de celui auquel vous étiez attendu, vous devez relire avec attention cette ligne et peut être celles juste avant : la faute est par là. Cette exécution pas à pas en oservant le contenu des variables, s’appelle (en bon franglais) <strong>débugger</strong>. Vous verez dans le chapitre suivant l’environement Spyder qui permet de débugger facilement votre code.</p>
 </section>
 </section>
@@ -895,18 +900,19 @@ int() argument must be a string, a bytes-like object or a number, not &#39;list&
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gerer-les-exceptions">6.1.8. Gérer les exceptions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.2. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-mot-cle">6.2.1. oubli d’un mot clé</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-cle-au-mauvais-endroit">6.2.2. mot clé au mauvais endroit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese">6.2.3. oubli d’un symbole (comme un : ou une paranthèse)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faute-de-frappe-sur-un-mot-cle">6.2.4. faute de frappe sur un mot clé</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-incorrecte">6.2.5. indentation incorrecte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-vide">6.2.6. block vide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declencher-une-exception">6.2. Déclencher une exception</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-de-syntaxe">6.3. Les erreurs de syntaxe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-mot-cle">6.3.1. oubli d’un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-cle-au-mauvais-endroit">6.3.2. mot clé au mauvais endroit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oubli-d-un-symbole-comme-un-ou-une-paranthese">6.3.3. oubli d’un symbole (comme un : ou une paranthèse)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faute-de-frappe-sur-un-mot-cle">6.3.4. faute de frappe sur un mot clé</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-incorrecte">6.3.5. indentation incorrecte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-vide">6.3.6. block vide</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.3. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.3.1. La boucle infinie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comportement-different-de-celui-attendu">6.3.2. Comportement différent de celui attendu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-erreurs-d-execution">6.4. Les erreurs d’exécution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-boucle-infinie">6.4.1. La boucle infinie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comportement-different-de-celui-attendu">6.4.2. Comportement différent de celui attendu</a></li>
 </ul>
 </li>
 </ul>
