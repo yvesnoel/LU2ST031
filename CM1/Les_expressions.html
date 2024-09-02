@@ -428,7 +428,7 @@ document.write(`
 </section>
 <section id="affichage-d-une-expression">
 <h2><span class="section-number">1.2. </span>Affichage d’une expression<a class="headerlink" href="#affichage-d-une-expression" title="Permalink to this heading">#</a></h2>
-<p>Lorsque Python interprète un code (ou une cellule d’un notebook) il affiche le resultat de la dernière expression du code. Dans la majorité des exemples de ce chapitre nous utilisons cette propriété pour visualiser le résultat de chaque expression en ne mettant qu’une seule expression par cellule. Dans le cas où l’on voudrait afficher le contenu de plusieurs expressions d’un même code ou cellule, on est obligé de passer par une fonction Python qui “imprime vers l’écran” (<em>print</em> en anglais) une valeur. Cette fonction est la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Les 4 exemples à suivre illustrent ces subtilités à propos de l’affichage des valeurs issues d’une expression.</p>
+<p>Lorsque Python interprète un code (ou une cellule d’un notebook), il affiche le resultat de la dernière expression du code. Dans la majorité des exemples de ce chapitre nous utilisons cette propriété pour visualiser le résultat de chaque expression en ne mettant qu’une seule expression par cellule. Dans le cas où l’on voudrait afficher le contenu de plusieurs expressions d’un même code ou cellule, on est obligé de passer par une fonction Python qui “imprime vers l’écran” (<em>print</em> en anglais) une valeur. Cette fonction est la fonction <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Les 4 exemples à suivre illustrent ces subtilités à propos de l’affichage des valeurs issues d’une expression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">123.456</span>
@@ -568,6 +568,56 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello !&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello !&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsqu’une chaine de catactères contient un <code class="docutils literal notranslate"><span class="pre">'</span></code> ou un <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, Il suffit d’utiliser l’autre symbole pour encadrer l’expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Il a dit &quot;Bonjour!&quot;.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Il a dit &quot;Bonjour!&quot;.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C&#39;est moi&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;C&#39;est moi&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou encore “protéger” le symbole en le faisant précéder d’un <code class="docutils literal notranslate"><span class="pre">\</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;C</span><span class="se">\&#39;</span><span class="s1">est toi&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;C&#39;est toi&quot;
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>Une valeur booléenne (<em>boolean</em> en anglais et <code class="docutils literal notranslate"><span class="pre">bool</span></code> en Python)</p></li>
 </ul>
@@ -596,7 +646,7 @@ document.write(`
 </section>
 <section id="recuperer-le-type-d-une-valeur">
 <h3><span class="section-number">1.3.2. </span>Récupérer le type d’une valeur<a class="headerlink" href="#recuperer-le-type-d-une-valeur" title="Permalink to this heading">#</a></h3>
-<p>Il est possible de connaitre le type de la valeur issue d’une expression en utilisant la fonction <code class="docutils literal notranslate"><span class="pre">type</span></code>. Nous reviendrons plus tard dans le cours sur la notion de fonction.</p>
+<p>Il est possible de connaître le type de la valeur issue d’une expression en utilisant la fonction <code class="docutils literal notranslate"><span class="pre">type</span></code>. Nous reviendrons plus tard dans le cours sur la notion de fonction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Coucou. Comment ça va ?&#39;</span><span class="p">)</span>
@@ -678,7 +728,7 @@ document.write(`
 <section id="les-expressions-complexes">
 <h2><span class="section-number">1.4. </span>Les expressions complexes<a class="headerlink" href="#les-expressions-complexes" title="Permalink to this heading">#</a></h2>
 <p>Dans tous les exemples ci-dessus, nous avions à faire à des expressions simples mais il est aussi possible de construire des expressions plus complexes qui contiennent des opérations. Ces opérations s’appuient en général sur 2 valeurs (on parle d’opérateurs binaires) ou parfois un seule valeur (opérateur unaire). Les valeurs sur lesquelles s’appuie l’opérateur pour calculer l’opération, s’appellent des opérandes.</p>
-<p>Evidemment, la ou les opérandes peuvent être de types variés. La valeur du résultat de l’opération peut aussi être de type varié.</p>
+<p>Evidemment, la ou les opérandes peuvent être de types variés. La valeur du résultat de l’opération peut aussi être de type variés.</p>
 <section id="les-expressions-numeriques">
 <h3><span class="section-number">1.4.1. </span>Les expressions numériques<a class="headerlink" href="#les-expressions-numeriques" title="Permalink to this heading">#</a></h3>
 <p>Vous avez déjà l’habitude d’utiliser votre calculatrice pour effectuer des opérations sur des nombres, voici la liste des opérations connues de python :</p>
