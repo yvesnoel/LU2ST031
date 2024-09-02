@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'CM7/Les_fonctions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -401,7 +403,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="les-fonctions">
+  <section class="tex2jax_ignore mathjax_ignore" id="les-fonctions">
 <h1><span class="section-number">8. </span>Les fonctions<a class="headerlink" href="#les-fonctions" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Objectifs</p>
@@ -477,7 +479,7 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7404410902835963
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6451744550758614
 </pre></div>
 </div>
 </div>
@@ -512,7 +514,7 @@ Elle affiche à l’écran ce booléen et <strong>ne renvoie rien</strong>.</p>
 </div>
 <div class="seealso admonition">
 <p class="admonition-title">À vous de jouer</p>
-<p>Affectez la valeur arrondie à 2 décimales de $\sin(\frac{2\pi}{3})$, à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> en appelant la fonction <code class="docutils literal notranslate"><span class="pre">sin</span></code> (du module <code class="docutils literal notranslate"><span class="pre">math</span></code>). Affichez le contenu de <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Affectez la valeur arrondie à 2 décimales de <span class="math notranslate nohighlight">\(\sin(\frac{2\pi}{3})\)</span>, à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> en appelant la fonction <code class="docutils literal notranslate"><span class="pre">sin</span></code> (du module <code class="docutils literal notranslate"><span class="pre">math</span></code>). Affichez le contenu de <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -809,12 +811,12 @@ Dans le script la variable x vaut : 0.87
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3] [4, 5, 6]
-Dans le script avant l&#39;appel, l&#39;id de c est :139971177901888
-Dans le script avant l&#39;appel, l&#39;id de a est :139971177901632
-Dans la fonction l&#39;id de b avant append est :139971177901888
-Dans la fonction l&#39;id de b après append est :139971177901888
-Dans la fonction l&#39;id de a après append est :139971177901632
-Dans le script après l&#39;appel, l&#39;id de c est :139971177901888
+Dans le script avant l&#39;appel, l&#39;id de c est :140496177222912
+Dans le script avant l&#39;appel, l&#39;id de a est :140496177224832
+Dans la fonction l&#39;id de b avant append est :140496177222912
+Dans la fonction l&#39;id de b après append est :140496177222912
+Dans la fonction l&#39;id de a après append est :140496177224832
+Dans le script après l&#39;appel, l&#39;id de c est :140496177222912
 [1, -2, 3] [4, 5, 6]
 </pre></div>
 </div>
@@ -837,11 +839,11 @@ Dans le script après l&#39;appel, l&#39;id de c est :139971177901888
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dans le script 139971177900224
-Dans le script 139971177900672
-Dans la fonction 139971177900224
-Dans la fonction 139971177900672
-Dans la fonction 139971177900224
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dans le script 140496177322624
+Dans le script 140496177221888
+Dans la fonction 140496177322624
+Dans la fonction 140496177221888
+Dans la fonction 140496177322624
 True
 </pre></div>
 </div>
