@@ -13,6 +13,8 @@ parse:
   myst_enable_extensions:  
     - strikethrough
     - colon_fence
+    - dollarmath
+    - amsmath
 
 # Define the name of the latex output file for PDF builds
 #latex:
