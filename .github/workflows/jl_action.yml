@@ -3,7 +3,8 @@ name: Build and Deploy JL
 on:
   push:
     branches:
-      - main
+      - master
+      - JLite
   pull_request:
     branches:
       - '*'
