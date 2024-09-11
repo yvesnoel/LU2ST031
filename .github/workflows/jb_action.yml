@@ -33,9 +33,11 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build .
-
+    - name: list dir
+      run: ls
     - name: Build the JupyterLite site
       run: |
+        cp README.md content
         cp -r CM* content/
         jupyter lite build --contents content --output-dir dist
     - name: Upload artifact
