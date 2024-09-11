@@ -36,15 +36,31 @@ jobs:
 
     - name: Build the JupyterLite site
       run: |
-        cp README.md content
-        jupyter lite build --contents content --output-dir _build/_html/dist
+        cp -r CM* content/
+        jupyter lite build --contents content --output-dir dist
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./_build/html/dist
+        path: ./dist
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.9.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
+  deploy:
+    needs: deploy-book
+    if: github.ref == 'refs/heads/master'
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
