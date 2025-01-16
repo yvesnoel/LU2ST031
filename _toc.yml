@@ -17,3 +17,5 @@ chapters:
 - file: CM8/Algorithmes_et_logigrammes
 - file: CM8/Debug_spyder
 - file: CM9/Les_graphiques
+- file: CM10/dictionnaires-pandas
+- file: CM11/installer_avec_pip
