@@ -46,38 +46,20 @@ jobs:
         cp -r _build/html dist/
 
     # ── Cross-Origin Isolation pour Chrome ───────────────────────────────────
-    # Pyodide 0.23 requiert SharedArrayBuffer, qui n'est disponible que si
-    # les headers COOP/COEP sont présents. GitHub Pages ne les envoie pas.
-    # coi-serviceworker les ajoute côté client via un Service Worker.
+    # Pyodide 0.23 requiert SharedArrayBuffer (headers COOP/COEP).
+    # GitHub Pages ne les envoie pas ; coi-serviceworker les ajoute cote client.
     - name: Inject coi-serviceworker
       run: |
-        # Télécharger le service worker
         curl -sL -o dist/coi-serviceworker.min.js \
           https://cdn.jsdelivr.net/npm/coi-serviceworker@0.1.7/coi-serviceworker.min.js
-
-        # Injecter le script dans tous les index.html de JupyterLite
-        # (exclut les fichiers du JupyterBook dans dist/html/)
-        python3 - <<'EOF'
-import pathlib
-
-dist = pathlib.Path("dist")
-patched = 0
-for idx in dist.rglob("index.html"):
-    # Exclure le dossier html/ (sortie du JupyterBook)
-    if "html" in idx.relative_to(dist).parts:
-        continue
-    content = idx.read_text(encoding="utf-8")
-    if "<head>" not in content or "coi-serviceworker" in content:
-        continue
-    # Calculer le chemin relatif vers dist/coi-serviceworker.min.js
-    depth = len(idx.relative_to(dist).parts) - 1  # -1 pour le nom du fichier
-    rel = "../" * depth if depth > 0 else "./"
-    tag = f'<script src="{rel}coi-serviceworker.min.js"></script>'
-    idx.write_text(content.replace("<head>", "<head>" + tag, 1), encoding="utf-8")
-    print(f"Patched: {idx}")
-    patched += 1
-print(f"Total patched: {patched} file(s)")
-EOF
+        if [ -f dist/lab/index.html ]; then
+          sed -i 's|<head>|<head><script src="../coi-serviceworker.min.js"></script>|' dist/lab/index.html
+          echo "Patched: dist/lab/index.html"
+        fi
+        if [ -f dist/index.html ]; then
+          sed -i 's|<head>|<head><script src="./coi-serviceworker.min.js"></script>|' dist/index.html
+          echo "Patched: dist/index.html"
+        fi
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
