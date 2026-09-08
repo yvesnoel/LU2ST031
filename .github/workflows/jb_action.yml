@@ -1,12 +1,10 @@
 name: deploy-book
 
-# Only run this when the master branch changes
 on:
   push:
     branches:
     - master
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
@@ -18,35 +16,25 @@ jobs:
       with:
         python-version: '3.11'
 
-    # -----------------------------------------------------------------------
-    # ÉTAPE 1 : construction du JupyterBook (requiert JupyterLab 3.x)
-    # jupyter-book v1 s'appuie sur Sphinx, pas sur JupyterLab à l'exécution.
-    # -----------------------------------------------------------------------
-    - name: Install JupyterBook dependencies
-      run: |
-        pip install "jupyter-book<2" jupyterlab-myst
-
-    - name: Build the book
-      run: |
-        jupyter-book build .
-
-    # -----------------------------------------------------------------------
-    # ÉTAPE 2 : construction du site JupyterLite (requiert JupyterLab 4.x)
-    # On installe jupyterlab 4 + jupyterlite-core 0.2 + pyodide-kernel 0.1
-    # APRÈS avoir construit le book, pour éviter le conflit de dépendances.
-    # jupyterlite-pyodide-kernel >=0.1 embarque Pyodide 0.22+ qui corrige
-    # le crash Chrome ("atime" null) présent dans Pyodide 0.21.
-    # -----------------------------------------------------------------------
-    - name: Install JupyterLite dependencies
+    # Toutes les dépendances dans un seul environnement :
+    # - jupyter-book<2 et jupyterlite-core 0.1.x requièrent tous deux JupyterLab 3.x → pas de conflit
+    # - jupyterlite-pyodide-kernel>=0.1.0 embarque Pyodide 0.22 (vs 0.21 dans 0.0.10)
+    #   ce qui corrige le crash Chrome "TypeError: Cannot read properties of null (reading 'atime')"
+    - name: Install dependencies
       run: |
         pip install \
-          "jupyterlite-core>=0.2.0,<0.3" \
-          "jupyterlab>=4.0.0,<5" \
+          "jupyter-book<2" \
+          jupyterlab-myst \
+          "jupyterlite-core>=0.1.1,<0.2" \
           "jupyterlite-pyodide-kernel>=0.1.0,<0.2" \
           "ipywidgets>=8.0.0,<9" \
           "ipympl>=0.9.0" \
           "plotly>=5,<6" \
           ipyleaflet
+
+    - name: Build the book
+      run: |
+        jupyter-book build .
 
     - name: Build the JupyterLite site
       run: |
