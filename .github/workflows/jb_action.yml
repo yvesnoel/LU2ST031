@@ -5,6 +5,12 @@ on:
     branches:
     - master
 
+# Permissions au niveau du workflow (s'appliquent aux deux jobs)
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
@@ -16,10 +22,9 @@ jobs:
       with:
         python-version: '3.11'
 
-    # Toutes les dépendances dans un seul environnement :
-    # - jupyter-book<2 et jupyterlite-core 0.1.x requièrent tous deux JupyterLab 3.x → pas de conflit
-    # - jupyterlite-pyodide-kernel>=0.1.0 embarque Pyodide 0.22 (vs 0.21 dans 0.0.10)
-    #   ce qui corrige le crash Chrome "TypeError: Cannot read properties of null (reading 'atime')"
+    # jupyter-book<2 et jupyterlite-core 0.1.x utilisent tous deux JupyterLab 3.x → pas de conflit
+    # jupyterlite-pyodide-kernel>=0.1.0 embarque Pyodide 0.22 (vs 0.21 dans 0.0.10)
+    # ce qui corrige le crash Chrome "TypeError: Cannot read properties of null (reading 'atime')"
     - name: Install dependencies
       run: |
         pip install \
@@ -51,9 +56,6 @@ jobs:
   deploy:
     needs: deploy-book
     if: github.ref == 'refs/heads/master'
-    permissions:
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages
