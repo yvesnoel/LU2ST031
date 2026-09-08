@@ -5,12 +5,6 @@ on:
   push:
     branches:
     - master
-    # If your git repository has the Jupyter Book within some-subfolder next to
-    # unrelated files, you can make this run only if a file within that specific
-    # folder has been modified.
-    #
-    # paths:
-    # - some-subfolder/**
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
@@ -19,38 +13,53 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # Install dependencies
-    - name: Set up Python 3.8
+    - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: '3.8'
+        python-version: '3.11'
 
-    - name: Install dependencies
+    # -----------------------------------------------------------------------
+    # ÉTAPE 1 : construction du JupyterBook (requiert JupyterLab 3.x)
+    # jupyter-book v1 s'appuie sur Sphinx, pas sur JupyterLab à l'exécution.
+    # -----------------------------------------------------------------------
+    - name: Install JupyterBook dependencies
       run: |
-        pip install -r requirements.txt
+        pip install "jupyter-book<2" jupyterlab-myst
 
-    # Build the book
     - name: Build the book
       run: |
         jupyter-book build .
-    - name: list dir
-      run: ls
+
+    # -----------------------------------------------------------------------
+    # ÉTAPE 2 : construction du site JupyterLite (requiert JupyterLab 4.x)
+    # On installe jupyterlab 4 + jupyterlite-core 0.2 + pyodide-kernel 0.1
+    # APRÈS avoir construit le book, pour éviter le conflit de dépendances.
+    # jupyterlite-pyodide-kernel >=0.1 embarque Pyodide 0.22+ qui corrige
+    # le crash Chrome ("atime" null) présent dans Pyodide 0.21.
+    # -----------------------------------------------------------------------
+    - name: Install JupyterLite dependencies
+      run: |
+        pip install \
+          "jupyterlite-core>=0.2.0,<0.3" \
+          "jupyterlab>=4.0.0,<5" \
+          "jupyterlite-pyodide-kernel>=0.1.0,<0.2" \
+          "ipywidgets>=8.0.0,<9" \
+          "ipympl>=0.9.0" \
+          "plotly>=5,<6" \
+          ipyleaflet
+
     - name: Build the JupyterLite site
       run: |
         cp README.md content
         cp -r CM* content/
         jupyter lite build --contents content --output-dir dist
         cp -r _build/html dist/
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
-    # Push the book's HTML to github-pages
-    #    - name: GitHub Pages action
-    #  uses: peaceiris/actions-gh-pages@v3.9.0
-    #  with:
-    #    github_token: ${{ secrets.GITHUB_TOKEN }}
-    #    publish_dir: ./_build/html
+
   deploy:
     needs: deploy-book
     if: github.ref == 'refs/heads/master'
@@ -64,8 +73,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: echo env
-        run: echo ${{ steps.deployment.outputs.page_url }}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
