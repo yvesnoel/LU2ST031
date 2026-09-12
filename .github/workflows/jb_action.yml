@@ -29,10 +29,6 @@ jobs:
         venv_book/bin/jupyter-book build .
 
     # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.23) ───────
-    # Ordre critique :
-    #   1. cp CM* content/   ← notebooks disponibles
-    #   2. fix kernel name   ← patche les notebooks dans content/
-    #   3. jupyter lite build
     - name: Build JupyterLite
       run: |
         python -m venv venv_lite
@@ -44,10 +40,16 @@ jobs:
           "ipympl>=0.9.0" \
           "plotly>=5,<6" \
           ipyleaflet
+
+        # Copier les notebooks dans content/
         cp README.md content
         cp -r CM* content/
+
+        # Corriger le nom du kernel : "python3" → "python" (Pyodide)
+        # DOIT tourner après la copie des notebooks dans content/
         python3 -c "
         import json, pathlib
+        fixed = 0
         for p in pathlib.Path('content').rglob('*.ipynb'):
             nb = json.loads(p.read_text())
             ks = nb.setdefault('metadata', {}).setdefault('kernelspec', {})
@@ -55,7 +57,14 @@ jobs:
                 ks.update({'name': 'python', 'display_name': 'Python (Pyodide)', 'language': 'python'})
                 p.write_text(json.dumps(nb, ensure_ascii=False))
                 print('Fixed:', p)
+                fixed += 1
+        print('Total fixed:', fixed)
         "
+
+        # Désactiver l'extension TOC (bug connu jupyterlite-core 0.2.x :
+        # toc.js:513 Cannot read properties of undefined (reading 'type'))
+        echo '{"@jupyterlab/toc-extension:plugin":{"enabled":false}}' > overrides.json
+
         venv_lite/bin/jupyter lite build --contents content --output-dir dist
         cp -r _build/html dist/
 
