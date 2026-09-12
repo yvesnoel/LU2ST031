@@ -28,23 +28,11 @@ jobs:
         venv_book/bin/pip install --quiet "jupyter-book<2" jupyterlab-myst
         venv_book/bin/jupyter-book build .
 
-    # ── Correction du nom de kernel dans les notebooks ───────────────────────
-    # JupyterLite ne connait que "python" (Pyodide).
-    # Les notebooks contiennent souvent "python3" => le kernel ne demarre pas.
-    - name: Fix kernel name (python3 -> python)
-      run: |
-        python3 -c "
-        import json, pathlib
-        for p in pathlib.Path('content').rglob('*.ipynb'):
-            nb = json.loads(p.read_text())
-            ks = nb.setdefault('metadata', {}).setdefault('kernelspec', {})
-            if ks.get('name') != 'python':
-                ks.update({'name': 'python', 'display_name': 'Python (Pyodide)', 'language': 'python'})
-                p.write_text(json.dumps(nb, ensure_ascii=False))
-                print('Fixed:', p)
-        "
-
     # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.23) ───────
+    # Ordre critique :
+    #   1. cp CM* content/   ← notebooks disponibles
+    #   2. fix kernel name   ← patche les notebooks dans content/
+    #   3. jupyter lite build
     - name: Build JupyterLite
       run: |
         python -m venv venv_lite
@@ -58,6 +46,16 @@ jobs:
           ipyleaflet
         cp README.md content
         cp -r CM* content/
+        python3 -c "
+        import json, pathlib
+        for p in pathlib.Path('content').rglob('*.ipynb'):
+            nb = json.loads(p.read_text())
+            ks = nb.setdefault('metadata', {}).setdefault('kernelspec', {})
+            if ks.get('name') != 'python':
+                ks.update({'name': 'python', 'display_name': 'Python (Pyodide)', 'language': 'python'})
+                p.write_text(json.dumps(nb, ensure_ascii=False))
+                print('Fixed:', p)
+        "
         venv_lite/bin/jupyter lite build --contents content --output-dir dist
         cp -r _build/html dist/
 
