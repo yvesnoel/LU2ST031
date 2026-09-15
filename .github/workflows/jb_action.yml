@@ -82,6 +82,30 @@ jobs:
           echo "Patched: dist/index.html"
         fi
 
+    # ── Replier la barre latérale gauche par défaut ───────────────────────────
+    - name: Collapse sidebar by default
+      run: |
+        if [ -f dist/lab/index.html ]; then
+          python3 -c "
+        import pathlib
+        path = pathlib.Path('dist/lab/index.html')
+        script = '''<script>
+        (function(){
+          var done=false;
+          new MutationObserver(function(m,obs){
+            if(done) return;
+            var t=document.querySelector('.jp-SideBar .lm-TabBar-tab.lm-mod-current');
+            if(t){ t.click(); done=true; }
+          }).observe(document.body,{childList:true,subtree:true});
+        })();
+        </script>'''
+        html = path.read_text()
+        html = html.replace('</body>', script + '</body>', 1)
+        path.write_text(html)
+        print('Patched: sidebar collapsed by default')
+          "
+        fi
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
