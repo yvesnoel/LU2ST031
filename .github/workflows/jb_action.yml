@@ -28,14 +28,14 @@ jobs:
         venv_book/bin/pip install --quiet "jupyter-book<2" jupyterlab-myst
         venv_book/bin/jupyter-book build .
 
-    # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.23) ───────
+    # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.25+) ──────
     - name: Build JupyterLite
       run: |
         python -m venv venv_lite
         venv_lite/bin/pip install --quiet \
-          "jupyterlite-core>=0.2.0,<0.3" \
+          "jupyterlite-core>=0.4.0,<0.5" \
           "jupyterlab>=4.0.0,<5" \
-          "jupyterlite-pyodide-kernel>=0.2.0,<0.3" \
+          "jupyterlite-pyodide-kernel>=0.4.0,<0.5" \
           "ipywidgets>=8.0.0,<9" \
           "ipympl>=0.9.0" \
           "plotly>=5,<6" \
@@ -61,8 +61,7 @@ jobs:
         print('Total fixed:', fixed)
         "
 
-        # Désactiver l'extension TOC (bug connu jupyterlite-core 0.2.x :
-        # toc.js:513 Cannot read properties of undefined (reading 'type'))
+        # Désactiver l'extension TOC si elle pose problème
         echo '{"@jupyterlab/toc-extension:plugin":{"enabled":false}}' > overrides.json
 
         venv_lite/bin/jupyter lite build --contents content --output-dir dist
