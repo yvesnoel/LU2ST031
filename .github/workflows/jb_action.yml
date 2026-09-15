@@ -28,14 +28,14 @@ jobs:
         venv_book/bin/pip install --quiet "jupyter-book<2" jupyterlab-myst
         venv_book/bin/jupyter-book build .
 
-    # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.25+) ──────
+    # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.26) ───────
     - name: Build JupyterLite
       run: |
         python -m venv venv_lite
         venv_lite/bin/pip install --quiet \
-          "jupyterlite-core>=0.4.0,<0.5" \
+          "jupyterlite-core>=0.8.0,<0.9" \
           "jupyterlab>=4.0.0,<5" \
-          "jupyterlite-pyodide-kernel>=0.4.0,<0.5" \
+          "jupyterlite-pyodide-kernel>=0.8.0,<0.9" \
           "ipywidgets>=8.0.0,<9" \
           "ipympl>=0.9.0" \
           "plotly>=5,<6" \
