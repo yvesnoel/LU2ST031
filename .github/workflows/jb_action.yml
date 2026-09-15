@@ -90,14 +90,21 @@ jobs:
         import pathlib
         path = pathlib.Path('dist/lab/index.html')
         script = '''<script>
-        (function(){
-          var done=false;
-          new MutationObserver(function(m,obs){
-            if(done) return;
-            var t=document.querySelector('.jp-SideBar .lm-TabBar-tab.lm-mod-current');
-            if(t){ t.click(); done=true; }
-          }).observe(document.body,{childList:true,subtree:true});
-        })();
+        window.addEventListener('load', function() {
+          var attempts = 0;
+          function tryCollapse() {
+            attempts++;
+            if (attempts > 20) return;
+            if (window.jupyterapp && window.jupyterapp.shell) {
+              window.jupyterapp.shell.collapseLeft();
+              return;
+            }
+            var tab = document.querySelector('.jp-SideBar .lm-TabBar-tab.lm-mod-current');
+            if (tab) { tab.click(); }
+            setTimeout(tryCollapse, 500);
+          }
+          setTimeout(tryCollapse, 1000);
+        });
         </script>'''
         html = path.read_text()
         html = html.replace('</body>', script + '</body>', 1)
