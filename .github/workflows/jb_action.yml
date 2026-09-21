@@ -21,7 +21,7 @@ jobs:
       with:
         python-version: '3.11'
 
-    # ── Environnement 1 : JupyterBook (JupyterLab 3.x) ──────────────────────
+    # ── Environnement 1 : JupyterBook ────────────────────────────────────────
     - name: Build JupyterBook
       run: |
         python -m venv venv_book
@@ -32,21 +32,22 @@ jobs:
     - name: Build JupyterLite
       run: |
         python -m venv venv_lite
-        # IMPORTANT : n'installer QUE jupyterlite-core et le kernel Pyodide.
-        # Tout autre paquet pip (ipywidgets, ipympl, plotly, jupyterlab-myst…)
-        # embarque une labextension JS compilée contre une version de JupyterLab
-        # incompatible avec le bundle pré-compilé de jupyterlite-core → erreurs
-        # "Cannot set properties of undefined (setting 'default')" → page blanche.
-        # Les packages Python (numpy, matplotlib, pandas, ipywidgets, plotly…)
-        # sont disponibles directement via Pyodide dans le kernel ; pas besoin
-        # de les installer ici pour qu'ils fonctionnent dans les notebooks.
+
+        # N'installer QUE jupyterlite-core et le kernel Pyodide.
+        # Les autres packages (ipywidgets, ipympl, plotly, jupyterlab-myst…)
+        # embarquent des labextensions JS incompatibles avec le bundle pré-compilé
+        # de jupyterlite-core → "Cannot set properties of undefined" → page blanche.
+        # numpy, matplotlib, pandas, ipywidgets… sont fournis par Pyodide sans rien installer.
         venv_lite/bin/pip install --quiet \
           "jupyterlite-core>=0.8.0,<0.9" \
           "jupyterlite-pyodide-kernel>=0.8.0,<0.9" \
           "jupyter-server>=2.0,<3"
 
+        # S'assurer que le dossier content/ existe
+        mkdir -p content
+
         # Copier les notebooks dans content/
-        cp README.md content
+        cp README.md content/
         cp -r CM* content/
 
         # Corriger le nom du kernel : "python3" → "python" (Pyodide)
@@ -64,15 +65,13 @@ jobs:
         print('Total fixed:', fixed)
         "
 
-        # Désactiver TOC et masquer le filebrowser au démarrage
-        echo '{"@jupyterlab/toc-extension:plugin":{"enabled":false},"@jupyterlab/filebrowser-extension:browser":{"startHidden":true}}' > overrides.json
+        # NE PAS écrire d'overrides.json ici : des IDs de plugins invalides
+        # peuvent crasher le système de settings de JupyterLite au démarrage.
 
         venv_lite/bin/jupyter lite build --contents content --output-dir dist
         cp -r _build/html dist/
 
     # ── HTML autonomes pour Moodle ───────────────────────────────────────────
-    # Placé APRÈS JupyterLite pour éviter que jupyter lite build écrase dist/moodle
-    # Source : HTML JupyterBook (_build/html) → admonitions MyST déjà rendues
     - name: Build Moodle HTML
       run: |
         mkdir -p dist/moodle
@@ -81,48 +80,20 @@ jobs:
         echo "ZIP créé : dist/moodle_notebooks.zip ($(du -h dist/moodle_notebooks.zip | cut -f1))"
         find dist/moodle -name '*.html' | sort
 
-    # ── Cross-Origin Isolation pour Chrome (SharedArrayBuffer) ───────────────
+    # ── Cross-Origin Isolation pour Chrome (SharedArrayBuffer / Pyodide) ─────
     - name: Inject coi-serviceworker
       run: |
         curl -sL -o dist/coi-serviceworker.min.js \
           https://cdn.jsdelivr.net/npm/coi-serviceworker@0.1.7/coi-serviceworker.min.js
+
+        # Injecter juste avant </head> (plus robuste que après <head>)
         if [ -f dist/lab/index.html ]; then
-          sed -i 's|<head>|<head><script src="../coi-serviceworker.min.js"></script>|' dist/lab/index.html
+          sed -i 's|</head>|<script src="../coi-serviceworker.min.js"></script></head>|' dist/lab/index.html
           echo "Patched: dist/lab/index.html"
         fi
         if [ -f dist/index.html ]; then
-          sed -i 's|<head>|<head><script src="./coi-serviceworker.min.js"></script>|' dist/index.html
+          sed -i 's|</head>|<script src="./coi-serviceworker.min.js"></script></head>|' dist/index.html
           echo "Patched: dist/index.html"
-        fi
-
-    # ── Replier la barre latérale gauche par défaut ───────────────────────────
-    - name: Collapse sidebar by default
-      run: |
-        if [ -f dist/lab/index.html ]; then
-          python3 -c "
-        import pathlib
-        path = pathlib.Path('dist/lab/index.html')
-        script = '''<script>
-        (function() {
-          var attempts = 0;
-          function tryCollapse() {
-            if (attempts++ >= 30) return;
-            if (window.jupyterapp && window.jupyterapp.shell) {
-              setTimeout(function() {
-                try { window.jupyterapp.shell.collapseLeft(); } catch(e) {}
-              }, 800);
-              return;
-            }
-            setTimeout(tryCollapse, 500);
-          }
-          setTimeout(tryCollapse, 1000);
-        })();
-        </script>'''
-        html = path.read_text()
-        html = html.replace('</body>', script + '</body>', 1)
-        path.write_text(html)
-        print('Patched: sidebar collapsed by default')
-          "
         fi
 
     - name: Upload artifact
