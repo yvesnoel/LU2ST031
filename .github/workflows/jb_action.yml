@@ -28,29 +28,28 @@ jobs:
         venv_book/bin/pip install --quiet "jupyter-book<2" jupyterlab-myst beautifulsoup4 lxml
         venv_book/bin/jupyter-book build .
 
-    # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.26) ───────
+    # ── Environnement 2 : JupyterLite (Pyodide kernel) ──────────────────────
     - name: Build JupyterLite
       run: |
         python -m venv venv_lite
-        # jupyterlite-core 0.8.x a été compilé contre jupyterlab 4.2.x
-        # Ne pas utiliser jupyterlab>=4.0,<5 → pip installerait la dernière 4.x
-        # incompatible avec les bundles JS de jupyterlite 0.8
+        # IMPORTANT : n'installer QUE jupyterlite-core et le kernel Pyodide.
+        # Tout autre paquet pip (ipywidgets, ipympl, plotly, jupyterlab-myst…)
+        # embarque une labextension JS compilée contre une version de JupyterLab
+        # incompatible avec le bundle pré-compilé de jupyterlite-core → erreurs
+        # "Cannot set properties of undefined (setting 'default')" → page blanche.
+        # Les packages Python (numpy, matplotlib, pandas, ipywidgets, plotly…)
+        # sont disponibles directement via Pyodide dans le kernel ; pas besoin
+        # de les installer ici pour qu'ils fonctionnent dans les notebooks.
         venv_lite/bin/pip install --quiet \
           "jupyterlite-core>=0.8.0,<0.9" \
-          "jupyterlab~=4.2.0" \
-          "jupyterlite-pyodide-kernel>=0.8.0,<0.9" \
-          "jupyterlab-myst<3" \
-          "ipywidgets>=8.0.0,<9" \
-          "ipympl>=0.9.0" \
-          "plotly>=5,<6" \
-          ipyleaflet
+          "jupyterlite-pyodide-kernel>=0.8.0,<0.9"
 
         # Copier les notebooks dans content/
         cp README.md content
         cp -r CM* content/
 
         # Corriger le nom du kernel : "python3" → "python" (Pyodide)
-        python3 -c "
+        venv_lite/bin/python3 -c "
         import json, pathlib
         fixed = 0
         for p in pathlib.Path('content').rglob('*.ipynb'):
