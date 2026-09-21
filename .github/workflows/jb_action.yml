@@ -28,16 +28,6 @@ jobs:
         venv_book/bin/pip install --quiet "jupyter-book<2" jupyterlab-myst beautifulsoup4 lxml
         venv_book/bin/jupyter-book build .
 
-    # ── HTML autonomes pour Moodle ───────────────────────────────────────────
-    # Source : HTML JupyterBook (_build/html) → admonitions MyST déjà rendues
-    - name: Build Moodle HTML
-      run: |
-        mkdir -p dist/moodle
-        python3 .github/scripts/build_moodle_html.py
-        (cd dist/moodle && zip -r ../../dist/moodle_notebooks.zip .)
-        echo "ZIP créé : dist/moodle_notebooks.zip ($(du -h dist/moodle_notebooks.zip | cut -f1))"
-        find dist/moodle -name '*.html' | sort
-
     # ── Environnement 2 : JupyterLite (JupyterLab 4.x, Pyodide 0.26) ───────
     - name: Build JupyterLite
       run: |
@@ -76,6 +66,17 @@ jobs:
 
         venv_lite/bin/jupyter lite build --contents content --output-dir dist
         cp -r _build/html dist/
+
+    # ── HTML autonomes pour Moodle ───────────────────────────────────────────
+    # Placé APRÈS JupyterLite pour éviter que jupyter lite build écrase dist/moodle
+    # Source : HTML JupyterBook (_build/html) → admonitions MyST déjà rendues
+    - name: Build Moodle HTML
+      run: |
+        mkdir -p dist/moodle
+        venv_book/bin/python3 .github/scripts/build_moodle_html.py
+        (cd dist/moodle && zip -r ../../dist/moodle_notebooks.zip .)
+        echo "ZIP créé : dist/moodle_notebooks.zip ($(du -h dist/moodle_notebooks.zip | cut -f1))"
+        find dist/moodle -name '*.html' | sort
 
     # ── Cross-Origin Isolation pour Chrome (SharedArrayBuffer) ───────────────
     - name: Inject coi-serviceworker
