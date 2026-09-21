@@ -41,7 +41,12 @@ jobs:
         venv_lite/bin/pip install --quiet \
           "jupyterlite-core>=0.8.0,<0.9" \
           "jupyterlite-pyodide-kernel>=0.8.0,<0.9" \
-          "jupyter-server>=2.0,<3"
+          "jupyter-server>=2.0,<3" \
+          "jupyterlab-myst"
+        # jupyterlab-myst sans pin de version : pip résout la version de jupyterlab
+        # compatible avec jupyterlite-core 0.8.x via ses dépendances déclarées.
+        # NE PAS ajouter d'autres packages ici (ipywidgets, ipympl, plotly…) :
+        # leurs labextensions JS sont incompatibles avec le bundle pré-compilé.
 
         # S'assurer que le dossier content/ existe
         mkdir -p content
