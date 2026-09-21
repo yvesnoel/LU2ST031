@@ -1,16 +1,15 @@
 """
 Génère des fichiers HTML autonomes pour Moodle à partir du HTML JupyterBook.
 
-Stratégie : inline TOUS les fichiers CSS référencés par <link rel="stylesheet">
-pour un rendu identique au site JupyterBook, sans aucune dépendance externe.
-
-- Admonitions MyST déjà rendues par Sphinx
-- Images embarquées en base64
-- Tous les CSS lus depuis _build/html/_static/ et inlinés
+Stratégie :
+- Inline TOUS les CSS locaux (link rel=stylesheet) avec leurs polices/images
+  embarquées en base64 (url() relatifs → data URI)
+- Garde les CSS externes CDN comme <link> tags (icônes FontAwesome, etc.)
+- Embarque les images du contenu en base64
 - MathJax conditionnel (CDN, ne se charge pas si Moodle l'a déjà)
 - Navigation / sidebar supprimées
 """
-import pathlib, base64, sys, re
+import pathlib, base64, sys, re, urllib.request, urllib.error
 from bs4 import BeautifulSoup
 
 build_dir = pathlib.Path('_build/html')
@@ -23,8 +22,8 @@ MATHJAX = """<script>
 if (typeof MathJax === "undefined") {
   window.MathJax = {
     tex: {
-      inlineMath: [["\\\\(","\\\\)"]],
-      displayMath: [["\\\\[","\\\\]"]]
+      inlineMath: [["\\(","\\)"]],
+      displayMath: [["\\[","\\]"]]
     },
     options: { skipHtmlTags: ["script","noscript","style","textarea","pre"] }
   };
@@ -35,7 +34,7 @@ if (typeof MathJax === "undefined") {
 }
 </script>"""
 
-# ── CSS minimal de recadrage pour intégration Moodle ─────────────────────────
+# ── CSS de recadrage Moodle ───────────────────────────────────────────────────
 MOODLE_OVERRIDE = """<style>
 /* Recadrage pour intégration Moodle - masque navigation et sidebar */
 body { overflow-x: hidden !important; }
@@ -54,53 +53,129 @@ a.headerlink { display: none !important; }
 .copybtn { display: none !important; }
 </style>"""
 
+# ── Mime types pour les fichiers référencés en url() ─────────────────────────
+FONT_MIME = {
+    'woff':  'font/woff',
+    'woff2': 'font/woff2',
+    'ttf':   'font/ttf',
+    'otf':   'font/otf',
+    'eot':   'application/vnd.ms-fontobject',
+}
+IMG_MIME = {
+    'png':  'image/png',
+    'jpg':  'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'gif':  'image/gif',
+    'svg':  'image/svg+xml',
+    'ico':  'image/x-icon',
+}
+
+
+def file_to_data_uri(path: pathlib.Path) -> str | None:
+    """Convertit un fichier local en data URI base64."""
+    ext = path.suffix.lstrip('.').lower()
+    mime = FONT_MIME.get(ext) or IMG_MIME.get(ext)
+    if mime is None:
+        return None
+    b64 = base64.b64encode(path.read_bytes()).decode()
+    return f'data:{mime};base64,{b64}'
+
+
+def fix_css_urls(css_text: str, css_file_path: pathlib.Path) -> str:
+    """
+    Remplace les url() relatifs dans un bloc CSS par des data URIs base64.
+    Laisse intacts les url() déjà absolus (http, data:, //).
+    """
+    def replacer(m):
+        raw = m.group(1).strip()
+        # Enlève les quotes éventuelles
+        url = raw.strip("'\"")
+        if url.startswith(('data:', 'http', '//', '#', '')):
+            return m.group(0)
+        # Résout par rapport au fichier CSS
+        resolved = (css_file_path.parent / url).resolve()
+        if resolved.exists():
+            data_uri = file_to_data_uri(resolved)
+            if data_uri:
+                return f'url("{data_uri}")'
+        return m.group(0)
+
+    return re.sub(r'url\(([^)]+)\)', replacer, css_text)
+
 
 def resolve_css_path(href: str, page_path: pathlib.Path) -> pathlib.Path | None:
-    """
-    Résout le chemin d'un fichier CSS (href relatif) par rapport à la page HTML.
-    Ex : href="../_static/styles/theme.css" depuis CM1/page.html
-         → _build/html/_static/styles/theme.css
-    """
-    # Supprime les query strings (?v=..., ?digest=...)
+    """Résout le chemin d'un CSS relatif depuis la page HTML."""
     clean_href = re.sub(r'\?.*$', '', href)
-    # Chemin absolu depuis la page
     resolved = (page_path.parent / clean_href).resolve()
     return resolved if resolved.exists() else None
 
 
-def inline_all_css(soup: BeautifulSoup, page_path: pathlib.Path) -> str:
-    """Lit tous les <link rel=stylesheet> et retourne le CSS combiné."""
-    css_parts = []
+def inline_css_file(css_path: pathlib.Path) -> str:
+    """Lit un fichier CSS et fixe ses url() relatifs."""
+    text = css_path.read_text('utf-8', errors='replace')
+    return fix_css_urls(text, css_path)
 
-    # 1. Blocs <style> inline existants (ex: .pst-js-only)
+
+def resolve_css_imports(css_text: str, css_file_path: pathlib.Path) -> str:
+    """Résout les @import url(...) / @import "..." dans un bloc CSS."""
+    def replacer(m):
+        raw = m.group(1).strip().strip("'\"")
+        # Supprime query string
+        raw = re.sub(r'\?.*$', '', raw)
+        if raw.startswith(('http', '//', 'data:')):
+            return m.group(0)
+        resolved = (css_file_path.parent / raw).resolve()
+        if resolved.exists():
+            imported = resolved.read_text('utf-8', errors='replace')
+            imported = fix_css_urls(imported, resolved)
+            imported = resolve_css_imports(imported, resolved)
+            return imported + '\n'
+        return m.group(0)
+
+    # Gère : @import "foo.css"; et @import url("foo.css");
+    pattern = r'@import\s+(?:url\()?["\']?([^"\')\s;]+)["\']?\)?;?'
+    return re.sub(pattern, replacer, css_text)
+
+
+def collect_css(soup: BeautifulSoup, page_path: pathlib.Path):
+    """
+    Retourne (inline_css: str, external_link_tags: list[str]).
+    - inline_css : CSS local combiné, url() convertis en base64
+    - external_link_tags : <link> CDN à conserver tels quels dans le <head>
+    """
+    css_parts = []
+    external_links = []
+
+    # 1. Blocs <style> existants dans la page
     for style in soup.find_all('style'):
         txt = style.get_text()
-        if txt.strip():
-            # Remplace @import "basic.css" par le contenu réel si trouvé
-            if '@import' in txt and 'basic.css' in txt:
-                basic = (page_path.parent / '../basic.css').resolve()
-                if not basic.exists():
-                    basic = page_path.parent.parent / '_static' / 'basic.css'
-                if basic.exists():
-                    txt = re.sub(
-                        r'@import\s+["\'][^"\']*basic\.css["\'];?\s*',
-                        basic.read_text('utf-8') + '\n',
-                        txt
-                    )
-            css_parts.append(txt)
+        if not txt.strip():
+            continue
+        txt = resolve_css_imports(txt, page_path)
+        txt = fix_css_urls(txt, page_path)
+        css_parts.append(txt)
 
-    # 2. <link rel="stylesheet" href="..."> → lit le fichier et inline
+    # 2. <link rel="stylesheet">
     for link in soup.find_all('link', rel='stylesheet'):
         href = link.get('href', '')
-        if not href or href.startswith('http'):
+        if not href:
             continue
+
+        if href.startswith('http') or href.startswith('//'):
+            # CSS externe (CDN) : garder comme <link> pour les icônes, etc.
+            external_links.append(f'<link rel="stylesheet" href="{href}" crossorigin="anonymous">')
+            continue
+
         css_path = resolve_css_path(href, page_path)
         if css_path and css_path.exists():
-            css_parts.append(css_path.read_text('utf-8', errors='replace'))
+            css_text = inline_css_file(css_path)
+            css_text = resolve_css_imports(css_text, css_path)
+            css_parts.append(css_text)
         else:
-            print(f'    CSS manquant: {href}', file=sys.stderr)
+            print(f'    CSS local manquant: {href}', file=sys.stderr)
 
-    return '<style>\n' + '\n\n'.join(css_parts) + '\n</style>'
+    inline_block = '<style>\n' + '\n\n'.join(css_parts) + '\n</style>'
+    return inline_block, external_links
 
 
 # ── Traitement de chaque notebook ─────────────────────────────────────────────
@@ -120,11 +195,10 @@ for nb_path in notebooks:
 
     soup = BeautifulSoup(jb_html.read_text('utf-8'), 'lxml')
 
-    # ── Inline tout le CSS ───────────────────────────────────────────────────
-    all_css = inline_all_css(soup, jb_html)
+    # ── CSS inline + liens CDN externes ──────────────────────────────────────
+    all_css, external_link_tags = collect_css(soup, jb_html)
 
     # ── Extrait le contenu principal ─────────────────────────────────────────
-    # JupyterBook / Sphinx Book Theme : <article class="bd-article">
     main = (soup.find('article', class_='bd-article')
             or soup.find('div', role='main')
             or soup.find('div', class_='bd-article')
@@ -136,7 +210,7 @@ for nb_path in notebooks:
         errors.append(str(nb_path))
         continue
 
-    # ── Supprime les éléments de navigation dans le contenu ─────────────────
+    # ── Supprime navigation et éléments inutiles ──────────────────────────────
     for sel in [
         '.prev-next', '.footer-item', 'a.headerlink',
         '.sd-badge', '.cell_tag', '.copybtn',
@@ -146,7 +220,7 @@ for nb_path in notebooks:
         for el in main.select(sel):
             el.decompose()
 
-    # ── Embarque les images locales en base64 ────────────────────────────────
+    # ── Embarque les images du contenu en base64 ──────────────────────────────
     for img in main.find_all('img'):
         src = img.get('src', '')
         if src.startswith('data:') or src.startswith('http'):
@@ -154,10 +228,9 @@ for nb_path in notebooks:
         img_path = (jb_html.parent / src).resolve()
         if img_path.exists():
             ext = img_path.suffix.lstrip('.').lower()
-            mime_map = {'jpg': 'jpeg', 'svg': 'svg+xml'}
-            ext = mime_map.get(ext, ext)
+            mime = IMG_MIME.get(ext, f'image/{ext}')
             b64 = base64.b64encode(img_path.read_bytes()).decode()
-            img['src'] = f'data:image/{ext};base64,{b64}'
+            img['src'] = f'data:{mime};base64,{b64}'
         else:
             print(f'    Image manquante: {img_path}', file=sys.stderr)
 
@@ -169,14 +242,16 @@ for nb_path in notebooks:
             if k.startswith('data-'):
                 data_attrs += f' {k}="{v}"'
 
-    # ── Assemble le HTML final ───────────────────────────────────────────────
+    # ── Assemble le HTML final ────────────────────────────────────────────────
     title = nb_path.stem.replace('_', ' ')
+    external_links_html = '\n'.join(external_link_tags)
     html_out = f"""<!DOCTYPE html>
 <html lang="fr"{data_attrs}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
+{external_links_html}
 {all_css}
 {MOODLE_OVERRIDE}
 {MATHJAX}
