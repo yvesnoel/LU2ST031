@@ -2,23 +2,23 @@
 Génère des fichiers HTML autonomes pour Moodle à partir du HTML JupyterBook.
 
 Stratégie :
-- Inline TOUS les CSS locaux (link rel=stylesheet) avec leurs polices/images
-  embarquées en base64 (url() relatifs → data URI)
-- Garde les CSS externes CDN comme <link> tags (icônes FontAwesome, etc.)
+- Garde la structure complète du <body> (pour que tous les sélecteurs CSS
+  fonctionnent, ex : .bd-page-width .highlight, body.pst-... etc.)
+- Supprime du DOM les éléments de navigation (header, sidebar, footer, scripts)
+- Inline tous les CSS locaux avec leurs polices/images converties en base64
+  (gère les URLs avec query strings : fa-solid.woff2?v=6.4 → fichier réel)
+- Garde les CSS CDN externes comme <link> tags (icônes Font Awesome, etc.)
 - Embarque les images du contenu en base64
-- MathJax conditionnel (CDN, ne se charge pas si Moodle l'a déjà)
-- Navigation / sidebar supprimées
+- MathJax conditionnel (CDN)
 """
-import pathlib, base64, sys, re, urllib.request, urllib.error
+import pathlib, base64, sys, re
 from bs4 import BeautifulSoup
 
 build_dir = pathlib.Path('_build/html')
 moodle_dir = pathlib.Path('dist/moodle')
-static_dir = build_dir / '_static'
 
 # ── MathJax conditionnel ─────────────────────────────────────────────────────
 MATHJAX = """<script>
-/* Charge MathJax uniquement si pas déjà présent (Moodle l'a souvent) */
 if (typeof MathJax === "undefined") {
   window.MathJax = {
     tex: {
@@ -36,146 +36,148 @@ if (typeof MathJax === "undefined") {
 
 # ── CSS de recadrage Moodle ───────────────────────────────────────────────────
 MOODLE_OVERRIDE = """<style>
-/* Recadrage pour intégration Moodle - masque navigation et sidebar */
+/* Masque navigation et sidebar — le contenu article reste visible */
 body { overflow-x: hidden !important; }
-.bd-sidebar-primary, .bd-sidebar-secondary,
-.prev-next, .bd-footer, nav.bd-links,
-#navbar-icon-links, .topbar, #main-nav,
 .bd-header, header.bd-header,
+.bd-sidebar-primary, .bd-sidebar-secondary,
 #pst-primary-sidebar-modal, #pst-secondary-sidebar-modal,
+.prev-next, .bd-footer, footer,
+nav.bd-links, #navbar-icon-links,
 [aria-label="previous page"], [aria-label="next page"],
-.footer, footer { display: none !important; }
+.topbar, #main-nav,
+a.headerlink, .copybtn, .cell_tag,
+.sd-badge { display: none !important; }
+
 .bd-main { padding-left: 0 !important; margin-left: 0 !important; }
-.bd-content { max-width: 100% !important; padding: 0 !important; }
+.bd-content { max-width: 100% !important; }
 .bd-article-container { max-width: 900px !important; margin: 0 auto; }
 article.bd-article { padding: 1rem 1.5rem 2rem !important; }
-a.headerlink { display: none !important; }
-.copybtn { display: none !important; }
 </style>"""
 
-# ── Mime types pour les fichiers référencés en url() ─────────────────────────
-FONT_MIME = {
+# ── Types MIME pour fichiers locaux ──────────────────────────────────────────
+MIME = {
     'woff':  'font/woff',
     'woff2': 'font/woff2',
     'ttf':   'font/ttf',
     'otf':   'font/otf',
     'eot':   'application/vnd.ms-fontobject',
-}
-IMG_MIME = {
-    'png':  'image/png',
-    'jpg':  'image/jpeg',
-    'jpeg': 'image/jpeg',
-    'gif':  'image/gif',
-    'svg':  'image/svg+xml',
-    'ico':  'image/x-icon',
+    'svg':   'image/svg+xml',
+    'png':   'image/png',
+    'jpg':   'image/jpeg',
+    'jpeg':  'image/jpeg',
+    'gif':   'image/gif',
+    'ico':   'image/x-icon',
 }
 
+MAX_EMBED_BYTES = 2 * 1024 * 1024  # 2 Mo max par fichier embarqué
 
-def file_to_data_uri(path: pathlib.Path) -> str | None:
-    """Convertit un fichier local en data URI base64."""
+
+def to_data_uri(path: pathlib.Path) -> str | None:
+    """Convertit un fichier local en data URI base64 si son type est connu."""
     ext = path.suffix.lstrip('.').lower()
-    mime = FONT_MIME.get(ext) or IMG_MIME.get(ext)
-    if mime is None:
+    mime = MIME.get(ext)
+    if not mime:
+        return None
+    size = path.stat().st_size
+    if size > MAX_EMBED_BYTES:
+        print(f'    Trop grand pour embarquer ({size//1024} Ko): {path}', file=sys.stderr)
         return None
     b64 = base64.b64encode(path.read_bytes()).decode()
     return f'data:{mime};base64,{b64}'
 
 
-def fix_css_urls(css_text: str, css_file_path: pathlib.Path) -> str:
+def fix_css_urls(css_text: str, css_file: pathlib.Path) -> str:
     """
-    Remplace les url() relatifs dans un bloc CSS par des data URIs base64.
-    Laisse intacts les url() déjà absolus (http, data:, //).
+    Remplace url(<chemin relatif>) → url("data:...")
+    Gère les URLs avec query string et fragment (ex: fa.woff2?v=6.4#iefix).
     """
     def replacer(m):
-        raw = m.group(1).strip()
-        # Enlève les quotes éventuelles
-        url = raw.strip("'\"")
-        if url.startswith(('data:', 'http', '//', '#', '')):
+        raw = m.group(1).strip().strip("'\"")
+        # Ignore les URLs déjà absolues ou vides
+        if not raw or raw.startswith(('data:', 'http', '//', '#')):
             return m.group(0)
-        # Résout par rapport au fichier CSS
-        resolved = (css_file_path.parent / url).resolve()
+        # Supprime query string et fragment pour trouver le vrai fichier
+        clean = re.sub(r'[?#].*$', '', raw)
+        resolved = (css_file.parent / clean).resolve()
         if resolved.exists():
-            data_uri = file_to_data_uri(resolved)
-            if data_uri:
-                return f'url("{data_uri}")'
+            uri = to_data_uri(resolved)
+            if uri:
+                return f'url("{uri}")'
         return m.group(0)
 
-    return re.sub(r'url\(([^)]+)\)', replacer, css_text)
+    return re.sub(r'url\(\s*(["\']?[^"\'()]*["\']?)\s*\)', replacer, css_text)
+
+
+def resolve_imports(css_text: str, css_file: pathlib.Path, depth: int = 0) -> str:
+    """Remplace les @import par le contenu réel du fichier importé (récursif)."""
+    if depth > 5:
+        return css_text
+
+    def replacer(m):
+        raw = m.group(1).strip().strip("'\"")
+        clean = re.sub(r'[?#].*$', '', raw)
+        if clean.startswith(('http', '//')):
+            return m.group(0)
+        resolved = (css_file.parent / clean).resolve()
+        if resolved.exists():
+            txt = resolved.read_text('utf-8', errors='replace')
+            txt = resolve_imports(txt, resolved, depth + 1)
+            txt = fix_css_urls(txt, resolved)
+            return txt + '\n'
+        return ''
+
+    return re.sub(
+        r'@import\s+(?:url\()?["\']?([^"\'();\s]+)["\']?\)?;?',
+        replacer, css_text
+    )
 
 
 def resolve_css_path(href: str, page_path: pathlib.Path) -> pathlib.Path | None:
-    """Résout le chemin d'un CSS relatif depuis la page HTML."""
-    clean_href = re.sub(r'\?.*$', '', href)
-    resolved = (page_path.parent / clean_href).resolve()
+    """Résout un href relatif (sans query string) depuis la page HTML."""
+    clean = re.sub(r'[?#].*$', '', href)
+    resolved = (page_path.parent / clean).resolve()
     return resolved if resolved.exists() else None
-
-
-def inline_css_file(css_path: pathlib.Path) -> str:
-    """Lit un fichier CSS et fixe ses url() relatifs."""
-    text = css_path.read_text('utf-8', errors='replace')
-    return fix_css_urls(text, css_path)
-
-
-def resolve_css_imports(css_text: str, css_file_path: pathlib.Path) -> str:
-    """Résout les @import url(...) / @import "..." dans un bloc CSS."""
-    def replacer(m):
-        raw = m.group(1).strip().strip("'\"")
-        # Supprime query string
-        raw = re.sub(r'\?.*$', '', raw)
-        if raw.startswith(('http', '//', 'data:')):
-            return m.group(0)
-        resolved = (css_file_path.parent / raw).resolve()
-        if resolved.exists():
-            imported = resolved.read_text('utf-8', errors='replace')
-            imported = fix_css_urls(imported, resolved)
-            imported = resolve_css_imports(imported, resolved)
-            return imported + '\n'
-        return m.group(0)
-
-    # Gère : @import "foo.css"; et @import url("foo.css");
-    pattern = r'@import\s+(?:url\()?["\']?([^"\')\s;]+)["\']?\)?;?'
-    return re.sub(pattern, replacer, css_text)
 
 
 def collect_css(soup: BeautifulSoup, page_path: pathlib.Path):
     """
-    Retourne (inline_css: str, external_link_tags: list[str]).
-    - inline_css : CSS local combiné, url() convertis en base64
-    - external_link_tags : <link> CDN à conserver tels quels dans le <head>
+    Retourne (css_inline: str, external_links: list[str]).
+    Les CSS locaux sont lus, leurs imports et url() résolus, polices embarquées.
+    Les CSS CDN restent comme <link> tags (pour les icônes Font Awesome, etc.).
     """
-    css_parts = []
-    external_links = []
+    parts = []
+    external = []
 
-    # 1. Blocs <style> existants dans la page
+    # Blocs <style> existants dans la page
     for style in soup.find_all('style'):
         txt = style.get_text()
-        if not txt.strip():
-            continue
-        txt = resolve_css_imports(txt, page_path)
-        txt = fix_css_urls(txt, page_path)
-        css_parts.append(txt)
+        if txt.strip():
+            txt = resolve_imports(txt, page_path)
+            txt = fix_css_urls(txt, page_path)
+            parts.append(txt)
 
-    # 2. <link rel="stylesheet">
+    # <link rel="stylesheet">
     for link in soup.find_all('link', rel='stylesheet'):
         href = link.get('href', '')
         if not href:
             continue
-
-        if href.startswith('http') or href.startswith('//'):
-            # CSS externe (CDN) : garder comme <link> pour les icônes, etc.
-            external_links.append(f'<link rel="stylesheet" href="{href}" crossorigin="anonymous">')
+        if href.startswith(('http', '//')):
+            # CDN externe : garder comme <link> (icônes, polices CDN, etc.)
+            external.append(
+                f'<link rel="stylesheet" href="{href}" crossorigin="anonymous">'
+            )
             continue
-
         css_path = resolve_css_path(href, page_path)
-        if css_path and css_path.exists():
-            css_text = inline_css_file(css_path)
-            css_text = resolve_css_imports(css_text, css_path)
-            css_parts.append(css_text)
+        if css_path:
+            txt = css_path.read_text('utf-8', errors='replace')
+            txt = resolve_imports(txt, css_path)
+            txt = fix_css_urls(txt, css_path)
+            parts.append(txt)
+            print(f'    CSS inline: {css_path.name} ({css_path.stat().st_size//1024} Ko)')
         else:
-            print(f'    CSS local manquant: {href}', file=sys.stderr)
+            print(f'    CSS manquant: {href}', file=sys.stderr)
 
-    inline_block = '<style>\n' + '\n\n'.join(css_parts) + '\n</style>'
-    return inline_block, external_links
+    return '<style>\n' + '\n\n'.join(parts) + '\n</style>', external
 
 
 # ── Traitement de chaque notebook ─────────────────────────────────────────────
@@ -194,47 +196,54 @@ for nb_path in notebooks:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     soup = BeautifulSoup(jb_html.read_text('utf-8'), 'lxml')
+    print(f'  Traitement: {nb_path}')
 
-    # ── CSS inline + liens CDN externes ──────────────────────────────────────
-    all_css, external_link_tags = collect_css(soup, jb_html)
+    # ── CSS ──────────────────────────────────────────────────────────────────
+    all_css, ext_links = collect_css(soup, jb_html)
 
-    # ── Extrait le contenu principal ─────────────────────────────────────────
-    main = (soup.find('article', class_='bd-article')
-            or soup.find('div', role='main')
-            or soup.find('div', class_='bd-article')
-            or soup.find('article')
-            or soup.find('div', class_='bd-content'))
-
-    if not main:
-        print(f'  Contenu principal introuvable: {jb_html}', file=sys.stderr)
+    # ── Structure body : on garde tout mais on retire les scripts et
+    #    les éléments de navigation lourds (sidebar, header, footer)
+    #    Le CSS MOODLE_OVERRIDE masquera le reste.
+    body = soup.find('body')
+    if not body:
+        print(f'  <body> introuvable: {jb_html}', file=sys.stderr)
         errors.append(str(nb_path))
         continue
 
-    # ── Supprime navigation et éléments inutiles ──────────────────────────────
+    # Supprimer : scripts (dépendances ext.), éléments nav explicites
     for sel in [
-        '.prev-next', '.footer-item', 'a.headerlink',
-        '.sd-badge', '.cell_tag', '.copybtn',
-        '[aria-label="previous page"]', '[aria-label="next page"]',
-        '.bd-sidebar', 'nav',
+        'script',
+        'header.bd-header',
+        '.bd-sidebar-primary',
+        '.bd-sidebar-secondary',
+        'footer.bd-footer',
+        'footer',
+        '.prev-next',
+        'a.headerlink',
+        '.copybtn',
+        '.cell_tag',
     ]:
-        for el in main.select(sel):
+        for el in body.select(sel):
             el.decompose()
 
-    # ── Embarque les images du contenu en base64 ──────────────────────────────
-    for img in main.find_all('img'):
+    # ── Images dans le contenu : embarquer en base64 ─────────────────────────
+    article = (body.find('article', class_='bd-article')
+               or body.find('div', role='main')
+               or body)
+    for img in article.find_all('img'):
         src = img.get('src', '')
-        if src.startswith('data:') or src.startswith('http'):
+        if src.startswith(('data:', 'http')):
             continue
         img_path = (jb_html.parent / src).resolve()
         if img_path.exists():
             ext = img_path.suffix.lstrip('.').lower()
-            mime = IMG_MIME.get(ext, f'image/{ext}')
+            mime = MIME.get(ext, f'image/{ext}')
             b64 = base64.b64encode(img_path.read_bytes()).decode()
             img['src'] = f'data:{mime};base64,{b64}'
         else:
             print(f'    Image manquante: {img_path}', file=sys.stderr)
 
-    # ── Attributs data-* du tag <html> (nécessaires pour le thème) ───────────
+    # ── Attributs data-* du <html> (nécessaires pour le thème) ───────────────
     html_tag = soup.find('html')
     data_attrs = ''
     if html_tag:
@@ -242,22 +251,29 @@ for nb_path in notebooks:
             if k.startswith('data-'):
                 data_attrs += f' {k}="{v}"'
 
-    # ── Assemble le HTML final ────────────────────────────────────────────────
+    # ── Attributs / classes du <body> (sélecteurs CSS dépendent du body) ─────
+    body_attrs = ''
+    for k, v in body.attrs.items():
+        if isinstance(v, list):
+            body_attrs += f' {k}="{" ".join(v)}"'
+        else:
+            body_attrs += f' {k}="{v}"'
+
+    # ── HTML final ────────────────────────────────────────────────────────────
     title = nb_path.stem.replace('_', ' ')
-    external_links_html = '\n'.join(external_link_tags)
     html_out = f"""<!DOCTYPE html>
 <html lang="fr"{data_attrs}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-{external_links_html}
+{chr(10).join(ext_links)}
 {all_css}
 {MOODLE_OVERRIDE}
 {MATHJAX}
 </head>
-<body>
-{str(main)}
+<body{body_attrs}>
+{body.decode_contents()}
 </body>
 </html>"""
 
