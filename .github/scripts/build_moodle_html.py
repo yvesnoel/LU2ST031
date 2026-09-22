@@ -244,12 +244,15 @@ for nb_path in notebooks:
             print(f'    Image manquante: {img_path}', file=sys.stderr)
 
     # ── Attributs data-* du <html> (nécessaires pour le thème) ───────────────
+    # data-theme est normalement injecté par JS au runtime ; on le fixe à "light"
+    # pour que les sélecteurs Pygments html[data-theme="light"] .highlight soient actifs.
     html_tag = soup.find('html')
-    data_attrs = ''
+    data_attrs_dict = {'data-theme': 'light'}  # valeur par défaut forcée
     if html_tag:
         for k, v in html_tag.attrs.items():
             if k.startswith('data-'):
-                data_attrs += f' {k}="{v}"'
+                data_attrs_dict[k] = v  # les attrs statiques écrasent si présents
+    data_attrs = ''.join(f' {k}="{v}"' for k, v in data_attrs_dict.items())
 
     # ── Attributs / classes du <body> (sélecteurs CSS dépendent du body) ─────
     body_attrs = ''
